@@ -45,14 +45,20 @@ export default function GlobalSearch({ campaign }: { campaign: Campaign }) {
     if (dmMode) {
       for (const d of campaign.documents) {
         const locked = isDmOnlyDoc(d) && !dmMode;
-        const hay = `${d.title} ${d.path} ${locked ? "" : d.content}`;
+        const content =
+          typeof d.content === "string"
+            ? d.content
+            : Array.isArray(d.content)
+              ? d.content.join("\n")
+              : String(d.content ?? "");
+        const hay = `${d.title} ${d.path ?? ""} ${locked ? "" : content}`;
         if (hay.toLowerCase().includes(query.toLowerCase())) {
           results.push({
             kind: "doc",
             id: d.id,
             title: d.title,
             subtitle: `${d.act} · ${d.category}${isDmOnlyDoc(d) ? " · DM" : ""}`,
-            snippet: locked ? "Locked (enable DM Mode to search inside)." : mkSnippet(d.content, query),
+            snippet: locked ? "Locked (enable DM Mode to search inside)." : mkSnippet(content, query),
             locked,
           });
         }
