@@ -49,7 +49,7 @@ export default function GlobalSearch({ campaign }: { campaign: Campaign }) {
           typeof d.content === "string"
             ? d.content
             : Array.isArray(d.content)
-              ? d.content.join("\n")
+              ? (d.content as string[]).join("\n")
               : String(d.content ?? "");
         const hay = `${d.title} ${d.path ?? ""} ${locked ? "" : content}`;
         if (hay.toLowerCase().includes(query.toLowerCase())) {
