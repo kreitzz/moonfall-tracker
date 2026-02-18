@@ -92,3 +92,41 @@ body {
   font-family: var(--font-mono);
   font-size: 0.95em;
 }
+
+.prose .table-wrap {
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.prose th,
+.prose td {
+  border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  padding: 0.5em 0.6em;
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  font-weight: 600;
+}
+
+.prose .kv-grid {
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) 1fr;
+  gap: 0.35em 1em;
+  margin: 1em 0;
+}
+
+.prose .kv-grid dt {
+  font-weight: 600;
+}
+
+.prose .kv-grid dd {
+  margin: 0;
+}

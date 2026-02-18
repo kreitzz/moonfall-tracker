@@ -1,71 +1,9 @@
 "use client";
 
-import { Fragment } from "react";
 import Link from "next/link";
 import { CampaignDoc, isDmOnlyDoc } from "@/lib/campaign";
 import { useDmMode } from "@/components/DmModeProvider";
-
-function normalizeText(content: unknown): string {
-  if (typeof content === "string") return content;
-  if (Array.isArray(content)) return content.filter((x) => typeof x === "string").join("\n\n");
-  if (content == null) return "";
-  return String(content);
-}
-
-type Block =
-  | { kind: "heading"; text: string }
-  | { kind: "subheading"; text: string }
-  | { kind: "list"; items: string[]; ordered: boolean }
-  | { kind: "paragraph"; lines: string[] };
-
-function uppercaseRatio(text: string) {
-  const letters = text.match(/[A-Za-z]/g) ?? [];
-  if (letters.length === 0) return 0;
-  const upper = letters.filter((ch) => ch === ch.toUpperCase()).length;
-  return upper / letters.length;
-}
-
-function looksLikeHeading(text: string) {
-  if (text.length > 120) return false;
-  if (/[.?!]$/.test(text)) return false;
-  return uppercaseRatio(text) > 0.75;
-}
-
-function parseBlocks(content: unknown): Block[] {
-  const text = normalizeText(content);
-  const chunks = text
-    .split(/\n{2,}/g)
-    .map((chunk) => chunk.trim())
-    .filter(Boolean);
-
-  return chunks.map((chunk) => {
-    const lines = chunk
-      .split(/\n/g)
-      .map((line) => line.trim())
-      .filter(Boolean);
-
-    if (lines.length === 1 && looksLikeHeading(lines[0])) {
-      const heading = lines[0];
-      if (heading.length <= 32) {
-        return { kind: "subheading", text: heading };
-      }
-      return { kind: "heading", text: heading };
-    }
-
-    if (lines.length >= 2) {
-      const ordered = lines.every((line) => /^\\d+[.)]\\s+/.test(line));
-      const unordered = lines.every((line) => /^[-*•]\\s+/.test(line));
-      if (ordered || unordered) {
-        const items = lines.map((line) =>
-          line.replace(/^\\d+[.)]\\s+/, "").replace(/^[-*•]\\s+/, ""),
-        );
-        return { kind: "list", items, ordered };
-      }
-    }
-
-    return { kind: "paragraph", lines };
-  });
-}
+import { parseBlocks, renderBlocks } from "@/lib/textBlocks";
 
 
 
@@ -125,34 +63,7 @@ export default function DocViewer({
           </div>
         ) : (
           <div className="prose max-w-none text-black dark:text-white">
-            {parseBlocks(doc.content).map((block, idx) => {
-              if (block.kind === "heading") {
-                return <h2 key={idx}>{block.text}</h2>;
-              }
-              if (block.kind === "subheading") {
-                return <h3 key={idx}>{block.text}</h3>;
-              }
-              if (block.kind === "list") {
-                const ListTag = block.ordered ? "ol" : "ul";
-                return (
-                  <ListTag key={idx}>
-                    {block.items.map((item, itemIdx) => (
-                      <li key={itemIdx}>{item}</li>
-                    ))}
-                  </ListTag>
-                );
-              }
-              return (
-                <p key={idx}>
-                  {block.lines.map((line, lineIdx) => (
-                    <Fragment key={lineIdx}>
-                      {line}
-                      {lineIdx < block.lines.length - 1 ? <br /> : null}
-                    </Fragment>
-                  ))}
-                </p>
-              );
-            })}
+            {renderBlocks(parseBlocks(doc.content))}
           </div>
         )}
       </div>

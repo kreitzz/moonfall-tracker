@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getCampaign } from "@/lib/campaign";
+import { parseBlocks, renderBlocks } from "@/lib/textBlocks";
 
 function slugify(name: string) {
   return name
@@ -9,6 +10,7 @@ function slugify(name: string) {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
+
 
 // ✅ Next 16: params is async in dynamic routes
 export default async function PartyMemberPage({
@@ -34,29 +36,26 @@ export default async function PartyMemberPage({
         </div>
       </header>
 
-      <div className="grid gap-6 md:grid-cols-[220px_1fr]">
-        <div className="overflow-hidden rounded-3xl border border-black/10 bg-white shadow-sm dark:border-white/10 dark:bg-zinc-950">
-          <div className="relative aspect-square">
-            {member.image ? (
-              <Image src={member.image} alt={member.name} fill className="object-cover" />
-            ) : null}
-          </div>
-        </div>
-
-        <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
+      <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
+        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+          <div className="min-w-0">
           <div className="text-sm text-black/60 dark:text-white/60">Role</div>
           <div className="mt-1 text-lg font-semibold tracking-tight">{member.role}</div>
 
-          <div className="mt-6 text-sm text-black/70 dark:text-white/70">
-            <p>
-              This is a default character card. If you want, you can add:
-              <span className="font-medium">
-                {" "}
-                backstory, bonds, gear, notable moments
-              </span>
-              .
-            </p>
-          </div>
+          {member.card ? (
+            <div className="mt-6">
+              <div className="prose max-w-none text-black dark:text-white">
+                {renderBlocks(parseBlocks(member.card))}
+              </div>
+            </div>
+          ) : (
+            <div className="mt-6 text-sm text-black/70 dark:text-white/70">
+              <p>
+                This is a default character card. If you want, you can add:
+                <span className="font-medium"> backstory, bonds, gear, notable moments</span>.
+              </p>
+            </div>
+          )}
 
           <div className="mt-6 flex flex-wrap gap-2">
             <Link
@@ -71,6 +70,15 @@ export default async function PartyMemberPage({
             >
               View sessions →
             </Link>
+          </div>
+          </div>
+
+          <div className="w-full md:w-[360px]">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-black/[0.03] dark:bg-white/5">
+              {member.image ? (
+                <Image src={member.image} alt={member.name} fill className="object-contain" />
+              ) : null}
+            </div>
           </div>
         </div>
       </div>

@@ -26,10 +26,17 @@ export default function DocsGrid({ docs }: Props) {
       .filter((d) => (category === "all" ? true : d.category === category))
       .filter((d) => {
         if (!query) return true;
+        const path = (d.path ?? "").toLowerCase();
+        const content =
+          typeof d.content === "string"
+            ? d.content
+            : Array.isArray(d.content)
+              ? d.content.join("\n")
+              : String(d.content ?? "");
         return (
           d.title.toLowerCase().includes(query) ||
-          d.path.toLowerCase().includes(query) ||
-          d.content.toLowerCase().includes(query)
+          path.includes(query) ||
+          content.toLowerCase().includes(query)
         );
       })
       .sort((a, b) => a.title.localeCompare(b.title));

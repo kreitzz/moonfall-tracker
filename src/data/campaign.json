@@ -31,14 +31,16 @@
       "ancestry": "Half-Elf",
       "class": "Bard",
       "role": "Face / morale / strings",
-      "image": "/party/echo.png"
+      "image": "/party/echo.png",
+      "card": "ECHO\nHalf-Elf Bard (Level 1) — Charlatan\nChaotic Good\n\nCORE IDENTITY\nName: Echo\nRace: Half-Elf\nClass: Bard (Level 1)\nBackground: Charlatan\nAlignment: Chaotic Good\nAge: 28\nHeight: 5'8\"\nWeight: 150 lbs\nEyes: Blue\nHair: Brown\nSkin: Yes (lmao leaving that as written unless that was placeholder)\n\nABILITY SCORES\nStrength 10 (+0)\nDexterity 15 (+2)\nConstitution 14 (+2)\nIntelligence 13 (+1)\nWisdom 13 (+1)\nCharisma 18 (+4)\nProficiency Bonus: +2\nInitiative: +2\nSpeed: 30 ft\nArmor Class: 13\nHP: 10\nHit Dice: 1d8\nPassive Perception: 15\n\nSKILLS & PROFICIENCIES\nSaving Throws\n- Dexterity\n- Charisma\nSkill Proficiencies\n- Deception (+6)\n- Performance (+6)\n- Sleight of Hand (+4)\n- Insight (+3)\n- Athletics (+2)\n- Perception (+3)\nTool Proficiencies\n- Disguise Kit\n- Forgery Kit\nWeapon Proficiencies\n- Simple weapons\n- Hand crossbows\n- Longswords\n- Rapiers\n- Shortswords\nArmor Proficiency\n- Light armor\nLanguages\n- Common\n- Elvish\n- Gnomish\n\nCOMBAT\nWeapons\n- Longsword — +4 to hit — 1d8 slashing (1d10 two-handed)\n- Dagger — +4 to hit — 1d4 piercing\n\nFEATURES & TRAITS\nDarkvision\n- See in dim light within 60 ft as if bright light.\nFey Ancestry\n- Advantage on saving throws against being charmed.\n- Magic cannot put you to sleep.\nBardic Inspiration (4 uses)\n- Bonus Action: Give a creature within 60 ft a d6.\n- Add it to one ability check, attack roll, or saving throw within 10 minutes.\n- Uses = Charisma modifier (4 per long rest).\nFalse Identity (Charlatan Feature)\n- You have created a second identity complete with documentation, acquaintances, and disguises.\n- You can forge documents if you’ve seen an example.\n- You can mimic handwriting and documentation styles.\nCon of Choice\n- \"Put on new identities like clothes.\"\n\nEQUIPMENT\n- Guitar\n- Flute\n- Leather Armor\n- Fine Clothes\n- Disguise Kit\n- Forgery Items\n- Forged Documents (for false identity)\n- Diplomat’s Pack\n\nBACKSTORY SUMMARY\nEcho grew up in a small but well-traveled village, learning guitar by imitation and instinct. He became the region’s finest performer, earning coin and reputation in taverns.\n\nOne night, an elf played an ancient melody unlike anything Echo had heard. The song overwhelmed him — and he experienced a vision:\n- A silver forest untouched by time\n- An unnamed elven goddess bathed in moonlight\n- A single command: \"You must seek Lunaryth.\"\n\nMonths later, a second vision came — harsher. No goddess. Only fire. Screams. A burning city he believes was Lunaryth.\n\nNow he travels not for fame, but to warn a city of destruction — guided by music that seems to listen, but refuses to answer."
     },
     {
       "name": "Mead",
       "ancestry": "Hill Dwarf",
       "class": "Cleric (Light)",
       "role": "Heals + holy fire",
-      "image": "/party/mead.png"
+      "image": "/party/mead.png",
+      "card": "MEAD\nHill Dwarf Cleric — Moradin\nAlignment: TBD\n\nCORE IDENTITY\nName: Mead\nRace: Hill Dwarf\nClass: Cleric\nDomain: Moradin (Forge)\nBackground: TBD\nAge: TBD\nHeight: TBD\nWeight: TBD\nEyes: TBD\nHair: TBD\nSkin: TBD\n\nABILITY SCORES\nStrength: TBD\nDexterity: TBD\nConstitution: TBD\nIntelligence: TBD\nWisdom: TBD\nCharisma: TBD\nProficiency Bonus: TBD\nInitiative: TBD\nSpeed: 25 ft\nArmor Class: TBD\nHP: TBD\nHit Dice: TBD\nPassive Perception: TBD\n\nSKILLS & PROFICIENCIES\nSaving Throws\n- TBD\nSkill Proficiencies\n- TBD\nTool Proficiencies\n- TBD\nWeapon Proficiencies\n- TBD\nArmor Proficiency\n- TBD\nLanguages\n- Common\n- Dwarvish\n- TBD\n\nCOMBAT\nWeapons\n- TBD\n\nFEATURES & TRAITS\n- TBD\n\nEQUIPMENT\n- TBD\n\nBACKSTORY SUMMARY\nMead is a cleric of Moradin. He was banished for healing his enemies so he could beat them up further. He now travels toward Lunaryth, carrying the weight of that exile and looking for purpose on the road ahead."
     },
     {
       "name": "Prom",
@@ -413,13 +415,13 @@
     {
       "id": "seris",
       "name": "Seris",
-      "title": "Mysterious Guide",
-      "status": "Unknown",
+      "title": "Half-Elf Cleric",
+      "status": "With the party",
       "tags": [
-        "guide",
-        "mysterious"
+        "cleric",
+        "ally"
       ],
-      "summary": "A quiet, steady presence in Tide’s Rest who is fiercely protective of her mother. She’s guarded but determined, and the party has already seen how far she’ll go to find a cure.",
+      "summary": "A half-elf cleric traveling with the party — quiet, steady, and fiercely protective of those she cares about.",
       "image": "/npcs/seris.png",
       "dmOnly": true
     },
