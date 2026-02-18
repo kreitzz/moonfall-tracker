@@ -31,7 +31,7 @@ export default function DocsGrid({ docs }: Props) {
           typeof d.content === "string"
             ? d.content
             : Array.isArray(d.content)
-              ? d.content.join("\n")
+              ? (d.content as string[]).join("\n")
               : String(d.content ?? "");
         return (
           d.title.toLowerCase().includes(query) ||
