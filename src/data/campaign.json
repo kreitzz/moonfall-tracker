@@ -17,14 +17,16 @@
       "ancestry": "Goliath",
       "class": "Wizard",
       "role": "Arcane artillery / scholar",
-      "image": "/party/heywud-ja-blohme.png"
+      "image": "/party/heywud-ja-blohme.png",
+      "card": "HEYWUD JA'BLOHME\nGoliath Wizard\nAlignment: TBD\n\nCORE IDENTITY\nName: Heywud Ja'blohme\nRace: Goliath\nClass: Wizard\nBackground: TBD\nAlignment: TBD\nAge: TBD\nHeight: TBD\nWeight: TBD\nEyes: TBD\nHair: TBD\nSkin: TBD\n\nABILITY SCORES\nStrength: TBD\nDexterity: TBD\nConstitution: TBD\nIntelligence: TBD\nWisdom: TBD\nCharisma: TBD\nProficiency Bonus: TBD\nInitiative: TBD\nSpeed: TBD\nArmor Class: TBD\nHP: TBD\nHit Dice: TBD\nPassive Perception: TBD\n\nSKILLS & PROFICIENCIES\nSaving Throws\n- TBD\nSkill Proficiencies\n- TBD\nTool Proficiencies\n- TBD\nWeapon Proficiencies\n- TBD\nArmor Proficiency\n- TBD\nLanguages\n- Common\n- TBD\n\nCOMBAT\nWeapons\n- TBD\n\nFEATURES & TRAITS\n- TBD\n\nEQUIPMENT\n- TBD\n\nBACKSTORY SUMMARY\nTBD"
     },
     {
       "name": "Kelsier",
       "ancestry": "Tiefling",
       "class": "Monk",
       "role": "Striker / chaos agent",
-      "image": "/party/kelsier.png"
+      "image": "/party/kelsier.png",
+      "card": "KELSIER\nTiefling Monk\nAlignment: TBD\n\nCORE IDENTITY\nName: Kelsier\nRace: Tiefling\nClass: Monk\nBackground: TBD\nAlignment: TBD\nAge: TBD\nHeight: TBD\nWeight: TBD\nEyes: TBD\nHair: TBD\nSkin: TBD\n\nABILITY SCORES\nStrength: TBD\nDexterity: TBD\nConstitution: TBD\nIntelligence: TBD\nWisdom: TBD\nCharisma: TBD\nProficiency Bonus: TBD\nInitiative: TBD\nSpeed: TBD\nArmor Class: TBD\nHP: TBD\nHit Dice: TBD\nPassive Perception: TBD\n\nSKILLS & PROFICIENCIES\nSaving Throws\n- TBD\nSkill Proficiencies\n- TBD\nTool Proficiencies\n- TBD\nWeapon Proficiencies\n- TBD\nArmor Proficiency\n- TBD\nLanguages\n- Common\n- TBD\n\nCOMBAT\nWeapons\n- TBD\n\nFEATURES & TRAITS\n- TBD\n\nEQUIPMENT\n- TBD\n\nBACKSTORY SUMMARY\nTBD"
     },
     {
       "name": "Echo",
@@ -47,7 +49,8 @@
       "ancestry": "Half-Orc",
       "class": "Barbarian",
       "role": "Frontline menace",
-      "image": "/party/prom.png"
+      "image": "/party/prom.png",
+      "card": "PROM\nHalf-Orc Barbarian\nAlignment: TBD\n\nCORE IDENTITY\nName: Prom\nRace: Half-Orc\nClass: Barbarian\nBackground: TBD\nAlignment: TBD\nAge: TBD\nHeight: TBD\nWeight: TBD\nEyes: TBD\nHair: TBD\nSkin: TBD\n\nABILITY SCORES\nStrength: TBD\nDexterity: TBD\nConstitution: TBD\nIntelligence: TBD\nWisdom: TBD\nCharisma: TBD\nProficiency Bonus: TBD\nInitiative: TBD\nSpeed: TBD\nArmor Class: TBD\nHP: TBD\nHit Dice: TBD\nPassive Perception: TBD\n\nSKILLS & PROFICIENCIES\nSaving Throws\n- TBD\nSkill Proficiencies\n- TBD\nTool Proficiencies\n- TBD\nWeapon Proficiencies\n- TBD\nArmor Proficiency\n- TBD\nLanguages\n- Common\n- TBD\n\nCOMBAT\nWeapons\n- TBD\n\nFEATURES & TRAITS\n- TBD\n\nEQUIPMENT\n- TBD\n\nBACKSTORY SUMMARY\nTBD"
     }
   ],
   "sessions": [
