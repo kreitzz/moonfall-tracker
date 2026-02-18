@@ -21,7 +21,7 @@ export default function PartyCard({ member }: { member: PartyMember }) {
         <div className="flex items-start gap-3">
           <div className="relative h-12 w-12 overflow-hidden rounded-xl border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/5">
             {member.image ? (
-              <Image src={member.image} alt={member.name} fill className="object-cover" sizes="48px" />
+              <Image src={member.image} alt={member.name} fill className="object-contain" sizes="48px" />
             ) : null}
           </div>
           <div>
