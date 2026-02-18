@@ -78,6 +78,14 @@
       "number": 1,
       "title": "Bells in the Lost Forest",
       "summary": "The party learns of the Lost Forest's true danger, meets Seris in Tide’s Rest, and slays the undead cow that tolls the bells.",
+      "mvp": {
+        "name": "Prom",
+        "reason": "Killed Admiral MooMoo"
+      },
+      "lowlight": {
+        "name": "Kelsier",
+        "reason": "Almost died from a combo of stupidity and bad luck, then shamelessly flirted with Seris while she tried to save her mother"
+      },
       "docId": "session-1"
     }
   ],

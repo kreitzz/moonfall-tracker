@@ -149,6 +149,16 @@ export default function Home() {
             <div className="text-sm text-black/60 dark:text-white/60">Session {latestSession.number}</div>
             <div className="mt-1 text-2xl font-semibold tracking-tight">{latestSession.title}</div>
             <p className="mt-2 max-w-3xl text-black/70 dark:text-white/70">{latestSession.summary}</p>
+            {latestSession.mvp ? (
+              <div className="mt-3 text-sm text-black/70 dark:text-white/70">
+                <span className="font-semibold">MVP:</span> {latestSession.mvp.name} — {latestSession.mvp.reason}
+              </div>
+            ) : null}
+            {latestSession.lowlight ? (
+              <div className="mt-2 text-sm text-black/70 dark:text-white/70">
+                <span className="font-semibold">Critical Fail:</span> {latestSession.lowlight.name} — {latestSession.lowlight.reason}
+              </div>
+            ) : null}
             <div className="mt-4">
               <Link
                 href={`/sessions/${latestSession.id}`}
