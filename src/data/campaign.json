@@ -484,8 +484,7 @@
       "summary": "Reach Lunaryth and learn why the city has gone silent.",
       "steps": [
         { "label": "Reach Tide’s Rest", "done": true },
-        { "label": "Cross the Lost Forest", "done": false },
-        { "label": "Arrive in Lunaryth", "done": false }
+        { "label": "Cross the Lost Forest", "done": false }
       ]
     },
     {
