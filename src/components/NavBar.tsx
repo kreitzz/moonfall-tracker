@@ -19,12 +19,13 @@ export default function NavBar({ partyName }: { partyName: string }) {
   const links = useMemo(
     () => [
       { href: "/", label: "Home" },
+      { href: "/players", label: "Players" },
       { href: "/sessions", label: "Sessions" },
-      { href: "/docs", label: "Codex" },
       { href: "/npcs", label: "NPCs" },
       { href: "/battles", label: "Battles" },
       { href: "/gallery", label: "Maps" },
       { href: "/search", label: "Search" },
+      ...(dmMode ? [{ href: "/docs", label: "DM Tools" }] : []),
       ...(dmMode ? [{ href: "/admin", label: "DM" }] : []),
     ],
     [dmMode]

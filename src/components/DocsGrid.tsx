@@ -3,14 +3,12 @@
 import { useMemo, useState } from "react";
 import { CampaignDoc } from "@/lib/campaign";
 import DocCard from "@/components/DocCard";
-import { useDmMode } from "@/components/DmModeProvider";
 
 type Props = {
   docs: CampaignDoc[];
 };
 
 export default function DocsGrid({ docs }: Props) {
-  const { dmMode } = useDmMode();
   const [q, setQ] = useState("");
   const [act, setAct] = useState<string>("all");
   const [category, setCategory] = useState<string>("all");
@@ -74,8 +72,7 @@ export default function DocsGrid({ docs }: Props) {
         </div>
 
         <div className="text-sm text-black/60 dark:text-white/60">
-          Showing <span className="font-medium">{filtered.length}</span> entries
-          {dmMode ? " (including DM-only)." : "."}
+          Showing <span className="font-medium">{filtered.length}</span> tools.
         </div>
       </div>
 

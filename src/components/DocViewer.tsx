@@ -69,7 +69,17 @@ function parseBlocks(content: unknown): Block[] {
 
 
 
-export default function DocViewer({ doc }: { doc: CampaignDoc }) {
+export default function DocViewer({
+  doc,
+  backHref = "/docs",
+  backLabel = "Back to DM tools",
+  showBackLink = true,
+}: {
+  doc: CampaignDoc;
+  backHref?: string;
+  backLabel?: string;
+  showBackLink?: boolean;
+}) {
   const { dmMode } = useDmMode();
   const dmOnly = isDmOnlyDoc(doc);
   const titleHidden = dmOnly && !dmMode;
@@ -79,13 +89,13 @@ export default function DocViewer({ doc }: { doc: CampaignDoc }) {
 
   const title = titleHidden ? "Unknown Entry" : doc.title;
 
+  const metaLine = [doc.act, doc.category, !titleHidden ? doc.path : null].filter(Boolean).join(" · ");
+
   return (
     <div className="space-y-6">
       <header className="space-y-2">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="text-sm text-black/60 dark:text-white/60">
-            {[doc.act, doc.category, !titleHidden ? doc.path : null].filter(Boolean).join(" · ")}
-          </div>
+          {metaLine ? <div className="text-sm text-black/60 dark:text-white/60">{metaLine}</div> : null}
 
           {dmOnly ? (
             <span className="inline-flex w-fit rounded-full border border-amber-500/40 bg-amber-500/10 px-3 py-1 text-xs text-amber-700 dark:text-amber-300">
@@ -147,11 +157,13 @@ export default function DocViewer({ doc }: { doc: CampaignDoc }) {
         )}
       </div>
 
-      <div>
-        <Link href="/docs" className="text-sm text-black/70 hover:underline dark:text-white/70">
-          ← Back to codex
-        </Link>
-      </div>
+      {showBackLink ? (
+        <div>
+          <Link href={backHref} className="text-sm text-black/70 hover:underline dark:text-white/70">
+            ← {backLabel}
+          </Link>
+        </div>
+      ) : null}
     </div>
   );
 }

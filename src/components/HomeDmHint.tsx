@@ -11,7 +11,7 @@ export default function HomeDmHint() {
       {dmMode ? (
         <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
           <div>
-            <span className="font-medium">DM Mode is enabled.</span> DM-only guides and encounter notes will show up across the Codex.
+            <span className="font-medium">DM Mode is enabled.</span> DM Tools and map reveals are now available.
           </div>
           <Link href="/admin" className="text-sm font-medium underline underline-offset-4">
             Open DM dashboard
@@ -19,7 +19,7 @@ export default function HomeDmHint() {
         </div>
       ) : (
         <div>
-          Players will only see public docs. If you’re the DM, toggle <span className="font-medium">DM Mode</span> in the navbar to unlock guides.
+          If you’re the DM, toggle <span className="font-medium">DM Mode</span> in the navbar to access DM Tools and reveals.
         </div>
       )}
     </div>

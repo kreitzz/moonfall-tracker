@@ -37,23 +37,25 @@ export default function GlobalSearch({ campaign }: { campaign: Campaign }) {
           id: s.id,
           title: s.title,
           subtitle: `Session ${s.number}`,
-          href: `/docs/${s.docId}`,
+          href: `/sessions/${s.id}`,
         });
       }
     }
 
-    for (const d of campaign.documents) {
-      const locked = isDmOnlyDoc(d) && !dmMode;
-      const hay = `${d.title} ${d.path} ${locked ? "" : d.content}`;
-      if (hay.toLowerCase().includes(query.toLowerCase())) {
-        results.push({
-          kind: "doc",
-          id: d.id,
-          title: d.title,
-          subtitle: `${d.act} · ${d.category}${isDmOnlyDoc(d) ? " · DM" : ""}`,
-          snippet: locked ? "Locked (enable DM Mode to search inside)." : mkSnippet(d.content, query),
-          locked,
-        });
+    if (dmMode) {
+      for (const d of campaign.documents) {
+        const locked = isDmOnlyDoc(d) && !dmMode;
+        const hay = `${d.title} ${d.path} ${locked ? "" : d.content}`;
+        if (hay.toLowerCase().includes(query.toLowerCase())) {
+          results.push({
+            kind: "doc",
+            id: d.id,
+            title: d.title,
+            subtitle: `${d.act} · ${d.category}${isDmOnlyDoc(d) ? " · DM" : ""}`,
+            snippet: locked ? "Locked (enable DM Mode to search inside)." : mkSnippet(d.content, query),
+            locked,
+          });
+        }
       }
     }
 

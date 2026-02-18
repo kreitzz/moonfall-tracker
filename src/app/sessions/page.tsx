@@ -24,10 +24,10 @@ export default function SessionsPage() {
                 <div className="mt-2 text-sm text-black/70 dark:text-white/70">{s.summary}</div>
               </div>
               <Link
-                href={`/docs/${s.docId}`}
+                href={`/sessions/${s.id}`}
                 className="mt-3 inline-flex w-fit items-center gap-2 rounded-lg bg-black px-3 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black md:mt-0"
               >
-                Open doc <span aria-hidden>→</span>
+                Open <span aria-hidden>→</span>
               </Link>
             </div>
           </div>

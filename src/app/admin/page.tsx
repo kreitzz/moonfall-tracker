@@ -86,7 +86,7 @@ export default function AdminPage() {
         <div className="flex items-end justify-between gap-4">
           <h2 className="text-lg font-semibold tracking-tight">DM-only docs (quick index)</h2>
           <Link href="/docs" className="text-sm text-black/70 hover:underline dark:text-white/70">
-            Browse codex →
+            Browse DM tools →
           </Link>
         </div>
 

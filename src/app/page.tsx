@@ -1,6 +1,5 @@
 import Link from "next/link";
 import PartyCard from "@/components/PartyCard";
-import DocCard from "@/components/DocCard";
 import NpcCard from "@/components/NpcCard";
 import BattleCard from "@/components/BattleCard";
 import { getCampaign } from "@/lib/campaign";
@@ -10,11 +9,6 @@ export default function Home() {
   const campaign = getCampaign();
   const latestSession = [...campaign.sessions].sort((a, b) => (b.number ?? 0) - (a.number ?? 0))[0];
 
-  // A few “featured” docs: player primer + act 1 location guides.
-  const featured = campaign.documents
-    .filter((d) => ["Session 0", "Moonfall Grotto", "Tide_s Rest", "The Lost Forest"].includes(d.title))
-    .slice(0, 6);
-
   return (
     <div className="space-y-10">
       <header className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
@@ -23,7 +17,7 @@ export default function Home() {
             <div className="text-sm text-black/60 dark:text-white/60">Campaign tracker</div>
             <h1 className="mt-2 text-3xl font-semibold tracking-tight">{campaign.meta.name}</h1>
             <p className="mt-2 max-w-2xl text-base text-black/70 dark:text-white/70">
-              A living, clickable record of the story so far — sessions, maps, lore, and DM-only prep.
+              A living, clickable record of the story so far — sessions, maps, lore, and character info.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -34,10 +28,10 @@ export default function Home() {
               View sessions
             </Link>
             <Link
-              href="/docs"
+              href="/players"
               className="rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
             >
-              Browse codex
+              Players
             </Link>
             <Link
               href="/gallery"
@@ -60,9 +54,9 @@ export default function Home() {
             <div className="mt-1 text-sm text-black/70 dark:text-white/70">Logged so far</div>
           </div>
           <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
-            <div className="text-sm text-black/60 dark:text-white/60">Codex entries</div>
-            <div className="mt-1 text-2xl font-semibold">{campaign.documents.length}</div>
-            <div className="mt-1 text-sm text-black/70 dark:text-white/70">Guides + lore + encounters</div>
+            <div className="text-sm text-black/60 dark:text-white/60">NPCs</div>
+            <div className="mt-1 text-2xl font-semibold">{campaign.npcs?.length ?? 0}</div>
+            <div className="mt-1 text-sm text-black/70 dark:text-white/70">Known characters</div>
           </div>
         </div>
 
@@ -72,8 +66,8 @@ export default function Home() {
       <section>
         <div className="flex items-end justify-between gap-4">
           <h2 className="text-xl font-semibold tracking-tight">The Belligerent Five</h2>
-          <Link href="/docs" className="text-sm text-black/70 hover:underline dark:text-white/70">
-            See all lore →
+          <Link href="/players" className="text-sm text-black/70 hover:underline dark:text-white/70">
+            See all players →
           </Link>
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -124,26 +118,12 @@ export default function Home() {
           <p className="mt-2 max-w-3xl text-black/70 dark:text-white/70">{latestSession.summary}</p>
           <div className="mt-4">
             <Link
-              href={`/docs/${latestSession.docId}`}
+              href={`/sessions/${latestSession.id}`}
               className="inline-flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black"
             >
-              Open session doc <span aria-hidden>→</span>
+              Open session <span aria-hidden>→</span>
             </Link>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="flex items-end justify-between gap-4">
-          <h2 className="text-xl font-semibold tracking-tight">Featured entries</h2>
-          <Link href="/docs" className="text-sm text-black/70 hover:underline dark:text-white/70">
-            Browse codex →
-          </Link>
-        </div>
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
-          {featured.map((d) => (
-            <DocCard key={d.id} doc={d} />
-          ))}
         </div>
       </section>
     </div>
