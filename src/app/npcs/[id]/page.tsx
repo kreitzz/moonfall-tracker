@@ -19,9 +19,9 @@ export default async function NpcPage({ params }: { params: Promise<{ id: string
         </div>
       </header>
 
-      <div className="grid gap-6 md:grid-cols-[520px_1fr]">
-        <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
-          <div className="relative aspect-[3/4] min-h-[560px] overflow-hidden rounded-2xl">
+      <div className="grid gap-6 md:grid-cols-[320px_1fr]">
+        <div className="rounded-3xl border border-black/10 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-zinc-950">
+          <div className="relative aspect-[4/5] min-h-[320px] overflow-hidden rounded-2xl">
             {npc.image ? <Image src={npc.image} alt={npc.name} fill className="object-cover" unoptimized /> : null}
           </div>
         </div>

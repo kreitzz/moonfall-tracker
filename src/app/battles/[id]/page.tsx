@@ -19,9 +19,9 @@ export default async function BattlePage({ params }: { params: Promise<{ id: str
         </div>
       </header>
 
-      <div className="grid gap-6 md:grid-cols-[260px_1fr]">
-        <div className="overflow-hidden rounded-3xl border border-black/10 bg-white shadow-sm dark:border-white/10 dark:bg-zinc-950">
-          <div className="relative aspect-square">
+      <div className="grid gap-6 md:grid-cols-[320px_1fr]">
+        <div className="rounded-3xl border border-black/10 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-zinc-950">
+          <div className="relative aspect-[4/5] min-h-[320px] overflow-hidden rounded-2xl">
             {battle.image ? <Image src={battle.image} alt={battle.name} fill className="object-cover" unoptimized /> : null}
           </div>
         </div>
