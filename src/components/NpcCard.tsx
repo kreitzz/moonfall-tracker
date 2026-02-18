@@ -16,9 +16,9 @@ export default function NpcCard({ npc }: { npc: CampaignNpc }) {
     <div className="rounded-2xl border border-black/10 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-zinc-950">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3">
-          <div className="relative h-12 w-12 overflow-hidden rounded-xl border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/5">
+          <div className="relative h-28 w-28 min-w-[7rem] flex-shrink-0 overflow-hidden rounded-2xl border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/5">
             {npc.image ? (
-              <Image src={npc.image} alt={npc.name} fill className="object-cover" sizes="48px" unoptimized />
+              <Image src={npc.image} alt={npc.name} fill className="object-cover" sizes="112px" unoptimized />
             ) : null}
           </div>
           <div>

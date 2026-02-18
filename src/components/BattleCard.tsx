@@ -16,9 +16,9 @@ export default function BattleCard({ battle }: { battle: CampaignBattle }) {
     <div className="rounded-2xl border border-black/10 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-zinc-950">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3">
-          <div className="relative h-12 w-12 overflow-hidden rounded-xl border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/5">
+          <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/5">
             {battle.image ? (
-              <Image src={battle.image} alt={battle.name} fill className="object-cover" sizes="48px" unoptimized />
+              <Image src={battle.image} alt={battle.name} fill className="object-cover" sizes="80px" unoptimized />
             ) : null}
           </div>
           <div>
