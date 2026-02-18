@@ -9,7 +9,8 @@
       "act-1-maps-the-lost-forest-jpg",
       "act-1-maps-tide-s-rest-jpg",
       "act-1-maps-the-docked-boat-jpg",
-      "general-info-session-0-docx"
+      "general-info-session-0-docx",
+      "general-maps-ascendaria-png"
     ]
   },
   "party": [
@@ -60,7 +61,7 @@
       "role": "Guest PC · Frontline guard",
       "image": "/party/brigg.png",
       "guest": true,
-      "card": "BRIGG\nHuman Fighter (Level 1) — Guard\nAlignment: Neutral\n\nCORE IDENTITY\nName: Brigg\nRace: Human\nClass: Fighter (Level 1)\nBackground: Guard\nAlignment: Neutral\nAge: 24\nHeight: 5'11\nWeight: 190 lbs\nEyes: Hazel\nHair: Brown\nSkin: Weathered tan\n\nABILITY SCORES\nAbility | Score | Modifier\nStrength | 16 | +3\nDexterity | 12 | +1\nConstitution | 14 | +2\nIntelligence | 10 | +0\nWisdom | 11 | +0\nCharisma | 8 | -1\nProficiency Bonus: +2\nInitiative: +1\nSpeed: 30 ft\nArmor Class: 16\nHP: 12\nHit Dice: 1d10\nPassive Perception: 10\n\nSKILLS & PROFICIENCIES\nSaving Throws\n- Strength\n- Dexterity\nSkill Proficiencies\n- Athletics +5\n- Perception +2\nWeapon Proficiencies\n- Simple weapons\n- Martial weapons\nArmor Proficiency\n- All armor\n- Shields\nLanguages\n- Common\n\nCOMBAT\nWeapons\n- Longsword — +5 to hit — 1d8 + 3 slashing (1d10 + 3 two-handed)\n- Javelin — +5 to hit — 1d6 + 3 piercing — Range 30/120\n\nFEATURES & TRAITS\nSecond Wind (1/short rest)\n- Bonus action: regain 1d10 + 1 HP.\nFighting Style: Defense\n- +1 AC while wearing armor.\n\nEQUIPMENT\n- Chain mail\n- Shield\n- Longsword\n- 3 Javelins\n- Traveler’s pack\n\nBACKSTORY SUMMARY\nBrigg is Eldra’s adoptive son — raised around her herb work and trusted to handle hard tasks. He’s a trained fighter who regularly checks on Seris and her mother.\n\nEldra took him in after a caravan accident on the coastal road left him alone and half‑starved. He grew up hauling crates at the docks and chopping wood for the apothecary, learning discipline the hard way.\n\nHis strength comes from that work — lifting, hauling, and years of sparring with dockhands who didn’t go easy on him. He fights like someone who learned to endure first and win second.\n\nROLEPLAY NOTES\n- Protective without speaking for Seris; steps in physically when danger spikes.\n- Respectful to Eldra but quietly resentful of anyone who dismisses her warnings.\n- Humor as a pressure valve, followed by sudden seriousness when Seris is overwhelmed.\n\nSAMPLE LINES\n- You don’t get to talk over her.\n- Eldra’s been carrying this town. Don’t make it heavier.\n"
+      "card": "BRIGG\nHuman Fighter (Level 1) — Guard\nAlignment: Neutral\n\nCORE IDENTITY\nName: Brigg\nRace: Human\nClass: Fighter (Level 1)\nBackground: Guard\nAlignment: Neutral\nAge: 24\nHeight: 5'11\nWeight: 190 lbs\nEyes: Hazel\nHair: Brown\nSkin: Weathered tan\n\nABILITY SCORES\nAbility | Score | Modifier\nStrength | 16 | +3\nDexterity | 12 | +1\nConstitution | 14 | +2\nIntelligence | 10 | +0\nWisdom | 11 | +0\nCharisma | 8 | -1\nProficiency Bonus: +2\nInitiative: +1\nSpeed: 30 ft\nArmor Class: 16\nHP: 12\nHit Dice: 1d10\nPassive Perception: 10\n\nSKILLS & PROFICIENCIES\nSaving Throws\n- Strength\n- Dexterity\nSkill Proficiencies\n- Athletics +5\n- Perception +2\nWeapon Proficiencies\n- Simple weapons\n- Martial weapons\nArmor Proficiency\n- All armor\n- Shields\nLanguages\n- Common\n- Gnomish\n\nCOMBAT\nWeapons\n- Longsword — +5 to hit — 1d8 + 3 slashing (1d10 + 3 two-handed)\n- Javelin — +5 to hit — 1d6 + 3 piercing — Range 30/120\n\nFEATURES & TRAITS\nSecond Wind (1/short rest)\n- Bonus action: regain 1d10 + 1 HP.\nFighting Style: Defense\n- +1 AC while wearing armor.\n\nEQUIPMENT\n- Chain mail\n- Shield\n- Longsword\n- 3 Javelins\n- Traveler’s pack\n\nBACKSTORY SUMMARY\nBrigg is Eldra’s adoptive son — raised around her herb work and trusted to handle hard tasks. He’s a trained fighter who regularly checks on Seris and her mother.\n\nEldra took him in after a caravan accident on the coastal road left him alone and half‑starved. He grew up hauling crates at the docks and chopping wood for the apothecary, learning discipline the hard way.\n\nHis strength comes from that work — lifting, hauling, and years of sparring with dockhands who didn’t go easy on him. He fights like someone who learned to endure first and win second.\n\nROLEPLAY NOTES\n- Protective without speaking for Seris; steps in physically when danger spikes.\n- Respectful to Eldra but quietly resentful of anyone who dismisses her warnings.\n- Humor as a pressure valve, followed by sudden seriousness when Seris is overwhelmed.\n\nSAMPLE LINES\n- You don’t get to talk over her.\n- Eldra’s been carrying this town. Don’t make it heavier.\n"
     }
   ],
   "sessions": [
@@ -406,6 +407,13 @@
       "path": "Act 2/Maps/Lunaryth Red Light Underground.jpg",
       "title": "Lunaryth Red Light Underground",
       "act": "Act 2"
+    },
+    {
+      "id": "general-maps-ascendaria-png",
+      "path": "General/Ascendaria.png",
+      "title": "Ascendaria",
+      "act": "General",
+      "version": "2"
     }
   ],
   "npcs": [

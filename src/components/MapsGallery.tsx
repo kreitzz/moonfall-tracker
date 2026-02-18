@@ -53,7 +53,9 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
           const pub = isPublic(img.id);
           const title = img.title;
           const subtitle = img.act;
-          const href = `/campaign/${img.path}`;
+          const version = (img as any).version;
+          const src = `/campaign/${img.path}${version ? `?v=${version}` : ""}`;
+          const href = src;
 
           return (
             <div
@@ -62,7 +64,7 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
             >
               <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src={`/campaign/${img.path}`}
+                  src={src}
                   alt={title}
                   fill
                   sizes="(max-width: 1024px) 50vw, 33vw"
