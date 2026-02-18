@@ -76,7 +76,12 @@ export default async function PartyMemberPage({
           <div className="w-full md:w-[360px]">
             <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-black/[0.03] dark:bg-white/5">
               {member.image ? (
-                <Image src={member.image} alt={member.name} fill className="object-contain" />
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-contain"
+                />
               ) : null}
             </div>
           </div>
