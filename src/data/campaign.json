@@ -519,8 +519,7 @@
       "summary": "Understand the visions and the goddess’s command to seek Lunaryth.",
       "steps": [
         { "label": "Arrive in Lunaryth and follow the music’s pull", "done": false },
-        { "label": "Identify the goddess from the vision", "done": false },
-        { "label": "Discover whether Lunaryth can be saved", "done": false }
+        { "label": "Identify the goddess from the vision", "done": false }
       ]
     }
   ]
