@@ -22,7 +22,7 @@ export default function BattleCard({ battle }: { battle: CampaignBattle }) {
             ) : null}
           </div>
           <div>
-            <div className="text-sm text-black/60 dark:text-white/60">Battle</div>
+            <div className="text-sm text-black/60 dark:text-white/60">Encounter</div>
             <div className="mt-0.5 text-base font-semibold tracking-tight">{title}</div>
             <div className="mt-1 text-xs text-black/60 dark:text-white/60">
               CR {battle.cr} · {battle.type}

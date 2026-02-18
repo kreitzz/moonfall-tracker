@@ -21,8 +21,9 @@ export default function NavBar({ partyName }: { partyName: string }) {
       { href: "/", label: "Home" },
       { href: "/players", label: "Players" },
       { href: "/sessions", label: "Sessions" },
+      { href: "/locations", label: "Location Notes" },
       { href: "/npcs", label: "NPCs" },
-      { href: "/battles", label: "Battles" },
+      { href: "/battles", label: "Encounters" },
       { href: "/gallery", label: "Maps" },
       { href: "/search", label: "Search" },
       ...(dmMode ? [{ href: "/docs", label: "DM Tools" }] : []),
@@ -38,9 +39,6 @@ export default function NavBar({ partyName }: { partyName: string }) {
           <Link href="/" className="text-base font-semibold tracking-tight">
             {partyName}
           </Link>
-          <span className="rounded-full border border-black/10 px-2 py-0.5 text-xs text-black/70 dark:border-white/10 dark:text-white/70">
-            Shadows of Moonfall
-          </span>
         </div>
 
         <div className="flex items-center gap-2">

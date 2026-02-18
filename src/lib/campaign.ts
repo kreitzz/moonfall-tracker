@@ -7,6 +7,7 @@ export type CampaignImage = Campaign["images"][number];
 export type PartyMember = Campaign["party"][number];
 export type CampaignNpc = Campaign["npcs"][number];
 export type CampaignBattle = Campaign["battles"][number];
+export type CampaignLocation = Campaign["locations"][number];
 
 export function getCampaign(): Campaign {
   return campaign as Campaign;
@@ -22,6 +23,10 @@ export function findNpcById(id: string): CampaignNpc | undefined {
 
 export function findBattleById(id: string): CampaignBattle | undefined {
   return (campaign as Campaign).battles?.find((b) => b.id === id);
+}
+
+export function findLocationById(id: string): CampaignLocation | undefined {
+  return (campaign as Campaign).locations?.find((l) => l.id === id);
 }
 
 export function findSessionById(id: string): CampaignSession | undefined {

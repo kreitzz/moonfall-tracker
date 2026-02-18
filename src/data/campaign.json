@@ -1,6 +1,6 @@
 {
   "meta": {
-    "name": "Shadows of Moonfall",
+    "name": "The Belligerent Five",
     "partyName": "The Belligerent Five",
     "generatedAt": "2026-02-17",
     "initialPublic": [
@@ -8,6 +8,7 @@
       "act-1-dm-guide-tide-s-rest-docx",
       "act-1-maps-the-lost-forest-jpg",
       "act-1-maps-tide-s-rest-jpg",
+      "act-1-maps-the-docked-boat-jpg",
       "general-info-session-0-docx"
     ]
   },
@@ -50,7 +51,7 @@
       "class": "Barbarian",
       "role": "Frontline menace",
       "image": "/party/prom.png",
-      "card": "PROM\nHalf-Orc Barbarian\nAlignment: TBD\n\nCORE IDENTITY\nName: Prom\nRace: Half-Orc\nClass: Barbarian\nBackground: TBD\nAlignment: TBD\nAge: TBD\nHeight: TBD\nWeight: TBD\nEyes: TBD\nHair: TBD\nSkin: TBD\n\nABILITY SCORES\nStrength: TBD\nDexterity: TBD\nConstitution: TBD\nIntelligence: TBD\nWisdom: TBD\nCharisma: TBD\nProficiency Bonus: TBD\nInitiative: TBD\nSpeed: TBD\nArmor Class: TBD\nHP: TBD\nHit Dice: TBD\nPassive Perception: TBD\n\nSKILLS & PROFICIENCIES\nSaving Throws\n- TBD\nSkill Proficiencies\n- TBD\nTool Proficiencies\n- TBD\nWeapon Proficiencies\n- TBD\nArmor Proficiency\n- TBD\nLanguages\n- Common\n- TBD\n\nCOMBAT\nWeapons\n- TBD\n\nFEATURES & TRAITS\n- TBD\n\nEQUIPMENT\n- TBD\n\nBACKSTORY SUMMARY\nTBD"
+      "card": "PROM “GO BOOM”\nHalf-Orc Gladiator Barbarian (Level 1)\nAlignment: Chaotic Neutral\nPlayer: Gavin\nRace: Half-Orc\nBackground: Gladiator\n\nPHYSICAL DESCRIPTION\nRace: Half-Orc\nBuild: Towering, muscular arena fighter\nArmor: Scale Mail\nSignature Mark: Lightning scar across his face\nMask: Wears a gladiator mask to conceal the scar\nVibe: Loud. Confident. Slightly unhinged.\n\nBACKSTORY\n“I am Prom, a half-orc gladiator barbarian.\nI was struck by lightning as a boy.\nIt made me go boom.\nNow I mask my face.\nI go to Lunaryth to learn why lightning go boom — and how I too boom.”\n\nProm was struck by lightning in his youth and survived.\nThe strike left him scarred — physically and spiritually.\n\nHe believes:\n- Lightning chose him.\n- Power is meant to be understood.\n- If lightning can boom… so can he.\n\nHe travels to Lunaryth seeking answers about the storm — and himself.\n\nABILITY SCORES\nStrength 19 (+4)\nDexterity 13 (+1)\nConstitution 14 (+2)\nIntelligence 8 (-1)\nWisdom 12 (+1)\nCharisma 12 (+1)\nProficiency Bonus: +2\nPassive Perception: 11\n\nCOMBAT STATS\nAC: 15\nHP Max: 14\nSpeed: 30 ft\nInitiative: +1\nHit Dice: 1d12\n\nATTACKS\nGreataxe — +6 to hit — 1d12 + 4 slashing\nHandaxe — +6 to hit — 1d6 + 4 slashing — Range 20/60\nJavelin — +6 to hit — 1d6 + 4 piercing — Range 30/120\n\nBARBARIAN FEATURES\nRage (2 per Long Rest)\n- +2 damage to melee attacks (Strength)\n- Resistance to bludgeoning, piercing, slashing\n- Advantage on Strength checks and saving throws\n\nSavage Attacks (Half-Orc)\n- On a melee critical hit, roll one additional weapon damage die.\n\nRelentless Endurance\n- When reduced to 0 HP but not killed outright: drop to 1 HP instead.\n- Once per long rest.\n\nGLADIATOR BACKGROUND\nSkill Proficiencies\n- Athletics (+4)\n- Performance (+1)\nAdditional Proficiencies\n- Animal Handling: 1d20 + 3\n- Survival: 1d20 + 3\n\nEQUIPMENT\n- Scale Mail Armor\n- Greataxe\n- Handaxes\n- Javelins\n- Explorer’s Pack\n- 10 Torches\n- 10 Rations\n- Waterskin\n- 50 ft Rope\n- Tinderbox\n- Mess Kit\n- Bedroll\n- Disguise Kit\n- Healing Potion (1d8)\n- Arena Costume\n- Musical Instrument (for dramatic entrances)\n- JBL Speaker (canonically hilarious)\n\nADDITIONAL TRAITS\nDisguise Specialist\n- Hide his lightning scar\n- Pretend to be a mercenary\n- Pose as a dock worker\n- Blend into rough crowds"
     }
   ],
   "sessions": [
@@ -123,7 +124,7 @@
     {
       "id": "act-1-dm-guide-tide-s-rest-docx",
       "path": "Act 1/DM Guide/Tide_s Rest.docx",
-      "title": "Tide_s Rest",
+      "title": "Tide's Rest",
       "category": "DM Guide",
       "act": "Act 1",
       "dmOnly": true,
@@ -312,9 +313,9 @@
   ],
   "images": [
     {
-      "id": "act-1-maps-startingpoint-jpg",
+      "id": "act-1-maps-the-docked-boat-jpg",
       "path": "Act 1/Maps/startingpoint.jpg",
-      "title": "startingpoint",
+      "title": "The Docked Boat",
       "act": "Act 1"
     },
     {
@@ -326,7 +327,7 @@
     {
       "id": "act-1-maps-tide-s-rest-jpg",
       "path": "Act 1/Maps/Tide_s Rest.jpg",
-      "title": "Tide_s Rest",
+      "title": "Tide's Rest",
       "act": "Act 1"
     },
     {
@@ -452,6 +453,24 @@
       "summary": "The undead bell‑toller of the Lost Forest — a hulking, corrupted ox that crashes through trees and punishes anyone who lingers when the bells ring.",
       "image": "/battles/admiral-moomoo.png",
       "dmOnly": true
+    }
+  ],
+  "locations": [
+    {
+      "id": "location-tides-rest",
+      "title": "Tide's Rest",
+      "act": "Act 1",
+      "session": 1,
+      "summary": "A small, weather-worn port town on the edge of the Lost Forest. The party met Seris here while she sought moon‑petal to save her mother, and learned just how desperate the town has become.",
+      "content": "OVERVIEW\nA coastal settlement with a struggling dock, tired merchants, and a quiet fear of the forest.\n\nWHAT THE PARTY LEARNED\n- Lunaryth is unreachable without passing through the Lost Forest.\n- Seris is a local with a sick mother, and the only known cure is moon‑petal.\n- The town is worn down, low on resources, and anxious about what the forest has become.\n\nKEY MOMENTS\n- Seris was turned away by Eldra, the gnomish herbalist.\n- The party decided to help Seris by seeking moon‑petal.\n- The warning about bells and the forest’s danger became a recurring theme.\n\nNOTES TO REMEMBER\n- Tide’s Rest feels like a place holding its breath.\n- The party’s decision here set the tone for helping Seris going forward."
+    },
+    {
+      "id": "location-lost-forest",
+      "title": "The Lost Forest",
+      "act": "Act 1",
+      "session": 1,
+      "summary": "A quiet, oppressive forest where bells ring as a warning. The party entered to find moon‑petal, discovered how unnatural the place feels, and faced the undead bell‑toller.",
+      "content": "OVERVIEW\nThe Lost Forest is unnaturally silent and oppressive. The bells are not just a warning — they feel like a boundary.\n\nWHAT THE PARTY EXPERIENCED\n- The forest felt wrong almost immediately.\n- The bells grew louder as danger approached.\n- Moon‑petal was found near a massive tree.\n\nKEY MOMENTS\n- The party confirmed the bells were real and meaningful.\n- An undead ox (the bell‑toller) attacked in the woods.\n- The party defeated the creature and survived the forest.\n\nNOTES TO REMEMBER\n- The forest punishes hesitation and carelessness.\n- Bells = danger. If you hear them, you should run."
     }
   ]
 }

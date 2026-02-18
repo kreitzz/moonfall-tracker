@@ -12,7 +12,7 @@ export default async function BattlePage({ params }: { params: Promise<{ id: str
   return (
     <div className="space-y-6">
       <header className="space-y-2">
-        <div className="text-sm text-black/60 dark:text-white/60">Battle</div>
+        <div className="text-sm text-black/60 dark:text-white/60">Encounter</div>
         <h1 className="text-2xl font-semibold tracking-tight">{battle.name}</h1>
         <div className="text-black/70 dark:text-white/70">
           CR {battle.cr} · {battle.type}
@@ -35,7 +35,7 @@ export default async function BattlePage({ params }: { params: Promise<{ id: str
               href="/battles"
               className="rounded-lg border border-black/10 px-3 py-2 text-sm text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
             >
-              ← Back to Battles
+              ← Back to Encounters
             </Link>
             <Link
               href="/"

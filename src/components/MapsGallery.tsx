@@ -20,8 +20,9 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
   const filtered = useMemo(() => {
     return images
       .filter((i) => (act === "all" ? true : i.act === act))
+      .filter((i) => (dmMode ? true : isPublic(i.id)))
       .sort((a, b) => a.title.localeCompare(b.title));
-  }, [images, act]);
+  }, [images, act, dmMode, isPublic]);
 
   return (
     <div className="space-y-4">
@@ -43,18 +44,16 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
         </div>
 
         <div className="text-sm text-black/60 dark:text-white/60">
-          {dmMode ? "DM Mode: you can reveal maps for players." : "Locked maps stay hidden until discovered."}
+          {dmMode ? "DM Mode: you can reveal maps for players." : "Showing discovered maps only."}
         </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((img) => {
           const pub = isPublic(img.id);
-          const locked = !dmMode && !pub;
-
-          const title = locked ? "Unknown Map" : img.title;
-          const subtitle = locked ? "Locked" : img.act;
-          const href = locked ? undefined : `/campaign/${img.path}`;
+          const title = img.title;
+          const subtitle = img.act;
+          const href = `/campaign/${img.path}`;
 
           return (
             <div
@@ -67,18 +66,8 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
                   alt={title}
                   fill
                   sizes="(max-width: 1024px) 50vw, 33vw"
-                  className={classNames(
-                    "object-cover transition-transform duration-200",
-                    locked ? "blur-md" : "group-hover:scale-[1.02]"
-                  )}
+                  className="object-cover transition-transform duration-200 group-hover:scale-[1.02]"
                 />
-                {locked ? (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="rounded-full border border-white/20 bg-black/40 px-3 py-1.5 text-sm text-white">
-                      🔒 Locked
-                    </div>
-                  </div>
-                ) : null}
               </div>
 
               <div className="p-4">
@@ -104,28 +93,17 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
                   ) : null}
                 </div>
 
-                <div className="mt-3 text-xs text-black/60 dark:text-white/60">
-                  {locked ? "Ask your DM to reveal this after you discover it." : "Click to open full size"}
-                </div>
+                <div className="mt-3 text-xs text-black/60 dark:text-white/60">Click to open full size</div>
 
                 <div className="mt-4">
-                  {href ? (
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-black/10 px-3 py-2 text-sm text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
-                    >
-                      Open <span aria-hidden>→</span>
-                    </a>
-                  ) : (
-                    <button
-                      disabled
-                      className="inline-flex items-center gap-2 rounded-lg border border-black/10 px-3 py-2 text-sm text-black/40 dark:border-white/10 dark:text-white/40"
-                    >
-                      Locked <span aria-hidden>→</span>
-                    </button>
-                  )}
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border border-black/10 px-3 py-2 text-sm text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
+                  >
+                    Open <span aria-hidden>→</span>
+                  </a>
                 </div>
               </div>
             </div>

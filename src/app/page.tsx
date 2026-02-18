@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PartyCard from "@/components/PartyCard";
 import NpcCard from "@/components/NpcCard";
 import BattleCard from "@/components/BattleCard";
@@ -12,51 +13,82 @@ export default function Home() {
   return (
     <div className="space-y-10">
       <header className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div>
+        <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
+          <div className="min-w-0 flex-1 space-y-4">
             <div className="text-sm text-black/60 dark:text-white/60">Campaign tracker</div>
             <h1 className="mt-2 text-3xl font-semibold tracking-tight">{campaign.meta.name}</h1>
-            <p className="mt-2 max-w-2xl text-base text-black/70 dark:text-white/70">
+            <p className="mt-2 text-base text-black/70 dark:text-white/70">
               A living, clickable record of the story so far — sessions, maps, lore, and character info.
             </p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <Link
-              href="/sessions"
-              className="rounded-full bg-black px-4 py-2 text-sm font-medium text-white hover:opacity-90 dark:bg-white dark:text-black"
-            >
-              View sessions
-            </Link>
-            <Link
-              href="/players"
-              className="rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
-            >
-              Players
-            </Link>
-            <Link
-              href="/gallery"
-              className="rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
-            >
-              Open maps
-            </Link>
-          </div>
-        </div>
+            <div className="flex flex-wrap gap-2">
+              <Link
+                href="/sessions"
+                className="w-48 rounded-full bg-black px-4 py-2 text-center text-sm font-medium text-white hover:opacity-90 dark:bg-white dark:text-black"
+              >
+                View sessions
+              </Link>
+              <Link
+                href="/players"
+                className="w-48 rounded-full border border-black/10 px-4 py-2 text-center text-sm font-medium text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
+              >
+                Players
+              </Link>
+              <Link
+                href="/gallery"
+                className="w-48 rounded-full border border-black/10 px-4 py-2 text-center text-sm font-medium text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
+              >
+                Open maps
+              </Link>
+            </div>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
-            <div className="text-sm text-black/60 dark:text-white/60">Party</div>
-            <div className="mt-1 text-2xl font-semibold">{campaign.party.length}</div>
-            <div className="mt-1 text-sm text-black/70 dark:text-white/70">Current roster</div>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
+                <div className="text-sm text-black/60 dark:text-white/60">Party</div>
+                <div className="mt-1 text-2xl font-semibold">{campaign.party.length}</div>
+                <div className="mt-1 text-sm text-black/70 dark:text-white/70">Current roster</div>
+              </div>
+              <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
+                <div className="text-sm text-black/60 dark:text-white/60">Sessions</div>
+                <div className="mt-1 text-2xl font-semibold">{campaign.sessions.length}</div>
+                <div className="mt-1 text-sm text-black/70 dark:text-white/70">Logged so far</div>
+              </div>
+              <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
+                <div className="text-sm text-black/60 dark:text-white/60">NPCs</div>
+                <div className="mt-1 text-2xl font-semibold">{campaign.npcs?.length ?? 0}</div>
+                <div className="mt-1 text-sm text-black/70 dark:text-white/70">Known characters</div>
+              </div>
+              <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
+                <div className="text-sm text-black/60 dark:text-white/60">Encounters</div>
+                <div className="mt-1 text-2xl font-semibold">{campaign.battles?.length ?? 0}</div>
+                <div className="mt-1 text-sm text-black/70 dark:text-white/70">Logged so far</div>
+              </div>
+              <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
+                <div className="text-sm text-black/60 dark:text-white/60">Party level</div>
+                <div className="mt-1 text-2xl font-semibold">1</div>
+                <div className="mt-1 text-sm text-black/70 dark:text-white/70">Current average</div>
+              </div>
+              <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
+                <div className="text-sm text-black/60 dark:text-white/60">Deaths</div>
+                <div className="mt-1 text-2xl font-semibold">0</div>
+                <div className="mt-1 text-sm text-black/70 dark:text-white/70">Party lost</div>
+              </div>
+            </div>
           </div>
-          <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
-            <div className="text-sm text-black/60 dark:text-white/60">Sessions</div>
-            <div className="mt-1 text-2xl font-semibold">{campaign.sessions.length}</div>
-            <div className="mt-1 text-sm text-black/70 dark:text-white/70">Logged so far</div>
-          </div>
-          <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
-            <div className="text-sm text-black/60 dark:text-white/60">NPCs</div>
-            <div className="mt-1 text-2xl font-semibold">{campaign.npcs?.length ?? 0}</div>
-            <div className="mt-1 text-sm text-black/70 dark:text-white/70">Known characters</div>
+          <div className="w-full md:w-[420px] md:self-stretch">
+            <div className="flex h-full flex-col">
+              <div className="flex-1 overflow-hidden rounded-3xl border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/5">
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/party/belligerentfive.png"
+                    alt="The Belligerent Five"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 420px"
+                    unoptimized
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -93,9 +125,9 @@ export default function Home() {
 
       <section>
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-xl font-semibold tracking-tight">Battles</h2>
+          <h2 className="text-xl font-semibold tracking-tight">Encounters</h2>
           <Link href="/battles" className="text-sm text-black/70 hover:underline dark:text-white/70">
-            See all battles →
+            See all encounters →
           </Link>
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

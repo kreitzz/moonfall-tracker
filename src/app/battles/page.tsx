@@ -9,8 +9,8 @@ export default function BattlesPage() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="text-2xl font-semibold tracking-tight">Battles</h1>
-        <p className="mt-1 text-black/70 dark:text-white/70">Encounter notes and monsters worth remembering.</p>
+        <h1 className="text-2xl font-semibold tracking-tight">Encounters</h1>
+        <p className="mt-1 text-black/70 dark:text-white/70">Encounters, monsters, and moments worth remembering.</p>
       </header>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

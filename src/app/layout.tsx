@@ -6,8 +6,8 @@ import NavBar from "@/components/NavBar";
 import { getCampaign } from "@/lib/campaign";
 
 export const metadata: Metadata = {
-  title: "Shadows of Moonfall — Campaign Tracker",
-  description: "An interactive tracker for Shadows of Moonfall.",
+  title: "The Belligerent Five — Campaign Tracker",
+  description: "An interactive tracker for The Belligerent Five.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

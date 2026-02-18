@@ -17,11 +17,7 @@ export default function HomeDmHint() {
             Open DM dashboard
           </Link>
         </div>
-      ) : (
-        <div>
-          If you’re the DM, toggle <span className="font-medium">DM Mode</span> in the navbar to access DM Tools and reveals.
-        </div>
-      )}
+      ) : null}
     </div>
   );
 }
