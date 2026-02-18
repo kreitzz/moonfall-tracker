@@ -8,7 +8,7 @@ import HomeDmHint from "@/components/HomeDmHint";
 
 export default function Home() {
   const campaign = getCampaign();
-  const latestSession = [...campaign.sessions].sort((a, b) => (b.number ?? 0) - (a.number ?? 0))[0];
+  const latestSession = [...(campaign.sessions ?? [])].sort((a, b) => (b.number ?? 0) - (a.number ?? 0))[0];
 
   return (
     <div className="space-y-10">
@@ -49,7 +49,7 @@ export default function Home() {
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
                 <div className="text-sm text-black/60 dark:text-white/60">Sessions</div>
-                <div className="mt-1 text-2xl font-semibold">{campaign.sessions.length}</div>
+                <div className="mt-1 text-2xl font-semibold">{campaign.sessions?.length ?? 0}</div>
                 <div className="mt-1 text-sm text-black/70 dark:text-white/70">Logged so far</div>
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
@@ -103,8 +103,8 @@ export default function Home() {
           </Link>
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {campaign.party.map((m) => (
-            <PartyCard key={m.name} member={m} />
+          {campaign.party.map((m, idx) => (
+            <PartyCard key={`${m.name}-${idx}`} member={m} />
           ))}
         </div>
       </section>
@@ -144,19 +144,25 @@ export default function Home() {
             All sessions →
           </Link>
         </div>
-        <div className="mt-4 rounded-3xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
-          <div className="text-sm text-black/60 dark:text-white/60">Session {latestSession.number}</div>
-          <div className="mt-1 text-2xl font-semibold tracking-tight">{latestSession.title}</div>
-          <p className="mt-2 max-w-3xl text-black/70 dark:text-white/70">{latestSession.summary}</p>
-          <div className="mt-4">
-            <Link
-              href={`/sessions/${latestSession.id}`}
-              className="inline-flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black"
-            >
-              Open session <span aria-hidden>→</span>
-            </Link>
+        {latestSession ? (
+          <div className="mt-4 rounded-3xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
+            <div className="text-sm text-black/60 dark:text-white/60">Session {latestSession.number}</div>
+            <div className="mt-1 text-2xl font-semibold tracking-tight">{latestSession.title}</div>
+            <p className="mt-2 max-w-3xl text-black/70 dark:text-white/70">{latestSession.summary}</p>
+            <div className="mt-4">
+              <Link
+                href={`/sessions/${latestSession.id}`}
+                className="inline-flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black"
+              >
+                Open session <span aria-hidden>→</span>
+              </Link>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="mt-4 rounded-3xl border border-black/10 bg-black/[0.03] p-6 text-sm text-black/70 dark:border-white/10 dark:bg-white/5 dark:text-white/70">
+            No sessions yet.
+          </div>
+        )}
       </section>
     </div>
   );

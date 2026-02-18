@@ -3,13 +3,14 @@ import Image from "next/image";
 import { PartyMember } from "@/lib/campaign";
 
 function slugify(name: string) {
-  return name
+  return (name || "unknown")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
 
 export default function PartyCard({ member }: { member: PartyMember }) {
+  if (!member?.name) return null;
   const slug = slugify(member.name);
 
   return (
@@ -33,7 +34,7 @@ export default function PartyCard({ member }: { member: PartyMember }) {
         </div>
 
         <span className="rounded-full border border-black/10 px-2 py-0.5 text-xs text-black/60 dark:border-white/10 dark:text-white/60">
-          PC
+          {member.guest ? "Guest" : "PC"}
         </span>
       </div>
       <div className="mt-3 text-sm text-black/70 dark:text-white/70">{member.role}</div>
