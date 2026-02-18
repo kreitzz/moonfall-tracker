@@ -63,6 +63,23 @@
       "card": "BRIGG\nHuman Fighter (Level 1) — Guard\nAlignment: Neutral\n\nCORE IDENTITY\nName: Brigg\nRace: Human\nClass: Fighter (Level 1)\nBackground: Guard\nAlignment: Neutral\nAge: 24\nHeight: 5'11\nWeight: 190 lbs\nEyes: Hazel\nHair: Brown\nSkin: Weathered tan\n\nABILITY SCORES\nAbility | Score | Modifier\nStrength | 16 | +3\nDexterity | 12 | +1\nConstitution | 14 | +2\nIntelligence | 10 | +0\nWisdom | 11 | +0\nCharisma | 8 | -1\nProficiency Bonus: +2\nInitiative: +1\nSpeed: 30 ft\nArmor Class: 16\nHP: 12\nHit Dice: 1d10\nPassive Perception: 10\n\nSKILLS & PROFICIENCIES\nSaving Throws\n- Strength\n- Dexterity\nSkill Proficiencies\n- Athletics +5\n- Perception +2\nWeapon Proficiencies\n- Simple weapons\n- Martial weapons\nArmor Proficiency\n- All armor\n- Shields\nLanguages\n- Common\n\nCOMBAT\nWeapons\n- Longsword — +5 to hit — 1d8 + 3 slashing (1d10 + 3 two-handed)\n- Javelin — +5 to hit — 1d6 + 3 piercing — Range 30/120\n\nFEATURES & TRAITS\nSecond Wind (1/short rest)\n- Bonus action: regain 1d10 + 1 HP.\nFighting Style: Defense\n- +1 AC while wearing armor.\n\nEQUIPMENT\n- Chain mail\n- Shield\n- Longsword\n- 3 Javelins\n- Traveler’s pack\n\nBACKSTORY SUMMARY\nBrigg is Eldra’s adoptive son — raised around her herb work and trusted to handle hard tasks. He’s a trained fighter who regularly checks on Seris and her mother.\n\nEldra took him in after a caravan accident on the coastal road left him alone and half‑starved. He grew up hauling crates at the docks and chopping wood for the apothecary, learning discipline the hard way.\n\nHis strength comes from that work — lifting, hauling, and years of sparring with dockhands who didn’t go easy on him. He fights like someone who learned to endure first and win second.\n\nROLEPLAY NOTES\n- Protective without speaking for Seris; steps in physically when danger spikes.\n- Respectful to Eldra but quietly resentful of anyone who dismisses her warnings.\n- Humor as a pressure valve, followed by sudden seriousness when Seris is overwhelmed.\n\nSAMPLE LINES\n- You don’t get to talk over her.\n- Eldra’s been carrying this town. Don’t make it heavier.\n"
     }
   ],
+  "sessions": [
+    {
+      "id": "session-0",
+      "number": 0,
+      "title": "Session Zero — Ascendaria (Player Primer)",
+      "date": null,
+      "summary": "Player primer and opening setup as the party sails toward Tide’s Rest en route to Lunaryth.",
+      "docId": "general-info-session-0-docx"
+    },
+    {
+      "id": "session-1",
+      "number": 1,
+      "title": "Bells in the Lost Forest",
+      "summary": "The party learns of the Lost Forest's true danger, meets Seris in Tide’s Rest, and slays the undead cow that tolls the bells.",
+      "docId": "session-1"
+    }
+  ],
   "documents": [
     {
       "id": "act-1-encounter-guide-admiral-moomoo-fight-docx",
@@ -77,21 +94,7 @@
       "id": "session-1",
       "title": "Session 1 – 2/13/26",
       "dmOnly": false,
-      "content": [
-        "Lunaryth is unreachable without passing through the Lost Forest. It was called ‘lost’ not because it vanished, but because it began plaguing the region.",
-        "We are in Tide’s Rest.",
-        "Three months ago contact with Lunaryth was lost.",
-        "Water quickly deteriorates boats.",
-        "Foul beasts break trees in half. If you hear bells, you should run.",
-        "Everyone who entered the forest heard bells and fled before anything happened. They only made a few steps in before feeling they should not be there.",
-        "We travel to Moonwell Square.",
-        "A woman, Seris, approaches Eldra the gnomish herbalist about her mother’s fever. She is turned away.",
-        "Seris has lived here her whole life. Her mother is ill. The only cure is moon-petal herb.",
-        "Moon-petal grows near the giant tree in the forest.",
-        "Wouldya Blow Me got wrecked by a falling branch.",
-        "The giant undead cow is what tolls the bells.",
-        "Prom absolutely obliterates it after it wrecked Kelsier about 20 times."
-      ]
+      "content": "SESSION 1 — 2/13/26\n\n**Where We Are**\n- Tide’s Rest\n- Moonwell Square\n\n**What We Learned**\n- Lunaryth is unreachable without passing through the Lost Forest.\n- The Lost Forest is dangerous — if you hear bells, run.\n- Moon‑petal is the only known cure for Seris’s mother.\n- Moon‑petal grows near the giant tree in the forest.\n\n**Key Events**\n- Seris asked Eldra for help and was turned away.\n- The party agreed to help Seris find moon‑petal.\n- The undead cow that tolls the bells attacked.\n- Prom destroyed the creature after it badly hurt Kelsier.\n\n**Notable Moments**\n- Wouldya Blow Me got wrecked by a falling branch.\n"
     },
     {
       "id": "act-1-encounter-guide-moonfall-grotto-encounters-docx",
@@ -271,7 +274,7 @@
       "category": "General Info",
       "act": "General",
       "dmOnly": false,
-      "content": "SESSION ZERO — ASCENDARIA\nA Player Primer for Adventurers Bound for Lunaryth\nA Traveler’s Chronicle\nAcross the open seas lies Ascendaria, a quiet frontier land where ocean winds roll over untouched wilds and uncharted inland territories. Most who journey there seek the famed elven city of Lunaryth, said to be a beacon of learning, beauty, and magical scholarship.\nFor reasons uniquely your own, you have boarded a ship bound for this distant region.\n You sail alongside a small handful of other travelers — some quiet, some curious, some clearly on a mission of their own.\nAs the ship approaches the coastal settlement of Tide’s Rest, your path seems simple:\nDisembark, resupply, and head north toward Lunaryth.\nJourneys, however, rarely unfold exactly as expected.\nWhat Your Characters Know\nYour characters only know what an ordinary traveler might hear before making the voyage.\nAscendaria is distant, sparsely mapped, and rarely visited without purpose.\n At the start of the campaign, you know only two locations:\nTide’s Rest\nA small but functional port town.\nA place where sailors, merchants, and travelers come and go.\nYour characters expect basic lodging, supplies, and little more.\nLunaryth\nYour intended destination.\nWhat your characters know:\nLunaryth is a major elven city, respected throughout the region.\nIt is known for its temples, libraries, academies, and refined culture.\nMany travel there to study, seek opportunity, or petition its scholars.\nThe journey inland from Tide’s Rest is assumed to be safe and straightforward.\nYour characters know nothing of other towns, landmarks, or regions beyond these two points.\nYour Party — Shared Start, Flexible Relationships\nAll characters begin:\nOn the same ship, bound for Tide’s Rest\nArriving together on Ascendaria’s shore\nWith the shared destination of Lunaryth\nBefore Session 1, you may decide:\nWhether you already know one another,\nWhether you have met briefly on the voyage, or\nWhether you are complete strangers who simply disembark at the same time.\nAny level of familiarity is acceptable.\nNothing in the story forces you into predetermined roles or relationships.\nInhabitants of Ascendaria\nThe two most common peoples in Ascendaria are:\nHumans\nElves\nThey make up the majority of settlements and cultural centers.\nHowever, your characters may be of any race. Travelers from across the world pass through Tide’s Rest, and no ancestry is out of place. Your background — distant homeland, unusual species, or unique lineage — fits naturally as part of your personal journey.\nWhat Your Characters Do Not Know\nTo preserve the sense of discovery:\nYou do not know any other settlements\nYou do not know the names of forests, mountains, or other regions\nYou do not know any dangers, mysteries, or unusual features of the land\nYou do not know of any supernatural events or history\nYou do not know any NPCs beyond what you discover in-game\nEverything beyond Tide’s Rest and Lunaryth will be learned organically as you explore.\nParty Composition Notes\nWhile you may play any class or background, a balanced party will make your journey smoother.\n Consider ensuring your group has a mix of:\nDamage dealers\nSupport/healing\nA durable frontline\nA character with utility (skills, spells, or knowledge)\nYou need not overthink optimization — this is simply meant to help you handle whatever Ascendaria throws at you.\nCharacter Creation Guidelines\nAll official 5E classes and races are allowed.\nPossible motivations for traveling to Lunaryth include:\nStudy or magical training\nSearching for lost family or roots\nSeeking work, trade, or refuge\nCuriosity about elven culture\nStarting over in a new land\nPilgrimage or personal mission\nEscaping trouble elsewhere\nYour story begins on the ocean — who you are, and why you travel, is entirely up to you."
+      "content": "SESSION ZERO — ASCENDARIA\n**A Player Primer for Adventurers Bound for Lunaryth**\n\n**What Your Characters Know**\n- Ascendaria is distant, sparsely mapped, and rarely visited without purpose.\n- You begin knowing only two locations:\n  - **Tide’s Rest** — a small port town for lodging and supplies.\n  - **Lunaryth** — a major elven city of temples, libraries, and academies.\n- The journey inland is assumed to be safe and straightforward.\n\n**Your Party — Shared Start, Flexible Relationships**\n- You all arrive on the same ship bound for Tide’s Rest.\n- You can decide if you already know each other or just met.\n\n**What You Do Not Know (On Purpose)**\n- Other settlements, landmarks, or regional names.\n- Dangers, mysteries, or supernatural events.\n- NPCs beyond what you discover in‑game.\n\n**Party Composition Notes**\nA balanced party helps, but optimization is not required. Consider:\n- Damage dealers\n- Support/healing\n- A durable frontline\n- Utility (skills, spells, or knowledge)\n\n**Character Creation Guidelines**\nAll official 5E classes and races are allowed.\nPossible motivations for traveling to Lunaryth:\n- Study or magical training\n- Searching for lost family or roots\n- Seeking work, trade, or refuge\n- Curiosity about elven culture\n- Starting over in a new land\n- Pilgrimage or personal mission\n- Escaping trouble elsewhere\n\n**Closing**\nYour story begins on the ocean — who you are, and why you travel, is entirely up to you.\n"
     },
     {
       "id": "general-info-relic-information-docx",

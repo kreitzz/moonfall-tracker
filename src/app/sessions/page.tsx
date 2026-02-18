@@ -3,7 +3,7 @@ import { getCampaign } from "@/lib/campaign";
 
 export default function SessionsPage() {
   const campaign = getCampaign();
-  const sessions = [...campaign.sessions].sort((a, b) => (a.number ?? 0) - (b.number ?? 0));
+  const sessions = [...(campaign.sessions ?? [])].sort((a, b) => (a.number ?? 0) - (b.number ?? 0));
 
   return (
     <div className="space-y-6">
