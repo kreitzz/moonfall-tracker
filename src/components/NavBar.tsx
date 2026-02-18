@@ -21,6 +21,7 @@ export default function NavBar({ partyName }: { partyName: string }) {
       { href: "/", label: "Home" },
       { href: "/players", label: "Players" },
       { href: "/sessions", label: "Sessions" },
+      { href: "/quests", label: "Quests" },
       { href: "/locations", label: "Location Notes" },
       { href: "/npcs", label: "NPCs" },
       { href: "/battles", label: "Encounters" },

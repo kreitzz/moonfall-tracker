@@ -474,4 +474,54 @@
       "content": "OVERVIEW\nThe Lost Forest is unnaturally silent and oppressive. The bells are not just a warning — they feel like a boundary.\n\nWHAT THE PARTY EXPERIENCED\n- The forest felt wrong almost immediately.\n- The bells grew louder as danger approached.\n- Moon‑petal was found near a massive tree.\n\nKEY MOMENTS\n- The party confirmed the bells were real and meaningful.\n- An undead ox (the bell‑toller) attacked in the woods.\n- The party defeated the creature and survived the forest.\n\nNOTES TO REMEMBER\n- The forest punishes hesitation and carelessness.\n- Bells = danger. If you hear them, you should run."
     }
   ]
+  ,
+  "quests": [
+    {
+      "id": "quest-get-to-lunaryth",
+      "title": "Get to Lunaryth",
+      "tier": "main",
+      "status": "active",
+      "summary": "Reach Lunaryth and learn why the city has gone silent.",
+      "steps": [
+        { "label": "Reach Tide’s Rest", "done": true },
+        { "label": "Cross the Lost Forest", "done": false },
+        { "label": "Arrive in Lunaryth", "done": false }
+      ]
+    },
+    {
+      "id": "quest-moonpetal",
+      "title": "Retrieve the Moon‑petal",
+      "tier": "main",
+      "status": "active",
+      "summary": "Secure moon‑petal to help Seris’s mother.",
+      "steps": [
+        { "label": "Find moon‑petal in the forest", "done": true },
+        { "label": "Bring it back to Eldra", "done": false }
+      ]
+    },
+    {
+      "id": "quest-prom-storms",
+      "title": "Prom: Answer the Storm",
+      "tier": "personal",
+      "status": "active",
+      "summary": "Learn why the lightning chose Prom and what that power means.",
+      "steps": [
+        { "label": "Reach Lunaryth and seek storm lore", "done": false },
+        { "label": "Find a scholar or relic tied to the lightning scar", "done": false },
+        { "label": "Unlock a controlled “boom” (ritual, training, or trial)", "done": false }
+      ]
+    },
+    {
+      "id": "quest-echo-lunaryth",
+      "title": "Echo: The Moonlit Song",
+      "tier": "personal",
+      "status": "active",
+      "summary": "Understand the visions and the goddess’s command to seek Lunaryth.",
+      "steps": [
+        { "label": "Arrive in Lunaryth and follow the music’s pull", "done": false },
+        { "label": "Identify the goddess from the vision", "done": false },
+        { "label": "Discover whether Lunaryth can be saved", "done": false }
+      ]
+    }
+  ]
 }
