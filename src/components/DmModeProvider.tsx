@@ -14,7 +14,7 @@ const STORAGE_KEY = "moonfall.dmMode";
 const PASS_KEY = "moonfall.dmPassphrase";
 
 // Default passphrase. Change in UI anytime; this is intentionally lightweight.
-const DEFAULT_PASSPHRASE = "moonfall";
+const DEFAULT_PASSPHRASE = "sires69420";
 
 export function DmModeProvider({ children }: { children: React.ReactNode }) {
   const [dmMode, setDmMode] = useState(false);

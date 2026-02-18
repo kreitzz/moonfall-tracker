@@ -88,7 +88,7 @@ export default function NavBar({ partyName }: { partyName: string }) {
         <div className="border-t border-black/10 bg-white dark:border-white/10 dark:bg-black">
           <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-3 md:flex-row md:items-center md:justify-between">
             <div className="text-sm text-black/70 dark:text-white/70">
-              Enter passphrase to reveal DM-only docs. (Default: <span className="font-mono">moonfall</span>)
+              Enter passphrase to unlock DM Mode.
             </div>
             <div className="flex items-center gap-2">
               <input
