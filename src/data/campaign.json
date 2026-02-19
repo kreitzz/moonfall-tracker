@@ -3,6 +3,13 @@
     "name": "The Belligerent Five",
     "partyName": "The Belligerent Five",
     "generatedAt": "2026-02-17",
+    "whatWeKnow": [
+      "Lunaryth is unreachable without passing through the Lost Forest.",
+      "The Lost Forest is dangerous — if you hear bells, run.",
+      "Moon‑petal is the only known cure for Seris’s mother.",
+      "Moon‑petal grows near a giant tree deep in the forest.",
+      "The party defeated the undead bell‑toller (Admiral MooMoo) in the Lost Forest."
+    ],
     "initialPublic": [
       "act-1-dm-guide-the-lost-forest-docx",
       "act-1-dm-guide-tide-s-rest-docx",
