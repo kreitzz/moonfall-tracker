@@ -53,7 +53,7 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
           const pub = isPublic(img.id);
           const title = img.title;
           const subtitle = img.act;
-          const version = (img as any).version;
+          const version = (img as CampaignImage & { version?: string }).version;
           const src = `/campaign/${img.path}${version ? `?v=${version}` : ""}`;
           const href = src;
 
@@ -98,14 +98,24 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
                 <div className="mt-3 text-xs text-black/60 dark:text-white/60">Click to open full size</div>
 
                 <div className="mt-4">
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg border border-black/10 px-3 py-2 text-sm text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
-                  >
-                    Open <span aria-hidden>→</span>
-                  </a>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg border border-black/10 px-3 py-2 text-sm text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
+                    >
+                      Open <span aria-hidden>→</span>
+                    </a>
+                    {dmMode && img.act === "Act 1" ? (
+                      <a
+                        href={`/map-editor?imageId=${encodeURIComponent(img.id)}`}
+                        className="inline-flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black"
+                      >
+                        Edit Map <span aria-hidden>↗</span>
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Whale Proposal – Project Yggdrasil</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        :root {
+            --navy-dark: #152a3d;
+            --navy-primary: #1e3a52;
+            --navy-light: #2a4a65;
+            --navy-accent: #3a5a75;
+            --gold-accent: #c9a962;
+            --cream: #faf9f7;
+            --white: #ffffff;
+            --gray-light: #f5f4f2;
+            --gray-medium: #e5e4e2;
+            --gray-text: #6b7280;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 10pt;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--white);
+        }
+        
+        .page { max-width: 8.5in; margin: 0 auto; background: var(--white); }
+
+        .header {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 50%, var(--navy-light) 100%);
+            padding: 35px 50px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+        .header-content { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: flex-end; }
+        .header-left { flex: 1; }
+        .header-label { font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
+        .header-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 36px; font-weight: 400; font-style: italic; color: var(--white); line-height: 1.15; margin-bottom: 8px; }
+        .header-subtitle { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.8); letter-spacing: 0.3px; }
+        .header-logo { width: 65px; height: 65px; opacity: 0.9; flex-shrink: 0; margin-left: 30px; }
+
+        .content { padding: 28px 50px 20px; }
+        .section-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 16px; font-weight: 600; color: var(--navy-primary); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid rgba(30, 58, 82, 0.12); }
+        .section-number { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 600; color: var(--gold-accent); margin-right: 8px; }
+        p { margin-bottom: 10px; }
+
+        .background-box { background: var(--gray-light); border-radius: 10px; padding: 18px 22px; margin-bottom: 22px; }
+        .background-box-title { font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy-primary); margin-bottom: 10px; }
+        .engine-label { font-family: 'JetBrains Mono', monospace; font-size: 9pt; font-weight: 500; color: var(--navy-primary); margin-bottom: 2px; }
+        .engine-desc { font-size: 9pt; color: var(--text-secondary); margin-bottom: 10px; line-height: 1.55; }
+        .engine-desc:last-child { margin-bottom: 0; }
+
+        .tag-pro { display: inline-block; font-size: 7.5pt; font-weight: 600; letter-spacing: 0.5px; padding: 1px 6px; border-radius: 3px; margin-right: 4px; vertical-align: middle; }
+        .tag-green { background: rgba(34, 139, 34, 0.1); color: #16a34a; }
+        .tag-equity { background: rgba(30, 58, 82, 0.1); color: #1e3a52; }
+        .tag-pangea { background: rgba(58, 90, 117, 0.12); color: #3a5a75; }
+        .tag-red { background: rgba(220, 38, 38, 0.08); color: #dc2626; }
+
+        .goal-box { border-left: 4px solid var(--gold-accent); background: rgba(201, 169, 98, 0.06); padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 20px; }
+        .goal-box p { font-size: 10pt; color: var(--text-primary); margin-bottom: 0; line-height: 1.65; }
+
+        .criteria-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 22px; }
+        .criteria-card { background: var(--white); border: 1px solid var(--gray-medium); border-radius: 8px; padding: 14px 16px; display: flex; align-items: flex-start; gap: 12px; }
+        .criteria-icon { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--navy-primary), var(--navy-light)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; }
+        .criteria-text { font-size: 9.5pt; color: var(--text-primary); line-height: 1.5; }
+        .criteria-text strong { color: var(--navy-primary); }
+        .criteria-sub { font-size: 8.5pt; color: var(--text-secondary); margin-top: 3px; }
+
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; margin-bottom: 20px; }
+        .impact-item { font-size: 9pt; color: var(--text-secondary); margin-bottom: 8px; padding-left: 14px; position: relative; line-height: 1.55; }
+        .impact-item::before { content: '◇'; position: absolute; left: 0; color: var(--gold-accent); font-size: 8px; top: 2px; }
+        .impact-item strong { color: var(--text-primary); }
+
+        .info-bar { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 50%, var(--navy-light) 100%); border-radius: 12px; padding: 22px 28px; margin: 20px 0; position: relative; overflow: hidden; }
+        .info-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 25px 25px; pointer-events: none; }
+        .info-bar-content { position: relative; z-index: 1; }
+        .info-bar-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 500; font-style: italic; color: var(--white); margin-bottom: 14px; }
+        .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .info-item-label { font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-accent); margin-bottom: 6px; }
+        .info-item-value { font-size: 9.5pt; color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .info-item-value strong { color: var(--white); }
+        .deps-section { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.15); }
+        .dep-tag { display: inline-block; font-size: 8pt; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.85); margin: 3px 4px 3px 0; }
+
+        .footer { background: var(--gray-light); padding: 16px 50px; text-align: center; border-top: 1px solid rgba(30, 58, 82, 0.08); }
+        .footer-text { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--navy-primary); }
+
+        @media print {
+            @page { size: 8.5in 11in; margin: 0; }
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page { max-width: none; width: 8.5in; }
+            .header, .info-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="header-label">White Whale Proposal · 1H26</div>
+                    <h1 class="header-title">Project Yggdrasil</h1>
+                    <div class="header-subtitle">Walleye Order Routing Low-latency Distributed Trans-market Real-time Execution Engine (WorldTree)</div>
+                    <div style="font-size: 10px; font-style: italic; color: rgba(255,255,255,0.55); margin-top: 6px;">In Norse mythology, Yggdrasil is known as the World Tree.</div>
+                </div>
+                <svg class="header-logo" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100 20 C60 20, 25 55, 25 95 C25 125, 40 150, 65 165 C75 171, 85 175, 100 178 C115 175, 125 171, 135 165 C160 150, 175 125, 175 95 C175 55, 140 20, 100 20Z" stroke="rgba(255,255,255,0.85)" stroke-width="3" fill="none"/>
+                    <path d="M72 60 C72 60, 85 50, 100 50 C115 50, 128 60, 128 60" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M60 85 C60 85, 75 72, 100 72 C125 72, 140 85, 140 85 C140 85, 130 110, 100 125 C70 110, 60 85, 60 85Z" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" fill="none"/>
+                    <circle cx="82" cy="88" r="3" fill="rgba(255,255,255,0.7)"/>
+                    <circle cx="118" cy="88" r="3" fill="rgba(255,255,255,0.7)"/>
+                    <path d="M85 140 C85 140, 92 155, 100 165 C108 155, 115 140, 115 140" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M80 140 L85 140 M115 140 L120 140" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <section class="content">
+
+            <!-- Section 1: Goal & Background -->
+            <h2 class="section-title"><span class="section-number">1</span> The Goal</h2>
+
+            <div class="goal-box">
+                <p><strong>Goal:</strong> Build and launch Yggdrasil — a single unified systematic trading platform that is capable of routing orders across asset classes, markets, and internal systems from DDL. Alongside the engine, ship a well-documented strategy-toolkit library of common helpers and abstractions that lowers the barrier to entry for strategy development, unblocks less technical users, and enables leveraging modern AI tools for strategy authoring.</p>
+            </div>
+
+            <div class="background-box">
+                <div class="background-box-title">Background — Current State</div>
+
+                <div class="engine-desc" style="margin-bottom: 14px;">
+                    Systematic strategies at Walleye are driven by DDL tables of orders that tick, with messages forwarded to our order endpoints. Today this is spread across three distinct services with different communication layers and infrastructure. All share a common challenge: strategy development has a steep learning curve, with no modern, well-documented library of helpers to accelerate development or make strategies accessible to less technical users and AI tooling.
+                </div>
+
+                <div class="engine-label">QuantTradingEngine (QTE) <span class="tag-pro tag-equity">EQUITY</span> <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 500; color: var(--gray-text); margin-left: 4px;">~90 strategies enabled daily</span></div>
+                <div class="engine-desc" style="margin-bottom: 4px;">
+                    Routes OmsOrders, PositionTransfers, and ComboEx Orders through System Equity. Communicates via TCP over the legacy CommLayer.
+                </div>
+                <div class="engine-desc" style="margin-bottom: 2px; padding-left: 12px;"><span class="tag-pro tag-green">PRO</span> Activity-key constraints — max orders per key at a given time</div>
+                <div class="engine-desc" style="margin-bottom: 2px; padding-left: 12px;"><span class="tag-pro tag-green">PRO</span> Dedicated Strategy QueryConfig type in DDL with its own UI for selecting constants/parameters</div>
+                <div class="engine-desc" style="margin-bottom: 2px; padding-left: 12px;"><span class="tag-pro tag-green">PRO</span> DDL latency monitoring that will kill trading strategies if latency is unhealthy</div>
+                <div class="engine-desc" style="margin-bottom: 2px; padding-left: 12px;"><span class="tag-pro tag-red">CON</span> Any tick to the order table triggers a cancel/resend cycle — must carefully manage table logic</div>
+                <div class="engine-desc" style="padding-left: 12px;"><span class="tag-pro tag-red">CON</span> Not redundant to server crashes</div>
+
+                <div class="engine-label" style="margin-top: 14px;">VolOrderTransactionEngine (VOTE) <span class="tag-pro tag-equity">EQUITY</span> <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 500; color: var(--gray-text); margin-left: 4px;">~12 strategies enabled daily</span></div>
+                <div class="engine-desc" style="margin-bottom: 4px;">
+                    Builds on QTE — routes VolTraderOrders with meaningful-difference filtering on updates. Uses Kafka as its messaging layer with status topic output for monitoring.
+                </div>
+                <div class="engine-desc" style="margin-bottom: 2px; padding-left: 12px;"><span class="tag-pro tag-green">PRO</span> Meaningful-difference filtering — boolean/enum changes always meaningful; numeric fields use configurable diff thresholds</div>
+                <div class="engine-desc" style="margin-bottom: 2px; padding-left: 12px;"><span class="tag-pro tag-green">PRO</span> Squashes noisy updates that come in faster than we can process</div>
+                <div class="engine-desc" style="padding-left: 12px;"><span class="tag-pro tag-red">CON</span> Specific to VolTrader — missing some of the niceties that QTE exposes</div>
+
+                <div class="engine-label" style="margin-top: 14px;">Pyranha + Portainer <span class="tag-pro tag-pangea">PANGEA</span> <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 500; color: var(--gray-text); margin-left: 4px;">~2 strategies enabled daily</span></div>
+                <div class="engine-desc" style="margin-bottom: 4px;">Supports systematic trading in System Pangea.</div>
+                <div class="engine-desc" style="padding-left: 12px;"><span class="tag-pro tag-red">CON</span> Requires a separate Portainer service with a listener attached to DDL — adds complexity, additional points of failure, and is difficult to scale</div>
+            </div>
+
+            <!-- Section 2: Why It Matters -->
+            <div class="two-column">
+                <div>
+                    <h2 class="section-title"><span class="section-number">2</span> Why It Matters</h2>
+                    
+                    <div style="font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy-primary); margin-bottom: 8px;">Immediate Impact</div>
+                    <div class="impact-item"><strong>Unblocks systematic trading in Pangea:</strong> Enables systematic trading for security types and markets not currently supported through System Equity. This could be a huge driver for scaling strategies such as Commodity Vol and FX Vol while also paving the way for automation of key workflows such as FX hedging.</div>
+                    <div class="impact-item"><strong>Democratizes strategy development:</strong> A well-documented, centralized, unit-tested SDK that many people can contribute to as they come across use cases they think others would find useful.</div>
+                    <div class="impact-item"><strong>Consolidation:</strong> Reduces the number of bespoke systems into one execution pattern, lowering maintenance burden and operational risk.</div>
+                    <div class="impact-item"><strong>Extensibility & Scalability:</strong> New execution endpoints and strategy mains become configuration changes. Yggdrasil provides a single platform that grows with the firm rather than a proliferating set of one-off solutions.</div>
+                    <div class="impact-item"><strong>Fault tolerance:</strong> A more resilient execution platform for systematic strategies — especially critical when trading in off-hours with fewer technologists available to respond to issues.</div>
+                    <div class="impact-item"><strong>Lowers barrier to entry on strategy development:</strong> Less technical users can build strategies, leverage modern AI tools, and write efficient code without needing deep expertise in the underlying table logic and plumbing.</div>
+                </div>
+
+                <div>
+                    <h2 class="section-title" style="visibility: hidden;">Spacer</h2>
+                    
+                    <div style="font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy-primary); margin-bottom: 8px;">Future Opportunities</div>
+                    <div class="impact-item"><strong>Unlocks FX neutralization via DFDs:</strong> Addresses one of the hardest operational challenges in international trading on day one. Additionally, it opens the door for increasing margin efficiency for different currencies at time of trade in the future.</div>
+                    <div class="impact-item"><strong>Enables cross-market opportunities:</strong> Facilitates strategies like scraping gamma across ADRs and local instruments where we hold derivatives on one or the other. This is an active opportunity in which we are leaving $$ on the table by not doing it, and this project would vastly simplify the means of implementing it.</div>
+
+                    <div style="margin-top: 16px;">
+                        <div class="background-box" style="margin-bottom: 0;">
+                            <div class="background-box-title">Example Helpers</div>
+                            <div style="font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; color: var(--text-secondary); line-height: 2;">
+                                <span style="color: var(--navy-primary);">isEarningsDay</span>(sym)<br>
+                                <span style="color: var(--navy-primary);">isWithinTimeRange</span>(start, end)<br>
+                                <span style="color: var(--navy-primary);">isExpiryDay</span>(sym)<br>
+                                <span style="color: var(--navy-primary);">randomWeightedSymSelection</span>(...)
+                            </div>
+                            <div style="font-size: 8pt; color: var(--gray-text); margin-top: 8px; font-style: italic;">
+                                A small sample — the full toolkit would include many more helpers to abstract away data sources and complex table joins, letting strategy authors focus on logic rather than plumbing.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Premortem -->
+            <div style="margin-bottom: 20px;">
+                <h2 class="section-title"><span class="section-number">3</span> Premortem</h2>
+                <div class="impact-item"><strong>Competing priorities:</strong> High priority work around WOF/WT trader migration or VT scaling potentially disrupting progress.</div>
+                <div class="impact-item"><strong>Kafka infrastructure:</strong> Messaging layer needing to scale appropriately to accommodate new load. We have significant headroom today, but worth flagging in an effort to be thorough.</div>
+                <div class="impact-item"><strong>Auth workflow:</strong> Proper authentication workflow related complications.</div>
+                <div class="impact-item"><strong>Strategy-toolkit design input:</strong> Biggest end users of the strategy-toolkit not having enough time to weigh in on design.</div>
+            </div>
+
+            <!-- Section 4: Measurable Success Criteria -->
+            <div style="margin-bottom: 20px;">
+                <h2 class="section-title"><span class="section-number">4</span> Measurable Success Criteria</h2>
+                <p style="font-size: 9pt; color: var(--text-secondary); margin-bottom: 12px;">Live systematic strategies using the new strategy-toolkit covering the following workflows. <em>Note: requires buy-in and approval from strategy owners.</em></p>
+                <div class="criteria-grid">
+                    <div class="criteria-card">
+                        <div class="criteria-icon">1</div>
+                        <div>
+                            <div class="criteria-text"><strong>Pangea</strong></div>
+                            <div class="criteria-sub">From Portainer workflow</div>
+                        </div>
+                    </div>
+                    <div class="criteria-card">
+                        <div class="criteria-icon">2</div>
+                        <div>
+                            <div class="criteria-text"><strong>Equity (QTE)</strong></div>
+                            <div class="criteria-sub">From QTE workflow</div>
+                        </div>
+                    </div>
+                    <div class="criteria-card">
+                        <div class="criteria-icon">3</div>
+                        <div>
+                            <div class="criteria-text"><strong>Equity (VOTE)</strong></div>
+                            <div class="criteria-sub">From VOTE workflow</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy-primary); margin-bottom: 8px;">Key KPIs to Track</div>
+                <div class="impact-item"><strong>Latency:</strong> Equivalent or faster order table tick to order reaching endpoint latency.</div>
+                <div class="impact-item"><strong>Developer experience:</strong> Increase in ease of strategy development survey scoring.</div>
+                <div class="impact-item"><strong>Toolkit adoption:</strong> 50%+ of new strategy code should rely on new common shareable utilities.</div>
+            </div>
+
+            <!-- Info Bar: Team, Date, Prize -->
+            <div class="info-bar">
+                <div class="info-bar-content">
+                    <div class="info-bar-title">Team, Timeline & Prize</div>
+                    <div class="info-grid">
+                        <div>
+                            <div class="info-item-label">Owners</div>
+                            <div class="info-item-value"><strong>Charles Papandreou</strong> &amp; <strong>Adam Kreitzman</strong></div>
+                        </div>
+                        <div>
+                            <div class="info-item-label">Target Completion</div>
+                            <div class="info-item-value"><strong>End of 1H26</strong></div>
+                        </div>
+                        <div>
+                            <div class="info-item-label">Proposed Prize</div>
+                            <div class="info-item-value">Sushi Sho Omakase Dinner + Drinks, TBD Walleye Merch</div>
+                        </div>
+                    </div>
+                    <div class="deps-section">
+                        <div class="info-item-label" style="margin-bottom: 8px;">Cross-Team Dependencies</div>
+                        <span class="dep-tag">Future-Proof to DDL PCP Migration</span>
+                        <span class="dep-tag">Pangea TradingSystems</span>
+                        <span class="dep-tag">VolTech</span>
+                        <span class="dep-tag">Trading / VolTrading Solutions</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-text">Private and Confidential</div>
+        </footer>
+    </div>
+</body>
+</html>

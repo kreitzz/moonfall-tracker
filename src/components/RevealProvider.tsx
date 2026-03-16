@@ -14,6 +14,7 @@ type RevealContextValue = {
 const RevealContext = createContext<RevealContextValue | null>(null);
 
 const STORAGE_KEY = "moonfall.publicIds";
+const FORCED_HIDDEN_IDS = new Set<string>(["act-1-maps-moonfall-grotto-level-p1a-jpg"]);
 
 function safeParseJson<T>(raw: string): T | null {
   try {
@@ -34,7 +35,8 @@ function decodeBase64Utf8(s: string): string {
 
 export function RevealProvider({ children }: { children: React.ReactNode }) {
   const campaign = getCampaign();
-  const initial = (campaign.meta as any).initialPublic as string[] | undefined;
+  const metaWithInitial = campaign.meta as typeof campaign.meta & { initialPublic?: string[] };
+  const initial = metaWithInitial.initialPublic;
 
   const [publicIds, setPublicIds] = useState<Set<string>>(new Set(initial ?? []));
 
@@ -63,8 +65,12 @@ export function RevealProvider({ children }: { children: React.ReactNode }) {
     };
 
     return {
-      isPublic: (id: string) => publicIds.has(id),
+      isPublic: (id: string) => {
+        if (FORCED_HIDDEN_IDS.has(id)) return false;
+        return publicIds.has(id);
+      },
       setPublic: (id: string, v: boolean) => {
+        if (FORCED_HIDDEN_IDS.has(id)) return;
         const next = new Set(publicIds);
         if (v) next.add(id);
         else next.delete(id);

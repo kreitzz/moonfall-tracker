@@ -2,22 +2,27 @@
   "meta": {
     "name": "The Belligerent Five",
     "partyName": "The Belligerent Five",
-    "generatedAt": "2026-02-17",
+    "generatedAt": "2026-03-15",
     "whatWeKnow": [
-      "Lunaryth is unreachable without passing through the Lost Forest.",
-      "The Lost Forest is dangerous — if you hear bells, run.",
-      "Moon‑petal is the only known cure for Seris’s mother.",
-      "Moon‑petal grows near a giant tree deep in the forest.",
-      "The party defeated the undead bell‑toller (Admiral MooMoo) in the Lost Forest."
+      "Lunaryth remains unreachable until the corruption routes are understood and bypassed.",
+      "Mara died after a brief recovery when moon-petal failed against a deeper corrupted force.",
+      "Before dying, Mara directed the party to seek answers at Moonfall Grotto.",
+      "Seris is more important to the region’s fate than she fully understands.",
+      "A sealed letter from Mara opened only after Moonfall was resolved.",
+      "Moonfall Grotto is a temple of Selune and site of a lunar trial.",
+      "Seris forcibly attuned to the first artifact and the party saw five more linked relics.",
+      "Seris learned her father may be alive in Lunaryth under the name Elyndor."
     ],
     "initialPublic": [
       "act-1-dm-guide-the-lost-forest-docx",
       "act-1-dm-guide-tide-s-rest-docx",
-      "act-1-maps-the-lost-forest-jpg",
-      "act-1-maps-tide-s-rest-jpg",
-      "act-1-maps-the-docked-boat-jpg",
       "general-info-session-0-docx",
-      "general-maps-ascendaria-png"
+      "act-1-maps-the-docked-boat-jpg",
+      "act-1-maps-tide-s-rest-jpg",
+      "act-1-maps-moonfall-grotto-level-p1b-jpg",
+      "act-1-maps-moonfall-grotto-level-1-jpg",
+      "act-1-maps-the-lost-forest-jpg",
+      "act-1-maps-moonfall-grotto-p2b-jpg"
     ]
   },
   "party": [
@@ -94,6 +99,22 @@
         "reason": "Almost died from a combo of stupidity and bad luck, then shamelessly flirted with Seris while she tried to save her mother"
       },
       "docId": "session-1"
+    },
+    {
+      "id": "session-2",
+      "number": 2,
+      "title": "Moonfall Trial and the Sealed Letter",
+      "date": "2026-03-15",
+      "summary": "After Mara's death, the party pushed through the Lost Forest into Moonfall Grotto, survived a hostile robed faction and Selune's trial, and witnessed Seris attune to the first artifact before learning Elyndor is alive in Lunaryth.",
+      "mvp": {
+        "name": "Mead",
+        "reason": "Brutally eliminated the robed leader, broke enemy morale, and swung the Moonfall fight tempo in the party's favor."
+      },
+      "lowlight": {
+        "name": "Prom",
+        "reason": "Challenged Seris for the sealed letter, landed zero hits, got dusted in the duel, then smashed the robed leader's head and lost the planned Speak with Dead lead."
+      },
+      "docId": "session-2"
     }
   ],
   "documents": [
@@ -318,6 +339,12 @@
       "act": "General",
       "dmOnly": false,
       "content": "Admiral MooMoo\nElyndor Vaeloris\nCyrion Vaeloris\nEldra Mosswhistle\nMara Vaeloris\nEdrin Mossmere\nLyra Fenwillow\n⭐ 1. SERIS VAELORIS — BASELINE\nSTATS (PLAYER CHARACTER STYLE)\nRace: Half-Elf\nClass: Cleric (Subclass chosen later)\nBackground: Outlander or Acolyte\nAlignment: Neutral Good → (branching)\nStarting Ability Scores (Point Buy)\nThese are balanced and make sense for her backstory:\nArmor: Medium armor (scale mail), shield\nWeapons: Simple weapons (mace, quarterstaff)\n⭐ 2. LEVEL-BY-LEVEL PROGRESSION (Matches Player Levels)\nAct 1 (Levels 1–3)\nSeris starts mechanically as a Level 2 Cleric, supporting the party.\nLEVEL 2 (party levels 1–2)\nAC 16 (scale mail + shield)\nHP: ~17 (2d8+2)\nSpells: Cure Wounds, Guiding Bolt, Bless, Sanctuary\nRole: Healer + early support\nFeature: Healing Word always prepared\nLEVEL 3 (party hits 3)\nAccess to 2nd-level spells\nSpiritual Weapon\nLesser Restoration\nAct 2 (Levels 4–6)\nStill tracks party level. Increasing signs of internal conflict.\nLEVEL 4\nAbility Score Increase → WIS 18\n Better spell attack + save DC\nLEVEL 5\n3rd-level spells unlocked (this is the big turning point)\n Includes your custom spell:\nGuardian of Faith (Radiant or Necrotic depending on state)\nSpirit Guardians (radiant baseline)\nLEVEL 6\nHer subclass features begin to awaken (but branch later).\n For now:\nChannel Divinity improvement\nOptional “Moonshard Insight” (advantage on one Perception/Insight check per long rest)\n⭐ BRANCH POINT: Act 3 (Levels 7–9)\nTheir choices + her trauma determine which subclass she becomes.\n🌙 SELÛNE PATH\nSubclass: Light Domain Cleric\nLEVEL 7–9 Features\nPotent Spellcasting (add WIS to cantrip damage)\nRadiant Resilience: gains resistance to necrotic\nMoonlit Step: once/rest teleport 30 ft\nSpells:\nDaylight\nAura of Vitality\nBeacon of Hope\nMoonbeam (auto-prepared)\n🌑 SHAR PATH\nSubclass: Custom “Shadow Domain” Cleric\nLEVEL 7–9 Features\nShadow Step: teleport 30 ft in dim light\nUmbral Ward: resistance to radiant\nEyes of the Dark: 120 ft darkvision\nSpells:\nHunger of Hadar\nShadow Blade\nFear\nVampiric Touch\n⭐ ACT 4 (LEVELS 10–12) — FINAL EVOLUTION\nBoth paths become extremely powerful but in opposite ways.\n🌙 SELÛNE CHAMPION (Level 10–12)\nLEVEL 10\nCorona of Light (Light Domain): enemies in 30 ft aura have disadvantage on saves vs radiant spells\nRadiant Soul: resistance to necrotic, +2 radiant damage on all spells\nLEVEL 11\nAccess to 6th-level spells:\nHeal\nSunbeam\nTrue Seeing\nLEVEL 12\nASI → WIS 20\n HP ~90\n She becomes a CR 8 ally in the final fight.\n🌑 SHAR VESSEL (Level 10–12)\nLEVEL 10\nHeart of Night: 20 ft aura that reduces enemy healing\nShadow Rebirth: when dropped to 0 HP, she returns with 1 HP once/day\nLEVEL 11\n6th-level spells:\nHarm\nCircle of Death\nEyebite\nLEVEL 12\nASI → CHA 16\n HP ~105\n She becomes a CR 9–10 boss in her “corrupted” form.\n⭐ 3. SPELL — Guardian of Faith (Dual Version)\nThis is her signature spell.\n🌙 Selûne Version — “Guardian of Moonlit Faith”\nRadiant damage\nAppears as a towering feminine or celestial figure\n20 radiant damage (Dex save for half)\n🌑 Shar Version — “Guardian of the Deep Night”\nNecrotic damage\nAppears as a shadowy silhouette with twisting void tendrils\n20 necrotic damage (Dex save for half)\nEverything else is identical to Guardian of Faith.\n⭐ 4. RECOMMENDED PLAYSTYLE\nShe should not overshadow the party.\nGeneral rules:\nShe never takes the killing blow if a player can\nShe heals when players fall\nShe deals damage only when necessary\nIn boss fights, she provides key buffs/debuffs\nHer offensive power spikes ONLY in Act 4\nThis keeps her helpful but not dominant.\n⭐ 5. Quick Reference Table\nAbility | Score | Mod\nSTR | 10 | +0\nDEX | 14 | +2\nCON | 13 | +1\nWIS | 16 | +3\nCHA | 14 | +2\nINT | 10 | +0\nParty Level | Seris Level | Role | Key Features\n1 | 2 | Support healer | Cure Wounds, Guiding Bolt\n2 | 2 | Support | Bless, Healing Word\n3 | 3 | Support w/ damage | Spiritual Weapon\n4 | 4 | Scaling | WIS 18\n5 | 5 | Spell spike | Guardian of Faith\n6 | 6 | Pre-branch | Growing inner conflict\n7 | 7 | Path split | Moonlit Step OR Shadow Step\n8 | 8 | Mid-tier power | Radiant Resilience OR Umbral Ward\n9 | 9 | Path solidified | Beacon of Hope OR Fear\n10 | 10 | Ascended | Corona of Light OR Heart of Night\n11 | 11 | High magic | Sunbeam OR Harm\n12 | 12 | Final form | WIS 20 OR CHA 16"
+    },
+    {
+      "id": "session-2",
+      "title": "Session 2 - Moonfall Trial and the Sealed Letter",
+      "dmOnly": false,
+      "content": "SESSION 2 - 3/15/26\n\nWHERE WE STARTED\n- The Lost Forest, after Admiral (Ayatollah) MooMoo was slain.\n- The party long rested in the woods.\n\nOPENING BEAT\n- Most of the party slept quietly.\n- Prom could not sleep, wandered off to blow off steam, and witnessed a distant lightning strike and thunder pattern identical to the strike from his childhood.\n\nRETURN TO TIDE'S REST\n- The party delivered moon-petal to Eldra.\n- Eldra administered it to Mara; for a brief moment, Mara stabilized.\n- A corrupted force then overtook the cure and drew from Mara's breath.\n- Mara gave Seris final encouragement and told the party Moonfall Grotto held answers to what is plaguing the region.\n- Seris became openly determined and aggressive in grief and declared she was coming no matter what.\n- Mara left Seris a magically sealed letter that could not be opened until after Moonfall.\n\nBACK THROUGH THE LOST FOREST\n- En route to Moonfall, Prom challenged Seris to a duel over custody of the letter.\n- Seris bodied Prom cleanly; he failed to land a single blow.\n- Seris revived him and told him not to overthink it next time.\n\nMOONFALL GROTTO - ENTRY LEVEL\n- The party reached a chamber with a large statue, altar, and split stairways.\n- Prayer at the altar triggered a vision of a yin-yang style symbol where black bled over and consumed the circle.\n- The party identified the temple as devoted to Selune.\n\nLEFT STAIR ENCOUNTER\n- The party found dark-robed occupants camped in the grotto.\n- The group immediately locked onto Seris and offered to spare the party in exchange for her.\n- The party chose combat and won hard.\n- Mead brutally killed the leader, causing morale collapse.\n- Echo slit one captive's throat to reinforce the threat.\n- Surviving captives knew little; all orders came through the now-dead leader.\n- Prom initially kept the leader's head for a future Speak with Dead attempt, then threw it to the ground and destroyed it.\n- Kelsier persuaded two survivors to join, but they escaped once the party dropped guard.\n\nFINAL FLOOR - SELUNE'S TRIAL\n- The party descended to a round glass platform and second statue.\n- They identified active conjuration magic.\n- A massive knight of light manifested and declared: \"The moon does not yield to the untested.\"\n- After a long, difficult fight (including a failed attempt at viciously mogging it), the party won.\n- The knight's final words: \"Carry the moonlight and its burden.\"\n\nARTIFACT REVELATION\n- The knight disintegrated, leaving behind an orb.\n- As the party approached, all members witnessed a vision linking this artifact to five others scattered across the region.\n- The orb forcibly attuned to Seris.\n- The party obtained a map identifying the other artifact locations.\n\nLETTER PAYOFF\n- The seal on Mara's letter dissolved after Moonfall's completion.\n- Seris read it and revealed that her father, previously believed dead, is alive in Lunaryth.\n- Name revealed: Elyndor.\n\nEND STATE\n- The party now carries the first artifact milestone and a map to the remaining five.\n- Seris's role in the larger conflict has become explicit.\n- The next major destination pressure points toward Lunaryth and Elyndor."
     }
   ],
   "images": [
@@ -435,13 +462,14 @@
     {
       "id": "seris",
       "name": "Seris",
-      "title": "Half-Elf Cleric",
-      "status": "With the party",
+      "title": "Half-Elf Cleric • First Relic Bearer",
+      "status": "At a crossroads after Moonfall attunement",
       "tags": [
         "cleric",
-        "ally"
+        "ally",
+        "relic-bearer"
       ],
-      "summary": "A half-elf cleric traveling with the party — quiet, steady, and fiercely protective of those she cares about.",
+      "summary": "After Mara's death, Seris became sharper and more forceful. She now carries the first relic from Moonfall Grotto and stands at a turning point in the unfolding artifact crisis.",
       "image": "/npcs/seris.png",
       "dmOnly": true
     },
@@ -457,6 +485,19 @@
       "summary": "Tide’s Rest’s overworked herbalist — blunt, practical, and stretched thin. She knows the forest is dangerous, but she also knows which herbs might save lives if someone is brave enough to fetch them.",
       "image": "/npcs/eldra.png",
       "dmOnly": false
+    },
+    {
+      "id": "mara",
+      "name": "Mara Vaeloris",
+      "title": "Seris's Mother",
+      "status": "Deceased",
+      "tags": [
+        "family",
+        "deceased"
+      ],
+      "summary": "Mara briefly stabilized under moon-petal treatment before a deeper corrupted force overwhelmed the cure. Her dying guidance sent the party toward Moonfall Grotto and left Seris a sealed letter.",
+      "image": "",
+      "dmOnly": false
     }
   ],
   "battles": [
@@ -469,6 +510,16 @@
       "summary": "The undead bell‑toller of the Lost Forest — a hulking, corrupted ox that crashes through trees and punishes anyone who lingers when the bells ring.",
       "image": "/battles/admiral-moomoo.png",
       "dmOnly": true
+    },
+    {
+      "id": "moonbound-sentinel",
+      "name": "Moonbound Sentinel",
+      "cr": "3",
+      "type": "Trial",
+      "location": "Moonfall Grotto",
+      "summary": "A colossal knight of moonlight that tested the party's worth in Selune's temple, declaring: \"The moon does not yield to the untested.\"",
+      "image": "/campaign/Act 1/Maps/Moonfall Grotto Level 1.jpg",
+      "dmOnly": true
     }
   ],
   "locations": [
@@ -476,41 +527,68 @@
       "id": "location-tides-rest",
       "title": "Tide's Rest",
       "act": "Act 1",
-      "session": 1,
-      "summary": "A small, weather-worn port town on the edge of the Lost Forest. The party met Seris here while she sought moon‑petal to save her mother, and learned just how desperate the town has become.",
-      "content": "OVERVIEW\nA coastal settlement with a struggling dock, tired merchants, and a quiet fear of the forest.\n\nWHAT THE PARTY LEARNED\n- Lunaryth is unreachable without passing through the Lost Forest.\n- Seris is a local with a sick mother, and the only known cure is moon‑petal.\n- The town is worn down, low on resources, and anxious about what the forest has become.\n\nKEY MOMENTS\n- Seris was turned away by Eldra, the gnomish herbalist.\n- The party decided to help Seris by seeking moon‑petal.\n- The warning about bells and the forest’s danger became a recurring theme.\n\nNOTES TO REMEMBER\n- Tide’s Rest feels like a place holding its breath.\n- The party’s decision here set the tone for helping Seris going forward."
+      "session": 2,
+      "summary": "The party returned triumphant with moon-petal, but Mara died as a deeper corruption overpowered the cure, turning Tide's Rest into the emotional launch point for Moonfall Grotto.",
+      "content": "OVERVIEW\nA worn coastal town now carrying fresh grief and urgency.\n\nWHAT THE PARTY LEARNED\n- Moon-petal can help, but it is not enough against the deeper force in play.\n- Mara believed Moonfall Grotto held answers to the region's corruption.\n- Seris's role in the larger conflict is personal and likely pivotal.\n\nKEY MOMENTS\n- Eldra administered moon-petal and briefly stabilized Mara.\n- The cure failed under corrupted pressure and Mara died.\n- Mara left Seris a magically sealed letter that only opened after Moonfall.\n\nNOTES TO REMEMBER\n- Tide's Rest is now a town in mourning with renewed stakes.\n- The party left with purpose, not just curiosity."
     },
     {
       "id": "location-lost-forest",
       "title": "The Lost Forest",
       "act": "Act 1",
-      "session": 1,
-      "summary": "A quiet, oppressive forest where bells ring as a warning. The party entered to find moon‑petal, discovered how unnatural the place feels, and faced the undead bell‑toller.",
-      "content": "OVERVIEW\nThe Lost Forest is unnaturally silent and oppressive. The bells are not just a warning — they feel like a boundary.\n\nWHAT THE PARTY EXPERIENCED\n- The forest felt wrong almost immediately.\n- The bells grew louder as danger approached.\n- Moon‑petal was found near a massive tree.\n\nKEY MOMENTS\n- The party confirmed the bells were real and meaningful.\n- An undead ox (the bell‑toller) attacked in the woods.\n- The party defeated the creature and survived the forest.\n\nNOTES TO REMEMBER\n- The forest punishes hesitation and carelessness.\n- Bells = danger. If you hear them, you should run."
+      "session": 2,
+      "summary": "On the return path toward Moonfall, the forest framed personal omens and party tension, including Prom's storm sighting and a one-sided duel with Seris.",
+      "content": "OVERVIEW\nThe forest remains oppressive, but this pass emphasized destiny beats and party dynamics over survival horror.\n\nWHAT THE PARTY EXPERIENCED\n- Prom witnessed distant lightning and thunder matching the strike that marked him in childhood.\n- Seris carried Mara's sealed letter as the group pushed toward Moonfall.\n- Prom challenged Seris in a duel over custody of the letter and got shut down instantly.\n\nKEY MOMENTS\n- Seris revived Prom after the duel and kept momentum toward Moonfall.\n- The party arrived at Moonfall Grotto still intact and mission-focused.\n\nNOTES TO REMEMBER\n- Prom's lightning mystery escalated from backstory to active omen.\n- Seris's grief now presents as hard resolve and aggression."
+    },
+    {
+      "id": "location-moonfall-grotto",
+      "title": "Moonfall Grotto",
+      "act": "Act 1",
+      "session": 2,
+      "summary": "A Selune temple where the party fought hostile robed zealots, passed a lunar trial, and witnessed Seris forcibly attune to the first of six linked artifacts.",
+      "content": "OVERVIEW\nAn ancient lunar temple tied to Selune, layered with tests, hostile interest in Seris, and artifact-level magic.\n\nWHAT THE PARTY LEARNED\n- The temple is a Selune site with symbolic warnings about balance being consumed by darkness.\n- External forces are actively hunting Seris.\n- The first relic is linked to five others across the region.\n\nKEY MOMENTS\n- The dark-robed group demanded Seris and was defeated.\n- Mead executed the leader; Prom briefly kept the head, then destroyed it, removing a future Speak with Dead option.\n- A Moonbound Sentinel tested the party and fell.\n- The orb relic forcibly attuned to Seris and revealed the wider relic network.\n- Mara's sealed letter opened afterward, naming Elyndor in Lunaryth.\n\nNOTES TO REMEMBER\n- Moonfall is not just a dungeon clear; it is the campaign's first major cosmic lock-in.\n- The party now has both direction (relic map) and a personal hook (Elyndor)."
     }
-  ]
-  ,
+  ],
   "quests": [
     {
       "id": "quest-get-to-lunaryth",
       "title": "Get to Lunaryth",
       "tier": "main",
       "status": "active",
-      "summary": "Reach Lunaryth and learn why the city has gone silent.",
+      "summary": "Reach Lunaryth to pursue Elyndor and the next artifact leads.",
       "steps": [
-        { "label": "Reach Tide’s Rest", "done": true },
-        { "label": "Cross the Lost Forest", "done": false }
+        {
+          "label": "Reach Tide's Rest",
+          "done": true
+        },
+        {
+          "label": "Cross the Lost Forest",
+          "done": true
+        },
+        {
+          "label": "Complete Moonfall Grotto and secure first relic lead",
+          "done": true
+        },
+        {
+          "label": "Travel toward Lunaryth using the relic map",
+          "done": false
+        }
       ]
     },
     {
       "id": "quest-moonpetal",
-      "title": "Retrieve the Moon‑petal",
+      "title": "Retrieve the Moon-petal",
       "tier": "main",
-      "status": "active",
-      "summary": "Secure moon‑petal to help Seris’s mother.",
+      "status": "complete",
+      "summary": "Moon-petal was delivered, but Mara was lost to a deeper corruption.",
       "steps": [
-        { "label": "Find moon‑petal in the forest", "done": true },
-        { "label": "Bring it back to Eldra", "done": false }
+        {
+          "label": "Find moon-petal in the forest",
+          "done": true
+        },
+        {
+          "label": "Bring it back to Eldra",
+          "done": true
+        }
       ]
     },
     {
@@ -518,11 +596,24 @@
       "title": "Prom: Answer the Storm",
       "tier": "personal",
       "status": "active",
-      "summary": "Learn why the lightning chose Prom and what that power means.",
+      "summary": "Prom has now seen the same impossible lightning again; the storm mystery is active, not historical.",
       "steps": [
-        { "label": "Reach Lunaryth and seek storm lore", "done": false },
-        { "label": "Find a scholar or relic tied to the lightning scar", "done": false },
-        { "label": "Unlock a controlled “boom” (ritual, training, or trial)", "done": false }
+        {
+          "label": "Witness the recurring lightning omen",
+          "done": true
+        },
+        {
+          "label": "Reach Lunaryth and seek storm lore",
+          "done": false
+        },
+        {
+          "label": "Find a scholar or relic tied to the lightning scar",
+          "done": false
+        },
+        {
+          "label": "Unlock a controlled boom (ritual, training, or trial)",
+          "done": false
+        }
       ]
     },
     {
@@ -532,8 +623,60 @@
       "status": "active",
       "summary": "Understand the visions and the goddess’s command to seek Lunaryth.",
       "steps": [
-        { "label": "Arrive in Lunaryth and follow the music’s pull", "done": false },
-        { "label": "Identify the goddess from the vision", "done": false }
+        {
+          "label": "Arrive in Lunaryth and follow the music’s pull",
+          "done": false
+        },
+        {
+          "label": "Identify the goddess from the vision",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "quest-moonfall-relic",
+      "title": "Moonfall Grotto Trial",
+      "tier": "main",
+      "status": "complete",
+      "summary": "Survive Moonfall, protect Seris, and claim the first artifact vision.",
+      "steps": [
+        {
+          "label": "Reach Moonfall Grotto",
+          "done": true
+        },
+        {
+          "label": "Defeat hostile forces targeting Seris",
+          "done": true
+        },
+        {
+          "label": "Pass Selune's trial and defeat the sentinel",
+          "done": true
+        },
+        {
+          "label": "Trigger relic vision and Seris attunement",
+          "done": true
+        }
+      ]
+    },
+    {
+      "id": "quest-six-artifacts",
+      "title": "Track the Six Artifacts",
+      "tier": "main",
+      "status": "active",
+      "summary": "Follow the Moonfall map and secure the remaining relics before corruption does.",
+      "steps": [
+        {
+          "label": "Witness the first relic vision at Moonfall",
+          "done": true
+        },
+        {
+          "label": "Identify and route to the next artifact site",
+          "done": false
+        },
+        {
+          "label": "Recover at least one additional relic",
+          "done": false
+        }
       ]
     }
   ]

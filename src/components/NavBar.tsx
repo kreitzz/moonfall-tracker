@@ -26,6 +26,7 @@ export default function NavBar({ partyName }: { partyName: string }) {
       { href: "/npcs", label: "NPCs" },
       { href: "/battles", label: "Encounters" },
       { href: "/gallery", label: "Maps" },
+      ...(dmMode ? [{ href: "/map-editor", label: "Map Editor" }] : []),
       { href: "/search", label: "Search" },
       ...(dmMode ? [{ href: "/docs", label: "DM Tools" }] : []),
       ...(dmMode ? [{ href: "/admin", label: "DM" }] : []),
