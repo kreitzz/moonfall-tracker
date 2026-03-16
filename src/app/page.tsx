@@ -17,7 +17,7 @@ export default function Home() {
           <h2 className="text-xl font-semibold tracking-tight">Next Session</h2>
         </div>
         <div className="mt-4 rounded-3xl border border-black/10 bg-white p-6 text-2xl font-semibold tracking-tight shadow-sm dark:border-white/10 dark:bg-zinc-950">
-          Wed Feb 25
+          Monday March 16
         </div>
       </section>
 
