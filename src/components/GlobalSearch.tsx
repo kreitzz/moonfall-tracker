@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import type { Campaign } from "@/lib/campaign";
 import { isDmOnlyDoc } from "@/lib/campaign";
 import { useDmMode } from "@/components/DmModeProvider";
+import { useReveals } from "@/components/RevealProvider";
 
 type Hit =
   | { kind: "doc"; id: string; title: string; subtitle: string; snippet: string; locked: boolean }
@@ -21,6 +22,7 @@ function mkSnippet(hay: string, q: string) {
 
 export default function GlobalSearch({ campaign }: { campaign: Campaign }) {
   const { dmMode } = useDmMode();
+  const { isPublic } = useReveals();
   const [q, setQ] = useState("");
 
   const hits = useMemo<Hit[]>(() => {
@@ -66,6 +68,7 @@ export default function GlobalSearch({ campaign }: { campaign: Campaign }) {
     }
 
     for (const m of campaign.images) {
+      if (!dmMode && !isPublic(m.id)) continue;
       const hay = `${m.title} ${m.path}`;
       if (hay.toLowerCase().includes(query.toLowerCase())) {
         results.push({
@@ -86,7 +89,7 @@ export default function GlobalSearch({ campaign }: { campaign: Campaign }) {
     };
 
     return results.sort((a, b) => score(a) - score(b)).slice(0, 50);
-  }, [q, campaign, dmMode]);
+  }, [q, campaign, dmMode, isPublic]);
 
   return (
     <div className="space-y-4">
