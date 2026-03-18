@@ -73,7 +73,7 @@ export default function Home() {
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
                 <div className="text-sm text-black/60 dark:text-white/60">Party level</div>
-                <div className="mt-1 text-2xl font-semibold">1</div>
+                <div className="mt-1 text-2xl font-semibold">3</div>
                 <div className="mt-1 text-sm text-black/70 dark:text-white/70">Current average</div>
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
