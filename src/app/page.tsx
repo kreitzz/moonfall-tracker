@@ -125,8 +125,8 @@ export default function Home() {
             See all NPCs →
           </Link>
         </div>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {(campaign.npcs ?? []).slice(0, 3).map((n) => (
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {(campaign.npcs ?? []).map((n) => (
             <NpcCard key={n.id} npc={n} />
           ))}
         </div>
@@ -159,12 +159,12 @@ export default function Home() {
             <div className="mt-1 text-2xl font-semibold tracking-tight">{latestSession.title}</div>
             <p className="mt-2 max-w-3xl text-black/70 dark:text-white/70">{latestSession.summary}</p>
             {latestSession.mvp ? (
-              <div className="mt-3 text-sm text-black/70 dark:text-white/70">
+              <div className="mt-3 max-w-3xl text-pretty text-sm text-black/70 dark:text-white/70">
                 <span className="font-semibold">MVP:</span> {latestSession.mvp.name} — {latestSession.mvp.reason}
               </div>
             ) : null}
             {latestSession.lowlight ? (
-              <div className="mt-2 text-sm text-black/70 dark:text-white/70">
+              <div className="mt-2 max-w-3xl text-pretty text-sm text-black/70 dark:text-white/70">
                 <span className="font-semibold">Critical Fail:</span> {latestSession.lowlight.name} — {latestSession.lowlight.reason}
               </div>
             ) : null}

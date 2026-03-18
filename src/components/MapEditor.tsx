@@ -22,6 +22,8 @@ type DragState = {
   startClientY: number;
   startX: number;
   startY: number;
+  dragAll: boolean;
+  startPositions: Record<string, { x: number; y: number }>;
 };
 
 function imageSrcFromPath(path: string, version?: string) {
@@ -40,6 +42,8 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
   const [overlaysByImage, setOverlaysByImage] = useState<Record<string, Overlay[]>>({});
   const [selectedOverlayId, setSelectedOverlayId] = useState<string | null>(null);
   const [newText, setNewText] = useState("New Text");
+  const [highlightAll, setHighlightAll] = useState(false);
+  const [dragAllText, setDragAllText] = useState(false);
 
   const queryImageId = searchParams.get("imageId");
   const selectedImageId =
@@ -129,6 +133,8 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
       startClientY: event.clientY,
       startX: overlay.x,
       startY: overlay.y,
+      dragAll: dragAllText,
+      startPositions: Object.fromEntries(overlays.map((o) => [o.id, { x: o.x, y: o.y }])),
     };
   }
 
@@ -147,14 +153,32 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
     const dx = event.clientX - drag.startClientX;
     const dy = event.clientY - drag.startClientY;
 
+    if (!selectedImageId) {
+      return;
+    }
+
+    if (drag.dragAll) {
+      setOverlaysByImage((prev) => ({
+        ...prev,
+        [selectedImageId]: (prev[selectedImageId] ?? []).map((o) => {
+          const start = drag.startPositions[o.id] ?? { x: o.x, y: o.y };
+          const el = overlayRefs.current[o.id];
+          const maxX = Math.max(0, stage.clientWidth - (el?.offsetWidth ?? 0));
+          const maxY = Math.max(0, stage.clientHeight - (el?.offsetHeight ?? 0));
+          return {
+            ...o,
+            x: Math.max(0, Math.min(maxX, start.x + dx)),
+            y: Math.max(0, Math.min(maxY, start.y + dy)),
+          };
+        }),
+      }));
+      return;
+    }
+
     const maxX = Math.max(0, stage.clientWidth - overlayEl.offsetWidth);
     const maxY = Math.max(0, stage.clientHeight - overlayEl.offsetHeight);
     const nextX = Math.max(0, Math.min(maxX, drag.startX + dx));
     const nextY = Math.max(0, Math.min(maxY, drag.startY + dy));
-
-    if (!selectedImageId) {
-      return;
-    }
 
     setOverlaysByImage((prev) => ({
       ...prev,
@@ -229,6 +253,25 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
         >
           Add Text
         </button>
+
+        <div className="flex flex-wrap gap-2 lg:col-span-2">
+          <button
+            onClick={() => setHighlightAll((v) => !v)}
+            className="rounded-lg border border-black/10 px-3 py-2 text-sm text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
+          >
+            {highlightAll ? "Hide Highlights" : "Highlight All Text"}
+          </button>
+          <button
+            onClick={() => setDragAllText((v) => !v)}
+            className={
+              dragAllText
+                ? "rounded-lg bg-black px-3 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black"
+                : "rounded-lg border border-black/10 px-3 py-2 text-sm text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
+            }
+          >
+            {dragAllText ? "Drag All: ON" : "Drag All Text Together"}
+          </button>
+        </div>
 
         <div className="grid gap-3 sm:grid-cols-3 lg:col-span-2">
           <label className="grid gap-1 text-sm">
@@ -319,7 +362,9 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
                 className={
                   overlay.id === selectedOverlayId
                     ? "absolute cursor-grab whitespace-nowrap rounded px-2 py-1 font-semibold leading-tight outline-2 outline-blue-500"
-                    : "absolute cursor-grab whitespace-nowrap rounded px-2 py-1 font-semibold leading-tight"
+                    : highlightAll
+                      ? "absolute cursor-grab whitespace-nowrap rounded px-2 py-1 font-semibold leading-tight outline outline-1 outline-amber-400/90"
+                      : "absolute cursor-grab whitespace-nowrap rounded px-2 py-1 font-semibold leading-tight"
                 }
                 style={{
                   left: `${overlay.x}px`,

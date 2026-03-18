@@ -5,8 +5,9 @@ import QuestCard from "@/components/QuestCard";
 export default function SideQuestsPage() {
   const campaign = getCampaign();
   const sideQuests = (campaign.quests ?? []).filter((q) => q.tier === "side");
-  const active = sideQuests.filter((q) => q.status !== "complete");
-  const complete = sideQuests.filter((q) => q.status === "complete");
+  const isComplete = (status?: string) => status === "complete" || status === "completed";
+  const active = sideQuests.filter((q) => !isComplete(q.status));
+  const complete = sideQuests.filter((q) => isComplete(q.status));
 
   return (
     <div className="space-y-6">

@@ -8,13 +8,14 @@ export default function QuestsPage() {
   const main = quests.filter((q) => q.tier === "main");
   const personal = quests.filter((q) => q.tier === "personal");
   const side = quests.filter((q) => q.tier === "side");
+  const isComplete = (status?: string) => status === "complete" || status === "completed";
 
-  const activeMain = main.filter((q) => q.status !== "complete");
-  const completeMain = main.filter((q) => q.status === "complete");
-  const activePersonal = personal.filter((q) => q.status !== "complete");
-  const completePersonal = personal.filter((q) => q.status === "complete");
-  const activeSide = side.filter((q) => q.status !== "complete");
-  const completeSide = side.filter((q) => q.status === "complete");
+  const activeMain = main.filter((q) => !isComplete(q.status));
+  const completeMain = main.filter((q) => isComplete(q.status));
+  const activePersonal = personal.filter((q) => !isComplete(q.status));
+  const completePersonal = personal.filter((q) => isComplete(q.status));
+  const activeSide = side.filter((q) => !isComplete(q.status));
+  const completeSide = side.filter((q) => isComplete(q.status));
 
   return (
     <div className="space-y-6">
@@ -60,40 +61,6 @@ export default function QuestsPage() {
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-xl font-semibold tracking-tight">Personal Quests</h2>
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="space-y-3">
-            <div className="text-sm font-semibold uppercase tracking-wide text-black/50 dark:text-white/50">Active</div>
-            {activePersonal.length ? (
-              <div className="space-y-4">
-                {activePersonal.map((quest) => (
-                  <QuestCard key={quest.id} quest={quest} />
-                ))}
-              </div>
-            ) : (
-              <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 text-sm text-black/70 dark:border-white/10 dark:bg-white/5 dark:text-white/70">
-                No active personal quests yet.
-              </div>
-            )}
-          </div>
-          <div className="space-y-3">
-            <div className="text-sm font-semibold uppercase tracking-wide text-black/50 dark:text-white/50">Completed</div>
-            {completePersonal.length ? (
-              <div className="space-y-4">
-                {completePersonal.map((quest) => (
-                  <QuestCard key={quest.id} quest={quest} />
-                ))}
-              </div>
-            ) : (
-              <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 text-sm text-black/70 dark:border-white/10 dark:bg-white/5 dark:text-white/70">
-                No completed personal quests yet.
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="space-y-3">
         <h2 className="text-xl font-semibold tracking-tight">Side Quests</h2>
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="space-y-3">
@@ -121,6 +88,40 @@ export default function QuestsPage() {
             ) : (
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 text-sm text-black/70 dark:border-white/10 dark:bg-white/5 dark:text-white/70">
                 No completed side quests yet.
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold tracking-tight">Personal Quests</h2>
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="space-y-3">
+            <div className="text-sm font-semibold uppercase tracking-wide text-black/50 dark:text-white/50">Active</div>
+            {activePersonal.length ? (
+              <div className="space-y-4">
+                {activePersonal.map((quest) => (
+                  <QuestCard key={quest.id} quest={quest} />
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 text-sm text-black/70 dark:border-white/10 dark:bg-white/5 dark:text-white/70">
+                No active personal quests yet.
+              </div>
+            )}
+          </div>
+          <div className="space-y-3">
+            <div className="text-sm font-semibold uppercase tracking-wide text-black/50 dark:text-white/50">Completed</div>
+            {completePersonal.length ? (
+              <div className="space-y-4">
+                {completePersonal.map((quest) => (
+                  <QuestCard key={quest.id} quest={quest} />
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 text-sm text-black/70 dark:border-white/10 dark:bg-white/5 dark:text-white/70">
+                No completed personal quests yet.
               </div>
             )}
           </div>

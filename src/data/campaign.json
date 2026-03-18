@@ -2,16 +2,16 @@
   "meta": {
     "name": "The Belligerent Five",
     "partyName": "The Belligerent Five",
-    "generatedAt": "2026-03-15",
+    "generatedAt": "2026-03-17",
     "whatWeKnow": [
-      "Lunaryth remains unreachable until the corruption routes are understood and bypassed.",
       "Mara died after a brief recovery when moon-petal failed against a deeper corrupted force.",
-      "Before dying, Mara directed the party to seek answers at Moonfall Grotto.",
-      "Seris is more important to the region’s fate than she fully understands.",
-      "A sealed letter from Mara opened only after Moonfall was resolved.",
       "Moonfall Grotto is a temple of Selune and site of a lunar trial.",
       "Seris forcibly attuned to the first artifact and the party saw five more linked relics.",
-      "Seris learned her father may be alive in Lunaryth under the name Elyndor."
+      "Seris has left for Lunaryth to pursue Elyndor and understand the relic on her own.",
+      "The Weeping Marsh is the nearest confirmed lead for another relic.",
+      "Edrin and Lyra were abducted because they know about the Circle of Promise.",
+      "Greyhaven is filling with organized newcomers and growing steadily more dangerous.",
+      "The Circle of Promise may hide a buried weapon that should never be unearthed."
     ],
     "initialPublic": [
       "act-1-dm-guide-the-lost-forest-docx",
@@ -67,13 +67,13 @@
       "card": "PROM “GO BOOM”\nHalf-Orc Gladiator Barbarian (Level 1)\nAlignment: Chaotic Neutral\nPlayer: Gavin\nRace: Half-Orc\nBackground: Gladiator\n\nPHYSICAL DESCRIPTION\nRace: Half-Orc\nBuild: Towering, muscular arena fighter\nArmor: Scale Mail\nSignature Mark: Lightning scar across his face\nMask: Wears a gladiator mask to conceal the scar\nVibe: Loud. Confident. Slightly unhinged.\n\nBACKSTORY\n“I am Prom, a half-orc gladiator barbarian.\nI was struck by lightning as a boy.\nIt made me go boom.\nNow I mask my face.\nI go to Lunaryth to learn why lightning go boom — and how I too boom.”\n\nProm was struck by lightning in his youth and survived.\nThe strike left him scarred — physically and spiritually.\n\nHe believes:\n- Lightning chose him.\n- Power is meant to be understood.\n- If lightning can boom… so can he.\n\nHe travels to Lunaryth seeking answers about the storm — and himself.\n\nABILITY SCORES\nAbility | Score | Modifier\nStrength | 19 | +4\nDexterity | 13 | +1\nConstitution | 14 | +2\nIntelligence | 8 | -1\nWisdom | 12 | +1\nCharisma | 12 | +1\nProficiency Bonus: +2\nPassive Perception: 11\n\nCOMBAT STATS\nAC: 15\nHP Max: 14\nSpeed: 30 ft\nInitiative: +1\nHit Dice: 1d12\n\nATTACKS\nGreataxe — +6 to hit — 1d12 + 4 slashing\nHandaxe — +6 to hit — 1d6 + 4 slashing — Range 20/60\nJavelin — +6 to hit — 1d6 + 4 piercing — Range 30/120\n\nBARBARIAN FEATURES\nRage (2 per Long Rest)\n- +2 damage to melee attacks (Strength)\n- Resistance to bludgeoning, piercing, slashing\n- Advantage on Strength checks and saving throws\n\nSavage Attacks (Half-Orc)\n- On a melee critical hit, roll one additional weapon damage die.\n\nRelentless Endurance\n- When reduced to 0 HP but not killed outright: drop to 1 HP instead.\n- Once per long rest.\n\nGLADIATOR BACKGROUND\nSkill Proficiencies\n- Athletics (+4)\n- Performance (+1)\nAdditional Proficiencies\n- Animal Handling: 1d20 + 3\n- Survival: 1d20 + 3\n\nEQUIPMENT\n- Scale Mail Armor\n- Greataxe\n- Handaxes\n- Javelins\n- Explorer’s Pack\n- 10 Torches\n- 10 Rations\n- Waterskin\n- 50 ft Rope\n- Tinderbox\n- Mess Kit\n- Bedroll\n- Disguise Kit\n- Healing Potion (1d8)\n- Arena Costume\n- Musical Instrument (for dramatic entrances)\n- JBL Speaker (canonically hilarious)\n\nADDITIONAL TRAITS\nDisguise Specialist\n- Hide his lightning scar\n- Pretend to be a mercenary\n- Pose as a dock worker\n- Blend into rough crowds"
     },
     {
-      "name": "Brigg",
-      "ancestry": "Human",
-      "class": "Fighter",
-      "role": "Guest PC · Frontline guard",
-      "image": "/party/brigg.png",
+      "name": "Aylin",
+      "ancestry": "High Elf",
+      "class": "Rogue (Assassin)",
+      "role": "Guest PC · assassin / false noble / throne-seeker",
+      "image": "",
       "guest": true,
-      "card": "BRIGG\nHuman Fighter (Level 1) — Guard\nAlignment: Neutral\n\nCORE IDENTITY\nName: Brigg\nRace: Human\nClass: Fighter (Level 1)\nBackground: Guard\nAlignment: Neutral\nAge: 24\nHeight: 5'11\nWeight: 190 lbs\nEyes: Hazel\nHair: Brown\nSkin: Weathered tan\n\nABILITY SCORES\nAbility | Score | Modifier\nStrength | 16 | +3\nDexterity | 12 | +1\nConstitution | 14 | +2\nIntelligence | 10 | +0\nWisdom | 11 | +0\nCharisma | 8 | -1\nProficiency Bonus: +2\nInitiative: +1\nSpeed: 30 ft\nArmor Class: 16\nHP: 12\nHit Dice: 1d10\nPassive Perception: 10\n\nSKILLS & PROFICIENCIES\nSaving Throws\n- Strength\n- Dexterity\nSkill Proficiencies\n- Athletics +5\n- Perception +2\nWeapon Proficiencies\n- Simple weapons\n- Martial weapons\nArmor Proficiency\n- All armor\n- Shields\nLanguages\n- Common\n- Gnomish\n\nCOMBAT\nWeapons\n- Longsword — +5 to hit — 1d8 + 3 slashing (1d10 + 3 two-handed)\n- Javelin — +5 to hit — 1d6 + 3 piercing — Range 30/120\n\nFEATURES & TRAITS\nSecond Wind (1/short rest)\n- Bonus action: regain 1d10 + 1 HP.\nFighting Style: Defense\n- +1 AC while wearing armor.\n\nEQUIPMENT\n- Chain mail\n- Shield\n- Longsword\n- 3 Javelins\n- Traveler’s pack\n\nBACKSTORY SUMMARY\nBrigg is Eldra’s adoptive son — raised around her herb work and trusted to handle hard tasks. He’s a trained fighter who regularly checks on Seris and her mother.\n\nEldra took him in after a caravan accident on the coastal road left him alone and half‑starved. He grew up hauling crates at the docks and chopping wood for the apothecary, learning discipline the hard way.\n\nHis strength comes from that work — lifting, hauling, and years of sparring with dockhands who didn’t go easy on him. He fights like someone who learned to endure first and win second.\n\nROLEPLAY NOTES\n- Protective without speaking for Seris; steps in physically when danger spikes.\n- Respectful to Eldra but quietly resentful of anyone who dismisses her warnings.\n- Humor as a pressure valve, followed by sudden seriousness when Seris is overwhelmed.\n\nSAMPLE LINES\n- You don’t get to talk over her.\n- Eldra’s been carrying this town. Don’t make it heavier.\n"
+      "card": "AYLIN GALATHYNIUS\nHigh Elf Rogue (Level 2) — Assassin\nBackground: Charlatan\nAlignment: Neutral\n\nCORE IDENTITY\nName: Aylin Galathynius\nRace: High Elf\nClass: Rogue (Level 2)\nSubclass: Assassin\nBackground: Charlatan\nAlignment: Neutral\nRole: Assassin operating under a false identity while searching for clues to restore her lost kingdom.\n\nABILITY SCORES\nAttribute | Score | Modifier\nStrength | 8 | -1\nDexterity | 17 | +3\nConstitution | 12 | +1\nIntelligence | 15 | +2\nWisdom | 10 | +0\nCharisma | 13 | +1\n\nCORE STATS\nArmor Class: 14\nInitiative: +3\nSpeed: 30 ft\nHP: 15\nProficiency Bonus: +2\nHit Dice: 2d8\n\nCOMBAT\nWeapons\n- Rapier — +5 to hit — 1d8 + 3 piercing\n- Dagger — +5 to hit — 1d4 + 3 piercing\n- Shortbow — +5 to hit — 1d6 + 3 piercing\n\nKey Ability\n- Sneak Attack (1d6): extra damage once per turn when she has advantage or an ally is adjacent to the target.\n\nBonus Action\n- Cunning Action: Dash, Disengage, or Hide.\n\nSKILLS\n- Stealth +7\n- Sleight of Hand +5\n- Deception +5\n- Investigation +4\n- Insight +2\n\nEXPERTISE\n- Stealth\n- Deception\n\nMAGIC\nSpellcasting Ability: Intelligence\nSpell Save DC: 12\nSpell Attack: +4\n\nCantrip\n- Message: Whisper to someone within 120 ft.\n\nRACIAL TRAITS\n- Fey Ancestry: Advantage on saves against charm, and magic cannot put her to sleep.\n- Trance: 4 hours of meditation counts as a full long rest.\n\nLANGUAGES\n- Common\n- Elvish\n- Undercommon\n\nEQUIPMENT\n- Rapier\n- Shortbow and 20 arrows\n- 2 daggers\n- Leather armor\n- Thieves' tools\n- Burglar's pack\n- Disguise kit\n- Forgery kit\n- Fine clothes for a noble persona\n- Signet ring bearing her family crest\n\nBACKGROUND & STORY\nTrue Identity\n- Heir to a fallen fae kingdom destroyed by an enemy king.\n\nPublic Identity\n- A traveling noble and practiced charlatan.\n\nGuild Past\n- Raised and trained by an elite assassin guild after the fall of her kingdom.\n\nCurrent Mission\n- Travel through Ascendaria toward Lunaryth.\n- Fulfill an assassination contract.\n- Search for survivors, lost secrets, and a path to restoring magic and reclaiming her throne.\n\nCurrent Dynamic\n- She travels with the Belligerent Five when it suits her, tolerating them because their strength makes the road safer.\n- Her first appearance did not go cleanly: Heywud's crab familiar rattled her, the party spent most of the session bullying her, and she did not add much practical utility.\n- For someone claiming assassin credentials, she now has a lot to prove if she returns.\n\nPERSONALITY\nTraits\n- Cold, serious, and intolerant of childish behavior.\n\nIdeals\n- Independence\n- Logic\n- Responsibility\n\nBond\n- Her destroyed kingdom and murdered family.\n\nFlaw\n- Quick to violence when insulted.\n\nKEY ITEMS\n- Royal Signet Ring: hidden on a chain around her neck; proof of her true identity.\n- Assassin Guild Coin: a token proving guild membership.\n- Noble Clothes: used when adopting her false persona."
     }
   ],
   "sessions": [
@@ -115,6 +115,22 @@
         "reason": "Challenged Seris for the sealed letter, landed zero hits, got dusted in the duel, then smashed the robed leader's head and lost the planned Speak with Dead lead."
       },
       "docId": "session-2"
+    },
+    {
+      "id": "session-3",
+      "number": 3,
+      "title": "Roadside Thieves and the Greyhaven Hook",
+      "date": "2026-03-16",
+      "summary": "After securing Moonfall's side-room weapons and saying goodbye to Seris, the party got robbed during a long-rest honeypot, spent most of a guest appearance bullying Aylin, tracked the thieves to a bandit camp, and rescued Edrin and Lyra, learning about Greyhaven, the Weeping Marsh, and the Circle of Promise.",
+      "mvp": {
+        "name": "The Belligerent Five",
+        "reason": "Tracked the thieves immediately, hit the bandit camp fists first, and rescued Edrin and Lyra before the situation could spiral."
+      },
+      "lowlight": {
+        "name": "Mead & Echo",
+        "reason": "Brought the night visitors into their tent, ignored every red flag, and woke up lighter on coin and gear."
+      },
+      "docId": "session-3"
     }
   ],
   "documents": [
@@ -345,6 +361,12 @@
       "title": "Session 2 - Moonfall Trial and the Sealed Letter",
       "dmOnly": false,
       "content": "SESSION 2 - 3/15/26\n\nWHERE WE STARTED\n- The Lost Forest, after Admiral (Ayatollah) MooMoo was slain.\n- The party long rested in the woods.\n\nOPENING BEAT\n- Most of the party slept quietly.\n- Prom could not sleep, wandered off to blow off steam, and witnessed a distant lightning strike and thunder pattern identical to the strike from his childhood.\n\nRETURN TO TIDE'S REST\n- The party delivered moon-petal to Eldra.\n- Eldra administered it to Mara; for a brief moment, Mara stabilized.\n- A corrupted force then overtook the cure and drew from Mara's breath.\n- Mara gave Seris final encouragement and told the party Moonfall Grotto held answers to what is plaguing the region.\n- Seris became openly determined and aggressive in grief and declared she was coming no matter what.\n- Mara left Seris a magically sealed letter that could not be opened until after Moonfall.\n\nBACK THROUGH THE LOST FOREST\n- En route to Moonfall, Prom challenged Seris to a duel over custody of the letter.\n- Seris bodied Prom cleanly; he failed to land a single blow.\n- Seris revived him and told him not to overthink it next time.\n\nMOONFALL GROTTO - ENTRY LEVEL\n- The party reached a chamber with a large statue, altar, and split stairways.\n- Prayer at the altar triggered a vision of a yin-yang style symbol where black bled over and consumed the circle.\n- The party identified the temple as devoted to Selune.\n\nLEFT STAIR ENCOUNTER\n- The party found dark-robed occupants camped in the grotto.\n- The group immediately locked onto Seris and offered to spare the party in exchange for her.\n- The party chose combat and won hard.\n- Mead brutally killed the leader, causing morale collapse.\n- Echo slit one captive's throat to reinforce the threat.\n- Surviving captives knew little; all orders came through the now-dead leader.\n- Prom initially kept the leader's head for a future Speak with Dead attempt, then threw it to the ground and destroyed it.\n- Kelsier persuaded two survivors to join, but they escaped once the party dropped guard.\n\nFINAL FLOOR - SELUNE'S TRIAL\n- The party descended to a round glass platform and second statue.\n- They identified active conjuration magic.\n- A massive knight of light manifested and declared: \"The moon does not yield to the untested.\"\n- After a long, difficult fight (including a failed attempt at viciously mogging it), the party won.\n- The knight's final words: \"Carry the moonlight and its burden.\"\n\nARTIFACT REVELATION\n- The knight disintegrated, leaving behind an orb.\n- As the party approached, all members witnessed a vision linking this artifact to five others scattered across the region.\n- The orb forcibly attuned to Seris.\n- The party obtained a map identifying the other artifact locations.\n\nLETTER PAYOFF\n- The seal on Mara's letter dissolved after Moonfall's completion.\n- Seris read it and revealed that her father, previously believed dead, is alive in Lunaryth.\n- Name revealed: Elyndor.\n\nEND STATE\n- The party now carries the first artifact milestone and a map to the remaining five.\n- Seris's role in the larger conflict has become explicit.\n- The next major destination pressure points toward Lunaryth and Elyndor."
+    },
+    {
+      "id": "session-3",
+      "title": "Session 3 - Roadside Thieves and the Greyhaven Hook",
+      "dmOnly": false,
+      "content": "SESSION 3 - 3/16/26\n\nMOONFALL AFTERMATH\n- The party reviewed the relic map and confirmed three key leads: Moonfall already claimed, Weeping Marsh nearby, and Lunaryth holding another relic lead.\n- Seris recognized the Weeping Marsh as a place where many people are buried and the closest known destination.\n- The party searched the second room in Moonfall Grotto and claimed new weapons.\n- Aylin, a guest rogue-assassin, joined the group's orbit and immediately had a rough showing.\n- Heywud's crab familiar scared her, the party spent much of the session bullying her, and she did little to prove her assassin reputation.\n\nSERIS'S DEPARTURE\n- Seris gave an emotional goodbye and refused to stay, even when asked.\n- She said Mara's death, the weight of the relic, and the need to understand Elyndor in Lunaryth were forcing her onto a separate road.\n- Before leaving, she pointed out that Weeping Marsh was the nearest confirmed relic lead and that the northern locations above Lunaryth were unknown to her.\n\nTHE NIGHT VISITORS\n- During the next long rest, three women approached the camp asking for shelter.\n- The party let them in.\n- They were actually petty thieves who had been mixed up with a nearby bandit camp and decided to rob the party while they had the chance.\n- Mead and Echo were the easiest marks and woke up missing gold and valuables.\n\nTHE BANDIT CAMP\n- The party tracked the thieves' trail directly to a larger camp.\n- There they found Edrin and Lyra captured.\n- Eavesdropping revealed that the bandits wanted information about the Circle of Promise and a supposedly buried weapon.\n- The Belligerent Five chose violence immediately and crushed the camp.\n\nEDRIN, LYRA, AND GREYHAVEN\n- Once freed, Edrin and Lyra explained that they are from Greyhaven.\n- They had been taken because Lyra's research connected her to the Circle of Promise.\n- Lyra explained that the Circle may hide a powerful buried weapon that should never be unearthed.\n- The bandits learned about it simply by overhearing the two talking too loudly on the road.\n- The pair also warned that Greyhaven has changed: organized newcomers are buying property, setting rules, and quietly taking control.\n\nEND STATE\n- Seris is gone toward Lunaryth.\n- Weeping Marsh is the nearest relic lead.\n- Greyhaven is now a live problem.\n- Aylin left with very little credibility earned.\n- The Circle of Promise is no longer rumor alone; multiple groups are already moving on it."
     }
   ],
   "images": [
@@ -456,6 +478,12 @@
       "title": "Ascendaria",
       "act": "General",
       "version": "2"
+    },
+    {
+      "id": "act-2-maps-bandit-camp-png",
+      "path": "Act 2/Maps/BanditCamp.png",
+      "title": "Bandit Camp",
+      "act": "Act 2"
     }
   ],
   "npcs": [
@@ -463,13 +491,13 @@
       "id": "seris",
       "name": "Seris",
       "title": "Half-Elf Cleric • First Relic Bearer",
-      "status": "At a crossroads after Moonfall attunement",
+      "status": "Traveling alone toward Lunaryth",
       "tags": [
         "cleric",
         "ally",
         "relic-bearer"
       ],
-      "summary": "After Mara's death, Seris became sharper and more forceful. She now carries the first relic from Moonfall Grotto and stands at a turning point in the unfolding artifact crisis.",
+      "summary": "After attuning to the Moonfall relic, Seris chose to leave the party and head for Lunaryth alone, hoping to understand the relic and find Elyndor before grief or power makes her dangerous to others.",
       "image": "/npcs/seris.png",
       "dmOnly": true
     },
@@ -498,6 +526,33 @@
       "summary": "Mara briefly stabilized under moon-petal treatment before a deeper corrupted force overwhelmed the cure. Her dying guidance sent the party toward Moonfall Grotto and left Seris a sealed letter.",
       "image": "",
       "dmOnly": false
+    },
+    {
+      "id": "edrin",
+      "name": "Edrin",
+      "title": "Greyhaven Butcher",
+      "status": "Rescued from bandits",
+      "tags": [
+        "ally",
+        "greyhaven"
+      ],
+      "summary": "Greyhaven's butcher, practical and cautious, who got snatched by bandits after he and Lyra talked too loudly on the road about the Circle of Promise.",
+      "image": "/npcs/edrin.png",
+      "dmOnly": false
+    },
+    {
+      "id": "lyra",
+      "name": "Lyra",
+      "title": "Greyhaven Scholar",
+      "status": "Rescued from bandits",
+      "tags": [
+        "ally",
+        "scholar",
+        "greyhaven"
+      ],
+      "summary": "A driven researcher whose notes on the Circle of Promise got her targeted. She believes the site hides a buried weapon that should never be unearthed.",
+      "image": "/npcs/lyra.png",
+      "dmOnly": false
     }
   ],
   "battles": [
@@ -520,6 +575,16 @@
       "summary": "A colossal knight of moonlight that tested the party's worth in Selune's temple, declaring: \"The moon does not yield to the untested.\"",
       "image": "/campaign/Act 1/Maps/Moonfall Grotto Level 1.jpg",
       "dmOnly": true
+    },
+    {
+      "id": "bandit-camp",
+      "name": "Bandit Camp",
+      "cr": "3",
+      "type": "Encounter",
+      "location": "Forest Road to Greyhaven",
+      "summary": "A rough encampment of greedy road bandits who kidnapped Edrin and Lyra after overhearing talk of the Circle of Promise.",
+      "image": "/campaign/Act 2/Maps/BanditCamp.png",
+      "dmOnly": false
     }
   ],
   "locations": [
@@ -543,9 +608,33 @@
       "id": "location-moonfall-grotto",
       "title": "Moonfall Grotto",
       "act": "Act 1",
-      "session": 2,
-      "summary": "A Selune temple where the party fought hostile robed zealots, passed a lunar trial, and witnessed Seris forcibly attune to the first of six linked artifacts.",
-      "content": "OVERVIEW\nAn ancient lunar temple tied to Selune, layered with tests, hostile interest in Seris, and artifact-level magic.\n\nWHAT THE PARTY LEARNED\n- The temple is a Selune site with symbolic warnings about balance being consumed by darkness.\n- External forces are actively hunting Seris.\n- The first relic is linked to five others across the region.\n\nKEY MOMENTS\n- The dark-robed group demanded Seris and was defeated.\n- Mead executed the leader; Prom briefly kept the head, then destroyed it, removing a future Speak with Dead option.\n- A Moonbound Sentinel tested the party and fell.\n- The orb relic forcibly attuned to Seris and revealed the wider relic network.\n- Mara's sealed letter opened afterward, naming Elyndor in Lunaryth.\n\nNOTES TO REMEMBER\n- Moonfall is not just a dungeon clear; it is the campaign's first major cosmic lock-in.\n- The party now has both direction (relic map) and a personal hook (Elyndor)."
+      "session": 3,
+      "summary": "A Selune temple where the party won a lunar trial, claimed the first relic, armed themselves from a side chamber, and then parted ways with Seris.",
+      "content": "OVERVIEW\nAn ancient lunar temple tied to Selune, layered with tests, sacred symbolism, and the first major relic reveal of the campaign.\n\nWHAT THE PARTY LEARNED\n- The temple is a Selune site with symbolic warnings about balance being consumed by darkness.\n- The first relic is linked to five others across the region.\n- Weeping Marsh and Lunaryth are now confirmed future leads.\n\nKEY MOMENTS\n- The dark-robed group demanded Seris and was defeated.\n- Mead executed the leader; Prom briefly kept the head, then destroyed it, removing a future Speak with Dead option.\n- A Moonbound Sentinel tested the party and fell.\n- The orb relic forcibly attuned to Seris and revealed the wider relic network.\n- The party claimed additional weapons from a side chamber before leaving.\n- Seris chose the road to Lunaryth and separated from the group.\n\nNOTES TO REMEMBER\n- Moonfall locked the party into the wider relic arc.\n- Seris is no longer traveling with the group, but her choices now directly shape the road ahead."
+    },
+    {
+      "id": "location-bandit-camp",
+      "title": "Bandit Camp",
+      "act": "Act 2",
+      "session": 3,
+      "summary": "A roadside bandit hideout where the party tracked the women who robbed them, then rescued Edrin and Lyra from greedy captors chasing Circle of Promise rumors.",
+      "content": "OVERVIEW\nA rough camp of opportunists and scavengers operating off overheard treasure stories rather than ideology.\n\nWHAT THE PARTY LEARNED\n- The women from the long-rest honeypot were tied up with the other prisoners by the time the party arrived.\n- The bandits had overheard talk of the Circle of Promise and assumed it meant buried treasure.\n- Edrin and Lyra were abducted because they knew where the Circle might be.\n\nKEY MOMENTS\n- The Belligerent Five tracked the stolen goods directly to the camp.\n- The party ignored subtlety and destroyed the bandits quickly.\n- Edrin and Lyra were freed and immediately started explaining Greyhaven and the Circle.\n\nNOTES TO REMEMBER\n- The bandits were greedy, not masterminds.\n- Their existence proves other groups are already moving on old rumors and relic-adjacent sites."
+    },
+    {
+      "id": "location-greyhaven",
+      "title": "Greyhaven",
+      "act": "Act 2",
+      "session": 3,
+      "summary": "A once-quiet settlement now under pressure from organized newcomers who are buying influence, setting rules, and quietly tightening control.",
+      "content": "OVERVIEW\nGreyhaven is no longer just a quiet fishing-and-farming town. Something organized is moving into it and taking hold without openly declaring war.\n\nWHAT THE PARTY LEARNED\n- New people have been arriving in coordinated groups.\n- They are buying property, setting rules, and pushing locals into fear and silence.\n- People who resist sometimes vanish or suffer convenient accidents.\n\nKEY MOMENTS\n- Edrin and Lyra both urged the party to care about Greyhaven.\n- Lyra framed the Circle of Promise as a possible source of leverage against whoever is taking over the town.\n- The party now has both a rescue success and a civic problem waiting for them.\n\nNOTES TO REMEMBER\n- Greyhaven is a pressure cooker, not yet an open war zone.\n- The town ties directly into the Circle of Promise thread."
+    },
+    {
+      "id": "location-weeping-marsh",
+      "title": "Weeping Marsh",
+      "act": "Act 2",
+      "session": 3,
+      "summary": "The nearest confirmed relic lead: a burial-heavy marshland Seris recognized immediately when the party studied the relic map.",
+      "content": "OVERVIEW\nA marsh of graves, old stories, and the nearest known relic site on the map.\n\nWHAT THE PARTY LEARNED\n- Seris recognized it as the closest lead before leaving for Lunaryth.\n- It is not far out of the way if the party still wants to push generally toward Lunaryth.\n- It carries strong death-and-burial associations before the party has even set foot there.\n\nKEY MOMENTS\n- The relic map turned Weeping Marsh from rumor into a concrete destination.\n- Seris specifically called it out as the one nearby place she actually knew.\n\nNOTES TO REMEMBER\n- This is the clearest immediate relic lead.\n- The party now has to choose between urgency, information, and local obligations."
     }
   ],
   "quests": [
@@ -634,6 +723,65 @@
       ]
     },
     {
+      "id": "quest-heywud-lore",
+      "title": "Heywud: Scholar's Road",
+      "tier": "personal",
+      "status": "active",
+      "summary": "Heywud is headed toward Lunaryth to study deeper lore, follow the relic trail, and learn things the road itself cannot teach him.",
+      "steps": [
+        {
+          "label": "Reach Lunaryth and gain access to real archives or scholars",
+          "done": false
+        },
+        {
+          "label": "Research the relic network and the old lunar sites",
+          "done": false
+        },
+        {
+          "label": "Find knowledge worth more than a battlefield rumor",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "quest-mead-belonging",
+      "title": "Mead: Find Somewhere to Belong",
+      "tier": "personal",
+      "status": "active",
+      "summary": "Banished again and again for the way he fights and heals, Mead is still looking for a place that will take him as he is instead of throwing him back out.",
+      "steps": [
+        {
+          "label": "Find a town, order, or cause willing to tolerate Mead's methods",
+          "done": false
+        },
+        {
+          "label": "Prove he can be useful without being cast out again",
+          "done": false
+        },
+        {
+          "label": "Decide whether belonging means acceptance, purpose, or power",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "quest-kelsier-question-mark",
+      "title": "Kelsier: ???",
+      "tier": "personal",
+      "status": "active",
+      "summary": "Kelsier has not explained much about himself yet, which is either caution, mystery, or a terrible sign.",
+      "steps": [
+        {
+          "label": "Get Kelsier to actually reveal something real",
+          "done": false
+        },
+        {
+          "label": "Figure out what he's hiding, if anything",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "quest-moonfall-relic",
       "title": "Moonfall Grotto Trial",
       "tier": "main",
@@ -663,19 +811,86 @@
       "title": "Track the Six Artifacts",
       "tier": "main",
       "status": "active",
-      "summary": "Follow the Moonfall map and secure the remaining relics before corruption does.",
+      "summary": "Follow the Moonfall map and secure the remaining relics before other groups can move on them.",
       "steps": [
         {
           "label": "Witness the first relic vision at Moonfall",
           "done": true
         },
         {
-          "label": "Identify and route to the next artifact site",
+          "label": "Identify the next relic site",
+          "done": true
+        },
+        {
+          "label": "Travel to Weeping Marsh or another confirmed relic lead",
           "done": false
         },
         {
           "label": "Recover at least one additional relic",
           "done": false
+        }
+      ]
+    },
+    {
+      "id": "quest-greyhaven",
+      "title": "Investigate Greyhaven",
+      "tier": "side",
+      "status": "active",
+      "summary": "Learn who is taking control of Greyhaven and decide whether to stand with its people.",
+      "steps": [
+        {
+          "label": "Rescue Edrin and Lyra",
+          "done": true
+        },
+        {
+          "label": "Reach Greyhaven and assess the takeover",
+          "done": false
+        },
+        {
+          "label": "Decide whether to confront the new power there",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "quest-circle-of-promise",
+      "title": "Circle of Promise",
+      "tier": "side",
+      "status": "active",
+      "summary": "Find the Circle of Promise and determine whether the buried weapon should remain sealed.",
+      "steps": [
+        {
+          "label": "Learn why Edrin and Lyra were abducted",
+          "done": true
+        },
+        {
+          "label": "Confirm what Lyra knows about the Circle",
+          "done": true
+        },
+        {
+          "label": "Reach the Circle of Promise",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "quest-get-our-stuff-back",
+      "title": "Get Our Stuff Back",
+      "tier": "side",
+      "status": "completed",
+      "summary": "Recover the gear and coin the party somehow managed to lose to three obvious camp thieves.",
+      "steps": [
+        {
+          "label": "Invite three sketchy strangers into camp and act shocked when that goes badly",
+          "done": true
+        },
+        {
+          "label": "Wake up lighter on gold, dignity, and basic situational awareness",
+          "done": true
+        },
+        {
+          "label": "Punch through the bandit camp and reclaim the stuff that should never have been stolen in the first place",
+          "done": true
         }
       ]
     }

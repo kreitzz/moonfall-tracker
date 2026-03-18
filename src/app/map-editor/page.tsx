@@ -4,11 +4,13 @@ import MapEditor from "@/components/MapEditor";
 
 export default function MapEditorPage() {
   const campaign = getCampaign();
-  const actOneImages = campaign.images.filter((img) => img.act === "Act 1");
+  const editorImages = campaign.images.filter(
+    (img) => img.act === "Act 1" || img.id === "act-2-maps-bandit-camp-png"
+  );
 
   return (
     <Suspense fallback={<div className="text-sm text-black/70 dark:text-white/70">Loading map editor...</div>}>
-      <MapEditor images={actOneImages} />
+      <MapEditor images={editorImages} />
     </Suspense>
   );
 }

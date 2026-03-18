@@ -107,7 +107,7 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
                     >
                       Open <span aria-hidden>→</span>
                     </a>
-                    {dmMode && img.act === "Act 1" ? (
+                    {dmMode && (img.act === "Act 1" || img.id === "act-2-maps-bandit-camp-png") ? (
                       <a
                         href={`/map-editor?imageId=${encodeURIComponent(img.id)}`}
                         className="inline-flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black"

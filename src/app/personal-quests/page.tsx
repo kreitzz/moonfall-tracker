@@ -5,8 +5,9 @@ import QuestCard from "@/components/QuestCard";
 export default function PersonalQuestsPage() {
   const campaign = getCampaign();
   const personalQuests = (campaign.quests ?? []).filter((q) => q.tier === "personal");
-  const active = personalQuests.filter((q) => q.status !== "complete");
-  const complete = personalQuests.filter((q) => q.status === "complete");
+  const isComplete = (status?: string) => status === "complete" || status === "completed";
+  const active = personalQuests.filter((q) => !isComplete(q.status));
+  const complete = personalQuests.filter((q) => isComplete(q.status));
 
   return (
     <div className="space-y-6">

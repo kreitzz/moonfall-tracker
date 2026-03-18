@@ -5,7 +5,8 @@ function classNames(...xs: Array<string | false | undefined | null>) {
 }
 
 export default function QuestCard({ quest }: { quest: CampaignQuest }) {
-  const statusLabel = quest.status === "complete" ? "Completed" : "Active";
+  const isComplete = quest.status === "complete" || quest.status === "completed";
+  const statusLabel = isComplete ? "Completed" : "Active";
 
   return (
     <div className="rounded-2xl border border-black/10 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-zinc-950">
@@ -20,7 +21,7 @@ export default function QuestCard({ quest }: { quest: CampaignQuest }) {
         <span
           className={classNames(
             "rounded-full px-2.5 py-1 text-xs font-medium",
-            quest.status === "complete"
+            isComplete
               ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
               : "bg-black/5 text-black/70 dark:bg-white/10 dark:text-white/70"
           )}
