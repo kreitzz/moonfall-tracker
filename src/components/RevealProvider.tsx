@@ -14,7 +14,7 @@ type RevealContextValue = {
 const RevealContext = createContext<RevealContextValue | null>(null);
 
 const STORAGE_KEY = "moonfall.publicIds";
-const FORCED_HIDDEN_IDS = new Set<string>(["act-1-maps-moonfall-grotto-level-p1a-jpg"]);
+const FORCED_HIDDEN_IDS = new Set<string>([]);
 
 function safeParseJson<T>(raw: string): T | null {
   try {
