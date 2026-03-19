@@ -1,0 +1,77 @@
+{
+  "basics": {
+    "characterName": "Heywud Ja'blohme",
+    "race": "Goliath",
+    "classLevel": "Wizard",
+    "background": "",
+    "alignment": "",
+    "age": "",
+    "height": "",
+    "weight": "",
+    "eyes": "",
+    "hair": "",
+    "skin": ""
+  },
+  "abilityScores": {
+    "strength": {
+      "score": "",
+      "modifier": ""
+    },
+    "dexterity": {
+      "score": "",
+      "modifier": ""
+    },
+    "constitution": {
+      "score": "",
+      "modifier": ""
+    },
+    "intelligence": {
+      "score": "",
+      "modifier": ""
+    },
+    "wisdom": {
+      "score": "",
+      "modifier": ""
+    },
+    "charisma": {
+      "score": "",
+      "modifier": ""
+    }
+  },
+  "coreStats": {
+    "proficiencyBonus": "",
+    "initiative": "",
+    "speed": "",
+    "armorClass": "",
+    "currentHp": "",
+    "maxHp": "",
+    "hitDice": "",
+    "passivePerception": ""
+  },
+  "savingThrowProficiencies": {
+    "strength": "false",
+    "dexterity": "false",
+    "constitution": "false",
+    "intelligence": "false",
+    "wisdom": "false",
+    "charisma": "false"
+  },
+  "spellSlots": {
+    "level1Current": "0",
+    "level1Max": "0",
+    "level2Current": "0",
+    "level2Max": "0",
+    "level3Current": "0",
+    "level3Max": "0"
+  },
+  "skills": "",
+  "toolProficiencies": "",
+  "weaponProficiencies": "",
+  "armorProficiencies": "",
+  "languages": "Common",
+  "attacks": "",
+  "featuresTraits": "",
+  "equipment": "",
+  "backstory": "Scholar and arcane specialist. Headed toward Lunaryth to learn more, study the relic trail, and reach knowledge the road itself cannot provide.",
+  "notes": "Much of Heywud's detailed sheet is still intentionally unknown or unrevealed."
+}

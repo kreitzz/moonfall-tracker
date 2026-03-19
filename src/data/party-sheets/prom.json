@@ -1,0 +1,77 @@
+{
+  "basics": {
+    "characterName": "Prom",
+    "race": "Half-Orc",
+    "classLevel": "Barbarian (Level 1)",
+    "background": "Gladiator",
+    "alignment": "Chaotic Neutral",
+    "age": "",
+    "height": "",
+    "weight": "",
+    "eyes": "",
+    "hair": "",
+    "skin": ""
+  },
+  "abilityScores": {
+    "strength": {
+      "score": "19",
+      "modifier": "+4"
+    },
+    "dexterity": {
+      "score": "13",
+      "modifier": "+1"
+    },
+    "constitution": {
+      "score": "14",
+      "modifier": "+2"
+    },
+    "intelligence": {
+      "score": "8",
+      "modifier": "-1"
+    },
+    "wisdom": {
+      "score": "12",
+      "modifier": "+1"
+    },
+    "charisma": {
+      "score": "12",
+      "modifier": "+1"
+    }
+  },
+  "coreStats": {
+    "proficiencyBonus": "+2",
+    "initiative": "+1",
+    "speed": "30 ft",
+    "armorClass": "15",
+    "currentHp": "14",
+    "maxHp": "14",
+    "hitDice": "1d12",
+    "passivePerception": "11"
+  },
+  "savingThrowProficiencies": {
+    "strength": "true",
+    "dexterity": "false",
+    "constitution": "true",
+    "intelligence": "false",
+    "wisdom": "false",
+    "charisma": "false"
+  },
+  "spellSlots": {
+    "level1Current": "0",
+    "level1Max": "0",
+    "level2Current": "0",
+    "level2Max": "0",
+    "level3Current": "0",
+    "level3Max": "0"
+  },
+  "skills": "Athletics (+4)\nPerformance (+1)\nAnimal Handling (+3)\nSurvival (+3)",
+  "toolProficiencies": "Disguise Kit\nMusical Instrument",
+  "weaponProficiencies": "Simple weapons\nMartial weapons",
+  "armorProficiencies": "Light armor\nMedium armor\nShields",
+  "languages": "Common\nOrc",
+  "attacks": "Greataxe — +6 to hit — 1d12 + 4 slashing\nHandaxe — +6 to hit — 1d6 + 4 slashing — Range 20/60\nJavelin — +6 to hit — 1d6 + 4 piercing — Range 30/120",
+  "featuresTraits": "Rage (2 per Long Rest)\n- +2 damage to melee attacks (Strength)\n- Resistance to bludgeoning, piercing, slashing\n- Advantage on Strength checks and saving throws\n\nSavage Attacks\n- On a melee critical hit, roll one additional weapon damage die.\n\nRelentless Endurance\n- When reduced to 0 HP but not killed outright: drop to 1 HP instead once per long rest.\n\nDisguise Specialist\n- Hide his lightning scar\n- Pretend to be a mercenary\n- Pose as a dock worker\n- Blend into rough crowds",
+  "equipment": "Scale Mail Armor\nGreataxe\nHandaxes\nJavelins\nExplorer's Pack\n10 Torches\n10 Rations\nWaterskin\n50 ft Rope\nTinderbox\nMess Kit\nBedroll\nDisguise Kit\nHealing Potion (1d8)\nArena Costume\nMusical Instrument\nJBL Speaker",
+  "backstory": "Prom was struck by lightning as a boy and survived. The strike left him scarred physically and spiritually. He believes lightning chose him, and he is headed to Lunaryth to learn why lightning goes boom and how he can do the same.",
+  "notes": ""
+}

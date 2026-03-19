@@ -1,0 +1,77 @@
+{
+  "basics": {
+    "characterName": "Mead",
+    "race": "Hill Dwarf",
+    "classLevel": "Cleric",
+    "background": "",
+    "alignment": "",
+    "age": "",
+    "height": "",
+    "weight": "",
+    "eyes": "",
+    "hair": "",
+    "skin": ""
+  },
+  "abilityScores": {
+    "strength": {
+      "score": "",
+      "modifier": ""
+    },
+    "dexterity": {
+      "score": "",
+      "modifier": ""
+    },
+    "constitution": {
+      "score": "",
+      "modifier": ""
+    },
+    "intelligence": {
+      "score": "",
+      "modifier": ""
+    },
+    "wisdom": {
+      "score": "",
+      "modifier": ""
+    },
+    "charisma": {
+      "score": "",
+      "modifier": ""
+    }
+  },
+  "coreStats": {
+    "proficiencyBonus": "",
+    "initiative": "",
+    "speed": "25 ft",
+    "armorClass": "",
+    "currentHp": "",
+    "maxHp": "",
+    "hitDice": "",
+    "passivePerception": ""
+  },
+  "savingThrowProficiencies": {
+    "strength": "false",
+    "dexterity": "false",
+    "constitution": "false",
+    "intelligence": "false",
+    "wisdom": "false",
+    "charisma": "false"
+  },
+  "spellSlots": {
+    "level1Current": "0",
+    "level1Max": "0",
+    "level2Current": "0",
+    "level2Max": "0",
+    "level3Current": "0",
+    "level3Max": "0"
+  },
+  "skills": "",
+  "toolProficiencies": "",
+  "weaponProficiencies": "",
+  "armorProficiencies": "",
+  "languages": "Common\nDwarvish",
+  "attacks": "",
+  "featuresTraits": "",
+  "equipment": "",
+  "backstory": "Mead is a cleric of Moradin. He was banished for healing his enemies so he could beat them up further. He now travels toward Lunaryth, carrying the weight of that exile and looking for purpose on the road ahead.",
+  "notes": "Still looking for a place to belong after repeated exile."
+}

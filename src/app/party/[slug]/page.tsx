@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getCampaign } from "@/lib/campaign";
 import { parseBlocks, renderBlocks } from "@/lib/textBlocks";
+import EditableCharacterSheet from "@/components/EditableCharacterSheet";
 
 function slugify(name: string) {
   return name
@@ -23,6 +24,8 @@ export default async function PartyMemberPage({
   const campaign = getCampaign();
   const member = campaign.party.find((m) => slugify(m.name) === slug);
   if (!member) return notFound();
+  const editableSheet = (member as typeof member & { editableSheet?: unknown }).editableSheet;
+  const memberItems = (campaign.items ?? []).filter((item) => item.holder === member.name);
 
   return (
     <div className="space-y-6">
@@ -37,12 +40,33 @@ export default async function PartyMemberPage({
       </header>
 
       <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
-        <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+        <div className="space-y-6">
+          <div className="mx-auto w-full max-w-[360px]">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-black/[0.03] dark:bg-white/5">
+              {member.image ? (
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-contain"
+                />
+              ) : null}
+            </div>
+          </div>
+
           <div className="min-w-0">
           <div className="text-sm text-black/60 dark:text-white/60">Role</div>
           <div className="mt-1 text-lg font-semibold tracking-tight">{member.role}</div>
 
-          {member.card ? (
+          {editableSheet ? (
+            <div className="mt-6">
+              <EditableCharacterSheet
+                storageKey={`moonfall.sheet.${slug}`}
+                apiSlug={slug}
+                initialData={editableSheet as Record<string, unknown>}
+              />
+            </div>
+          ) : member.card ? (
             <div className="mt-6">
               <div className="prose max-w-none text-black dark:text-white">
                 {renderBlocks(parseBlocks(member.card))}
@@ -57,6 +81,32 @@ export default async function PartyMemberPage({
             </div>
           )}
 
+          <div className="mt-5">
+            <div className="text-sm text-amber-950/70">Key Items</div>
+            {memberItems.length ? (
+              <div className="mt-2 space-y-3">
+                {memberItems.map((item) => (
+                  <div
+                    key={item.id}
+                    className="rounded-[24px] border border-amber-950/20 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.35),transparent_42%),linear-gradient(180deg,#fbf3df,#f3e4c0)] p-4 text-amber-950 shadow-[0_10px_24px_rgba(80,49,12,0.06)]"
+                  >
+                    <Link href={`/items/${item.id}`} className="text-sm font-semibold tracking-tight hover:underline">
+                      {item.title}
+                    </Link>
+                    <div className="mt-1 text-sm text-amber-950/80">{item.summary}</div>
+                    <div className="mt-2 text-xs text-amber-950/60">
+                      {item.category} · {item.status}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="mt-3 rounded-[24px] border border-amber-950/20 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.35),transparent_42%),linear-gradient(180deg,#fbf3df,#f3e4c0)] p-4 text-sm text-amber-950/75 shadow-[0_10px_24px_rgba(80,49,12,0.06)]">
+                No key items assigned to {member.name} yet.
+              </div>
+            )}
+          </div>
+
           <div className="mt-6 flex flex-wrap gap-2">
             <Link
               href="/"
@@ -64,26 +114,7 @@ export default async function PartyMemberPage({
             >
               ← Back home
             </Link>
-            <Link
-              href="/sessions"
-              className="rounded-lg bg-black px-3 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black"
-            >
-              View sessions →
-            </Link>
           </div>
-          </div>
-
-          <div className="w-full md:w-[360px]">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-black/[0.03] dark:bg-white/5">
-              {member.image ? (
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-contain"
-                />
-              ) : null}
-            </div>
           </div>
         </div>
       </div>

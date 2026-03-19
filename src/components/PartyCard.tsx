@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { PartyMember } from "@/lib/campaign";
+import { getCampaign, PartyMember } from "@/lib/campaign";
 
 function slugify(name: string) {
   return (name || "unknown")
@@ -12,6 +12,8 @@ function slugify(name: string) {
 export default function PartyCard({ member }: { member: PartyMember }) {
   if (!member?.name) return null;
   const slug = slugify(member.name);
+  const campaign = getCampaign();
+  const keyItems = (campaign.items ?? []).filter((item) => item.holder === member.name);
 
   return (
     <Link
@@ -38,6 +40,10 @@ export default function PartyCard({ member }: { member: PartyMember }) {
         </span>
       </div>
       <div className="mt-3 text-sm text-black/70 dark:text-white/70">{member.role}</div>
+      <div className="mt-2 text-sm text-black/70 dark:text-white/70">
+        <span className="font-medium">Key Items:</span>{" "}
+        {keyItems.length ? keyItems.slice(0, 3).map((item) => item.title).join(", ") : "None assigned"}
+      </div>
       <div className="mt-3 text-xs text-black/50 dark:text-white/50">Click for details →</div>
     </Link>
   );

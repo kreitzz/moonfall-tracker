@@ -3,6 +3,7 @@ import Image from "next/image";
 import PartyCard from "@/components/PartyCard";
 import NpcCard from "@/components/NpcCard";
 import BattleCard from "@/components/BattleCard";
+import ItemCard from "@/components/ItemCard";
 import { getCampaign } from "@/lib/campaign";
 import HomeDmHint from "@/components/HomeDmHint";
 
@@ -72,6 +73,11 @@ export default function Home() {
                 <div className="mt-1 text-sm text-black/70 dark:text-white/70">Logged so far</div>
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
+                <div className="text-sm text-black/60 dark:text-white/60">Key Items</div>
+                <div className="mt-1 text-2xl font-semibold">{campaign.items?.length ?? 0}</div>
+                <div className="mt-1 text-sm text-black/70 dark:text-white/70">Worth tracking</div>
+              </div>
+              <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
                 <div className="text-sm text-black/60 dark:text-white/60">Party level</div>
                 <div className="mt-1 text-2xl font-semibold">3</div>
                 <div className="mt-1 text-sm text-black/70 dark:text-white/70">Current average</div>
@@ -128,6 +134,20 @@ export default function Home() {
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {(campaign.npcs ?? []).map((n) => (
             <NpcCard key={n.id} npc={n} />
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="text-xl font-semibold tracking-tight">Key Items</h2>
+          <Link href="/items" className="text-sm text-black/70 hover:underline dark:text-white/70">
+            See all key items →
+          </Link>
+        </div>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {(campaign.items ?? []).slice(0, 3).map((item) => (
+            <ItemCard key={item.id} item={item} />
           ))}
         </div>
       </section>

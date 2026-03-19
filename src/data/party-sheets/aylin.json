@@ -1,0 +1,77 @@
+{
+  "basics": {
+    "characterName": "Aylin",
+    "race": "High Elf",
+    "classLevel": "Rogue (Level 2)",
+    "background": "Charlatan",
+    "alignment": "Neutral",
+    "age": "",
+    "height": "",
+    "weight": "",
+    "eyes": "",
+    "hair": "",
+    "skin": ""
+  },
+  "abilityScores": {
+    "strength": {
+      "score": "8",
+      "modifier": "-1"
+    },
+    "dexterity": {
+      "score": "17",
+      "modifier": "+3"
+    },
+    "constitution": {
+      "score": "12",
+      "modifier": "+1"
+    },
+    "intelligence": {
+      "score": "15",
+      "modifier": "+2"
+    },
+    "wisdom": {
+      "score": "10",
+      "modifier": "+0"
+    },
+    "charisma": {
+      "score": "13",
+      "modifier": "+1"
+    }
+  },
+  "coreStats": {
+    "proficiencyBonus": "+2",
+    "initiative": "+3",
+    "speed": "30 ft",
+    "armorClass": "14",
+    "currentHp": "15",
+    "maxHp": "15",
+    "hitDice": "2d8",
+    "passivePerception": ""
+  },
+  "savingThrowProficiencies": {
+    "strength": "false",
+    "dexterity": "true",
+    "constitution": "false",
+    "intelligence": "true",
+    "wisdom": "false",
+    "charisma": "false"
+  },
+  "spellSlots": {
+    "level1Current": "0",
+    "level1Max": "0",
+    "level2Current": "0",
+    "level2Max": "0",
+    "level3Current": "0",
+    "level3Max": "0"
+  },
+  "skills": "Stealth (+7)\nSleight of Hand (+5)\nDeception (+5)\nInvestigation (+4)\nInsight (+2)",
+  "toolProficiencies": "Thieves' tools\nDisguise kit\nForgery kit",
+  "weaponProficiencies": "Simple weapons\nHand crossbows\nLongswords\nRapiers\nShortswords\nShortbow",
+  "armorProficiencies": "Light armor",
+  "languages": "Common\nElvish\nUndercommon",
+  "attacks": "Rapier — +5 to hit — 1d8 + 3 piercing\nDagger — +5 to hit — 1d4 + 3 piercing\nShortbow — +5 to hit — 1d6 + 3 piercing",
+  "featuresTraits": "Sneak Attack (1d6)\n- Extra damage once per turn when she has advantage or an ally is adjacent to the target.\n\nCunning Action\n- Dash, Disengage, or Hide as a bonus action.\n\nExpertise\n- Stealth\n- Deception\n\nFey Ancestry\n- Advantage vs charm, magic cannot put you to sleep\n\nTrance\n- 4 hours meditation = 8 hours sleep\n\nCantrip\n- Message (Spell Save DC 12, Spell Attack +4)",
+  "equipment": "Rapier\nShortbow + 20 arrows\n2 daggers\nLeather armor\nThieves' tools\nBurglar's pack\nDisguise kit\nForgery kit\nFine clothes for noble persona\nSignet ring (family crest)\nAssassin Guild Coin",
+  "backstory": "True Identity: Heir to a fallen fae kingdom destroyed by an enemy king. Public Identity: A traveling noble / charlatan. Raised and trained by an elite assassin guild after the fall of her kingdom. She travels toward Lunaryth to fulfill an assassination contract and search for survivors and secrets to restore magic and reclaim her throne.",
+  "notes": "Her first appearance went badly: Heywud's crab familiar rattled her, the party bullied her, and she has a lot to prove if she returns."
+}

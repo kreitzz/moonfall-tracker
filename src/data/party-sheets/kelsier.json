@@ -1,0 +1,77 @@
+{
+  "basics": {
+    "characterName": "Kelsier",
+    "race": "Tiefling",
+    "classLevel": "Monk",
+    "background": "",
+    "alignment": "",
+    "age": "",
+    "height": "",
+    "weight": "",
+    "eyes": "",
+    "hair": "",
+    "skin": ""
+  },
+  "abilityScores": {
+    "strength": {
+      "score": "",
+      "modifier": ""
+    },
+    "dexterity": {
+      "score": "",
+      "modifier": ""
+    },
+    "constitution": {
+      "score": "",
+      "modifier": ""
+    },
+    "intelligence": {
+      "score": "",
+      "modifier": ""
+    },
+    "wisdom": {
+      "score": "",
+      "modifier": ""
+    },
+    "charisma": {
+      "score": "",
+      "modifier": ""
+    }
+  },
+  "coreStats": {
+    "proficiencyBonus": "",
+    "initiative": "",
+    "speed": "",
+    "armorClass": "",
+    "currentHp": "",
+    "maxHp": "",
+    "hitDice": "",
+    "passivePerception": ""
+  },
+  "savingThrowProficiencies": {
+    "strength": "false",
+    "dexterity": "false",
+    "constitution": "false",
+    "intelligence": "false",
+    "wisdom": "false",
+    "charisma": "false"
+  },
+  "spellSlots": {
+    "level1Current": "0",
+    "level1Max": "0",
+    "level2Current": "0",
+    "level2Max": "0",
+    "level3Current": "0",
+    "level3Max": "0"
+  },
+  "skills": "",
+  "toolProficiencies": "",
+  "weaponProficiencies": "",
+  "armorProficiencies": "",
+  "languages": "Common",
+  "attacks": "",
+  "featuresTraits": "",
+  "equipment": "",
+  "backstory": "Kelsier has not revealed much about himself yet.",
+  "notes": "Intentionally vague until more is revealed in play."
+}

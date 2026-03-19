@@ -1,0 +1,69 @@
+{
+  "basics": {
+    "characterName": "Echo",
+    "race": "Half-Elf",
+    "classLevel": "Bard (Level 1)",
+    "background": "Charlatan",
+    "alignment": "Chaotic Good",
+    "age": "28",
+    "height": "5'8\"",
+    "weight": "150 lbs",
+    "eyes": "Blue",
+    "hair": "Brown",
+    "skin": ""
+  },
+  "abilityScores": {
+    "strength": {
+      "score": "10",
+      "modifier": "+0"
+    },
+    "dexterity": {
+      "score": "15",
+      "modifier": "+2"
+    },
+    "constitution": {
+      "score": "14",
+      "modifier": "+2"
+    },
+    "intelligence": {
+      "score": "13",
+      "modifier": "+1"
+    },
+    "wisdom": {
+      "score": "13",
+      "modifier": "+1"
+    },
+    "charisma": {
+      "score": "18",
+      "modifier": "+4"
+    }
+  },
+  "coreStats": {
+    "proficiencyBonus": "+2",
+    "initiative": "+2",
+    "speed": "30 ft",
+    "armorClass": "13",
+    "hp": "10",
+    "hitDice": "1d8",
+    "passivePerception": "15"
+  },
+  "savingThrows": "Dexterity\nCharisma",
+  "spellSlots": {
+    "level1Current": "2",
+    "level1Max": "2",
+    "level2Current": "0",
+    "level2Max": "0",
+    "level3Current": "0",
+    "level3Max": "0"
+  },
+  "skills": "Deception (+6)\nPerformance (+6)\nSleight of Hand (+4)\nInsight (+3)\nAthletics (+2)\nPerception (+3)",
+  "toolProficiencies": "Disguise Kit\nForgery Kit",
+  "weaponProficiencies": "Simple weapons\nHand crossbows\nLongswords\nRapiers\nShortswords",
+  "armorProficiencies": "Light armor",
+  "languages": "Common\nElvish\nGnomish",
+  "attacks": "Longsword — +4 to hit — 1d8 slashing (1d10 two-handed)\nDagger — +4 to hit — 1d4 piercing",
+  "featuresTraits": "Darkvision\n- See in dim light within 60 ft as if bright light.\n\nFey Ancestry\n- Advantage on saving throws against being charmed.\n- Magic cannot put you to sleep.\n\nBardic Inspiration (4 uses)\n- Bonus Action: Give a creature within 60 ft a d6.\n- Add it to one ability check, attack roll, or saving throw within 10 minutes.\n- Uses = Charisma modifier (4 per long rest).\n\nFalse Identity (Charlatan Feature)\n- You have created a second identity complete with documentation, acquaintances, and disguises.\n- You can forge documents if you’ve seen an example.\n- You can mimic handwriting and documentation styles.\n\nCon of Choice\n- Put on new identities like clothes.",
+  "equipment": "Guitar\nFlute\nLeather Armor\nFine Clothes\nDisguise Kit\nForgery Items\nForged Documents (for false identity)\nDiplomat's Pack\nAdmiral Moomoo's Bell",
+  "backstory": "Echo grew up in a small but well-traveled village, learning guitar by imitation and instinct. He became the region's finest performer, earning coin and reputation in taverns.\n\nOne night, an elf played an ancient melody unlike anything Echo had heard. The song overwhelmed him and he experienced a vision:\n- A silver forest untouched by time\n- An unnamed elven goddess bathed in moonlight\n- A single command: You must seek Lunaryth.\n\nMonths later, a second vision came, harsher. No goddess. Only fire. Screams. A burning city he believes was Lunaryth.\n\nNow he travels not for fame, but to warn a city of destruction, guided by music that seems to listen, but refuses to answer.",
+  "notes": ""
+}
