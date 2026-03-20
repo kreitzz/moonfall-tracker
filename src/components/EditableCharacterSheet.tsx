@@ -25,6 +25,12 @@ type EditableCharacterSheetData = {
   equipment?: string;
   backstory?: string;
   notes?: string;
+  spells?: Array<{
+    name?: string;
+    level?: string;
+    concentration?: string;
+    details?: string;
+  }>;
   familiar?: {
     enabled?: string;
     name?: string;
@@ -91,6 +97,13 @@ const ALL_SKILLS: Array<{ name: string; ability: string }> = [
   { name: "Stealth", ability: "dexterity" },
   { name: "Survival", ability: "wisdom" },
 ];
+
+const SPELL_LEVELS = [
+  { key: "0", label: "Level 0 (Cantrips)" },
+  { key: "1", label: "Level 1" },
+  { key: "2", label: "Level 2" },
+  { key: "3", label: "Level 3" },
+] as const;
 
 const FIELD_LABELS: Record<string, string> = {
   "basics.characterName": "Character Name",
@@ -389,6 +402,7 @@ export default function EditableCharacterSheet({
   const [isHydrating, setIsHydrating] = useState(true);
   const [undoEquipment, setUndoEquipment] = useState<{ item: string; index: number } | null>(null);
   const [saveMessage, setSaveMessage] = useState<string>("Saved copy will sync here.");
+  const [expandedSpells, setExpandedSpells] = useState<Record<string, boolean>>({});
   const lastSavedRef = useRef<EditableCharacterSheetData>(defaults);
   const lastSavedLogRef = useRef<ChangeLogEntry[]>([]);
 
@@ -599,6 +613,7 @@ export default function EditableCharacterSheet({
     () => keyItems.some((item) => /moomoo|moo moo/i.test(item.title)),
     [keyItems]
   );
+  const spells = sheet.spells ?? [];
   const familiarEnabled = sheet.familiar?.enabled === "true" || hasMooMooBond;
   const familiarData = {
     name: sheet.familiar?.name ?? (hasMooMooBond ? "Admiral MooMoo" : ""),
@@ -701,6 +716,47 @@ export default function EditableCharacterSheet({
       },
     }));
     pushLog(`Spell slots: ${key} updated.`);
+  }
+
+  function updateSpells(nextSpells: NonNullable<EditableCharacterSheetData["spells"]>, description = "Spellbook updated.") {
+    setSheet((prev) => ({ ...prev, spells: nextSpells }));
+    pushLog(description);
+  }
+
+  function updateSpell(index: number, field: "name" | "level" | "concentration" | "details", value: string) {
+    const nextSpells = [...spells];
+    nextSpells[index] = {
+      ...(nextSpells[index] ?? {}),
+      [field]: value,
+    };
+    updateSpells(nextSpells, `Spellbook: updated ${nextSpells[index]?.name || "spell"}.`);
+  }
+
+  function addSpell(level: string) {
+    updateSpells(
+      [
+        ...spells,
+        {
+          name: "New Spell",
+          level,
+          concentration: "false",
+          details: "",
+        },
+      ],
+      `Spellbook: added level ${level === "0" ? "0 cantrip" : level} spell.`
+    );
+  }
+
+  function removeSpell(index: number) {
+    const removed = spells[index]?.name || "spell";
+    updateSpells(
+      spells.filter((_, spellIndex) => spellIndex !== index),
+      `Spellbook: removed ${removed}.`
+    );
+  }
+
+  function toggleSpellExpanded(id: string) {
+    setExpandedSpells((prev) => ({ ...prev, [id]: !prev[id] }));
   }
 
   function updateFamiliar(key: keyof NonNullable<EditableCharacterSheetData["familiar"]>, value: string) {
@@ -1232,7 +1288,7 @@ export default function EditableCharacterSheet({
       ) : null}
 
       {activeTab === "magic" ? (
-        <div className="grid gap-6 xl:grid-cols-[0.8fr_1.2fr]">
+        <div className="grid gap-6 xl:grid-cols-[0.85fr_1.15fr]">
           <section className={sectionClass}>
             <SectionTitle title="Spellbook" subtitle="Core spellcasting numbers first, slots immediately below." />
             <div className="mb-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
@@ -1280,31 +1336,85 @@ export default function EditableCharacterSheet({
           </section>
 
           <section className={sectionClass}>
-            <SectionTitle title="Spell Notes" subtitle="Until you add structured spell entries, keep the live spellbook notes here." />
+            <SectionTitle title="Prepared Spells" subtitle="Grouped by level, with quick scanning first and full detail only when needed." />
             <div className="space-y-4">
-              <div className="grid gap-3 sm:grid-cols-3">
-                <div className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] px-4 py-3">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Level 0</div>
-                  <div className="mt-1 text-sm text-amber-950/72">Cantrips and at-will options</div>
-                </div>
-                <div className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] px-4 py-3">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Level 1</div>
-                  <div className="mt-1 text-sm text-amber-950/72">Core combat and support spells</div>
-                </div>
-                <div className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] px-4 py-3">
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Level 2</div>
-                  <div className="mt-1 text-sm text-amber-950/72">Higher-impact options and utility</div>
-                </div>
-              </div>
-              <TextBlock label="Spellbook Notes" value={sheet.notes ?? ""} onChange={(v) => updateText("notes", v)} rows={10} />
-              <div className="rounded-2xl border border-amber-950/15 bg-[#fff9ea] px-4 py-4 text-sm leading-7 text-amber-950/75">
-                <div className="font-semibold text-amber-950">Useful reminders</div>
-                <ul className="mt-2 list-disc space-y-1 pl-5">
-                  <li>Saving throws are inferred from the ability score and the save proficiency toggle.</li>
-                  <li>Skill reference values use explicit bonuses first, then fall back to the governing ability modifier.</li>
-                  <li>Spell slots are shared across devices once the website save succeeds.</li>
-                </ul>
-              </div>
+              {SPELL_LEVELS.map(({ key, label }) => {
+                const levelSpells = spells
+                  .map((spell, index) => ({ spell, index }))
+                  .filter(({ spell }) => (spell.level ?? "1") === key);
+                return (
+                  <div key={`spell-level-${key}`} className={panelClass}>
+                    <div className="mb-3 flex items-center justify-between gap-3">
+                      <div>
+                        <div className="font-serif text-lg font-semibold">{label}</div>
+                        <div className="text-sm text-amber-950/65">
+                          {key === "0" ? "At-will cantrips and tricks." : `Prepared level ${key} options.`}
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => addSpell(key)}
+                        className="rounded-lg border border-amber-950/15 bg-[#fffdf6] px-3 py-2 text-sm text-amber-950 hover:bg-white"
+                      >
+                        Add spell
+                      </button>
+                    </div>
+
+                    {levelSpells.length ? (
+                      <div className="space-y-2">
+                        {levelSpells.map(({ spell, index }) => {
+                          const spellId = `${key}-${index}`;
+                          const expanded = expandedSpells[spellId];
+                          return (
+                            <div key={spellId} className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] px-4 py-3">
+                              <div className="grid gap-3 lg:grid-cols-[1.9fr_0.75fr_auto_auto] lg:items-end">
+                                <Field label="Name" value={spell.name ?? ""} onChange={(value) => updateSpell(index, "name", value)} />
+                                <label className="space-y-1">
+                                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/60">Conc.</div>
+                                  <button
+                                    type="button"
+                                    onClick={() => updateSpell(index, "concentration", String(spell.concentration !== "true"))}
+                                    className={`w-full rounded-xl border px-3 py-2 text-sm font-semibold transition ${
+                                      spell.concentration === "true"
+                                        ? "border-amber-800/25 bg-amber-700/15 text-amber-950"
+                                        : "border-amber-950/15 bg-[#fffdf6] text-amber-950/65 hover:bg-white"
+                                    }`}
+                                  >
+                                    {spell.concentration === "true" ? "Yes" : "No"}
+                                  </button>
+                                </label>
+                                <button
+                                  type="button"
+                                  onClick={() => toggleSpellExpanded(spellId)}
+                                  className="rounded-lg border border-amber-950/10 px-3 py-2 text-sm text-amber-950/70 hover:bg-white hover:text-amber-950"
+                                >
+                                  {expanded ? "Collapse" : "Expand"}
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => removeSpell(index)}
+                                  className="rounded-lg border border-amber-950/10 px-3 py-2 text-sm text-amber-950/70 hover:bg-white hover:text-amber-950"
+                                >
+                                  Remove
+                                </button>
+                              </div>
+                              {expanded ? (
+                                <div className="mt-3">
+                                  <TextBlock label="Full Description" value={spell.details ?? ""} onChange={(value) => updateSpell(index, "details", value)} rows={5} />
+                                </div>
+                              ) : null}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className="rounded-2xl border border-dashed border-amber-950/18 bg-[#fffdf6] px-4 py-5 text-sm text-amber-950/65">
+                        No spells listed for {label.toLowerCase()} yet.
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </section>
         </div>

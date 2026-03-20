@@ -270,6 +270,56 @@
           "level3Current": "0",
           "level3Max": "0"
         },
+        "spells": [
+          {
+            "name": "Mage Hand",
+            "level": "0",
+            "concentration": "false",
+            "details": "A spectral floating hand appears and can manipulate objects, open unlocked doors, stow or retrieve items, and interact with simple objects at range."
+          },
+          {
+            "name": "Vicious Mockery",
+            "level": "0",
+            "concentration": "false",
+            "details": "Target makes a Wisdom save or takes psychic damage and has disadvantage on its next attack roll before the end of its next turn."
+          },
+          {
+            "name": "Cure Wounds",
+            "level": "1",
+            "concentration": "false",
+            "details": "A creature you touch regains hit points equal to 1d8 + your spellcasting modifier. Higher-level slots add another 1d8 per slot level."
+          },
+          {
+            "name": "Thunderwave",
+            "level": "1",
+            "concentration": "false",
+            "details": "Each creature in a 15-foot cube originating from you makes a Constitution save, taking thunder damage on a failure and being pushed 10 feet."
+          },
+          {
+            "name": "Bane",
+            "level": "1",
+            "concentration": "true",
+            "details": "Up to three creatures make a Charisma save. On a failure, they subtract 1d4 from attack rolls and saving throws while you maintain concentration."
+          },
+          {
+            "name": "Tasha's Hideous Laughter",
+            "level": "1",
+            "concentration": "true",
+            "details": "A creature that fails its Wisdom save falls prone and becomes incapacitated with laughter until it repeats the save at the end of its turns."
+          },
+          {
+            "name": "Cloud of Daggers",
+            "level": "2",
+            "concentration": "true",
+            "details": "Fills a 5-foot cube with spinning blades. Creatures take slashing damage when they enter the area or start their turn there."
+          },
+          {
+            "name": "Heat Metal",
+            "level": "2",
+            "concentration": "true",
+            "details": "A manufactured metal object glows red-hot. A creature in contact with it takes fire damage and may be forced to drop it. You can repeat the damage on later turns."
+          }
+        ],
         "skills": "Deception (+6)\nPerformance (+6)\nSleight of Hand (+4)\nInsight (+3)\nAthletics (+2)\nPerception (+3)",
         "toolProficiencies": "Disguise Kit\nForgery Kit",
         "weaponProficiencies": "Simple weapons\nHand crossbows\nLongswords\nRapiers\nShortswords",
