@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Moonfall Tracker
 
-## Getting Started
+Campaign tracker built on Next.js.
 
-First, run the development server:
+## Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Character sheet persistence
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Character sheets save through the API route at:
 
-## Learn More
+- `GET /api/party-sheets/[slug]`
+- `PUT /api/party-sheets/[slug]`
 
-To learn more about Next.js, take a look at the following resources:
+Persistence order:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Supabase, if configured
+2. local file fallback for local/self-hosted dev
+3. browser localStorage fallback in the sheet UI if saving fails
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy-safe persistence setup
 
-## Deploy on Vercel
+For real deployed persistence, use Supabase.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 1. Create the table
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Run the SQL in:
+
+- [supabase-party-sheets.sql](./supabase-party-sheets.sql)
+
+### 2. Set environment variables
+
+Add these to your deployment:
+
+```bash
+SUPABASE_URL=...
+SUPABASE_SERVICE_ROLE_KEY=...
+SUPABASE_PARTY_SHEETS_TABLE=party_sheets
+```
+
+Notes:
+
+- `SUPABASE_PARTY_SHEETS_TABLE` is optional; defaults to `party_sheets`
+- the app uses the service role only on the server API route
+- do not expose the service role key to the client
+
+### 3. Behavior
+
+When configured:
+
+- character pages load the saved website copy first
+- edits autosave back to Supabase
+- refreshes keep the saved sheet state on deployment
+
+When not configured:
+
+- local development falls back to file storage under `src/data/party-sheets`
+- browser localStorage still acts as a last-resort client fallback
+
+## Important limitation
+
+If you deploy without Supabase and rely on filesystem writes only, most serverless hosts will not persist those writes across requests or redeploys.

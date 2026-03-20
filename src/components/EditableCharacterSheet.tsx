@@ -157,6 +157,7 @@ export default function EditableCharacterSheet({
   const defaults = useMemo(() => deepClone(initialData as EditableCharacterSheetData), [initialData]);
   const [sheet, setSheet] = useState<EditableCharacterSheetData>(defaults);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [isHydrating, setIsHydrating] = useState(true);
   const lastSavedRef = useRef<EditableCharacterSheetData>(defaults);
 
   useEffect(() => {
@@ -175,6 +176,8 @@ export default function EditableCharacterSheet({
           } catch {
             // ignore
           }
+          setHasLoaded(true);
+          setIsHydrating(false);
           return;
         }
       } catch {
@@ -186,6 +189,7 @@ export default function EditableCharacterSheet({
         if (!cancelled && raw) {
           const next = { ...defaults, ...JSON.parse(raw) };
           setSheet(next);
+          setIsHydrating(false);
           return;
         }
       } catch {
@@ -196,6 +200,9 @@ export default function EditableCharacterSheet({
 
       if (!cancelled) {
         setSheet(defaults);
+        lastSavedRef.current = deepClone(defaults);
+        setHasLoaded(true);
+        setIsHydrating(false);
       }
     }
 
@@ -358,6 +365,14 @@ export default function EditableCharacterSheet({
       10
     ) || 0;
     return `${mod >= 0 ? "+" : ""}${mod}`;
+  }
+
+  if (isHydrating) {
+    return (
+      <section className="rounded-[28px] border border-amber-950/15 bg-[#f2e6c9] p-6 text-center text-sm text-amber-950/70 shadow-[0_20px_60px_rgba(74,44,19,0.08)]">
+        Loading character sheet...
+      </section>
+    );
   }
 
   return (
