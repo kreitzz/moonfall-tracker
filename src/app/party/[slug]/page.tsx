@@ -64,6 +64,7 @@ export default async function PartyMemberPage({
                 storageKey={`moonfall.sheet.${slug}`}
                 apiSlug={slug}
                 initialData={editableSheet as Record<string, unknown>}
+                keyItems={memberItems}
               />
             </div>
           ) : member.card ? (
@@ -80,32 +81,6 @@ export default async function PartyMemberPage({
               </p>
             </div>
           )}
-
-          <div className="mt-5">
-            <div className="text-sm text-amber-950/70">Key Items</div>
-            {memberItems.length ? (
-              <div className="mt-2 space-y-3">
-                {memberItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className="rounded-[24px] border border-amber-950/20 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.35),transparent_42%),linear-gradient(180deg,#fbf3df,#f3e4c0)] p-4 text-amber-950 shadow-[0_10px_24px_rgba(80,49,12,0.06)]"
-                  >
-                    <Link href={`/items/${item.id}`} className="text-sm font-semibold tracking-tight hover:underline">
-                      {item.title}
-                    </Link>
-                    <div className="mt-1 text-sm text-amber-950/80">{item.summary}</div>
-                    <div className="mt-2 text-xs text-amber-950/60">
-                      {item.category} · {item.status}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="mt-3 rounded-[24px] border border-amber-950/20 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.35),transparent_42%),linear-gradient(180deg,#fbf3df,#f3e4c0)] p-4 text-sm text-amber-950/75 shadow-[0_10px_24px_rgba(80,49,12,0.06)]">
-                No key items assigned to {member.name} yet.
-              </div>
-            )}
-          </div>
 
           <div className="mt-6 flex flex-wrap gap-2">
             <Link

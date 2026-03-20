@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
+import type { CampaignItem } from "@/lib/campaign";
 
 type AbilityField = {
   score?: string;
@@ -23,6 +25,17 @@ type EditableCharacterSheetData = {
   equipment?: string;
   backstory?: string;
   notes?: string;
+  familiar?: {
+    enabled?: string;
+    name?: string;
+    type?: string;
+    armorClass?: string;
+    hp?: string;
+    speed?: string;
+    abilities?: string;
+    specialTrait?: string;
+    notes?: string;
+  };
 };
 
 type ChangeLogEntry = {
@@ -36,7 +49,7 @@ type PersistedPayload = {
   changelog: ChangeLogEntry[];
 };
 
-const TABS = ["overview", "stats", "combat", "magic", "story", "log"] as const;
+const TABS = ["overview", "stats", "combat", "magic", "familiar", "story", "log"] as const;
 type TabKey = (typeof TABS)[number];
 
 const TAB_LABELS: Record<TabKey, string> = {
@@ -44,6 +57,7 @@ const TAB_LABELS: Record<TabKey, string> = {
   stats: "Stats",
   combat: "Combat",
   magic: "Magic",
+  familiar: "Familiar",
   story: "Story",
   log: "Log",
 };
@@ -290,9 +304,68 @@ function Toggle({
 
 function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
-    <div className="mb-4 border-b border-amber-950/15 pb-2">
+    <div className="mb-3 border-b border-amber-950/15 pb-2">
       <div className="font-serif text-xl font-semibold tracking-[0.06em] text-amber-950">{title}</div>
       {subtitle ? <div className="mt-1 text-sm text-amber-950/65">{subtitle}</div> : null}
+    </div>
+  );
+}
+
+function SnapshotCard({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] px-3 py-3 text-center">
+      <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">{label}</div>
+      <div className="mt-1 font-serif text-xl font-semibold text-amber-950">{value || "—"}</div>
+    </div>
+  );
+}
+
+function SnapshotHpEditor({
+  current,
+  max,
+  onCurrentChange,
+  onMaxChange,
+}: {
+  current: string;
+  max: string;
+  onCurrentChange: (value: string) => void;
+  onMaxChange: (value: string) => void;
+}) {
+  const currentValue = parseCount(current);
+
+  return (
+    <div className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] px-3 py-3">
+      <div className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">HP</div>
+      <div className="mt-2 grid grid-cols-[1fr_auto_1fr] items-center gap-x-2 gap-y-1">
+        <input
+          value={current}
+          onChange={(e) => onCurrentChange(e.target.value)}
+          className="min-w-0 bg-transparent text-center font-serif text-lg font-semibold text-amber-950 outline-none"
+        />
+        <span className="text-center text-amber-950/55">/</span>
+        <input
+          value={max}
+          onChange={(e) => onMaxChange(e.target.value)}
+          className="min-w-0 bg-transparent text-center font-serif text-lg font-semibold text-amber-950 outline-none"
+        />
+        <button
+          type="button"
+          onClick={() => onCurrentChange(String(Math.max(0, currentValue - 1)))}
+          className="flex h-7 w-full items-center justify-center rounded-lg border border-amber-950/15 bg-[#f7ecd4] text-sm font-semibold text-amber-950 hover:bg-white"
+        >
+          -
+        </button>
+        <div className="text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-amber-950/45">
+          Adjust
+        </div>
+        <button
+          type="button"
+          onClick={() => onCurrentChange(String(currentValue + 1))}
+          className="flex h-7 w-full items-center justify-center rounded-lg border border-amber-950/15 bg-[#f7ecd4] text-sm font-semibold text-amber-950 hover:bg-white"
+        >
+          +
+        </button>
+      </div>
     </div>
   );
 }
@@ -301,10 +374,12 @@ export default function EditableCharacterSheet({
   storageKey,
   apiSlug,
   initialData,
+  keyItems = [],
 }: {
   storageKey: string;
   apiSlug: string;
   initialData: EditableCharacterSheetData | Record<string, unknown>;
+  keyItems?: CampaignItem[];
 }) {
   const defaults = useMemo(() => deepClone(initialData as EditableCharacterSheetData), [initialData]);
   const [sheet, setSheet] = useState<EditableCharacterSheetData>(defaults);
@@ -428,9 +503,28 @@ export default function EditableCharacterSheet({
   }, [apiSlug, changelog, hasLoaded, sheet]);
 
   const sectionClass =
-    "rounded-[28px] border border-amber-950/20 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.45),transparent_42%),linear-gradient(180deg,#fbf3df,#f3e4c0)] p-5 shadow-[0_12px_30px_rgba(80,49,12,0.08)] text-amber-950";
-  const panelClass = "rounded-[24px] border border-amber-950/20 bg-[rgba(255,251,241,0.88)] p-4";
+    "rounded-[28px] border border-amber-950/20 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.45),transparent_42%),linear-gradient(180deg,#fbf3df,#f3e4c0)] p-4 shadow-[0_12px_30px_rgba(80,49,12,0.08)] text-amber-950";
+  const panelClass = "rounded-[22px] border border-amber-950/20 bg-[rgba(255,251,241,0.88)] p-3.5";
   const proficiencyBonus = Number.parseInt((sheet.coreStats?.proficiencyBonus ?? "0").replace("+", ""), 10) || 0;
+  const classLevelText = (sheet.basics?.classLevel ?? "").toLowerCase();
+  const primaryAbility =
+    classLevelText.includes("bard") ||
+    classLevelText.includes("paladin") ||
+    classLevelText.includes("sorcerer") ||
+    classLevelText.includes("warlock")
+      ? "charisma"
+      : classLevelText.includes("cleric") ||
+          classLevelText.includes("druid") ||
+          classLevelText.includes("ranger") ||
+          classLevelText.includes("monk")
+        ? "wisdom"
+        : classLevelText.includes("wizard") || classLevelText.includes("artificer")
+          ? "intelligence"
+          : null;
+  const spellModifier =
+    primaryAbility ? Number.parseInt(formatModifier(sheet.abilityScores?.[primaryAbility]?.score).replace("+", ""), 10) || 0 : null;
+  const spellSaveDc = primaryAbility ? String(8 + proficiencyBonus + (spellModifier ?? 0)) : "";
+  const spellAttackBonus = primaryAbility ? `${proficiencyBonus + (spellModifier ?? 0) >= 0 ? "+" : ""}${proficiencyBonus + (spellModifier ?? 0)}` : "";
 
   const explicitSkillBonuses = useMemo(() => {
     const map = new Map<string, string>();
@@ -467,13 +561,65 @@ export default function EditableCharacterSheet({
         .filter(Boolean)
         .map((block) => {
           const [headline, ...rest] = block.split("\n");
+          const quick = /^\[quick\]\s*/i.test(headline.trim());
           return {
-            title: headline.trim(),
+            title: headline.trim().replace(/^\[quick\]\s*/i, ""),
             details: rest.join("\n").trim(),
+            quick,
           };
         }),
     [sheet.featuresTraits]
   );
+  const quickActionFeatures = useMemo(
+    () =>
+      featureBlocks.filter(
+        (block) =>
+          block.quick ||
+          /bardic inspiration|rage|sneak attack|cunning action|action surge|wild shape|channel divinity|flourish/i.test(block.title)
+      ),
+    [featureBlocks]
+  );
+  const quickActionTrackers = useMemo(
+    () =>
+      quickActionFeatures.map((feature, index) => {
+        const match = feature.title.match(/\((\d+)\s+uses?\)/i);
+        const maxUses = match ? Number.parseInt(match[1], 10) : 0;
+        const trackerKey = `quickAction:${feature.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}:${index}`;
+        const remaining = maxUses > 0 ? parseCount(sheet.coreStats?.[trackerKey] ?? String(maxUses)) : 0;
+        return {
+          ...feature,
+          maxUses,
+          trackerKey,
+          remaining,
+        };
+      }),
+    [quickActionFeatures, sheet.coreStats]
+  );
+  const hasMooMooBond = useMemo(
+    () => keyItems.some((item) => /moomoo|moo moo/i.test(item.title)),
+    [keyItems]
+  );
+  const familiarEnabled = sheet.familiar?.enabled === "true" || hasMooMooBond;
+  const familiarData = {
+    name: sheet.familiar?.name ?? (hasMooMooBond ? "Admiral MooMoo" : ""),
+    type: sheet.familiar?.type ?? (hasMooMooBond ? "Spectral familiar" : ""),
+    armorClass: sheet.familiar?.armorClass ?? (hasMooMooBond ? "10" : ""),
+    hp: sheet.familiar?.hp ?? (hasMooMooBond ? "5 × level" : ""),
+    speed: sheet.familiar?.speed ?? (hasMooMooBond ? "30 ft" : ""),
+    abilities:
+      sheet.familiar?.abilities ??
+      (hasMooMooBond
+        ? "Darkvision 30 ft\nUnderstands the bonded creature's languages\nCan Dash, Disengage, and Dodge\nCan carry light loads and act as a scout through shared senses\nGrants advantage on nearby Animal Handling checks"
+        : ""),
+    specialTrait:
+      sheet.familiar?.specialTrait ??
+      (hasMooMooBond
+        ? "Comfort of the Herd — Once per long rest, while MooMoo is within 10 feet, reroll one failed Wisdom saving throw and use the new result."
+        : ""),
+    notes:
+      sheet.familiar?.notes ??
+      "",
+  };
 
   function pushLog(description: string) {
     setChangelog((prev) => addLogEntry(prev, description));
@@ -555,6 +701,19 @@ export default function EditableCharacterSheet({
       },
     }));
     pushLog(`Spell slots: ${key} updated.`);
+  }
+
+  function updateFamiliar(key: keyof NonNullable<EditableCharacterSheetData["familiar"]>, value: string) {
+    const oldValue = sheet.familiar?.[key] ?? "";
+    if (oldValue === value) return;
+    setSheet((prev) => ({
+      ...prev,
+      familiar: {
+        ...(prev.familiar ?? {}),
+        [key]: value,
+      },
+    }));
+    pushLog(describeChange(`familiar.${String(key)}`, oldValue, value));
   }
 
   function spendSpellSlot(level: number) {
@@ -654,25 +813,28 @@ export default function EditableCharacterSheet({
     commitAttackRows(attackRows.filter((_, rowIndex) => rowIndex !== index));
   }
 
-  function commitFeatureBlocks(blocks: Array<{ title: string; details: string }>) {
+  function commitFeatureBlocks(blocks: Array<{ title: string; details: string; quick?: boolean }>) {
     const text = blocks
-      .map((block) => [block.title.trim(), block.details.trim()].filter(Boolean).join("\n"))
+      .map((block) => {
+        const headline = `${block.quick ? "[Quick] " : ""}${block.title.trim()}`.trim();
+        return [headline, block.details.trim()].filter(Boolean).join("\n");
+      })
       .filter(Boolean)
       .join("\n\n");
     updateText("featuresTraits", text);
   }
 
-  function updateFeatureBlock(index: number, field: "title" | "details", value: string) {
+  function updateFeatureBlock(index: number, field: "title" | "details" | "quick", value: string | boolean) {
     const nextBlocks = [...featureBlocks];
     nextBlocks[index] = {
-      ...(nextBlocks[index] ?? { title: "", details: "" }),
+      ...(nextBlocks[index] ?? { title: "", details: "", quick: false }),
       [field]: value,
     };
-    commitFeatureBlocks(nextBlocks);
+    commitFeatureBlocks(nextBlocks as Array<{ title: string; details: string; quick?: boolean }>);
   }
 
   function addFeatureBlock() {
-    commitFeatureBlocks([...featureBlocks, { title: "New feature", details: "" }]);
+    commitFeatureBlocks([...featureBlocks, { title: "New feature", details: "", quick: false }]);
   }
 
   function removeFeatureBlock(index: number) {
@@ -784,17 +946,43 @@ export default function EditableCharacterSheet({
       {activeTab === "stats" ? (
         <>
           <section className={sectionClass}>
+            <SectionTitle title="Combat Snapshot" subtitle="The numbers you look for mid-turn." />
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <SnapshotCard label="AC" value={sheet.coreStats?.armorClass ?? ""} />
+              <SnapshotHpEditor
+                current={sheet.coreStats?.currentHp ?? ""}
+                max={sheet.coreStats?.maxHp ?? ""}
+                onCurrentChange={(value) => updateCoreStats("currentHp", value)}
+                onMaxChange={(value) => updateCoreStats("maxHp", value)}
+              />
+              <SnapshotCard label="Initiative" value={sheet.coreStats?.initiative ?? ""} />
+              <SnapshotCard label="Speed" value={sheet.coreStats?.speed ?? ""} />
+              <SnapshotCard label="Spell Save DC" value={spellSaveDc} />
+              <SnapshotCard label="Spell Attack" value={spellAttackBonus} />
+            </div>
+          </section>
+
+          <section className={sectionClass}>
             <SectionTitle title="Ability Scores" subtitle="Modifiers and saving throws are inferred from the score and proficiency toggle." />
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+            <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
               {ABILITY_LABELS.map(({ key, label }) => (
-                <div key={key} className={panelClass}>
-                  <div className="mb-3 flex min-h-[2.75rem] items-center justify-center text-center font-serif text-sm font-semibold leading-snug tracking-[0.02em]">
-                    {label}
+                <div
+                  key={key}
+                  className={`${panelClass} ${primaryAbility === key ? "ring-1 ring-amber-800/30 shadow-[0_0_0_1px_rgba(146,100,34,0.08)]" : ""}`}
+                >
+                  <div className="mb-3 flex items-center justify-between gap-3">
+                    <div className="font-serif text-sm font-semibold tracking-[0.08em] text-amber-950/75">
+                      {label.slice(0, 3).toUpperCase()}
+                    </div>
+                    <div className="font-serif text-lg font-semibold text-amber-950">
+                      {formatModifier(sheet.abilityScores?.[key]?.score, sheet.abilityScores?.[key]?.modifier)}
+                    </div>
                   </div>
-                  <div className="space-y-3">
+                  <div className="grid gap-3 sm:grid-cols-[0.95fr_1.05fr]">
                     <StepField label="Score" value={sheet.abilityScores?.[key]?.score ?? ""} onChange={(v) => updateAbility(key, "score", v)} min={0} />
-                    <Field label="Modifier" value={formatModifier(sheet.abilityScores?.[key]?.score, sheet.abilityScores?.[key]?.modifier)} onChange={() => {}} readOnly />
-                    <Field label={`${label} Save`} value={inferredSavingThrow(key)} onChange={() => {}} readOnly />
+                    <Field label="Save" value={inferredSavingThrow(key)} onChange={() => {}} readOnly />
+                  </div>
+                  <div className="mt-3">
                     <Toggle label="Save Proficient" checked={sheet.savingThrowProficiencies?.[key] === "true"} onChange={(checked) => updateSavingThrowProficiency(key, checked)} />
                   </div>
                 </div>
@@ -802,32 +990,50 @@ export default function EditableCharacterSheet({
             </div>
           </section>
 
-          <div className="grid gap-6 xl:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid gap-5 xl:grid-cols-[1.2fr_1.2fr]">
             <section className={sectionClass}>
-              <SectionTitle title="Proficiencies" subtitle="Enter one item per line. Skill bonuses should use the format Skill Name (+X)." />
-              <div className="space-y-4">
-                <TextBlock label="Skill Bonuses" value={sheet.skills ?? ""} onChange={(v) => updateText("skills", v)} rows={8} />
-                <TextBlock label="Tool Proficiencies" value={sheet.toolProficiencies ?? ""} onChange={(v) => updateText("toolProficiencies", v)} rows={4} />
-                <TextBlock label="Weapon Proficiencies" value={sheet.weaponProficiencies ?? ""} onChange={(v) => updateText("weaponProficiencies", v)} rows={5} />
-                <TextBlock label="Armor Proficiencies" value={sheet.armorProficiencies ?? ""} onChange={(v) => updateText("armorProficiencies", v)} rows={3} />
-                <TextBlock label="Languages" value={sheet.languages ?? ""} onChange={(v) => updateText("languages", v)} rows={4} />
+              <SectionTitle title="Saving Throws and Skills" subtitle="Compact gameplay reference with aligned modifiers and proficiency markers." />
+              <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
+                <div className="space-y-2">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Saving Throws</div>
+                  {ABILITY_LABELS.map(({ key, label }) => (
+                    <div key={`save-${key}`} className="grid grid-cols-[0.7rem_3rem_1fr] items-center gap-3 rounded-xl border border-amber-950/10 bg-[#fff9ea] px-3 py-2.5">
+                      <span className={`inline-flex h-2.5 w-2.5 rounded-full ${sheet.savingThrowProficiencies?.[key] === "true" ? "bg-amber-700" : "border border-amber-950/30 bg-transparent"}`} />
+                      <span className="text-sm font-semibold tabular-nums text-amber-950">{inferredSavingThrow(key)}</span>
+                      <span className="text-sm text-amber-950/82">{label}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-2">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Skills</div>
+                  <div className="space-y-2">
+                    {ALL_SKILLS.map((skill) => (
+                      <div key={skill.name} className="grid grid-cols-[0.7rem_3rem_minmax(0,1fr)_2.3rem] items-center gap-3 rounded-xl border border-amber-950/10 bg-[#fff9ea] px-3 py-2.5">
+                        <span className={`inline-flex h-2.5 w-2.5 rounded-full ${explicitSkillBonuses.has(skill.name.toLowerCase()) ? "bg-amber-700" : "border border-amber-950/30 bg-transparent"}`} />
+                        <span className="text-sm font-semibold tabular-nums text-amber-950">{inferredSkillBonus(skill.name, skill.ability)}</span>
+                        <span className="text-sm text-amber-950/82">{skill.name}</span>
+                        <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-950/46">
+                          {ABILITY_LABELS.find((item) => item.key === skill.ability)?.label.slice(0, 3)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </section>
 
             <section className={sectionClass}>
-              <SectionTitle title="Skill Check Reference" subtitle="Explicit skill bonuses override the base ability modifier." />
-              <div className="grid gap-x-4 gap-y-2 sm:grid-cols-2">
-                {ALL_SKILLS.map((skill) => (
-                  <div key={skill.name} className="flex items-center justify-between rounded-xl border border-amber-950/10 bg-[#fff9ea] px-3 py-2">
-                    <div>
-                      <div className="text-sm font-medium">{skill.name}</div>
-                      <div className="text-[11px] uppercase tracking-[0.16em] text-amber-950/55">
-                        {ABILITY_LABELS.find((item) => item.key === skill.ability)?.label}
-                      </div>
-                    </div>
-                    <div className="text-base font-semibold">{inferredSkillBonus(skill.name, skill.ability)}</div>
-                  </div>
-                ))}
+              <SectionTitle title="Proficiencies" subtitle="Enter one item per line. Skill bonuses should use the format Skill Name (+X)." />
+              <div className="space-y-4">
+                <TextBlock label="Skill Bonuses" value={sheet.skills ?? ""} onChange={(v) => updateText("skills", v)} rows={6} />
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <TextBlock label="Tool Proficiencies" value={sheet.toolProficiencies ?? ""} onChange={(v) => updateText("toolProficiencies", v)} rows={4} />
+                  <TextBlock label="Languages" value={sheet.languages ?? ""} onChange={(v) => updateText("languages", v)} rows={4} />
+                </div>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <TextBlock label="Weapon Proficiencies" value={sheet.weaponProficiencies ?? ""} onChange={(v) => updateText("weaponProficiencies", v)} rows={4} />
+                  <TextBlock label="Armor Proficiencies" value={sheet.armorProficiencies ?? ""} onChange={(v) => updateText("armorProficiencies", v)} rows={4} />
+                </div>
               </div>
             </section>
           </div>
@@ -838,6 +1044,55 @@ export default function EditableCharacterSheet({
         <div className="grid gap-6 xl:grid-cols-[1.55fr_0.9fr]">
           <section className={sectionClass}>
             <SectionTitle title="Attacks and Features" subtitle="Session-facing actions, class features, and combat notes." />
+            <div className="mb-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <SnapshotCard label="AC" value={sheet.coreStats?.armorClass ?? ""} />
+              <SnapshotHpEditor
+                current={sheet.coreStats?.currentHp ?? ""}
+                max={sheet.coreStats?.maxHp ?? ""}
+                onCurrentChange={(value) => updateCoreStats("currentHp", value)}
+                onMaxChange={(value) => updateCoreStats("maxHp", value)}
+              />
+              <SnapshotCard label="Initiative" value={sheet.coreStats?.initiative ?? ""} />
+              <SnapshotCard label="Speed" value={sheet.coreStats?.speed ?? ""} />
+              <SnapshotCard label="Spell Save DC" value={spellSaveDc} />
+              <SnapshotCard label="Spell Attack" value={spellAttackBonus} />
+            </div>
+            {quickActionTrackers.length ? (
+              <div className="mb-4 rounded-2xl border border-amber-950/14 bg-[#fff4dc] p-3">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Quick Actions</div>
+                <div className="mt-2 grid gap-2 lg:grid-cols-2">
+                  {quickActionTrackers.slice(0, 6).map((feature) => (
+                    <div key={feature.trackerKey} className={`rounded-xl border border-amber-950/10 bg-[#fff8e6] px-3 py-3 ${feature.maxUses > 0 ? "lg:col-span-2" : ""}`}>
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                          <div className="text-sm font-semibold text-amber-950">{feature.title}</div>
+                          {feature.details ? <div className="mt-1 whitespace-pre-line text-sm leading-6 text-amber-950/72">{feature.details}</div> : null}
+                        </div>
+                        {feature.maxUses > 0 ? (
+                          <div className="min-w-[220px]">
+                            <StepField
+                              label="Remaining Uses"
+                              value={String(feature.remaining)}
+                              onChange={(value) => {
+                                const next = parseCount(value);
+                                const clamped = Math.min(feature.maxUses, Math.max(0, next));
+                                updateCoreStats(feature.trackerKey, String(clamped));
+                              }}
+                              min={0}
+                            />
+                          </div>
+                        ) : null}
+                      </div>
+                      {feature.maxUses > 0 ? (
+                        <div className="mt-2 text-xs uppercase tracking-[0.16em] text-amber-950/45">
+                          {feature.remaining} of {feature.maxUses} remaining
+                        </div>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
             <div className="space-y-4">
               <div className={panelClass}>
                 <div className="mb-3 flex items-center justify-between gap-3">
@@ -853,11 +1108,17 @@ export default function EditableCharacterSheet({
                   {attackRows.length ? (
                     attackRows.map((row, index) => (
                       <div key={`attack-${index}`} className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] p-3">
-                        <div className="grid gap-3 md:grid-cols-[1fr_0.85fr_2.15fr_auto] md:items-end">
+                        <div className="grid gap-2 md:grid-cols-[1.15fr_0.8fr_1.3fr_1.3fr]">
                           <Field label="Name" value={row.name} onChange={(value) => updateAttackRow(index, "name", value)} />
-                          <Field label="Hit Bonus" value={row.bonus} onChange={(value) => updateAttackRow(index, "bonus", value)} />
-                          <Field label="Damage / Effect" value={row.damage} onChange={(value) => updateAttackRow(index, "damage", value)} />
-                          <button type="button" onClick={() => removeAttackRow(index)} className="rounded-lg border border-amber-950/10 px-3 py-2 text-sm text-amber-950/65 hover:bg-white hover:text-amber-950">
+                          <Field label="To Hit" value={row.bonus} onChange={(value) => updateAttackRow(index, "bonus", value)} />
+                          <Field label="Damage" value={row.damage.split("—")[0]?.trim() ?? row.damage} onChange={(value) => updateAttackRow(index, "damage", `${value}${row.damage.includes("—") ? ` — ${row.damage.split("—").slice(1).join("—").trim()}` : ""}`)} />
+                          <Field label="Notes" value={row.damage.includes("—") ? row.damage.split("—").slice(1).join("—").trim() : ""} onChange={(value) => {
+                            const baseDamage = row.damage.split("—")[0]?.trim() ?? "";
+                            updateAttackRow(index, "damage", value ? `${baseDamage} — ${value}` : baseDamage);
+                          }} />
+                        </div>
+                        <div className="mt-2 flex justify-end">
+                          <button type="button" onClick={() => removeAttackRow(index)} className="rounded-lg border border-amber-950/10 px-3 py-1.5 text-sm text-amber-950/65 hover:bg-white hover:text-amber-950">
                             Remove
                           </button>
                         </div>
@@ -893,6 +1154,9 @@ export default function EditableCharacterSheet({
                             Remove
                           </button>
                         </div>
+                        <div className="mb-3">
+                          <Toggle label="Quick Action" checked={Boolean(block.quick)} onChange={(checked) => updateFeatureBlock(index, "quick", checked)} />
+                        </div>
                         <TextBlock label="Details" value={block.details} onChange={(value) => updateFeatureBlock(index, "details", value)} rows={5} />
                       </div>
                     ))
@@ -908,6 +1172,29 @@ export default function EditableCharacterSheet({
 
           <section className={sectionClass}>
             <SectionTitle title="Equipment" subtitle="Track important carried gear with add/remove and undo support." />
+            {keyItems.length ? (
+              <div className="mb-4 rounded-2xl border border-amber-950/15 bg-[#fff4dc] px-4 py-4">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/60">Key Items</div>
+                <div className="mt-2 space-y-2">
+                  {keyItems.map((item) => (
+                    <div key={item.id} className="rounded-2xl border border-amber-950/12 bg-[#fff8e6] px-4 py-3">
+                      <div className="flex items-start gap-3">
+                        <span className="pt-0.5 text-amber-800">◆</span>
+                        <div className="min-w-0">
+                          <Link href={`/items/${item.id}`} className="text-sm font-semibold tracking-tight hover:underline">
+                            {item.title}
+                          </Link>
+                          <div className="mt-1 text-sm text-amber-950/78">{item.summary}</div>
+                          <div className="mt-1 text-xs text-amber-950/55">
+                            {item.category} · {item.status}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
             {undoEquipment ? (
               <div className="mb-4 flex items-center justify-between gap-3 rounded-2xl border border-amber-950/15 bg-[#fff4dc] px-4 py-3 text-sm text-amber-950/80">
                 <span>Removed {undoEquipment.item}</span>
@@ -947,18 +1234,23 @@ export default function EditableCharacterSheet({
       {activeTab === "magic" ? (
         <div className="grid gap-6 xl:grid-cols-[0.8fr_1.2fr]">
           <section className={sectionClass}>
-            <SectionTitle title="Spell Slots" subtitle="Use the quick controls during play or edit the raw values directly." />
+            <SectionTitle title="Spellbook" subtitle="Core spellcasting numbers first, slots immediately below." />
+            <div className="mb-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <SnapshotCard label="Spell Save DC" value={spellSaveDc} />
+              <SnapshotCard label="Spell Attack" value={spellAttackBonus} />
+              <SnapshotCard label="Proficiency" value={sheet.coreStats?.proficiencyBonus ?? ""} />
+            </div>
             <div className="space-y-4">
               {[1, 2, 3].map((level) => {
                 const current = parseCount(sheet.spellSlots?.[`level${level}Current`]);
                 const max = parseCount(sheet.spellSlots?.[`level${level}Max`]);
                 return (
                   <div key={`spell-${level}`} className={panelClass}>
-                    <div className="mb-3 flex items-center justify-between gap-3">
+                    <div className="mb-2 flex items-center justify-between gap-3">
                       <div className="font-serif text-base font-semibold">Level {level}</div>
                       <div className="text-sm text-amber-950/65">{current} / {max}</div>
                     </div>
-                    <div className="mb-3 flex flex-wrap gap-2">
+                    <div className="mb-2 flex flex-wrap gap-2">
                       {Array.from({ length: Math.max(max, 1) }).map((_, index) => (
                         <button
                           key={`slot-${level}-${index}`}
@@ -969,7 +1261,7 @@ export default function EditableCharacterSheet({
                         />
                       ))}
                     </div>
-                    <div className="mb-3 flex gap-2">
+                    <div className="mb-2 flex gap-2">
                       <button type="button" onClick={() => spendSpellSlot(level)} className="rounded-lg border border-amber-950/15 bg-[#fffdf6] px-2.5 py-1 text-xs font-medium text-amber-950 hover:bg-white">
                         Use 1
                       </button>
@@ -977,7 +1269,7 @@ export default function EditableCharacterSheet({
                         Reset
                       </button>
                     </div>
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-2">
                       <StepField label="Current" value={sheet.spellSlots?.[`level${level}Current`] ?? ""} onChange={(v) => updateSpellSlots(`level${level}Current`, v)} min={0} />
                       <StepField label="Max" value={sheet.spellSlots?.[`level${level}Max`] ?? ""} onChange={(v) => updateSpellSlots(`level${level}Max`, v)} min={0} />
                     </div>
@@ -988,9 +1280,23 @@ export default function EditableCharacterSheet({
           </section>
 
           <section className={sectionClass}>
-            <SectionTitle title="Spell and Utility Notes" subtitle="Use this area for prepared reminders, concentration warnings, and rules text." />
+            <SectionTitle title="Spell Notes" subtitle="Until you add structured spell entries, keep the live spellbook notes here." />
             <div className="space-y-4">
-              <TextBlock label="Notes" value={sheet.notes ?? ""} onChange={(v) => updateText("notes", v)} rows={8} />
+              <div className="grid gap-3 sm:grid-cols-3">
+                <div className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] px-4 py-3">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Level 0</div>
+                  <div className="mt-1 text-sm text-amber-950/72">Cantrips and at-will options</div>
+                </div>
+                <div className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] px-4 py-3">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Level 1</div>
+                  <div className="mt-1 text-sm text-amber-950/72">Core combat and support spells</div>
+                </div>
+                <div className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] px-4 py-3">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Level 2</div>
+                  <div className="mt-1 text-sm text-amber-950/72">Higher-impact options and utility</div>
+                </div>
+              </div>
+              <TextBlock label="Spellbook Notes" value={sheet.notes ?? ""} onChange={(v) => updateText("notes", v)} rows={10} />
               <div className="rounded-2xl border border-amber-950/15 bg-[#fff9ea] px-4 py-4 text-sm leading-7 text-amber-950/75">
                 <div className="font-semibold text-amber-950">Useful reminders</div>
                 <ul className="mt-2 list-disc space-y-1 pl-5">
@@ -1004,12 +1310,119 @@ export default function EditableCharacterSheet({
         </div>
       ) : null}
 
+      {activeTab === "familiar" ? (
+        <section className={sectionClass}>
+          <SectionTitle title="Companion Panel" subtitle="A compact secondary sheet for active companions and bonded summons." />
+          <div className="mb-4 max-w-sm">
+            <Toggle label="Active Familiar" checked={familiarEnabled} onChange={(checked) => updateFamiliar("enabled", String(checked))} />
+          </div>
+          {familiarEnabled ? (
+            <div className="grid gap-4 xl:grid-cols-[0.95fr_1.05fr]">
+              <div className="rounded-[24px] border border-amber-950/18 bg-[#fff8e6] p-4">
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <Field label="Name" value={familiarData.name} onChange={(value) => updateFamiliar("name", value)} />
+                  <Field label="Type" value={familiarData.type} onChange={(value) => updateFamiliar("type", value)} />
+                </div>
+                <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-2xl border border-amber-950/12 bg-[#fffdf6] p-3">
+                    <StepField label="Armor Class" value={familiarData.armorClass} onChange={(value) => updateFamiliar("armorClass", value)} min={0} />
+                  </div>
+                  <div className="rounded-2xl border border-amber-950/12 bg-[#fffdf6] p-3">
+                    <Field label="HP" value={familiarData.hp} onChange={(value) => updateFamiliar("hp", value)} />
+                  </div>
+                  <div className="rounded-2xl border border-amber-950/12 bg-[#fffdf6] p-3">
+                    <Field label="Speed" value={familiarData.speed} onChange={(value) => updateFamiliar("speed", value)} />
+                  </div>
+                </div>
+                <div className="mt-4 rounded-2xl border border-amber-950/12 bg-[#fffdf6] px-4 py-3">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Once per Long Rest</div>
+                  <textarea
+                    value={familiarData.specialTrait}
+                    onChange={(e) => updateFamiliar("specialTrait", e.target.value)}
+                    rows={4}
+                    className="mt-2 w-full rounded-2xl border border-amber-950/20 bg-[#fffdf6] px-3 py-2 text-sm text-amber-950 outline-none transition placeholder:text-amber-950/35 focus:border-amber-800/40 focus:bg-white"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className={panelClass}>
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Abilities</div>
+                  <textarea
+                    value={familiarData.abilities}
+                    onChange={(e) => updateFamiliar("abilities", e.target.value)}
+                    rows={8}
+                    className="mt-2 w-full rounded-2xl border border-amber-950/20 bg-[#fffdf6] px-3 py-2 text-sm text-amber-950 outline-none transition placeholder:text-amber-950/35 focus:border-amber-800/40 focus:bg-white"
+                  />
+                </div>
+                <div className={panelClass}>
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Notes</div>
+                  {hasMooMooBond ? (
+                    <div className="mb-3 rounded-2xl border border-amber-950/12 bg-[#fff8e6] px-4 py-3 text-sm leading-6 text-amber-950/74">
+                      Cannot attack, cannot take the Help action in combat, cannot intentionally trigger traps, and vanishes harmlessly at 0 HP.
+                    </div>
+                  ) : null}
+                  <textarea
+                    value={familiarData.notes}
+                    onChange={(e) => updateFamiliar("notes", e.target.value)}
+                    rows={5}
+                    className="w-full rounded-2xl border border-amber-950/20 bg-[#fffdf6] px-3 py-2 text-sm text-amber-950 outline-none transition placeholder:text-amber-950/35 focus:border-amber-800/40 focus:bg-white"
+                  />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="rounded-2xl border border-dashed border-amber-950/20 bg-[#fff9ea] px-4 py-5 text-sm text-amber-950/65">
+              No active familiar or companion panel is available for this character yet.
+            </div>
+          )}
+        </section>
+      ) : null}
+
       {activeTab === "story" ? (
         <section className={sectionClass}>
-          <SectionTitle title="Story and Notes" subtitle="Long-form character material, session context, and private reminders." />
+          <SectionTitle title="Story and Notes" subtitle="More like a character card than a form: summary first, details below." />
           <div className="space-y-4">
-            <TextBlock label="Backstory" value={sheet.backstory ?? ""} onChange={(v) => updateText("backstory", v)} rows={16} />
-            <TextBlock label="Notes" value={sheet.notes ?? ""} onChange={(v) => updateText("notes", v)} rows={8} />
+            <div className="rounded-[24px] border border-amber-950/18 bg-[#fff8e6] p-4">
+              <div className="font-serif text-2xl font-semibold text-amber-950">{sheet.basics?.characterName || "Unnamed Character"}</div>
+              <div className="mt-1 text-sm text-amber-950/72">
+                {[sheet.basics?.race, sheet.basics?.classLevel, sheet.basics?.alignment].filter(Boolean).join(" · ")}
+              </div>
+              <div className="mt-3 rounded-2xl border border-amber-950/10 bg-[#fffdf6] px-4 py-3 text-sm italic text-amber-950/78">
+                {sheet.notes?.trim() || "No character tagline or active note recorded yet."}
+              </div>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              {[
+                ["Age", sheet.basics?.age],
+                ["Height", sheet.basics?.height],
+                ["Weight", sheet.basics?.weight],
+                ["Eyes", sheet.basics?.eyes],
+                ["Hair", sheet.basics?.hair],
+                ["Skin", sheet.basics?.skin],
+              ].map(([label, value]) => (
+                <div key={label} className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] px-4 py-3">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">{label}</div>
+                  <div className="mt-1 text-sm text-amber-950/82">{value || "—"}</div>
+                </div>
+              ))}
+            </div>
+            <div className="grid gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Race</div>
+                <div className="mt-1 text-sm text-amber-950/82">{sheet.basics?.race || "—"}</div>
+              </div>
+              <div className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Background</div>
+                <div className="mt-1 text-sm text-amber-950/82">{sheet.basics?.background || "—"}</div>
+              </div>
+              <div className="rounded-2xl border border-amber-950/12 bg-[#fff9ea] p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-950/55">Alignment</div>
+                <div className="mt-1 text-sm text-amber-950/82">{sheet.basics?.alignment || "—"}</div>
+              </div>
+            </div>
+            <TextBlock label="Backstory" value={sheet.backstory ?? ""} onChange={(v) => updateText("backstory", v)} rows={14} />
+            <TextBlock label="Story Notes" value={sheet.notes ?? ""} onChange={(v) => updateText("notes", v)} rows={6} />
           </div>
         </section>
       ) : null}
