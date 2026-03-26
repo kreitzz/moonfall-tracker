@@ -5,7 +5,12 @@ import MapEditor from "@/components/MapEditor";
 export default function MapEditorPage() {
   const campaign = getCampaign();
   const editorImages = campaign.images.filter(
-    (img) => img.act === "Act 1" || img.id === "act-2-maps-bandit-camp-png"
+    (img) =>
+      img.act === "Act 1" ||
+      img.id === "act-2-maps-bandit-camp-png" ||
+      img.id === "act-2-maps-forgotten-shrine-of-aelwyn-jpg" ||
+      img.id === "act-2-maps-circle-of-promise-jpg" ||
+      img.id === "act-2-maps-circle-of-promise-underground-jpg"
   );
 
   return (

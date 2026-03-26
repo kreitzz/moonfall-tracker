@@ -588,6 +588,92 @@
         "backstory": "True Identity: Heir to a fallen fae kingdom destroyed by an enemy king. Public Identity: A traveling noble / charlatan. Raised and trained by an elite assassin guild after the fall of her kingdom. She travels toward Lunaryth to fulfill an assassination contract and search for survivors and secrets to restore magic and reclaim her throne.",
         "notes": "Her first appearance went badly: Heywud's crab familiar rattled her, the party bullied her, and she has a lot to prove if she returns."
       }
+    },
+    {
+      "name": "Tomas Vale",
+      "ancestry": "Human",
+      "class": "Fighter (Champion)",
+      "role": "Guest PC · frontline defender / Greyhaven road hand",
+      "image": "",
+      "guest": true,
+      "card": "TOMAS VALE\nHuman Fighter (Level 3) — Champion\nBackground: Soldier\nAlignment: Neutral Good\n\nCORE IDENTITY\nName: Tomas Vale\nRace: Human\nClass: Fighter (Level 3)\nSubclass: Champion\nBackground: Soldier\nAlignment: Neutral Good\nRole: A practical shield-first fighter built for players who want to survive, hit things cleanly, and keep the rest of the party standing.\n\nABILITY SCORES\nAttribute | Score | Modifier\nStrength | 16 | +3\nDexterity | 12 | +1\nConstitution | 14 | +2\nIntelligence | 10 | +0\nWisdom | 13 | +1\nCharisma | 8 | -1\n\nCORE STATS\nArmor Class: 17\nInitiative: +1\nSpeed: 30 ft\nHP: 28\nProficiency Bonus: +2\nHit Dice: 3d10\nPassive Perception: 13\n\nCOMBAT\nWeapons\n- Longsword — +5 to hit — 1d8 + 3 slashing (1d10 + 3 versatile)\n- Heavy Crossbow — +3 to hit — 1d10 + 1 piercing\n- Handaxe — +5 to hit — 1d6 + 3 slashing (thrown 20/60)\n\nKEY FEATURES\n- Fighting Style: Defense — +1 AC while wearing armor\n- Second Wind — Bonus action, regain 1d10 + 3 HP once per short rest\n- Action Surge — Take one additional action on your turn once per short rest\n- Improved Critical — Your weapon attacks crit on a 19 or 20\n\nSKILLS\n- Athletics +5\n- Perception +3\n- Intimidation +1\n- Survival +3\n\nSAVING THROWS\n- Strength +5\n- Constitution +4\n\nPROFICIENCIES\nArmor\n- All armor\n- Shields\nWeapons\n- Simple weapons\n- Martial weapons\nTools\n- Dice set\n- Vehicles (land)\nLanguages\n- Common\n\nEQUIPMENT\n- Scale mail\n- Shield\n- Longsword\n- Heavy crossbow with 20 bolts\n- 2 handaxes\n- Explorer's pack\n- Soldier's insignia\n- Dice set\n- Whetstone\n- Bedroll\n- Waterskin\n- Rations\n- 14 gp\n\nBACKGROUND & STORY\nTomas Vale spent years working caravan routes and militia roads between Greyhaven and the wider region. He is not a scholar, chosen one, or secret heir — just a man who got very good at standing between ordinary people and the things trying to break them.\n\nAs the roads grew stranger and Greyhaven fell under quiet pressure from organized newcomers, Tomas stopped believing that waiting for someone else to fix it was a serious plan. He joins up because the Belligerent Five are dangerous enough to matter, and because if old places are being dug up and old names are being erased, somebody with a shield should be there when it goes wrong.\n\nPERSONALITY\nTraits\n- Direct, practical, and not impressed by nonsense.\n- Dry sense of humor once he trusts people.\n\nIdeals\n- Duty\n- Endurance\n- Protect ordinary people first\n\nBond\n- Greyhaven and the roadfolk who do not have the luxury of ignoring what is coming.\n\nFlaw\n- Defaults to solving problems head-on even when patience would be smarter.\n\nBEGINNER NOTES\n- Stay near the front.\n- Hit with the longsword most turns.\n- Use Second Wind when hurt.\n- Use Action Surge when one more turn of pressure would really matter.\n- You are built to be reliable, not complicated.",
+      "editableSheet": {
+        "basics": {
+          "characterName": "Tomas Vale",
+          "race": "Human",
+          "classLevel": "Fighter (Level 3)",
+          "background": "Soldier",
+          "alignment": "Neutral Good",
+          "age": "31",
+          "height": "6'0\"",
+          "weight": "195 lbs",
+          "eyes": "Brown",
+          "hair": "Dark Brown",
+          "skin": "Weathered fair"
+        },
+        "abilityScores": {
+          "strength": {
+            "score": "16",
+            "modifier": "+3"
+          },
+          "dexterity": {
+            "score": "12",
+            "modifier": "+1"
+          },
+          "constitution": {
+            "score": "14",
+            "modifier": "+2"
+          },
+          "intelligence": {
+            "score": "10",
+            "modifier": "+0"
+          },
+          "wisdom": {
+            "score": "13",
+            "modifier": "+1"
+          },
+          "charisma": {
+            "score": "8",
+            "modifier": "-1"
+          }
+        },
+        "coreStats": {
+          "proficiencyBonus": "+2",
+          "initiative": "+1",
+          "speed": "30 ft",
+          "armorClass": "17",
+          "currentHp": "28",
+          "maxHp": "28",
+          "hitDice": "3d10",
+          "passivePerception": "13"
+        },
+        "savingThrowProficiencies": {
+          "strength": "true",
+          "dexterity": "false",
+          "constitution": "true",
+          "intelligence": "false",
+          "wisdom": "false",
+          "charisma": "false"
+        },
+        "spellSlots": {
+          "level1Current": "0",
+          "level1Max": "0",
+          "level2Current": "0",
+          "level2Max": "0",
+          "level3Current": "0",
+          "level3Max": "0"
+        },
+        "skills": "Athletics (+5)\nPerception (+3)\nIntimidation (+1)\nSurvival (+3)",
+        "toolProficiencies": "Dice set\nVehicles (land)",
+        "weaponProficiencies": "Simple weapons\nMartial weapons",
+        "armorProficiencies": "All armor\nShields",
+        "languages": "Common",
+        "attacks": "Longsword — +5 to hit — 1d8 + 3 slashing — Versatile (1d10 + 3)\nHeavy Crossbow — +3 to hit — 1d10 + 1 piercing — Range 100/400\nHandaxe — +5 to hit — 1d6 + 3 slashing — Thrown 20/60",
+        "featuresTraits": "Fighting Style: Defense\n- While wearing armor, gain +1 AC.\n\n[Quick] Second Wind (1 uses)\n- Bonus Action: regain 1d10 + fighter level HP.\n- Refreshes on a short or long rest.\n\n[Quick] Action Surge (1 uses)\n- On your turn, take one additional action.\n- Refreshes on a short or long rest.\n\nImproved Critical\n- Your weapon attacks score a critical hit on a roll of 19 or 20.\n\nSecond Wind Reminder\n- Use this when you are bloodied, not after you are already down.\n\nSoldier Background\n- Military rank.\n- Knows how to read camps, patrol patterns, and bad road discipline.",
+        "equipment": "Scale mail\nShield\nLongsword\nHeavy crossbow + 20 bolts\n2 handaxes\nExplorer's pack\nSoldier's insignia\nDice set\nWhetstone\nBedroll\nWaterskin\nRations\n14 gp",
+        "backstory": "Tomas Vale spent years guarding caravans and serving as a road hand near Greyhaven. He is not mystical, noble, or especially subtle — just dependable. As organized strangers tightened control over Greyhaven and old places started attracting dangerous attention, Tomas decided waiting for someone else to intervene was cowardice dressed as patience. He joins the party because they are strong enough to matter and reckless enough that someone sensible should probably be nearby.",
+        "notes": "Beginner-friendly fighter. Frontline role: stay near the enemy, use longsword and shield, pop Second Wind when hurt, and Action Surge when the fight needs momentum."
+      }
     }
   ],
   "sessions": [
@@ -959,7 +1045,7 @@
     {
       "id": "act-2-maps-forgotten-shrine-of-aelwyn-jpg",
       "path": "Act 2/Maps/Forgotten Shrine of Aelwyn.jpg",
-      "title": "Forgotten Shrine of Aelwyn",
+      "title": "Greyhaven",
       "act": "Act 2"
     },
     {

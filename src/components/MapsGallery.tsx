@@ -10,6 +10,13 @@ function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
 
+const MAP_EDITOR_IDS = new Set([
+  "act-2-maps-bandit-camp-png",
+  "act-2-maps-forgotten-shrine-of-aelwyn-jpg",
+  "act-2-maps-circle-of-promise-jpg",
+  "act-2-maps-circle-of-promise-underground-jpg",
+]);
+
 export default function MapsGallery({ images }: { images: CampaignImage[] }) {
   const { dmMode } = useDmMode();
   const { isPublic, setPublic } = useReveals();
@@ -107,7 +114,7 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
                     >
                       Open <span aria-hidden>→</span>
                     </a>
-                    {dmMode && (img.act === "Act 1" || img.id === "act-2-maps-bandit-camp-png") ? (
+                    {dmMode && (img.act === "Act 1" || MAP_EDITOR_IDS.has(img.id)) ? (
                       <a
                         href={`/map-editor?imageId=${encodeURIComponent(img.id)}`}
                         className="inline-flex items-center gap-2 rounded-lg bg-black px-3 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black"
