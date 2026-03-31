@@ -8,7 +8,7 @@ export default function MapEditorPage() {
     (img) =>
       img.act === "Act 1" ||
       img.id === "act-2-maps-bandit-camp-png" ||
-      img.id === "act-2-maps-forgotten-shrine-of-aelwyn-jpg" ||
+      img.id === "act-2-maps-greyhaven-jpg" ||
       img.id === "act-2-maps-circle-of-promise-jpg" ||
       img.id === "act-2-maps-circle-of-promise-underground-jpg"
   );

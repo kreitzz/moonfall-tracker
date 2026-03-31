@@ -12,7 +12,7 @@ function classNames(...xs: Array<string | false | undefined | null>) {
 
 const MAP_EDITOR_IDS = new Set([
   "act-2-maps-bandit-camp-png",
-  "act-2-maps-forgotten-shrine-of-aelwyn-jpg",
+  "act-2-maps-greyhaven-jpg",
   "act-2-maps-circle-of-promise-jpg",
   "act-2-maps-circle-of-promise-underground-jpg",
 ]);
