@@ -878,6 +878,91 @@
         "backstory": "Kian Mehravan was born on the Saffron Coast, a homeland of sea wind, saffron markets, poetry, gardens, and old civic rites. Then the Iron Crescent seized power and called it purification. They claimed to defend faith and national virtue, but their rule became patrols, prisons, forced confessions, and fear.\n\nTheir first and most visible targets were women who refused to lower their eyes. Veil Patrols stopped women in streets and markets to inspect headscarves, hair, sleeves, voices, and who they walked beside. A loose scarf became rebellion. A public song became corruption. A student protest became treason. Women were dragged into wagons for correction while officials preached that cruelty was protection.\n\nKian's family resisted by hiding fugitives, smuggling prison names out of the coast, and exposing what the Iron Crescent did behind sacred banners. The Crescent answered with arrests, executions, threats against families, and confessions beaten into people before public display. Kian escaped because others stayed behind to buy him time.\n\nNow he gathers strength in exile. He does not want a throne for its own sake. He wants enough power, allies, and proof to return to the Saffron Coast and break the Iron Crescent's hold. His greatest fear is not death. It is that hatred will make him into another man with soldiers, slogans, and prisons.",
         "notes": "Guest PC. Assumes standard-array Human Paladin until rolled stats or a different ancestry are provided."
       }
+    },
+    {
+      "name": "U Turn",
+      "ancestry": "Human",
+      "class": "Rogue (Thief)",
+      "role": "Guest PC · exiled smuggler / knife rogue / professional bad influence",
+      "image": "",
+      "guest": true,
+      "editableSheet": {
+        "basics": {
+          "characterName": "U Turn",
+          "race": "Human",
+          "classLevel": "Rogue (Thief, Level 3)",
+          "background": "Criminal / Smuggler",
+          "alignment": "Chaotic Neutral",
+          "age": "",
+          "height": "",
+          "weight": "",
+          "eyes": "",
+          "hair": "",
+          "skin": ""
+        },
+        "abilityScores": {
+          "strength": {
+            "score": "9",
+            "modifier": "-1"
+          },
+          "dexterity": {
+            "score": "16",
+            "modifier": "+3"
+          },
+          "constitution": {
+            "score": "14",
+            "modifier": "+2"
+          },
+          "intelligence": {
+            "score": "12",
+            "modifier": "+1"
+          },
+          "wisdom": {
+            "score": "10",
+            "modifier": "+0"
+          },
+          "charisma": {
+            "score": "14",
+            "modifier": "+2"
+          }
+        },
+        "coreStats": {
+          "proficiencyBonus": "+2",
+          "initiative": "+3",
+          "speed": "30 ft",
+          "armorClass": "15",
+          "currentHp": "24",
+          "maxHp": "24",
+          "hitDice": "3d8",
+          "passivePerception": "12"
+        },
+        "savingThrowProficiencies": {
+          "strength": "false",
+          "dexterity": "true",
+          "constitution": "false",
+          "intelligence": "true",
+          "wisdom": "false",
+          "charisma": "false"
+        },
+        "spellSlots": {
+          "level1Current": "0",
+          "level1Max": "0",
+          "level2Current": "0",
+          "level2Max": "0",
+          "level3Current": "0",
+          "level3Max": "0"
+        },
+        "skills": "Stealth (+7)\nSleight of Hand (+7)\nAcrobatics (+5)\nDeception (+4)\nInsight (+2)\nPerception (+2)",
+        "toolProficiencies": "Thieves' tools\nDisguise kit\nDice set\nCook's utensils, but only because of the avocado thing",
+        "weaponProficiencies": "Simple weapons\nHand crossbows\nLongswords\nRapiers\nShortswords\nShortbow",
+        "armorProficiencies": "Light armor",
+        "languages": "Common\nThieves' Cant\nFar-off coastal trade language",
+        "attacks": "Avocado Knife — +5 to hit — 1d4 + 3 piercing — Finesse, light, thrown 20/60\nShortbow — +5 to hit — 1d6 + 3 piercing — Range 80/320\nBackup Dagger — +5 to hit — 1d4 + 3 piercing — Finesse, light, thrown 20/60",
+        "featuresTraits": "Build Direction: Sneaky Thief Rogue\n- Level 3 guest PC built around hiding, striking with Sneak Attack, using dirty tricks, and surviving bad decisions.\n- U Turn is funny at the table, but mechanically useful: Stealth, Sleight of Hand, Cunning Action, and Fast Hands all matter.\n\nExpertise\n- Stealth and Sleight of Hand use double proficiency.\n\nSneak Attack (2d6)\n- Once per turn, deal +2d6 damage when you hit with a finesse or ranged weapon if you have advantage, or if an ally is within 5 ft of the target and you do not have disadvantage.\n\nThieves' Cant\n- Knows criminal signs, coded phrases, and smuggler shorthand.\n\n[Quick] Cunning Action\n- Bonus Action: Dash, Disengage, or Hide.\n\nThief: Fast Hands\n- Bonus Action: make a Sleight of Hand check, use thieves' tools to disarm a trap or open a lock, or take the Use an Object action.\n- Good uses: cut a rope, throw sand, slam a door, scatter caltrops, pick a pocket, flip a latch, or grab something small and immediately deny it.\n\nThief: Second-Story Work\n- Climbing no longer costs extra movement.\n- Running jumps increase by Dexterity modifier (+3 ft).\n\nSignature Flavor: Avocado Work (optional homebrew, 1/short rest)\n- When U Turn hits with the avocado knife and applies Sneak Attack, choose one effect:\n- Pit Splitter: target speed reduced by 10 ft until the start of U Turn's next turn.\n- Clean Cut: U Turn does not provoke opportunity attacks from that target this turn.\n- Soft Spot: the next ally to hit that target before U Turn's next turn deals +1d4 damage.\n\nRules Notes\n- The avocado knife is mechanically a dagger.\n- If avoiding homebrew, ignore Avocado Work and run him as a standard Thief Rogue.",
+        "equipment": "Studded leather armor\nAvocado knife\nBackup dagger\nShortbow + 20 arrows\nThieves' tools\nDisguise kit\nDice set\nDark common clothes with a hood\nBurglar's pack\nA sealed packet of definitely-not-green-hush\nOne preserved avocado with nothing inside it anymore\nFalse exile papers with his name spelled three different ways\n15 gp",
+        "backstory": "U Turn is a rogue, smuggler, and professional bad influence from a far-off coastal land where the laws are strict, the ports are corrupt, and everyone insists they are just moving spices. He was banished after getting caught smuggling a forbidden narcotic paste called green hush inside crates of preserved avocados. His official sentence was exile. His version is: \"Banishment is just travel with paperwork.\"\n\nAfter being forced out, he drifted from port to road to border town, doing courier work, debt collection, and occasional inventory correction. He eventually ran into Duldrick and Kian on a bad stretch of road. Kian had been cornered by bandits, and Duldrick was already in the middle of saving him. U Turn, who had absolutely not been hiding nearby, saw an opportunity to rob the bandits while they were distracted. The plan lasted almost eight seconds. One shout, one thrown bottle, and one questionable knife later, U Turn had somehow become part of the rescue.\n\nHe now refers to the whole event as a three-way strategic intervention. He travels with Duldrick and Kian because he owes Duldrick for not letting the bandits kill him, thinks Kian is good luck in a bad way, and suspects the Belligerent Five are walking toward money, trouble, or both.",
+        "notes": "Guest PC. Table voice: \"I don't sneak. I arrive privately.\" \"People see a dagger, they get nervous. People see an avocado knife, they get confused. Confused is better.\" \"Duldrick was doing the heroic thing. Kian was doing the hostage thing. I was doing the financially responsible thing.\""
+      }
     }
   ],
   "sessions": [
