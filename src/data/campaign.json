@@ -761,6 +761,123 @@
         "backstory": "Duldrick's charisma, or rizz, was so low that after repeated rejection he gave up on trying to make it work around other people and retreated into Rootspire Hollow. He lived alone in that forest for many years, getting by on caution, patience, and a steady hand with a crossbow.\n\nFor a long time, solitude suited him. Then Rootspire Hollow started getting weird in ways even Duldrick could not ignore. Strange signs, wrong sounds, and bad patterns pushed him back out of hiding and onto the road.",
         "notes": "Guest PC. Stats use the rolled array 16, 18, 10, 11, 7, 11 with Forest Gnome bonuses applied."
       }
+    },
+    {
+      "name": "Kian Mehravan",
+      "ancestry": "Human",
+      "class": "Paladin (Oath of Vengeance)",
+      "role": "Guest PC · exiled liberator / anti-tyrant paladin",
+      "image": "/party/kian.png",
+      "guest": true,
+      "editableSheet": {
+        "basics": {
+          "characterName": "Kian Mehravan",
+          "race": "Human",
+          "classLevel": "Paladin (Oath of Vengeance, Level 3)",
+          "background": "Exiled Noble",
+          "alignment": "Neutral Good",
+          "age": "",
+          "height": "",
+          "weight": "",
+          "eyes": "",
+          "hair": "",
+          "skin": ""
+        },
+        "abilityScores": {
+          "strength": {
+            "score": "16",
+            "modifier": "+3"
+          },
+          "dexterity": {
+            "score": "10",
+            "modifier": "+0"
+          },
+          "constitution": {
+            "score": "14",
+            "modifier": "+2"
+          },
+          "intelligence": {
+            "score": "8",
+            "modifier": "-1"
+          },
+          "wisdom": {
+            "score": "12",
+            "modifier": "+1"
+          },
+          "charisma": {
+            "score": "14",
+            "modifier": "+2"
+          }
+        },
+        "coreStats": {
+          "proficiencyBonus": "+2",
+          "initiative": "+0",
+          "speed": "30 ft",
+          "armorClass": "19",
+          "currentHp": "28",
+          "maxHp": "28",
+          "hitDice": "3d10",
+          "passivePerception": "11"
+        },
+        "savingThrowProficiencies": {
+          "strength": "false",
+          "dexterity": "false",
+          "constitution": "false",
+          "intelligence": "false",
+          "wisdom": "true",
+          "charisma": "true"
+        },
+        "spellSlots": {
+          "level1Current": "3",
+          "level1Max": "3",
+          "level2Current": "0",
+          "level2Max": "0",
+          "level3Current": "0",
+          "level3Max": "0"
+        },
+        "spells": [
+          {
+            "name": "Bane",
+            "level": "1",
+            "concentration": "true",
+            "details": "Oath spell. Up to three creatures make a Charisma save or subtract 1d4 from attack rolls and saving throws."
+          },
+          {
+            "name": "Hunter's Mark",
+            "level": "1",
+            "concentration": "true",
+            "details": "Oath spell. Mark a creature and deal +1d6 damage whenever you hit it with a weapon attack."
+          },
+          {
+            "name": "Bless",
+            "level": "1",
+            "concentration": "true",
+            "details": "Up to three creatures add 1d4 to attack rolls and saving throws."
+          },
+          {
+            "name": "Command",
+            "level": "1",
+            "concentration": "false",
+            "details": "One-word command. Target makes a Wisdom save or follows it on its next turn."
+          },
+          {
+            "name": "Shield of Faith",
+            "level": "1",
+            "concentration": "true",
+            "details": "Bonus Action. A creature gains +2 AC for up to 10 minutes."
+          }
+        ],
+        "skills": "Athletics (+5)\nInsight (+3)\nHistory (+1)\nPersuasion (+4)",
+        "toolProficiencies": "Dragonchess set",
+        "weaponProficiencies": "Simple weapons\nMartial weapons",
+        "armorProficiencies": "All armor\nShields",
+        "languages": "Common\nSaffron Coast dialect",
+        "attacks": "Longsword — +5 to hit — 1d8 + 3 slashing — Versatile (1d10 + 3), Divine Smite eligible\nJavelin — +5 to hit — 1d6 + 3 piercing — Thrown 30/120, Divine Smite eligible in melee only\nLight Crossbow — +2 to hit — 1d8 piercing — Range 80/320, loading, two-handed",
+        "featuresTraits": "Build Direction: Exiled Vengeance Paladin\n- Level 3 guest PC built as a shield-bearing paladin who punishes tyrants and protects people crushed by the Iron Crescent.\n- Standard-array build assumed until custom rolls are provided.\n\nFighting Style: Defense\n- While wearing armor, gain +1 AC.\n\nDivine Sense (3 uses)\n- Action: detect celestials, fiends, undead, and consecrated or desecrated places within 60 ft.\n- Uses = 1 + Charisma modifier per long rest.\n\nLay on Hands (15 HP pool)\n- Action: heal from a pool equal to 5 x paladin level.\n- Spend 5 HP from the pool to cure one disease or neutralize one poison.\n\nDivine Smite\n- When you hit with a melee weapon attack, spend a spell slot to deal radiant damage.\n- 1st-level slot: +2d8 radiant, or +3d8 against undead or fiends.\n\nSpellcasting\n- Spell Save DC: 12.\n- Spell Attack: +4.\n- Prepared paladin spells assumed: Bless, Command, Shield of Faith.\n- Oath spells always prepared: Bane and Hunter's Mark.\n\n[Quick] Channel Divinity: Abjure Enemy (1 use)\n- Action: one creature within 60 ft makes a Wisdom save.\n- On failure, it is frightened for 1 minute and its speed becomes 0.\n- On success, its speed is halved for 1 minute.\n- Refreshes on a short or long rest.\n\n[Quick] Channel Divinity: Vow of Enmity (1 use)\n- Bonus Action: choose one creature within 10 ft.\n- Gain advantage on attack rolls against it for 1 minute or until it drops to 0 HP or falls unconscious.\n- Refreshes on a short or long rest.\n\nOath Theme\n- Kian's oath is not to a throne. It is to the people of the Saffron Coast and to everyone the Iron Crescent tried to silence.\n- His test is whether vengeance can remain justice instead of becoming another banner for control.",
+        "equipment": "Chain mail\nShield\nLongsword\n5 javelins\nLight crossbow + 20 bolts\nHoly symbol from the Saffron Coast\nFine but travel-worn cloak\nDragonchess set\nExplorer's pack\nSignet ring hidden on a cord",
+        "backstory": "Kian Mehravan was born on the Saffron Coast, a homeland of sea wind, saffron markets, poetry, gardens, and old civic rites. Then the Iron Crescent seized power and called it purification. They claimed to defend faith and national virtue, but their rule became patrols, prisons, forced confessions, and fear.\n\nTheir first and most visible targets were women who refused to lower their eyes. Veil Patrols stopped women in streets and markets to inspect headscarves, hair, sleeves, voices, and who they walked beside. A loose scarf became rebellion. A public song became corruption. A student protest became treason. Women were dragged into wagons for correction while officials preached that cruelty was protection.\n\nKian's family resisted by hiding fugitives, smuggling prison names out of the coast, and exposing what the Iron Crescent did behind sacred banners. The Crescent answered with arrests, executions, threats against families, and confessions beaten into people before public display. Kian escaped because others stayed behind to buy him time.\n\nNow he gathers strength in exile. He does not want a throne for its own sake. He wants enough power, allies, and proof to return to the Saffron Coast and break the Iron Crescent's hold. His greatest fear is not death. It is that hatred will make him into another man with soldiers, slogans, and prisons.",
+        "notes": "Guest PC. Assumes standard-array Human Paladin until rolled stats or a different ancestry are provided."
+      }
     }
   ],
   "sessions": [
