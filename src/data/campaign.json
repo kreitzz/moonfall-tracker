@@ -2,18 +2,19 @@
   "meta": {
     "name": "The Belligerent Five",
     "partyName": "The Belligerent Five",
-    "generatedAt": "2026-03-26",
+    "generatedAt": "2026-04-21",
     "whatWeKnow": [
       "Mara died after a brief recovery when moon-petal failed against a deeper corrupted force.",
       "Moonfall Grotto is a temple of Selune and site of a lunar trial.",
       "Seris forcibly attuned to the first artifact and the party saw five more linked relics.",
       "Seris has left for Lunaryth to pursue Elyndor and understand the relic on her own.",
       "The Weeping Marsh is the nearest confirmed lead for another relic.",
-      "Edrin and Lyra were abducted because they know about the Circle of Promise.",
+      "Edrin and Lyra were abducted because they knew about the Circle of Promise, but Edrin was later murdered in the inn ambush before the party reached the marsh.",
       "Greyhaven is filling with organized newcomers and growing steadily more dangerous.",
       "The Circle of Promise may hide a buried weapon that should never be unearthed.",
       "Greyhaven contained a dismantled memorial being formally erased by robed civic agents tied visually to the Moonfall faction.",
-      "When the shrine was restored, the stones sang and Echo witnessed a vision of a calm drow cutting his palm over a blood basin in red firelight."
+      "When the shrine was restored, the stones sang and Echo witnessed a vision of a calm drow cutting his palm over a blood basin in red firelight.",
+      "On the road into the Weeping Marsh, the party survived an inn-room massacre attempt, took three new guest allies with them, and cut down the Red Witness on the staked path."
     ],
     "initialPublic": [
       "act-1-dm-guide-the-lost-forest-docx",
@@ -1035,6 +1036,21 @@
         "reason": "The session was a graveyard of natural 1s, failed dignity checks, and avoidable chaos before the shrine payoff finally landed."
       },
       "docId": "session-4"
+    },
+    {
+      "id": "session-5",
+      "number": 5,
+      "title": "Inn Ambush and the Red Witness",
+      "summary": "What should have been a safer night at the inn turned into a brutal assassination opener that killed Edrin and dropped Echo almost immediately, but the party recovered, linked up with three new guest PCs, pushed down the staked path into the Weeping Marsh approach, and overwhelmed the Red Witness despite losing their stolen bandit prisoner to a clean decapitation.",
+      "mvp": {
+        "name": "The Extra Bodies",
+        "reason": "The three guest PCs tilted the action economy hard enough that the Red Witness never really got to become the boss fight it wanted to be."
+      },
+      "lowlight": {
+        "name": "Echo",
+        "reason": "Got shot down almost immediately in both major fights and kept burning Heat Metal into a single target hard enough to distort the entire encounter plan."
+      },
+      "docId": "session-5"
     }
   ],
   "documents": [
@@ -1277,6 +1293,12 @@
       "title": "Session 4 - Greyhaven and the Singing Stones",
       "dmOnly": false,
       "content": "SESSION 4\n\nARRIVAL IN GREYHAVEN\n- The party finally reached Greyhaven and immediately found the town tense, orderly, and quietly wrong.\n- The inn crowd treated the shrine issue like civic business rather than open fear, which only made it more unsettling.\n- Tomas Vale, the guest fighter, folded into the group's momentum as the road and town situation escalated.\n\nTHE INN AND THE MEMORIAL\n- Echo verbally destroyed a random local in the bar, which did nothing to improve the room's opinion of the party.\n- The group learned that a disputed memorial was being retired from the public record.\n- The officials handling it wore dark robes that strongly resembled the faction the party had already fought in Moonfall Grotto.\n- The robed officials made it clear they were not rioting or vandalizing anything; they were calmly finishing an erasure.\n\nTHE FINAL ERASURE\n- The party followed the officials to the dismantled shrine platform.\n- They discovered a feminine memorial figure that had been carefully taken apart rather than smashed.\n- Partial lettering remained on the shrine, including fragments that read like A...L...W and V...L...R.\n- The confrontation turned violent as the party fought to stop the final removal and reassemble the memorial before it could be fully erased.\n\nFIGHT AND CHAOS\n- Tomas Vale carved through multiple enemies and immediately justified his existence as a frontline guest PC.\n- Prom used coin and axe nonsense to land one of the session's most unhinged kills.\n- The entire table seemed cursed with natural 1s for long stretches of the encounter.\n- Despite the chaos, the party held the shrine long enough to complete the restoration.\n\nTHE SINGING STONES\n- Once restored, the shrine's stones began to sing in the wind.\n- Echo completed the melody and triggered a vision.\n- He saw a cavern lit by red firelight, a tall drow standing calmly in a ritual circle, and blood deliberately spilled into a basin from a self-inflicted palm cut.\n- The drow appeared amused, and seemed to hear the same music Echo had just played before the vision ended.\n\nEND STATE\n- Greyhaven is now confirmed as more than a simple civic problem; the same broader force seen at Moonfall is operating here too.\n- The shrine mattered enough for someone to erase it carefully, not destroy it openly.\n- The party preserved the memorial's song, but not its full identity.\n- The road now points more sharply toward both Lunaryth and the Circle of Promise."
+    },
+    {
+      "id": "session-5",
+      "title": "Session 5 - Inn Ambush and the Red Witness",
+      "dmOnly": false,
+      "content": "SESSION 5\n\nTHE INN AMBUSH\n- The party chose to retire at the inn rather than risk another exposed roadside camp.\n- That did not save them.\n- A brutal night attack opened inside the room itself, with Edrin murdered almost immediately before the party could properly stabilize the situation.\n- Echo also got blasted down on the opening exchange, forcing the party into triage from the first seconds of the fight.\n- The attackers were horribly familiar: they appeared to be the same people the party had fought at the statue in Greyhaven, hauled back up in a wet, wrong state.\n\nTURNING THE FIGHT\n- After the opener, the Belligerent Five regained their footing instead of collapsing.\n- Once the first panic passed, they started removing threats quickly and took back control of the room.\n- The attack still did what it was supposed to do: it made Greyhaven and the road ahead feel unfinished, unsafe, and actively hostile.\n\nNEW ALLIES\n- In the aftermath, the party linked up with the three most recent guest PCs and brought them along for the push forward.\n- With those extra bodies in play, the group's ability to absorb pressure and flood the field changed dramatically.\n\nTHE STAKED PATH\n- The party pressed on toward the Weeping Marsh and entered the approach marked by severed heads, blood-signs, and deliberate ritual menace.\n- The path did exactly what it should have done: it announced that this was no longer just a relic hunt, but a sacrifice road.\n\nTHE RED WITNESS\n- The Red Witness confronted the group before the Circle of Promise proper and tried to frame the clearing in terms of blood payment.\n- When the familiar attackers were put down, they did not bleed out normally. They collapsed into mud and ruin.\n- Echo managed to get knocked out again, in part because he kept locking Heat Metal onto a single target hard enough to drag the whole encounter sideways.\n- Even so, the action economy was overwhelming. With the enlarged group surrounding it, the Red Witness never truly controlled the fight and went down far more cleanly than expected.\n\nTHE REAL LOSS\n- The Red Witness still got one cruel, memorable success: it decapitated the woman the party had taken from the bandit camp.\n- That death landed harder on the table than Edrin's, for reasons that were not especially noble.\n\nEND STATE\n- Edrin is dead.\n- Lyra is still moving with the party.\n- The Weeping Marsh approach has been breached.\n- The Red Witness is down.\n- The Circle of Promise is the next place in front of them."
     }
   ],
   "images": [
@@ -1441,12 +1463,12 @@
       "id": "edrin",
       "name": "Edrin",
       "title": "Greyhaven Butcher",
-      "status": "Rescued from bandits",
+      "status": "Dead",
       "tags": [
         "ally",
         "greyhaven"
       ],
-      "summary": "Greyhaven's butcher, practical and cautious, who got snatched by bandits after he and Lyra talked too loudly on the road about the Circle of Promise.",
+      "summary": "Greyhaven's butcher, practical and cautious, who survived the bandit camp only to be murdered in the inn ambush before the party pushed into the Weeping Marsh.",
       "image": "/npcs/edrin.png",
       "dmOnly": false
     },
@@ -1454,13 +1476,13 @@
       "id": "lyra",
       "name": "Lyra",
       "title": "Greyhaven Scholar",
-      "status": "Rescued from bandits",
+      "status": "Alive and traveling with the party",
       "tags": [
         "ally",
         "scholar",
         "greyhaven"
       ],
-      "summary": "A driven researcher whose notes on the Circle of Promise got her targeted. She believes the site hides a buried weapon that should never be unearthed.",
+      "summary": "A driven researcher whose notes on the Circle of Promise got her targeted. Edrin's death left her as the surviving Greyhaven guide still pushing toward the Circle.",
       "image": "/npcs/lyra.png",
       "dmOnly": false
     }
@@ -1494,6 +1516,16 @@
       "location": "Forest Road to Greyhaven",
       "summary": "A rough encampment of greedy road bandits who kidnapped Edrin and Lyra after overhearing talk of the Circle of Promise.",
       "image": "/campaign/Act 2/Maps/BanditCamp.png",
+      "dmOnly": false
+    },
+    {
+      "id": "red-witness",
+      "name": "The Red Witness",
+      "cr": "5",
+      "type": "Mini-Boss",
+      "location": "Staked Path, Weeping Marsh Approach",
+      "summary": "A blood-soaked executioner figure stationed on the staked path before the Circle of Promise. It arrived with what looked like the inn attackers dragged back up in a wet, ruined state, but the enlarged party still buried it under raw action economy after it managed one brutal decapitation.",
+      "image": "",
       "dmOnly": false
     }
   ],
@@ -1553,9 +1585,17 @@
       "id": "location-weeping-marsh",
       "title": "Weeping Marsh",
       "act": "Act 2",
-      "session": 3,
-      "summary": "The nearest confirmed relic lead: a burial-heavy marshland Seris recognized immediately when the party studied the relic map.",
-      "content": "OVERVIEW\nA marsh of graves, old stories, and the nearest known relic site on the map.\n\nWHAT THE PARTY LEARNED\n- Seris recognized it as the closest lead before leaving for Lunaryth.\n- It is not far out of the way if the party still wants to push generally toward Lunaryth.\n- It carries strong death-and-burial associations before the party has even set foot there.\n\nKEY MOMENTS\n- The relic map turned Weeping Marsh from rumor into a concrete destination.\n- Seris specifically called it out as the one nearby place she actually knew.\n\nNOTES TO REMEMBER\n- This is the clearest immediate relic lead.\n- The party now has to choose between urgency, information, and local obligations."
+      "session": 5,
+      "summary": "No longer just a map lead: the party has now entered the Weeping Marsh approach, survived the staked path, and killed the Red Witness after being ambushed at the inn by what looked like the same people they had fought at the Greyhaven statue.",
+      "content": "OVERVIEW\nA marsh of graves, old promises, and the nearest confirmed relic site on the map. What began as a nearby lead is now an active blood-soaked approach the party has already entered.\n\nWHAT THE PARTY LEARNED\n- Seris was right that the Weeping Marsh was the nearest relic lead.\n- The approach is ritualized, not merely dangerous: severed heads, warning stakes, and sacrifice imagery mark the road in.\n- The things rising on that road did not feel like ordinary undead. They looked disturbingly close to the people who had attacked the party at the inn.\n\nKEY MOMENTS\n- After the inn ambush that killed Edrin, the party still pushed forward with Lyra and three guest allies.\n- They crossed the staked path and faced the Red Witness before the Circle of Promise proper.\n- The Red Witness was beaten, but not before it decapitated the woman the party had taken from the bandit camp.\n- The familiar-looking dead on the road collapsed into mud after the fight instead of leaving ordinary bodies.\n\nNOTES TO REMEMBER\n- The marsh is no longer theoretical; the party has already entered it.\n- The road into the Circle of Promise is open.\n- Whatever is happening here is stranger than a normal undead problem."
+    },
+    {
+      "id": "location-circle-of-promise",
+      "title": "Circle of Promise",
+      "act": "Act 2",
+      "session": 5,
+      "summary": "Still unresolved. The party only completed the Red Witness fight on the approach, and the Circle itself remains ahead.",
+      "content": "OVERVIEW\nThe Circle of Promise is still ahead. The party has not entered or resolved it yet.\n\nWHAT THE PARTY KNOWS NOW\n- Lyra has warned that the Circle may hide something dangerous.\n- The approach to it is marked by ritual violence and guarded opposition.\n- The Red Witness was only one layer of whatever is protecting the road forward.\n\nKEY MOMENTS\n- The party beat the Red Witness on the staked path.\n- By that point, Edrin was already dead.\n- The familiar-looking dead on the road collapsed into mud after the fight.\n\nNOTES TO REMEMBER\n- This remains an active unresolved objective.\n- The Circle itself has not happened on-screen yet."
     }
   ],
   "quests": [
@@ -1798,7 +1838,7 @@
       "title": "Circle of Promise",
       "tier": "side",
       "status": "active",
-      "summary": "Find the Circle of Promise and learn whether it truly hides a buried weapon, or whether Greyhaven's panic is pointing at something older and worse.",
+      "summary": "The party has pushed through Greyhaven, lost Edrin in the inn ambush, and beaten the Red Witness on the staked path, but the Circle of Promise itself is still unresolved.",
       "steps": [
         {
           "label": "Learn why Edrin and Lyra were abducted",
