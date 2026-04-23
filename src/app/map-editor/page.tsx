@@ -10,7 +10,8 @@ export default function MapEditorPage() {
       img.id === "act-2-maps-bandit-camp-png" ||
       img.id === "act-2-maps-greyhaven-jpg" ||
       img.id === "act-2-maps-circle-of-promise-jpg" ||
-      img.id === "act-2-maps-circle-of-promise-underground-jpg"
+      img.id === "act-2-maps-weeping-marsh-jpg" ||
+      img.id === "act-2-maps-weeping-marsh-bottom-of-the-well-jpg"
   );
 
   return (

@@ -4,7 +4,7 @@ import NpcCard from "@/components/NpcCard";
 
 export default function NpcsPage() {
   const campaign = getCampaign();
-  const npcs = [...(campaign.npcs ?? [])].sort((a, b) => a.name.localeCompare(b.name));
+  const npcs = [...(campaign.npcs ?? [])].filter((npc) => !npc.dmOnly).sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <div className="space-y-6">

@@ -14,7 +14,9 @@
       "The Circle of Promise may hide a buried weapon that should never be unearthed.",
       "Greyhaven contained a dismantled memorial being formally erased by robed civic agents tied visually to the Moonfall faction.",
       "When the shrine was restored, the stones sang and Echo witnessed a vision of a calm drow cutting his palm over a blood basin in red firelight.",
-      "On the road into the Weeping Marsh, the party survived an inn-room massacre attempt, took three new guest allies with them, and cut down the Red Witness on the staked path."
+      "On the road into the Weeping Marsh, the party survived an inn-room massacre attempt, took three new guest allies with them, and cut down the Red Witness on the staked path.",
+      "The Circle of Promise opened only after blood was offered, and the Bloodbound Testament eventually passed from Echo to Prom, reshaping itself into a greataxe.",
+      "Deep in the Weeping Marsh, the party found the next artifact site, watched the marsh conjure false essences of Edrin and Lyra through the swamp, severed the roots tying them to the artifact, and saw the marsh artifact bind itself to Prom."
     ],
     "initialPublic": [
       "act-1-dm-guide-the-lost-forest-docx",
@@ -27,7 +29,11 @@
       "act-1-maps-moonfall-grotto-level-1-jpg",
       "act-1-maps-the-lost-forest-jpg",
       "act-1-maps-moonfall-grotto-p2b-jpg",
-      "act-2-maps-bandit-camp-png"
+      "act-2-maps-bandit-camp-png",
+      "act-2-maps-greyhaven-jpg",
+      "act-2-maps-circle-of-promise-jpg",
+      "act-2-maps-weeping-marsh-jpg",
+      "act-2-maps-weeping-marsh-bottom-of-the-well-jpg"
     ]
   },
   "party": [
@@ -513,6 +519,7 @@
       "role": "Guest PC · assassin / false noble / throne-seeker",
       "image": "",
       "guest": true,
+      "active": true,
       "card": "AYLIN GALATHYNIUS\nHigh Elf Rogue (Level 2) — Assassin\nBackground: Charlatan\nAlignment: Neutral\n\nCORE IDENTITY\nName: Aylin Galathynius\nRace: High Elf\nClass: Rogue (Level 2)\nSubclass: Assassin\nBackground: Charlatan\nAlignment: Neutral\nRole: Assassin operating under a false identity while searching for clues to restore her lost kingdom.\n\nABILITY SCORES\nAttribute | Score | Modifier\nStrength | 8 | -1\nDexterity | 17 | +3\nConstitution | 12 | +1\nIntelligence | 15 | +2\nWisdom | 10 | +0\nCharisma | 13 | +1\n\nCORE STATS\nArmor Class: 14\nInitiative: +3\nSpeed: 30 ft\nHP: 15\nProficiency Bonus: +2\nHit Dice: 2d8\n\nCOMBAT\nWeapons\n- Rapier — +5 to hit — 1d8 + 3 piercing\n- Dagger — +5 to hit — 1d4 + 3 piercing\n- Shortbow — +5 to hit — 1d6 + 3 piercing\n\nKey Ability\n- Sneak Attack (1d6): extra damage once per turn when she has advantage or an ally is adjacent to the target.\n\nBonus Action\n- Cunning Action: Dash, Disengage, or Hide.\n\nSKILLS\n- Stealth +7\n- Sleight of Hand +5\n- Deception +5\n- Investigation +4\n- Insight +2\n\nEXPERTISE\n- Stealth\n- Deception\n\nMAGIC\nSpellcasting Ability: Intelligence\nSpell Save DC: 12\nSpell Attack: +4\n\nCantrip\n- Message: Whisper to someone within 120 ft.\n\nRACIAL TRAITS\n- Fey Ancestry: Advantage on saves against charm, and magic cannot put her to sleep.\n- Trance: 4 hours of meditation counts as a full long rest.\n\nLANGUAGES\n- Common\n- Elvish\n- Undercommon\n\nEQUIPMENT\n- Rapier\n- Shortbow and 20 arrows\n- 2 daggers\n- Leather armor\n- Thieves' tools\n- Burglar's pack\n- Disguise kit\n- Forgery kit\n- Fine clothes for a noble persona\n- Signet ring bearing her family crest\n\nBACKGROUND & STORY\nTrue Identity\n- Heir to a fallen fae kingdom destroyed by an enemy king.\n\nPublic Identity\n- A traveling noble and practiced charlatan.\n\nGuild Past\n- Raised and trained by an elite assassin guild after the fall of her kingdom.\n\nCurrent Mission\n- Travel through Ascendaria toward Lunaryth.\n- Fulfill an assassination contract.\n- Search for survivors, lost secrets, and a path to restoring magic and reclaiming her throne.\n\nCurrent Dynamic\n- She travels with the Belligerent Five when it suits her, tolerating them because their strength makes the road safer.\n- Her first appearance did not go cleanly: Heywud's crab familiar rattled her, the party spent most of the session bullying her, and she did not add much practical utility.\n- For someone claiming assassin credentials, she now has a lot to prove if she returns.\n\nPERSONALITY\nTraits\n- Cold, serious, and intolerant of childish behavior.\n\nIdeals\n- Independence\n- Logic\n- Responsibility\n\nBond\n- Her destroyed kingdom and murdered family.\n\nFlaw\n- Quick to violence when insulted.\n\nKEY ITEMS\n- Royal Signet Ring: hidden on a chain around her neck; proof of her true identity.\n- Assassin Guild Coin: a token proving guild membership.\n- Noble Clothes: used when adopting her false persona.",
       "editableSheet": {
         "basics": {
@@ -599,6 +606,7 @@
       "role": "Guest PC · frontline defender / Greyhaven road hand",
       "image": "",
       "guest": true,
+      "active": false,
       "card": "TOMAS VALE\nHuman Fighter (Level 3) — Champion\nBackground: Soldier\nAlignment: Neutral Good\n\nCORE IDENTITY\nName: Tomas Vale\nRace: Human\nClass: Fighter (Level 3)\nSubclass: Champion\nBackground: Soldier\nAlignment: Neutral Good\nRole: A practical shield-first fighter built for players who want to survive, hit things cleanly, and keep the rest of the party standing.\n\nABILITY SCORES\nAttribute | Score | Modifier\nStrength | 16 | +3\nDexterity | 12 | +1\nConstitution | 14 | +2\nIntelligence | 10 | +0\nWisdom | 13 | +1\nCharisma | 8 | -1\n\nCORE STATS\nArmor Class: 17\nInitiative: +1\nSpeed: 30 ft\nHP: 28\nProficiency Bonus: +2\nHit Dice: 3d10\nPassive Perception: 13\n\nCOMBAT\nWeapons\n- Longsword — +5 to hit — 1d8 + 3 slashing (1d10 + 3 versatile)\n- Heavy Crossbow — +3 to hit — 1d10 + 1 piercing\n- Handaxe — +5 to hit — 1d6 + 3 slashing (thrown 20/60)\n\nKEY FEATURES\n- Fighting Style: Defense — +1 AC while wearing armor\n- Second Wind — Bonus action, regain 1d10 + 3 HP once per short rest\n- Action Surge — Take one additional action on your turn once per short rest\n- Improved Critical — Your weapon attacks crit on a 19 or 20\n\nSKILLS\n- Athletics +5\n- Perception +3\n- Intimidation +1\n- Survival +3\n\nSAVING THROWS\n- Strength +5\n- Constitution +4\n\nPROFICIENCIES\nArmor\n- All armor\n- Shields\nWeapons\n- Simple weapons\n- Martial weapons\nTools\n- Dice set\n- Vehicles (land)\nLanguages\n- Common\n\nEQUIPMENT\n- Scale mail\n- Shield\n- Longsword\n- Heavy crossbow with 20 bolts\n- 2 handaxes\n- Explorer's pack\n- Soldier's insignia\n- Dice set\n- Whetstone\n- Bedroll\n- Waterskin\n- Rations\n- 14 gp\n\nBACKGROUND & STORY\nTomas Vale spent years working caravan routes and militia roads between Greyhaven and the wider region. He is not a scholar, chosen one, or secret heir — just a man who got very good at standing between ordinary people and the things trying to break them.\n\nAs the roads grew stranger and Greyhaven fell under quiet pressure from organized newcomers, Tomas stopped believing that waiting for someone else to fix it was a serious plan. He joins up because the Belligerent Five are dangerous enough to matter, and because if old places are being dug up and old names are being erased, somebody with a shield should be there when it goes wrong.\n\nPERSONALITY\nTraits\n- Direct, practical, and not impressed by nonsense.\n- Dry sense of humor once he trusts people.\n\nIdeals\n- Duty\n- Endurance\n- Protect ordinary people first\n\nBond\n- Greyhaven and the roadfolk who do not have the luxury of ignoring what is coming.\n\nFlaw\n- Defaults to solving problems head-on even when patience would be smarter.\n\nBEGINNER NOTES\n- Stay near the front.\n- Hit with the longsword most turns.\n- Use Second Wind when hurt.\n- Use Action Surge when one more turn of pressure would really matter.\n- You are built to be reliable, not complicated.",
       "editableSheet": {
         "basics": {
@@ -685,6 +693,7 @@
       "role": "Guest PC · ranged fighter build",
       "image": "/party/duldrick.png",
       "guest": true,
+      "active": false,
       "editableSheet": {
         "basics": {
           "characterName": "Duldrick",
@@ -770,6 +779,7 @@
       "role": "Guest PC · exiled liberator / anti-tyrant paladin",
       "image": "/party/kian.png",
       "guest": true,
+      "active": false,
       "editableSheet": {
         "basics": {
           "characterName": "Kian Mehravan",
@@ -887,6 +897,7 @@
       "role": "Guest PC · exiled smuggler / knife rogue / professional bad influence",
       "image": "",
       "guest": true,
+      "active": false,
       "editableSheet": {
         "basics": {
           "characterName": "U Turn",
@@ -1051,6 +1062,21 @@
         "reason": "Got shot down almost immediately in both major fights and kept burning Heat Metal into a single target hard enough to distort the entire encounter plan."
       },
       "docId": "session-5"
+    },
+    {
+      "id": "session-6",
+      "number": 6,
+      "title": "The Circle Opens and the Marsh Answers",
+      "summary": "At the Circle of Promise, Mead and Echo blooded themselves to open the obelisk, Echo claimed the dagger inside, and Lyra died trying to stop him from wielding it. Echo later bequeathed the Bloodbound Testament to Prom, where it took the shape of a greataxe. From there MooMoo mapped the way into the Weeping Marsh, Mead plunged eighty feet down a well, touched the artifact, and triggered a brutal fight against marsh-conjured essences of Lyra and Edrin. Aylin, being a rogue, ran straight to the front to try to take the artifact and got her head bashed in by Lyra's legendary actions before Prom dealt heavy damage, the party severed the roots tying the false returns to the artifact, and the Tearstone attached itself to Prom.",
+      "mvp": {
+        "name": "Mead and Prom",
+        "reason": "Mead bled for the obelisk, survived the eighty-foot drop, rushed the artifact first, and brought Aylin back after the fight went sideways. Prom dealt heavy damage throughout the marsh fight and walked away as the bearer of the Tearstone."
+      },
+      "lowlight": {
+        "name": "Aylin",
+        "reason": "Tried to steal Echo's new knife, then later ran to the front like a rogue trying to grab the artifact and got her head bashed in by Lyra's legendary actions."
+      },
+      "docId": "session-6"
     }
   ],
   "documents": [
@@ -1299,6 +1325,12 @@
       "title": "Session 5 - Inn Ambush and the Red Witness",
       "dmOnly": false,
       "content": "SESSION 5\n\nTHE INN AMBUSH\n- The party chose to retire at the inn rather than risk another exposed roadside camp.\n- That did not save them.\n- A brutal night attack opened inside the room itself, with Edrin murdered almost immediately before the party could properly stabilize the situation.\n- Echo also got blasted down on the opening exchange, forcing the party into triage from the first seconds of the fight.\n- The attackers were horribly familiar: they appeared to be the same people the party had fought at the statue in Greyhaven, hauled back up in a wet, wrong state.\n\nTURNING THE FIGHT\n- After the opener, the Belligerent Five regained their footing instead of collapsing.\n- Once the first panic passed, they started removing threats quickly and took back control of the room.\n- The attack still did what it was supposed to do: it made Greyhaven and the road ahead feel unfinished, unsafe, and actively hostile.\n\nNEW ALLIES\n- In the aftermath, the party linked up with the three most recent guest PCs and brought them along for the push forward.\n- With those extra bodies in play, the group's ability to absorb pressure and flood the field changed dramatically.\n\nTHE STAKED PATH\n- The party pressed on toward the Weeping Marsh and entered the approach marked by severed heads, blood-signs, and deliberate ritual menace.\n- The path did exactly what it should have done: it announced that this was no longer just a relic hunt, but a sacrifice road.\n\nTHE RED WITNESS\n- The Red Witness confronted the group before the Circle of Promise proper and tried to frame the clearing in terms of blood payment.\n- When the familiar attackers were put down, they did not bleed out normally. They collapsed into mud and ruin.\n- Echo managed to get knocked out again, in part because he kept locking Heat Metal onto a single target hard enough to drag the whole encounter sideways.\n- Even so, the action economy was overwhelming. With the enlarged group surrounding it, the Red Witness never truly controlled the fight and went down far more cleanly than expected.\n\nTHE REAL LOSS\n- The Red Witness still got one cruel, memorable success: it decapitated the woman the party had taken from the bandit camp.\n- That death landed harder on the table than Edrin's, for reasons that were not especially noble.\n\nEND STATE\n- Edrin is dead.\n- Lyra is still moving with the party.\n- The Weeping Marsh approach has been breached.\n- The Red Witness is down.\n- The Circle of Promise is the next place in front of them."
+    },
+    {
+      "id": "session-6",
+      "title": "Session 6 - The Circle Opens and the Marsh Answers",
+      "dmOnly": false,
+      "content": "SESSION 6\n\nTHE CIRCLE OF PROMISE\n- The party finally reached the obelisk beyond the staked path.\n- Four lit pentagrams surrounded it: red, blue, gold, and green.\n- Their inscriptions read: Give what spills. Give what names you. Give what binds you. Give what carries you.\n- Mead and Echo cut themselves, and Echo pressed a bloody hand to the obelisk.\n- The shrine opened.\n\nTHE WEAPON INSIDE\n- Echo took the weapon from inside the obelisk and received a magic dagger later identified as the Bloodbound Testament.\n- Aylin immediately tried to steal it and failed.\n- The dagger pushed hard in the wrong direction almost at once: Echo felt compelled to kill Lyra.\n- Heywud tried to magic that impulse away and failed to pry the weapon loose from Echo's will.\n- Lyra tried to stop Echo from wielding it and died in the process.\n- Echo later bequeathed the Bloodbound Testament to Prom, and the weapon took the shape of a greataxe.\n\nINTO THE MARSH\n- The party pushed deeper into the Weeping Marsh.\n- MooMoo mapped the path to the center.\n- Mead then fell eighty feet down a well on the way to the artifact site, because of course he did.\n\nTHE ARTIFACT SITE\n- The party found the artifact.\n- Mead ran up first to touch it.\n- The marsh stopped breathing.\n- Something blasted Mead backward into the whetstone and the site woke up around them.\n\nTHE MARSH RETURNS\n- Both Edrin and Lyra were already dead before this fight.\n- The swamp and artifact conjured false essences of them, not true resurrections.\n- Their bodies were marsh-made returns tied to the artifact by living roots.\n- Aylin, being a rogue, ran straight to the front of the party to try to take the artifact.\n- The Lyra-return punished that immediately and bashed Aylin's head in through legendary actions.\n- The Lyra-return then died and got back up again, making it immediately clear the roots were keeping the false returns active.\n- Prom dealt heavy damage throughout the fight.\n- Once the party dispatched the roots connecting them to the artifact, both marsh returns could finally be put down.\n- Mead dragged Aylin back from death.\n\nAFTERMATH\n- Aylin's first act after being revived was to tell the entire party to fuck off.\n- The marsh artifact attached itself to Prom.\n- The Circle of Promise is no longer rumor.\n- The Weeping Marsh is no longer just a lead.\n- The party has now seen what this region does to memory, death, and anyone foolish enough to touch what it is protecting."
     }
   ],
   "images": [
@@ -1343,12 +1375,6 @@
       "path": "Act 1/Maps/Moonfall Grotto P2B.jpg",
       "title": "Moonfall Grotto P2B",
       "act": "Act 1"
-    },
-    {
-      "id": "act-2-maps-circle-of-promise-underground-jpg",
-      "path": "Act 2/Maps/Circle of Promise - Underground.jpg",
-      "title": "Circle of Promise - Underground",
-      "act": "Act 2"
     },
     {
       "id": "act-2-maps-weeping-marsh-jpg",
@@ -1476,13 +1502,13 @@
       "id": "lyra",
       "name": "Lyra",
       "title": "Greyhaven Scholar",
-      "status": "Alive and traveling with the party",
+      "status": "Dead",
       "tags": [
         "ally",
         "scholar",
         "greyhaven"
       ],
-      "summary": "A driven researcher whose notes on the Circle of Promise got her targeted. Edrin's death left her as the surviving Greyhaven guide still pushing toward the Circle.",
+      "summary": "A driven researcher whose notes on the Circle of Promise got her targeted. She survived Greyhaven, but died at the Circle of Promise trying to stop Echo from keeping the Bloodbound Testament.",
       "image": "/npcs/lyra.png",
       "dmOnly": false
     }
@@ -1493,10 +1519,10 @@
       "name": "Admiral MooMoo",
       "cr": "1",
       "type": "Encounter",
-      "location": "?",
-      "summary": "The undead bell‑toller of the Lost Forest — a hulking, corrupted ox that crashes through trees and punishes anyone who lingers when the bells ring.",
+      "location": "The Lost Forest",
+      "summary": "The corrupted bell-toller of the Lost Forest, a hulking pale ox that crashed through the trees near the moonpetal site and became the party's first real warning that the woods were wrong.",
       "image": "/battles/admiral-moomoo.png",
-      "dmOnly": true
+      "dmOnly": false
     },
     {
       "id": "moonbound-sentinel",
@@ -1506,7 +1532,17 @@
       "location": "Moonfall Grotto",
       "summary": "A colossal knight of moonlight that tested the party's worth in Selune's temple, declaring: \"The moon does not yield to the untested.\"",
       "image": "/campaign/Act 1/Maps/Moonfall Grotto Level 1.jpg",
-      "dmOnly": true
+      "dmOnly": false
+    },
+    {
+      "id": "moonfall-robed-camp",
+      "name": "Moonfall Robed Camp",
+      "cr": "2",
+      "type": "Encounter",
+      "location": "Moonfall Grotto",
+      "summary": "A dark-robed group camped inside Moonfall Grotto who immediately focused on Seris and offered to spare the party in exchange for her. The party chose violence, Mead killed the leader, and the survivors broke.",
+      "image": "/campaign/Act 1/Maps/Moonfall Grotto Level P1B.jpg",
+      "dmOnly": false
     },
     {
       "id": "bandit-camp",
@@ -1515,7 +1551,27 @@
       "type": "Encounter",
       "location": "Forest Road to Greyhaven",
       "summary": "A rough encampment of greedy road bandits who kidnapped Edrin and Lyra after overhearing talk of the Circle of Promise.",
-      "image": "/campaign/Act 2/Maps/BanditCamp.png",
+      "image": "/Act 2/Maps/BanditCamp.png",
+      "dmOnly": false
+    },
+    {
+      "id": "greyhaven-memorial-fight",
+      "name": "Greyhaven Memorial Fight",
+      "cr": "4",
+      "type": "Encounter",
+      "location": "Greyhaven",
+      "summary": "The party confronted robed officials calmly dismantling a disputed memorial. The fight became a race to stop the final erasure and restore the shrine before the town's history could be packed away.",
+      "image": "/Act 2/Maps/Greyhaven.jpg",
+      "dmOnly": false
+    },
+    {
+      "id": "inn-ambush",
+      "name": "The Inn Ambush",
+      "cr": "4",
+      "type": "Ambush",
+      "location": "Roadside Inn near Greyhaven",
+      "summary": "A brutal night attack that killed Edrin almost immediately and dropped Echo early. The attackers looked horribly familiar, like the Greyhaven robed fighters dragged back up in a wet, wrong state.",
+      "image": "",
       "dmOnly": false
     },
     {
@@ -1524,8 +1580,28 @@
       "cr": "5",
       "type": "Mini-Boss",
       "location": "Staked Path, Weeping Marsh Approach",
-      "summary": "A blood-soaked executioner figure stationed on the staked path before the Circle of Promise. It arrived with what looked like the inn attackers dragged back up in a wet, ruined state, but the enlarged party still buried it under raw action economy after it managed one brutal decapitation.",
+      "summary": "A blood-soaked figure that confronted the party on the staked path and tried to turn the approach to the Circle of Promise into a blood payment. The enlarged group overwhelmed it quickly, but not before it decapitated the bandit prisoner the party had dragged along.",
       "image": "",
+      "dmOnly": false
+    },
+    {
+      "id": "circle-of-promise-fallout",
+      "name": "Circle of Promise Fallout",
+      "cr": "Story",
+      "type": "Conflict",
+      "location": "Circle of Promise",
+      "summary": "The obelisk opened after Mead and Echo gave blood. Echo claimed the Bloodbound Testament, Aylin failed to steal it, Heywud could not break its pull, and Lyra died trying to stop Echo from wielding it.",
+      "image": "/Act 2/Maps/Circle of Promise.jpg",
+      "dmOnly": false
+    },
+    {
+      "id": "weeping-marsh-artifact-fight",
+      "name": "Weeping Marsh Artifact Fight",
+      "cr": "6",
+      "type": "Boss Fight",
+      "location": "Weeping Marsh Artifact Site",
+      "summary": "After Mead touched the artifact and was blasted backward, the marsh conjured false essences of Edrin and Lyra. Aylin was killed trying to reach the artifact, Prom dealt heavy damage, and the party severed the roots keeping the marsh-made returns active.",
+      "image": "/Act 2/Maps/Weeping Marsh Bottom of the Well.jpg",
       "dmOnly": false
     }
   ],
@@ -1538,6 +1614,35 @@
       "holder": "Echo",
       "summary": "A dented iron bell wrapped in cracked leather. Ringing it binds the bearer to MooMoo's spirit and lets the party call up the spectral beast again after it falls.",
       "content": "Common magic item (requires attunement)\n\nWhen first rung during a short or long rest, the bell binds its bearer to MooMoo's spirit.\n\nWhat it does:\n- Summons MooMoo as a persistent spectral familiar\n- No ongoing duration\n- If MooMoo drops to 0 HP, it vanishes harmlessly\n- It can be resummoned by ringing the bell during a short or long rest\n- If another creature attunes to the bell, the bond transfers\n\nUtility:\n- Scout through MooMoo's senses\n- Carry light loads\n- Offer quiet support without directly attacking\n- Once per long rest, while MooMoo is within 10 feet, the bonded creature may reroll a failed Wisdom save and must use the new result"
+    },
+    {
+      "id": "item-bloodbound-testament",
+      "title": "Bloodbound Testament",
+      "category": "Magic Item",
+      "status": "Acquired",
+      "holder": "Prom",
+      "summary": "A shrine-born weapon drawn from the Circle of Promise. Echo first claimed it as a dagger, Lyra died trying to keep it from him, and Echo later bequeathed it to Prom, where it reshaped itself into a greataxe.",
+      "content": "A magic weapon pulled from the opened obelisk at the Circle of Promise. Echo claimed it first after feeding blood to the shrine, Aylin immediately failed to steal it, and the weapon started pushing him toward violence almost at once. Lyra died trying to stop Echo from keeping it. Echo later bequeathed the Bloodbound Testament to Prom, and it took the shape of a greataxe."
+    },
+    {
+      "id": "item-tearstone-waning-tide",
+      "title": "Tearstone of the Waning Tide",
+      "category": "Key Item",
+      "status": "Acquired",
+      "holder": "Prom",
+      "summary": "The artifact recovered from the center of the Weeping Marsh. After the hollow fight, it attached itself to Prom instead of waiting to be claimed.",
+      "content": "An artifact from the heart of the Weeping Marsh. Mead was the first to touch it and was blasted backward when the marsh stopped breathing, but after the fight the relic chose Prom and bound itself to him. Prom decided it would bind to his forehead.",
+      "image": "/items/tearstone-of-waning-tide-card-front.png",
+      "images": [
+        {
+          "src": "/items/tearstone-of-waning-tide-card-front.png",
+          "label": "Front"
+        },
+        {
+          "src": "/items/tearstone-of-waning-tide-card-back.png",
+          "label": "Back"
+        }
+      ]
     }
   ],
   "locations": [
@@ -1585,17 +1690,17 @@
       "id": "location-weeping-marsh",
       "title": "Weeping Marsh",
       "act": "Act 2",
-      "session": 5,
-      "summary": "No longer just a map lead: the party has now entered the Weeping Marsh approach, survived the staked path, and killed the Red Witness after being ambushed at the inn by what looked like the same people they had fought at the Greyhaven statue.",
-      "content": "OVERVIEW\nA marsh of graves, old promises, and the nearest confirmed relic site on the map. What began as a nearby lead is now an active blood-soaked approach the party has already entered.\n\nWHAT THE PARTY LEARNED\n- Seris was right that the Weeping Marsh was the nearest relic lead.\n- The approach is ritualized, not merely dangerous: severed heads, warning stakes, and sacrifice imagery mark the road in.\n- The things rising on that road did not feel like ordinary undead. They looked disturbingly close to the people who had attacked the party at the inn.\n\nKEY MOMENTS\n- After the inn ambush that killed Edrin, the party still pushed forward with Lyra and three guest allies.\n- They crossed the staked path and faced the Red Witness before the Circle of Promise proper.\n- The Red Witness was beaten, but not before it decapitated the woman the party had taken from the bandit camp.\n- The familiar-looking dead on the road collapsed into mud after the fight instead of leaving ordinary bodies.\n\nNOTES TO REMEMBER\n- The marsh is no longer theoretical; the party has already entered it.\n- The road into the Circle of Promise is open.\n- Whatever is happening here is stranger than a normal undead problem."
+      "session": 6,
+      "summary": "No longer just a map lead: the party pushed all the way to the marsh's center, found the artifact site, fought marsh-conjured essences of Lyra and Edrin, severed the roots sustaining them, and watched the Tearstone attach itself to Prom.",
+      "content": "OVERVIEW\nA marsh of graves, preserved endings, and the nearest confirmed relic site on the map. The party has now gone beyond the approach and reached the center.\n\nWHAT THE PARTY LEARNED\n- MooMoo could map a route through the marsh where ordinary judgment probably would not have been enough.\n- The artifact site reacts violently when touched.\n- The dead here do not truly return. The marsh and artifact can conjure false essences from what was left behind.\n- The artifact did not simply wait to be taken; it attached itself to Prom.\n\nKEY MOMENTS\n- Mead fell eighty feet down a well on the way in and still made it to the artifact first.\n- The marsh stopped breathing when he touched the Tearstone and blasted him backward.\n- Both Edrin and Lyra were already dead before the artifact fight.\n- The marsh conjured false versions of them through the swamp, tied to the artifact by living roots.\n- Aylin ran to the front to try to take the artifact and got her head bashed in by the Lyra-return's legendary actions.\n- Prom dealt heavy damage throughout the fight.\n- The party severed the roots connecting the returns to the artifact, allowing both marsh-made versions to finally be killed.\n- Aylin got brought back and immediately made it everyone else's problem again.\n- The Tearstone of the Waning Tide bound itself to Prom.\n\nNOTES TO REMEMBER\n- The marsh is now fully real to the party, not a rumor or a waypoint.\n- This place does not just preserve bodies; it distorts endings.\n- The artifact site is one of the clearest signs yet that something in this region refuses to let death behave normally."
     },
     {
       "id": "location-circle-of-promise",
       "title": "Circle of Promise",
       "act": "Act 2",
-      "session": 5,
-      "summary": "Still unresolved. The party only completed the Red Witness fight on the approach, and the Circle itself remains ahead.",
-      "content": "OVERVIEW\nThe Circle of Promise is still ahead. The party has not entered or resolved it yet.\n\nWHAT THE PARTY KNOWS NOW\n- Lyra has warned that the Circle may hide something dangerous.\n- The approach to it is marked by ritual violence and guarded opposition.\n- The Red Witness was only one layer of whatever is protecting the road forward.\n\nKEY MOMENTS\n- The party beat the Red Witness on the staked path.\n- By that point, Edrin was already dead.\n- The familiar-looking dead on the road collapsed into mud after the fight.\n\nNOTES TO REMEMBER\n- This remains an active unresolved objective.\n- The Circle itself has not happened on-screen yet."
+      "session": 6,
+      "summary": "The party reached the obelisk, blooded it open, and pulled the Bloodbound Testament from inside, proving the Circle of Promise was never just a rumor.",
+      "content": "OVERVIEW\nA ritual clearing centered on a black obelisk and four colored pentagrams. The place runs on payment logic, blood symbolism, and the certainty that nothing here opens for free.\n\nWHAT THE PARTY LEARNED\n- The four lit circles each carried a phrase: Give what spills, Give what names you, Give what binds you, and Give what carries you.\n- Blood was enough to wake the obelisk.\n- Whatever was sealed inside was not passive for long.\n\nKEY MOMENTS\n- Mead and Echo cut themselves and fed blood to the shrine.\n- Echo pressed a bloody hand to the obelisk and opened it.\n- Echo drew a magic dagger from inside: the Bloodbound Testament.\n- Aylin immediately tried to steal it and failed.\n- The weapon almost instantly began pushing Echo toward killing Lyra, and Heywud failed to talk or magic that pressure out of him.\n- Lyra died trying to stop Echo from keeping the dagger.\n- Echo later bequeathed the Bloodbound Testament to Prom, where it took the shape of a greataxe."
     }
   ],
   "quests": [
@@ -1796,11 +1901,11 @@
         },
         {
           "label": "Travel to Weeping Marsh or another confirmed relic lead",
-          "done": false
+          "done": true
         },
         {
           "label": "Recover at least one additional relic",
-          "done": false
+          "done": true
         }
       ]
     },
@@ -1837,8 +1942,8 @@
       "id": "quest-circle-of-promise",
       "title": "Circle of Promise",
       "tier": "side",
-      "status": "active",
-      "summary": "The party has pushed through Greyhaven, lost Edrin in the inn ambush, and beaten the Red Witness on the staked path, but the Circle of Promise itself is still unresolved.",
+      "status": "completed",
+      "summary": "The party reached the obelisk, blooded it open, and left with the Bloodbound Testament. Echo first claimed it as a dagger, then bequeathed it to Prom, where it took the shape of a greataxe.",
       "steps": [
         {
           "label": "Learn why Edrin and Lyra were abducted",
@@ -1854,11 +1959,11 @@
         },
         {
           "label": "Reach the Circle of Promise",
-          "done": false
+          "done": true
         },
         {
           "label": "Determine whether the site holds a weapon, a seal, or something else entirely",
-          "done": false
+          "done": true
         }
       ]
     },

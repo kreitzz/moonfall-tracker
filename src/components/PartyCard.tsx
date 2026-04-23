@@ -14,11 +14,15 @@ export default function PartyCard({ member }: { member: PartyMember }) {
   const slug = slugify(member.name);
   const campaign = getCampaign();
   const keyItems = (campaign.items ?? []).filter((item) => item.holder === member.name);
+  const inactiveGuest = member.guest && !member.active;
+  const badge = inactiveGuest ? "Inactive Guest" : member.guest ? "Guest" : "PC";
 
   return (
     <Link
       href={`/party/${slug}`}
-      className="group block rounded-2xl border border-black/10 bg-white p-4 shadow-sm transition hover:shadow-md dark:border-white/10 dark:bg-zinc-950"
+      className={`group block rounded-2xl border border-black/10 bg-white p-4 shadow-sm transition hover:shadow-md dark:border-white/10 dark:bg-zinc-950 ${
+        inactiveGuest ? "opacity-70" : ""
+      }`}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-3">
@@ -36,7 +40,7 @@ export default function PartyCard({ member }: { member: PartyMember }) {
         </div>
 
         <span className="rounded-full border border-black/10 px-2 py-0.5 text-xs text-black/60 dark:border-white/10 dark:text-white/60">
-          {member.guest ? "Guest" : "PC"}
+          {badge}
         </span>
       </div>
       <div className="mt-3 text-sm text-black/70 dark:text-white/70">{member.role}</div>

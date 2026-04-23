@@ -14,8 +14,16 @@ const MAP_EDITOR_IDS = new Set([
   "act-2-maps-bandit-camp-png",
   "act-2-maps-greyhaven-jpg",
   "act-2-maps-circle-of-promise-jpg",
-  "act-2-maps-circle-of-promise-underground-jpg",
+  "act-2-maps-weeping-marsh-jpg",
+  "act-2-maps-weeping-marsh-bottom-of-the-well-jpg",
 ]);
+
+function imageSrcFromPath(path: string, version?: string) {
+  const encoded = path.split("/").map(encodeURIComponent).join("/");
+  const basePath =
+    path.startsWith("Act 1/") || path.startsWith("General/") ? `/campaign/${encoded}` : `/${encoded}`;
+  return `${basePath}${version ? `?v=${version}` : ""}`;
+}
 
 export default function MapsGallery({ images }: { images: CampaignImage[] }) {
   const { dmMode } = useDmMode();
@@ -61,7 +69,7 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
           const title = img.title;
           const subtitle = img.act;
           const version = (img as CampaignImage & { version?: string }).version;
-          const src = `/campaign/${img.path}${version ? `?v=${version}` : ""}`;
+          const src = imageSrcFromPath(img.path, version);
           const href = src;
 
           return (

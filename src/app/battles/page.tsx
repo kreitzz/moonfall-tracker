@@ -4,7 +4,7 @@ import BattleCard from "@/components/BattleCard";
 
 export default function BattlesPage() {
   const campaign = getCampaign();
-  const battles = [...(campaign.battles ?? [])].sort((a, b) => a.name.localeCompare(b.name));
+  const battles = [...(campaign.battles ?? [])].filter((battle) => !battle.dmOnly).sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <div className="space-y-6">

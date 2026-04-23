@@ -10,6 +10,9 @@ import HomeDmHint from "@/components/HomeDmHint";
 export default function Home() {
   const campaign = getCampaign();
   const latestSession = [...(campaign.sessions ?? [])].sort((a, b) => (b.number ?? 0) - (a.number ?? 0))[0];
+  const activePlayers = campaign.party.filter((member) => !member.guest || member.active);
+  const publicNpcs = (campaign.npcs ?? []).filter((npc) => !npc.dmOnly);
+  const publicBattles = (campaign.battles ?? []).filter((battle) => !battle.dmOnly);
 
   return (
     <div className="space-y-10">
@@ -54,8 +57,8 @@ export default function Home() {
             <div className="grid gap-4 md:grid-cols-3">
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
                 <div className="text-sm text-black/60 dark:text-white/60">Party</div>
-                <div className="mt-1 text-2xl font-semibold">{campaign.party.length}</div>
-                <div className="mt-1 text-sm text-black/70 dark:text-white/70">Current roster</div>
+                <div className="mt-1 text-2xl font-semibold">{activePlayers.length}</div>
+                <div className="mt-1 text-sm text-black/70 dark:text-white/70">Active roster</div>
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
                 <div className="text-sm text-black/60 dark:text-white/60">Sessions</div>
@@ -64,12 +67,12 @@ export default function Home() {
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
                 <div className="text-sm text-black/60 dark:text-white/60">NPCs</div>
-                <div className="mt-1 text-2xl font-semibold">{campaign.npcs?.length ?? 0}</div>
+                <div className="mt-1 text-2xl font-semibold">{publicNpcs.length}</div>
                 <div className="mt-1 text-sm text-black/70 dark:text-white/70">Known characters</div>
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
                 <div className="text-sm text-black/60 dark:text-white/60">Encounters</div>
-                <div className="mt-1 text-2xl font-semibold">{campaign.battles?.length ?? 0}</div>
+                <div className="mt-1 text-2xl font-semibold">{publicBattles.length}</div>
                 <div className="mt-1 text-sm text-black/70 dark:text-white/70">Logged so far</div>
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
@@ -118,7 +121,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {campaign.party.map((m, idx) => (
+          {activePlayers.map((m, idx) => (
             <PartyCard key={`${m.name}-${idx}`} member={m} />
           ))}
         </div>
@@ -132,7 +135,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {(campaign.npcs ?? []).map((n) => (
+          {publicNpcs.map((n) => (
             <NpcCard key={n.id} npc={n} />
           ))}
         </div>
@@ -160,7 +163,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {(campaign.battles ?? []).slice(0, 3).map((b) => (
+          {publicBattles.slice(0, 3).map((b) => (
             <BattleCard key={b.id} battle={b} />
           ))}
         </div>

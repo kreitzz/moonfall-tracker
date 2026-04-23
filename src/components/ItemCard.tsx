@@ -1,11 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { CampaignItem } from "@/lib/campaign";
 
 export default function ItemCard({ item }: { item: CampaignItem }) {
+  const image = (item as { image?: string }).image;
+
   return (
     <div className="rounded-2xl border border-black/10 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-zinc-950">
+      {image ? (
+        <div className="relative mb-4 aspect-[5/7] overflow-hidden rounded-xl border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/5">
+          <Image src={image} alt={item.title} fill className="object-contain p-2" sizes="(max-width: 768px) 100vw, 33vw" />
+        </div>
+      ) : null}
+
       <div className="flex items-start justify-between gap-3">
         <div>
           <div className="text-sm text-black/60 dark:text-white/60">Key Item</div>

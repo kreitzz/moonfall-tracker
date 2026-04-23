@@ -28,7 +28,9 @@ type DragState = {
 
 function imageSrcFromPath(path: string, version?: string) {
   const encoded = path.split("/").map(encodeURIComponent).join("/");
-  return `/campaign/${encoded}${version ? `?v=${version}` : ""}`;
+  const basePath =
+    path.startsWith("Act 1/") || path.startsWith("General/") ? `/campaign/${encoded}` : `/${encoded}`;
+  return `${basePath}${version ? `?v=${version}` : ""}`;
 }
 
 export default function MapEditor({ images }: { images: CampaignImage[] }) {
@@ -202,7 +204,7 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
     return (
       <div className="space-y-4">
         <header>
-          <h1 className="text-2xl font-semibold tracking-tight">Act 1 Map Editor</h1>
+          <h1 className="text-2xl font-semibold tracking-tight">Campaign Map Editor</h1>
           <p className="mt-1 text-black/70 dark:text-white/70">DM Mode is required to access this tool.</p>
         </header>
         <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-5 text-sm text-black/70 dark:border-white/10 dark:bg-white/5 dark:text-white/70">
@@ -215,14 +217,14 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="text-2xl font-semibold tracking-tight">Act 1 Map Editor</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Campaign Map Editor</h1>
         <p className="mt-1 text-black/70 dark:text-white/70">
-          Click any Act 1 image, then add and drag text directly on top.
+          Click any included campaign map, then add and drag text directly on top.
         </p>
       </header>
 
       <section className="rounded-2xl border border-black/10 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-zinc-950">
-        <div className="mb-3 text-sm font-medium">Act 1 maps</div>
+        <div className="mb-3 text-sm font-medium">Available maps</div>
         <div className="flex flex-wrap gap-2">
           {images.map((img) => (
             <button

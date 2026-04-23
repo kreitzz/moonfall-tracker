@@ -20,6 +20,11 @@ function mkSnippet(hay: string, q: string) {
   return (start > 0 ? "…" : "") + hay.slice(start, end) + (end < hay.length ? "…" : "");
 }
 
+function imageHrefFromPath(path: string) {
+  const encoded = path.split("/").map(encodeURIComponent).join("/");
+  return path.startsWith("Act 1/") || path.startsWith("General/") ? `/campaign/${encoded}` : `/${encoded}`;
+}
+
 export default function GlobalSearch({ campaign }: { campaign: Campaign }) {
   const { dmMode } = useDmMode();
   const { isPublic } = useReveals();
@@ -76,7 +81,7 @@ export default function GlobalSearch({ campaign }: { campaign: Campaign }) {
           id: m.id,
           title: m.title,
           subtitle: `${m.act} · Map`,
-          href: `/campaign/${m.path}`,
+          href: imageHrefFromPath(m.path),
         });
       }
     }
