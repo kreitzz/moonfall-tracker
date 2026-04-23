@@ -1457,7 +1457,7 @@
       ],
       "summary": "After attuning to the Moonfall relic, Seris chose to leave the party and head for Lunaryth alone, hoping to understand the relic and find Elyndor before grief or power makes her dangerous to others.",
       "image": "/npcs/seris.png",
-      "dmOnly": true
+      "dmOnly": false
     },
     {
       "id": "eldra",
