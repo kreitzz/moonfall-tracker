@@ -26,6 +26,7 @@ export default async function PartyMemberPage({
   if (!member) return notFound();
   const editableSheet = (member as typeof member & { editableSheet?: unknown }).editableSheet;
   const memberItems = (campaign.items ?? []).filter((item) => item.holder === member.name);
+  const deceased = member.active === false && /dead|deceased/i.test(`${member.role} ${member.editableSheet?.notes ?? ""}`);
 
   return (
     <div className="space-y-6">
@@ -50,6 +51,12 @@ export default async function PartyMemberPage({
                   fill
                   className="object-contain"
                 />
+              ) : null}
+              {deceased ? (
+                <div className="pointer-events-none absolute inset-0" aria-hidden>
+                  <div className="absolute left-1/2 top-1/2 h-[140%] w-5 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-red-600 shadow-lg" />
+                  <div className="absolute left-1/2 top-1/2 h-[140%] w-5 -translate-x-1/2 -translate-y-1/2 -rotate-45 rounded-full bg-red-600 shadow-lg" />
+                </div>
               ) : null}
             </div>
           </div>

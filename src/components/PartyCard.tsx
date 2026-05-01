@@ -14,14 +14,15 @@ export default function PartyCard({ member }: { member: PartyMember }) {
   const slug = slugify(member.name);
   const campaign = getCampaign();
   const keyItems = (campaign.items ?? []).filter((item) => item.holder === member.name);
-  const inactiveGuest = member.guest && !member.active;
-  const badge = inactiveGuest ? "Inactive Guest" : member.guest ? "Guest" : "PC";
+  const inactive = member.active === false;
+  const deceased = inactive && /dead|deceased/i.test(`${member.role} ${member.editableSheet?.notes ?? ""}`);
+  const badge = inactive ? (member.guest ? "Inactive Guest" : "Inactive PC") : member.guest ? "Guest" : "PC";
 
   return (
     <Link
       href={`/party/${slug}`}
       className={`group block rounded-2xl border border-black/10 bg-white p-4 shadow-sm transition hover:shadow-md dark:border-white/10 dark:bg-zinc-950 ${
-        inactiveGuest ? "opacity-70" : ""
+        inactive ? "opacity-70" : ""
       }`}
     >
       <div className="flex items-start justify-between gap-3">
@@ -29,6 +30,12 @@ export default function PartyCard({ member }: { member: PartyMember }) {
           <div className="relative h-12 w-12 overflow-hidden rounded-xl border border-black/10 bg-black/[0.03] dark:border-white/10 dark:bg-white/5">
             {member.image ? (
               <Image src={member.image} alt={member.name} fill className="object-contain" sizes="48px" />
+            ) : null}
+            {deceased ? (
+              <div className="pointer-events-none absolute inset-0" aria-hidden>
+                <div className="absolute left-1/2 top-1/2 h-[140%] w-1.5 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-red-600 shadow-sm" />
+                <div className="absolute left-1/2 top-1/2 h-[140%] w-1.5 -translate-x-1/2 -translate-y-1/2 -rotate-45 rounded-full bg-red-600 shadow-sm" />
+              </div>
             ) : null}
           </div>
           <div>

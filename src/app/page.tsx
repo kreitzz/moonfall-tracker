@@ -6,11 +6,12 @@ import BattleCard from "@/components/BattleCard";
 import ItemCard from "@/components/ItemCard";
 import { getCampaign } from "@/lib/campaign";
 import HomeDmHint from "@/components/HomeDmHint";
+import PartyNameMark from "@/components/PartyNameMark";
 
 export default function Home() {
   const campaign = getCampaign();
   const latestSession = [...(campaign.sessions ?? [])].sort((a, b) => (b.number ?? 0) - (a.number ?? 0))[0];
-  const activePlayers = campaign.party.filter((member) => !member.guest || member.active);
+  const activePlayers = campaign.party.filter((member) => member.active !== false && (!member.guest || member.active));
   const publicNpcs = (campaign.npcs ?? []).filter((npc) => !npc.dmOnly);
   const publicBattles = (campaign.battles ?? []).filter((battle) => !battle.dmOnly);
 
@@ -29,7 +30,9 @@ export default function Home() {
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
           <div className="min-w-0 flex-1 space-y-4">
             <div className="text-sm text-black/60 dark:text-white/60">Campaign tracker</div>
-            <h1 className="mt-2 text-3xl font-semibold tracking-tight">{campaign.meta.name}</h1>
+            <h1 className="mt-2">
+              <PartyNameMark size="lg" />
+            </h1>
             <p className="mt-2 text-base text-black/70 dark:text-white/70">
               A living, clickable record of the story so far — sessions, maps, lore, and character info.
             </p>
@@ -87,8 +90,8 @@ export default function Home() {
               </div>
               <div className="rounded-2xl border border-black/10 bg-black/[0.03] p-4 dark:border-white/10 dark:bg-white/5">
                 <div className="text-sm text-black/60 dark:text-white/60">Deaths</div>
-                <div className="mt-1 text-2xl font-semibold">1*</div>
-                <div className="mt-1 text-sm text-black/70 dark:text-white/70">Aylin, technically</div>
+                <div className="mt-1 text-2xl font-semibold">2*</div>
+                <div className="mt-1 text-sm text-black/70 dark:text-white/70">Kelsier, plus Aylin technically</div>
               </div>
             </div>
           </div>
@@ -104,6 +107,10 @@ export default function Home() {
                     sizes="(max-width: 1024px) 100vw, 420px"
                     unoptimized
                   />
+                  <div className="pointer-events-none absolute left-[9%] top-[21%] h-[25%] w-[21%]" aria-hidden>
+                    <div className="absolute left-1/2 top-1/2 h-[130%] w-3.5 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-red-600 shadow-lg shadow-black/30" />
+                    <div className="absolute left-1/2 top-1/2 h-[130%] w-3.5 -translate-x-1/2 -translate-y-1/2 -rotate-45 rounded-full bg-red-600 shadow-lg shadow-black/30" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -115,7 +122,9 @@ export default function Home() {
 
       <section>
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-xl font-semibold tracking-tight">The Belligerent Five</h2>
+          <h2 className="text-xl font-semibold tracking-tight">
+            <PartyNameMark />
+          </h2>
           <Link href="/players" className="text-sm text-black/70 hover:underline dark:text-white/70">
             See all players →
           </Link>
@@ -152,6 +161,26 @@ export default function Home() {
           {(campaign.items ?? []).slice(0, 3).map((item) => (
             <ItemCard key={item.id} item={item} />
           ))}
+        </div>
+      </section>
+
+      <section>
+        <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 className="text-xl font-semibold tracking-tight">Guild Games</h2>
+              <p className="mt-1 max-w-2xl text-sm text-black/70 dark:text-white/70">
+                The party has reached Lunaryth, visited the guilds, and learned the Games are the city's cleanest path to coin,
+                status, and access.
+              </p>
+            </div>
+            <Link
+              href="/guild-games"
+              className="w-48 rounded-full bg-black px-4 py-2 text-center text-sm font-medium text-white hover:opacity-90 dark:bg-white dark:text-black"
+            >
+              View bracket
+            </Link>
+          </div>
         </div>
       </section>
 

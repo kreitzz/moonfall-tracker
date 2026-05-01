@@ -4,8 +4,8 @@ import PartyCard from "@/components/PartyCard";
 
 export default function PlayersPage() {
   const campaign = getCampaign();
-  const activePlayers = campaign.party.filter((member) => !member.guest || member.active);
-  const inactivePlayers = campaign.party.filter((member) => member.guest && !member.active);
+  const activePlayers = campaign.party.filter((member) => member.active !== false && (!member.guest || member.active));
+  const inactivePlayers = campaign.party.filter((member) => member.active === false);
 
   return (
     <div className="space-y-6">

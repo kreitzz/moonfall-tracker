@@ -16,6 +16,7 @@ const MAP_EDITOR_IDS = new Set([
   "act-2-maps-circle-of-promise-jpg",
   "act-2-maps-weeping-marsh-jpg",
   "act-2-maps-weeping-marsh-bottom-of-the-well-jpg",
+  "act-2-maps-lunaryth-jpg",
 ]);
 
 function imageSrcFromPath(path: string, version?: string) {

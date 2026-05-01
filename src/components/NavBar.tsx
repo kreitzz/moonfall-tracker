@@ -4,12 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
 import { useDmMode } from "@/components/DmModeProvider";
+import PartyNameMark from "@/components/PartyNameMark";
 
 function classNames(...xs: Array<string | false | undefined | null>) {
   return xs.filter(Boolean).join(" ");
 }
 
-export default function NavBar({ partyName }: { partyName: string }) {
+export default function NavBar({ partyName: _partyName }: { partyName: string }) {
   const pathname = usePathname();
   const { dmMode, enableDmMode, disableDmMode } = useDmMode();
   const [showDmPrompt, setShowDmPrompt] = useState(false);
@@ -22,6 +23,7 @@ export default function NavBar({ partyName }: { partyName: string }) {
       { href: "/players", label: "Players" },
       { href: "/sessions", label: "Sessions" },
       { href: "/quests", label: "Quests" },
+      { href: "/guild-games", label: "Guild Games" },
       { href: "/items", label: "Key Items" },
       { href: "/locations", label: "Location Notes" },
       { href: "/npcs", label: "NPCs" },
@@ -39,8 +41,8 @@ export default function NavBar({ partyName }: { partyName: string }) {
     <div className="sticky top-0 z-50 border-b border-black/10 bg-white/80 backdrop-blur dark:border-white/10 dark:bg-black/70">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <div className="flex items-center gap-3">
-          <Link href="/" className="text-base font-semibold tracking-tight">
-            {partyName}
+          <Link href="/" aria-label="The Belligerent Four">
+            <PartyNameMark />
           </Link>
         </div>
 

@@ -2,7 +2,7 @@
   "meta": {
     "name": "The Belligerent Five",
     "partyName": "The Belligerent Five",
-    "generatedAt": "2026-04-21",
+    "generatedAt": "2026-05-01",
     "whatWeKnow": [
       "Mara died after a brief recovery when moon-petal failed against a deeper corrupted force.",
       "Moonfall Grotto is a temple of Selune and site of a lunar trial.",
@@ -16,7 +16,14 @@
       "When the shrine was restored, the stones sang and Echo witnessed a vision of a calm drow cutting his palm over a blood basin in red firelight.",
       "On the road into the Weeping Marsh, the party survived an inn-room massacre attempt, took three new guest allies with them, and cut down the Red Witness on the staked path.",
       "The Circle of Promise opened only after blood was offered, and the Bloodbound Testament eventually passed from Echo to Prom, reshaping itself into a greataxe.",
-      "Deep in the Weeping Marsh, the party found the next artifact site, watched the marsh conjure false essences of Edrin and Lyra through the swamp, severed the roots tying them to the artifact, and saw the marsh artifact bind itself to Prom."
+      "Deep in the Weeping Marsh, the party found the next artifact site, watched the marsh conjure false essences of Edrin and Lyra through the swamp, severed the roots tying them to the artifact, and saw the marsh artifact bind itself to Prom.",
+      "Kelsier is dead. His tortured body was thrown onto the path after the party left the Weeping Marsh, moments before robed attackers demanded Seris and the marsh artifact.",
+      "After leaving the marsh, robed attackers ambushed the party. Mead went down for the first time, but Prom's combination of the Tearstone and Bloodbound Testament let him purge magical influence and slaughter the ambushers before any useful information could be extracted.",
+      "On the road to Lunaryth, the party lost their gold to an old traveler in a game of road dice, then murdered him and took the gold back.",
+      "The party has reached Lunaryth and learned the Guild Games are happening in a few days.",
+      "The Mercantile League has won the last six Guild Games, hoards many of the best items in the city, and treated the party like peasants before kicking them out.",
+      "Mead found kindred spirits in the Civic Wardens, whose members seem to love brawling almost as much as he does.",
+      "Echo recognized the central statue in Lunaryth as the woman from his visions."
     ],
     "initialPublic": [
       "act-1-dm-guide-the-lost-forest-docx",
@@ -33,7 +40,8 @@
       "act-2-maps-greyhaven-jpg",
       "act-2-maps-circle-of-promise-jpg",
       "act-2-maps-weeping-marsh-jpg",
-      "act-2-maps-weeping-marsh-bottom-of-the-well-jpg"
+      "act-2-maps-weeping-marsh-bottom-of-the-well-jpg",
+      "act-2-maps-lunaryth-jpg"
     ]
   },
   "party": [
@@ -126,8 +134,9 @@
       "name": "Kelsier",
       "ancestry": "Tiefling",
       "class": "Monk",
-      "role": "Striker / chaos agent",
+      "role": "Deceased former PC",
       "image": "/party/kelsier.png",
+      "active": false,
       "card": "KELSIER\nTiefling Monk\nAlignment: TBD\n\nCORE IDENTITY\nName: Kelsier\nRace: Tiefling\nClass: Monk\nBackground: TBD\nAlignment: TBD\nAge: TBD\nHeight: TBD\nWeight: TBD\nEyes: TBD\nHair: TBD\nSkin: TBD\n\nABILITY SCORES\nAbility | Score | Modifier\nStrength | TBD | TBD\nDexterity | TBD | TBD\nConstitution | TBD | TBD\nIntelligence | TBD | TBD\nWisdom | TBD | TBD\nCharisma | TBD | TBD\nProficiency Bonus: TBD\nInitiative: TBD\nSpeed: TBD\nArmor Class: TBD\nHP: TBD\nHit Dice: TBD\nPassive Perception: TBD\n\nSKILLS & PROFICIENCIES\nSaving Throws\n- TBD\nSkill Proficiencies\n- TBD\nTool Proficiencies\n- TBD\nWeapon Proficiencies\n- TBD\nArmor Proficiency\n- TBD\nLanguages\n- Common\n- TBD\n\nCOMBAT\nWeapons\n- TBD\n\nFEATURES & TRAITS\n- TBD\n\nEQUIPMENT\n- TBD\n\nBACKSTORY SUMMARY\nTBD",
       "editableSheet": {
         "basics": {
@@ -203,8 +212,8 @@
         "attacks": "",
         "featuresTraits": "",
         "equipment": "",
-        "backstory": "Kelsier has not revealed much about himself yet.",
-        "notes": "Intentionally vague until more is revealed in play."
+        "backstory": "Kelsier split from the party after Moonfall and did not return. His body was later thrown onto the path after the Weeping Marsh, showing signs of severe restraint, torture, and a final throat wound.",
+        "notes": "Former PC. Confirmed dead in Session 7 when robed attackers used his body as a warning before ambushing the party."
       }
     },
     {
@@ -1077,6 +1086,22 @@
         "reason": "Tried to steal Echo's new knife, then later ran to the front like a rogue trying to grab the artifact and got her head bashed in by Lyra's legendary actions."
       },
       "docId": "session-6"
+    },
+    {
+      "id": "session-7",
+      "number": 7,
+      "title": "The Bearer Breaks the Ambush",
+      "date": "2026-04-30",
+      "summary": "After leaving the Weeping Marsh, the party found Kelsier's tortured body thrown onto the path as robed attackers demanded Seris and whatever had been brought up from below. Mead was downed for the first time, Echo was nearly forced into danger by Crown of Madness, and Prom proved terrifyingly dominant as the Tearstone of the Waning Tide and Bloodbound Testament worked together to purge the charm before he could destroy Echo. The last attacker surrendered, but Prom could not resist finishing a weakened enemy and decapitated him before the party could extract answers. On the road to Lunaryth afterward, the party lost badly at road dice to an old traveler, then murdered him and took the gold back. They reached Lunaryth, learned the Guild Games were coming in a few days, visited the guilds, found Mead's kind of brawlers in the Civic Wardens, and got kicked out of the Mercantile League after learning the League hoards top-tier items and has won the last six Games. The session ended at the central statue, where Echo realized the woman carved there is the woman from his visions.",
+      "mvp": {
+        "name": "Prom",
+        "reason": "The Tearstone and Bloodbound Testament made him overwhelming in the ambush: he resisted the worst consequence of Crown of Madness, purged the remaining attackers, and turned the fight decisively."
+      },
+      "lowlight": {
+        "name": "The Belligerent Five",
+        "reason": "Prom killed a surrendered ambusher before questioning, and the party later murdered an old traveler after losing their gold to him in road dice."
+      },
+      "docId": "session-7"
     }
   ],
   "documents": [
@@ -1331,6 +1356,12 @@
       "title": "Session 6 - The Circle Opens and the Marsh Answers",
       "dmOnly": false,
       "content": "SESSION 6\n\nTHE CIRCLE OF PROMISE\n- The party finally reached the obelisk beyond the staked path.\n- Four lit pentagrams surrounded it: red, blue, gold, and green.\n- Their inscriptions read: Give what spills. Give what names you. Give what binds you. Give what carries you.\n- Mead and Echo cut themselves, and Echo pressed a bloody hand to the obelisk.\n- The shrine opened.\n\nTHE WEAPON INSIDE\n- Echo took the weapon from inside the obelisk and received a magic dagger later identified as the Bloodbound Testament.\n- Aylin immediately tried to steal it and failed.\n- The dagger pushed hard in the wrong direction almost at once: Echo felt compelled to kill Lyra.\n- Heywud tried to magic that impulse away and failed to pry the weapon loose from Echo's will.\n- Lyra tried to stop Echo from wielding it and died in the process.\n- Echo later bequeathed the Bloodbound Testament to Prom, and the weapon took the shape of a greataxe.\n\nINTO THE MARSH\n- The party pushed deeper into the Weeping Marsh.\n- MooMoo mapped the path to the center.\n- Mead then fell eighty feet down a well on the way to the artifact site, because of course he did.\n\nTHE ARTIFACT SITE\n- The party found the artifact.\n- Mead ran up first to touch it.\n- The marsh stopped breathing.\n- Something blasted Mead backward into the whetstone and the site woke up around them.\n\nTHE MARSH RETURNS\n- Both Edrin and Lyra were already dead before this fight.\n- The swamp and artifact conjured false essences of them, not true resurrections.\n- Their bodies were marsh-made returns tied to the artifact by living roots.\n- Aylin, being a rogue, ran straight to the front of the party to try to take the artifact.\n- The Lyra-return punished that immediately and bashed Aylin's head in through legendary actions.\n- The Lyra-return then died and got back up again, making it immediately clear the roots were keeping the false returns active.\n- Prom dealt heavy damage throughout the fight.\n- Once the party dispatched the roots connecting them to the artifact, both marsh returns could finally be put down.\n- Mead dragged Aylin back from death.\n\nAFTERMATH\n- Aylin's first act after being revived was to tell the entire party to fuck off.\n- The marsh artifact attached itself to Prom.\n- The Circle of Promise is no longer rumor.\n- The Weeping Marsh is no longer just a lead.\n- The party has now seen what this region does to memory, death, and anyone foolish enough to touch what it is protecting."
+    },
+    {
+      "id": "session-7",
+      "title": "Session 7 - The Bearer Breaks the Ambush",
+      "dmOnly": false,
+      "content": "SESSION 7\n\nKELSIER'S BODY\n- As the party left the Weeping Marsh, something heavy was dragged through the marsh grass and thrown onto the path.\n- It was Kelsier.\n- His wrists were flayed raw from restraints, his body showed deliberate torture wounds rather than battle damage, and one final gash had opened his throat.\n- The robed attackers made it clear they had tortured him for information and enjoyed it.\n- They demanded to know where the half-elf girl had gone and what the party had brought up from below.\n\nTHE MARSH EXIT AMBUSH\n- The attackers were waiting in position and wanted the artifact recovered from the marsh.\n- Mead was downed for the first time.\n- A charm from Crown of Madness nearly made Prom swing his greataxe into Echo.\n- Right before Prom could destroy Echo, the Tearstone of the Waning Tide purified the affliction.\n- Once freed, Prom became terrifying: the Tearstone and Bloodbound Testament together made him too much for the ambushers to handle.\n- He purged through the remaining attackers and murdered everyone in reach.\n\nTHE SURRENDER THAT FAILED\n- The last attacker surrendered.\n- The party had a chance to extract information.\n- Prom could not resist the Bloodbound Testament's pressure to finish a weakened enemy.\n- He made the enemy go \"boom\" and decapitated him before questioning could happen.\n\nROAD DICE\n- On the way to Lunaryth, the party met an old traveler and played road dice.\n- Bad rolls cost them all of their gold.\n- Rather than accept the loss, they murdered the poor old man and took the gold back.\n- The road to Lunaryth now has one more unnecessary body behind them.\n\nARRIVAL IN LUNARYTH\n- The party finally reached Lunaryth.\n- They learned the Guild Games are happening in a few days.\n- They visited all six guilds to get a first sense of who matters in the city.\n- Mead immediately liked the Civic Wardens because they, like him, love to brawl.\n- The Mercantile League treated the party like peasants and eventually kicked them out.\n- The party learned the Mercantile League hoards many of the best items in Lunaryth and has won the last six Guild Games.\n\nTHE STATUE CLIFFHANGER\n- The party walked past the central statue.\n- Echo realized the woman carved in the middle of Lunaryth is the same woman from his visions.\n- The session ended on that recognition before the party could fully unpack what it means.\n\nEND STATE\n- Kelsier is dead.\n- The robed faction is still hunting Seris and the artifacts.\n- Mead has now been dropped in combat.\n- Prom's two bound items are clearly powerful together, but the Bloodbound Testament is becoming a real moral problem.\n- The party lost another chance to learn more because mercy failed at the exact wrong time.\n- The party also murdered a harmless old traveler over road dice money, meaning they arrived in Lunaryth with blood on their hands that was not forced by monsters, relics, or prophecy.\n- Lunaryth is now open in front of them, with the Guild Games as the clearest public path to money, status, and access.\n- Echo has finally found a visible piece of his visions in the real world."
     }
   ],
   "images": [
@@ -1511,6 +1542,20 @@
       "summary": "A driven researcher whose notes on the Circle of Promise got her targeted. She survived Greyhaven, but died at the Circle of Promise trying to stop Echo from keeping the Bloodbound Testament.",
       "image": "/npcs/lyra.png",
       "dmOnly": false
+    },
+    {
+      "id": "road-dice-stranger",
+      "name": "Road Dice Stranger",
+      "title": "Old Road Gambler",
+      "status": "Dead",
+      "tags": [
+        "traveler",
+        "victim",
+        "road"
+      ],
+      "summary": "An old traveler who won the party's gold in a road dice game on the way to Lunaryth, then was murdered so the party could take the gold back.",
+      "image": "",
+      "dmOnly": false
     }
   ],
   "battles": [
@@ -1603,6 +1648,26 @@
       "summary": "After Mead touched the artifact and was blasted backward, the marsh conjured false essences of Edrin and Lyra. Aylin was killed trying to reach the artifact, Prom dealt heavy damage, and the party severed the roots keeping the marsh-made returns active.",
       "image": "/Act 2/Maps/Weeping Marsh Bottom of the Well.jpg",
       "dmOnly": false
+    },
+    {
+      "id": "marsh-exit-ambush",
+      "name": "Marsh Exit Ambush",
+      "cr": "4",
+      "type": "Ambush",
+      "location": "Weeping Marsh Exit",
+      "summary": "Robed attackers threw Kelsier's tortured body onto the path and demanded Seris and the artifact from below. Mead went down for the first time, Crown of Madness nearly turned Prom against Echo, and the Tearstone purged the charm before Prom slaughtered the ambushers.",
+      "image": "/Act 2/Maps/Weeping Marsh.jpg",
+      "dmOnly": false
+    },
+    {
+      "id": "road-dice-murder",
+      "name": "Road Dice Murder",
+      "cr": "Story",
+      "type": "Crime",
+      "location": "Road to Lunaryth",
+      "summary": "A road dice game with an old traveler went badly for the party. After losing their gold to bad rolls, they murdered him and took the money back.",
+      "image": "",
+      "dmOnly": false
     }
   ],
   "items": [
@@ -1621,8 +1686,8 @@
       "category": "Magic Item",
       "status": "Acquired",
       "holder": "Prom",
-      "summary": "A shrine-born weapon drawn from the Circle of Promise. Echo first claimed it as a dagger, Lyra died trying to keep it from him, and Echo later bequeathed it to Prom, where it reshaped itself into a greataxe.",
-      "content": "A magic weapon pulled from the opened obelisk at the Circle of Promise. Echo claimed it first after feeding blood to the shrine, Aylin immediately failed to steal it, and the weapon started pushing him toward violence almost at once. Lyra died trying to stop Echo from keeping it. Echo later bequeathed the Bloodbound Testament to Prom, and it took the shape of a greataxe."
+      "summary": "A shrine-born weapon drawn from the Circle of Promise. Echo first claimed it as a dagger, Lyra died trying to keep it from him, and Echo later bequeathed it to Prom, where it reshaped itself into a greataxe. Its pressure to finish weakened enemies has now directly cost the party a prisoner.",
+      "content": "A magic weapon pulled from the opened obelisk at the Circle of Promise. Echo claimed it first after feeding blood to the shrine, Aylin immediately failed to steal it, and the weapon started pushing him toward violence almost at once. Lyra died trying to stop Echo from keeping it. Echo later bequeathed the Bloodbound Testament to Prom, and it took the shape of a greataxe.\n\nThe weapon's influence became undeniable after the Weeping Marsh. When the final robed ambusher surrendered, Prom could not resist the urge to finish a weakened enemy and decapitated him before the party could question him."
     },
     {
       "id": "item-tearstone-waning-tide",
@@ -1630,8 +1695,8 @@
       "category": "Key Item",
       "status": "Acquired",
       "holder": "Prom",
-      "summary": "The artifact recovered from the center of the Weeping Marsh. After the hollow fight, it attached itself to Prom instead of waiting to be claimed.",
-      "content": "An artifact from the heart of the Weeping Marsh. Mead was the first to touch it and was blasted backward when the marsh stopped breathing, but after the fight the relic chose Prom and bound itself to him. Prom decided it would bind to his forehead.",
+      "summary": "The artifact recovered from the center of the Weeping Marsh. After the hollow fight, it attached itself to Prom instead of waiting to be claimed. It has already shown the ability to purge hostile magical influence from him.",
+      "content": "An artifact from the heart of the Weeping Marsh. Mead was the first to touch it and was blasted backward when the marsh stopped breathing, but after the fight the relic chose Prom and bound itself to him. Prom decided it would bind to his forehead.\n\nDuring the ambush after the marsh, Crown of Madness nearly drove Prom to swing the Bloodbound Testament into Echo. The Tearstone purified the affliction at the last moment, breaking the charm before Prom could strike him.",
       "image": "/items/tearstone-of-waning-tide-card-front.png",
       "images": [
         {
@@ -1701,6 +1766,14 @@
       "session": 6,
       "summary": "The party reached the obelisk, blooded it open, and pulled the Bloodbound Testament from inside, proving the Circle of Promise was never just a rumor.",
       "content": "OVERVIEW\nA ritual clearing centered on a black obelisk and four colored pentagrams. The place runs on payment logic, blood symbolism, and the certainty that nothing here opens for free.\n\nWHAT THE PARTY LEARNED\n- The four lit circles each carried a phrase: Give what spills, Give what names you, Give what binds you, and Give what carries you.\n- Blood was enough to wake the obelisk.\n- Whatever was sealed inside was not passive for long.\n\nKEY MOMENTS\n- Mead and Echo cut themselves and fed blood to the shrine.\n- Echo pressed a bloody hand to the obelisk and opened it.\n- Echo drew a magic dagger from inside: the Bloodbound Testament.\n- Aylin immediately tried to steal it and failed.\n- The weapon almost instantly began pushing Echo toward killing Lyra, and Heywud failed to talk or magic that pressure out of him.\n- Lyra died trying to stop Echo from keeping the dagger.\n- Echo later bequeathed the Bloodbound Testament to Prom, where it took the shape of a greataxe."
+    },
+    {
+      "id": "location-lunaryth",
+      "title": "Lunaryth",
+      "act": "Act 2",
+      "session": 7,
+      "summary": "The party has reached Lunaryth, learned the Guild Games are approaching, sampled all six guilds, and ended the session with Echo recognizing the central statue as the woman from his visions.",
+      "content": "OVERVIEW\nA prosperous elven city of polished order, guild politics, guarded access, and carefully managed reputation. The party has only seen the surface so far, but the city is already pointing them toward the Guild Games as the path to money, status, and deeper access.\n\nWHAT THE PARTY LEARNED\n- The Guild Games are happening in a few days.\n- The six guilds matter socially and politically.\n- Mead found the Civic Wardens immediately appealing because their culture openly embraces brawling.\n- The Mercantile League hoards many of the best items in Lunaryth, treats outsiders like peasants, and has won the last six Guild Games.\n- The central statue depicts the woman from Echo's visions, though the party has not learned her name yet.\n\nKEY MOMENTS\n- The party arrived in Lunaryth after the road from the Weeping Marsh.\n- They visited every guild to get a first impression of the city's power structure.\n- The Civic Wardens felt like Mead's people almost immediately.\n- The Mercantile League kicked the party out after treating them as beneath notice.\n- The session ended at the central statue, with Echo realizing the vision thread has become physically real in the city.\n\nNOTES TO REMEMBER\n- Lunaryth is no longer just a destination; it is the active Act II stage.\n- The Guild Games are the cleanest visible path to coin, reputation, and access.\n- Echo's vision mystery is now tied directly to the central statue and Lunaryth's civic memory."
     }
   ],
   "quests": [
@@ -1708,8 +1781,8 @@
       "id": "quest-get-to-lunaryth",
       "title": "Get to Lunaryth",
       "tier": "main",
-      "status": "active",
-      "summary": "Reach Lunaryth to pursue Elyndor and the next artifact leads.",
+      "status": "complete",
+      "summary": "The party reached Lunaryth after surviving the Weeping Marsh, the marsh exit ambush, and the road north.",
       "steps": [
         {
           "label": "Reach Tide's Rest",
@@ -1725,6 +1798,35 @@
         },
         {
           "label": "Travel toward Lunaryth using the relic map",
+          "done": true
+        },
+        {
+          "label": "Arrive in Lunaryth",
+          "done": true
+        }
+      ]
+    },
+    {
+      "id": "quest-guild-games",
+      "title": "Enter the Guild Games",
+      "tier": "main",
+      "status": "active",
+      "summary": "The Guild Games are happening in a few days. The party has learned that guild standing is the cleanest path to coin, reputation, and access in Lunaryth.",
+      "steps": [
+        {
+          "label": "Reach Lunaryth",
+          "done": true
+        },
+        {
+          "label": "Visit the six guilds",
+          "done": true
+        },
+        {
+          "label": "Choose sponsors or a public path into the Games",
+          "done": false
+        },
+        {
+          "label": "Compete for coin, standing, and access",
           "done": false
         }
       ]
@@ -1759,7 +1861,7 @@
         },
         {
           "label": "Reach Lunaryth and seek storm lore",
-          "done": false
+          "done": true
         },
         {
           "label": "Find a scholar or relic tied to the lightning scar",
@@ -1792,7 +1894,11 @@
         },
         {
           "label": "Arrive in Lunaryth and follow the music's pull",
-          "done": false
+          "done": true
+        },
+        {
+          "label": "Recognize the central statue as the woman from the visions",
+          "done": true
         },
         {
           "label": "Identify the goddess from the vision",
@@ -1809,7 +1915,7 @@
       "steps": [
         {
           "label": "Reach Lunaryth and gain access to real archives or scholars",
-          "done": false
+          "done": true
         },
         {
           "label": "Research the relic network and the old lunar sites",
@@ -1830,7 +1936,7 @@
       "steps": [
         {
           "label": "Find a town, order, or cause willing to tolerate Mead's methods",
-          "done": false
+          "done": true
         },
         {
           "label": "Prove he can be useful without being cast out again",
@@ -1844,18 +1950,14 @@
     },
     {
       "id": "quest-kelsier-question-mark",
-      "title": "Kelsier: ???",
+      "title": "Kelsier: Cut Short",
       "tier": "personal",
-      "status": "active",
-      "summary": "Kelsier has not explained much about himself yet, which is either caution, mystery, or a terrible sign.",
+      "status": "completed",
+      "summary": "Get brutally torturemogged to death.",
       "steps": [
         {
-          "label": "Get Kelsier to actually reveal something real",
-          "done": false
-        },
-        {
-          "label": "Figure out what he's hiding, if anything",
-          "done": false
+          "label": "Get brutally torturemogged to death",
+          "done": true
         }
       ]
     },
@@ -1889,7 +1991,7 @@
       "title": "Track the Six Artifacts",
       "tier": "main",
       "status": "active",
-      "summary": "Follow the Moonfall map and secure the remaining relics before other groups can move on them.",
+      "summary": "Follow the Moonfall map and find the artifact that is in or around Lunaryth.",
       "steps": [
         {
           "label": "Witness the first relic vision at Moonfall",
@@ -1906,6 +2008,10 @@
         {
           "label": "Recover at least one additional relic",
           "done": true
+        },
+        {
+          "label": "Find the artifact that is in or around Lunaryth",
+          "done": false
         }
       ]
     },
