@@ -12,7 +12,12 @@ export default function MapEditorPage() {
       img.id === "act-2-maps-circle-of-promise-jpg" ||
       img.id === "act-2-maps-weeping-marsh-jpg" ||
       img.id === "act-2-maps-weeping-marsh-bottom-of-the-well-jpg" ||
-      img.id === "act-2-maps-lunaryth-jpg"
+      img.id === "act-2-maps-lunaryth-jpg" ||
+      img.id === "act-2-maps-lunaryth-burning-png" ||
+      img.id === "act-2-maps-lunaryth-castle-ballroom-jpg" ||
+      img.id === "act-2-maps-lunaryth-arena-jpg" ||
+      img.id === "act-2-maps-lunaryth-red-light-underground-jpg" ||
+      img.id === "act-2-maps-shar-temple-below-lunaryth-jpg"
   );
 
   return (

@@ -22,13 +22,11 @@ export default function NavBar({ partyName: _partyName }: { partyName: string })
       { href: "/", label: "Home" },
       { href: "/players", label: "Players" },
       { href: "/sessions", label: "Sessions" },
+      { href: "/highlights", label: "Highlights" },
       { href: "/quests", label: "Quests" },
-      { href: "/guild-games", label: "Guild Games" },
       { href: "/items", label: "Key Items" },
-      { href: "/locations", label: "Location Notes" },
       { href: "/npcs", label: "NPCs" },
-      { href: "/battles", label: "Encounters" },
-      { href: "/gallery", label: "Maps" },
+      ...(dmMode ? [{ href: "/gallery", label: "Maps" }] : []),
       ...(dmMode ? [{ href: "/map-editor", label: "Map Editor" }] : []),
       { href: "/search", label: "Search" },
       ...(dmMode ? [{ href: "/docs", label: "DM Tools" }] : []),
@@ -41,7 +39,7 @@ export default function NavBar({ partyName: _partyName }: { partyName: string })
     <div className="sticky top-0 z-50 border-b border-black/10 bg-white/80 backdrop-blur dark:border-white/10 dark:bg-black/70">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <div className="flex items-center gap-3">
-          <Link href="/" aria-label="The Belligerent Four">
+          <Link href="/" aria-label={_partyName}>
             <PartyNameMark />
           </Link>
         </div>

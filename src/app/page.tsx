@@ -170,8 +170,8 @@ export default function Home() {
             <div>
               <h2 className="text-xl font-semibold tracking-tight">Guild Games</h2>
               <p className="mt-1 max-w-2xl text-sm text-black/70 dark:text-white/70">
-                The party has reached Lunaryth, visited the guilds, and learned the Games are the city's cleanest path to coin,
-                status, and access.
+                Mead won the Guild Games, earning the party a place at the finalists&apos; reception where Elyndor Vaeloris was
+                revealed as Lunaryth&apos;s High Priest.
               </p>
             </div>
             <Link

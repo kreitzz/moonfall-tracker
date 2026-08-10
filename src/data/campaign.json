@@ -7,7 +7,7 @@
       "Mara died after a brief recovery when moon-petal failed against a deeper corrupted force.",
       "Moonfall Grotto is a temple of Selune and site of a lunar trial.",
       "Seris forcibly attuned to the first artifact and the party saw five more linked relics.",
-      "Seris has left for Lunaryth to pursue Elyndor and understand the relic on her own.",
+      "Seris exposed her divine bloodline during the battle beneath the Vesperveil Crystal and has been named High Priestess of Lunaryth.",
       "The Weeping Marsh is the nearest confirmed lead for another relic.",
       "Edrin and Lyra were abducted because they knew about the Circle of Promise, but Edrin was later murdered in the inn ambush before the party reached the marsh.",
       "Greyhaven is filling with organized newcomers and growing steadily more dangerous.",
@@ -23,7 +23,11 @@
       "The party has reached Lunaryth and learned the Guild Games are happening in a few days.",
       "The Mercantile League has won the last six Guild Games, hoards many of the best items in the city, and treated the party like peasants before kicking them out.",
       "Mead found kindred spirits in the Civic Wardens, whose members seem to love brawling almost as much as he does.",
-      "Echo recognized the central statue in Lunaryth as the woman from his visions."
+      "Echo recognized the central statue in Lunaryth as Aelwyn Vaeloris, the woman from his visions.",
+      "Echo exposed Elyndor's false history and revealed that Aelwyn saved Lunaryth from the drow attacker.",
+      "Seris used Channel Divinity to break the drow's Shadow of Moil, allowing the nearly defeated party to prevail.",
+      "An ice dragon and a fire-and-lightning dragon are attacking Lunaryth, fulfilling Echo's vision of the burning city.",
+      "Prom now knows that the lightning strike from his childhood came from the fire-and-lightning dragon attacking Lunaryth."
     ],
     "initialPublic": [
       "act-1-dm-guide-the-lost-forest-docx",
@@ -1102,6 +1106,52 @@
         "reason": "Prom killed a surrendered ambusher before questioning, and the party later murdered an old traveler after losing their gold to him in road dice."
       },
       "docId": "session-7"
+    },
+    {
+      "id": "session-8",
+      "number": 8,
+      "title": "The Statue Opens the Way",
+      "date": "2026-05-23",
+      "summary": "Echo followed the melody etched into the central statue into a vision of ancient Lunaryth burning. The party then used the library and Red Light district to keep pushing through the city, found Seris at the statue, and learned her mother had once worked the Red Light. Under the Hall of Civic Records they uncovered the buried history of Lunaryth and a hidden shrine below the city, found a keepsake tied to Seris's mother, and saw the city's blackmail papers point directly at the star-touched twins rumor around her family. On the way out a black pendant cracked open, released a huge bound beast, and the party had to kill it before claiming the pendant as their own.",
+      "mvp": {
+        "name": "Echo",
+        "reason": "The statue melody and vision did the heaviest story work of the session and opened the path into Lunaryth's buried history."
+      },
+      "lowlight": {
+        "name": "Prom",
+        "reason": "The prayer circle and the blood-touched visions gave him less than he hoped, and the pendant-beast escape only made the item problem stranger."
+      },
+      "docId": "session-8"
+    },
+    {
+      "id": "session-9",
+      "number": 9,
+      "title": "Mead Wins the Guild Games",
+      "summary": "The Guild Games reached their violent conclusion with Mead standing as champion. After the celebration and Moon Drop fallout, the party was invited to the finalists' reception and witnessed the Vesperveil Crystal demonstration, where the High Priest of Lunaryth was revealed as Elyndor Vaeloris. The crystal answered Echo's familiar melody, Elyndor's face carried an unmistakable resemblance to Seris, and the session ended as the room went dark.",
+      "mvp": {
+        "name": "Mead",
+        "reason": "Won the Guild Games, turned Civic Warden brawling into citywide recognition, and became the party's public path into Lunaryth's highest circles."
+      },
+      "lowlight": {
+        "name": "Lunaryth",
+        "reason": "The city dressed the party beautifully, applauded politely, then revealed that its highest priest is Elyndor Vaeloris while the Vesperveil Crystal began answering Echo's vision melody."
+      },
+      "docId": "session-9"
+    },
+    {
+      "id": "session-10",
+      "number": 10,
+      "title": "The Truth Burns and Dragons Descend",
+      "summary": "At the Vesperveil Crystal demonstration, Echo shattered Elyndor's carefully staged story and revealed the truth of Aelwyn Vaeloris saving Lunaryth from the drow who had attacked it. Elyndor was exposed as a fraud, but the drow struck back and nearly wiped out the party beneath Shadow of Moil. Seris saved the fight with Channel Divinity, stripping away the darkness so the party could finally land their blows and win by the narrowest margin. After a long recovery, Seris was recognized as part of Lunaryth's divine bloodline and named High Priestess. The peace lasted only until two dragons descended on the city: one breathing ice, the other wielding fire and lightning. As Lunaryth burned exactly as Echo had seen, Prom realized the lightning strike from his childhood had come from the dragon now directly in front of him.",
+      "mvp": {
+        "name": "Seris",
+        "reason": "Her Channel Divinity broke through Shadow of Moil when almost everyone was down, exposed the drow to the party's attacks, and turned a near-total defeat into a desperate victory."
+      },
+      "lowlight": {
+        "name": "Elyndor Vaeloris",
+        "reason": "His public spectacle collapsed when Echo revealed the true history of Aelwyn and exposed the High Priest's version of Lunaryth's salvation as a fraud."
+      },
+      "docId": "session-10"
     }
   ],
   "documents": [
@@ -1362,6 +1412,24 @@
       "title": "Session 7 - The Bearer Breaks the Ambush",
       "dmOnly": false,
       "content": "SESSION 7\n\nKELSIER'S BODY\n- As the party left the Weeping Marsh, something heavy was dragged through the marsh grass and thrown onto the path.\n- It was Kelsier.\n- His wrists were flayed raw from restraints, his body showed deliberate torture wounds rather than battle damage, and one final gash had opened his throat.\n- The robed attackers made it clear they had tortured him for information and enjoyed it.\n- They demanded to know where the half-elf girl had gone and what the party had brought up from below.\n\nTHE MARSH EXIT AMBUSH\n- The attackers were waiting in position and wanted the artifact recovered from the marsh.\n- Mead was downed for the first time.\n- A charm from Crown of Madness nearly made Prom swing his greataxe into Echo.\n- Right before Prom could destroy Echo, the Tearstone of the Waning Tide purified the affliction.\n- Once freed, Prom became terrifying: the Tearstone and Bloodbound Testament together made him too much for the ambushers to handle.\n- He purged through the remaining attackers and murdered everyone in reach.\n\nTHE SURRENDER THAT FAILED\n- The last attacker surrendered.\n- The party had a chance to extract information.\n- Prom could not resist the Bloodbound Testament's pressure to finish a weakened enemy.\n- He made the enemy go \"boom\" and decapitated him before questioning could happen.\n\nROAD DICE\n- On the way to Lunaryth, the party met an old traveler and played road dice.\n- Bad rolls cost them all of their gold.\n- Rather than accept the loss, they murdered the poor old man and took the gold back.\n- The road to Lunaryth now has one more unnecessary body behind them.\n\nARRIVAL IN LUNARYTH\n- The party finally reached Lunaryth.\n- They learned the Guild Games are happening in a few days.\n- They visited all six guilds to get a first sense of who matters in the city.\n- Mead immediately liked the Civic Wardens because they, like him, love to brawl.\n- The Mercantile League treated the party like peasants and eventually kicked them out.\n- The party learned the Mercantile League hoards many of the best items in Lunaryth and has won the last six Guild Games.\n\nTHE STATUE CLIFFHANGER\n- The party walked past the central statue.\n- Echo realized the woman carved in the middle of Lunaryth is the same woman from his visions.\n- The session ended on that recognition before the party could fully unpack what it means.\n\nEND STATE\n- Kelsier is dead.\n- The robed faction is still hunting Seris and the artifacts.\n- Mead has now been dropped in combat.\n- Prom's two bound items are clearly powerful together, but the Bloodbound Testament is becoming a real moral problem.\n- The party lost another chance to learn more because mercy failed at the exact wrong time.\n- The party also murdered a harmless old traveler over road dice money, meaning they arrived in Lunaryth with blood on their hands that was not forced by monsters, relics, or prophecy.\n- Lunaryth is now open in front of them, with the Guild Games as the clearest public path to money, status, and access.\n- Echo has finally found a visible piece of his visions in the real world."
+    },
+    {
+      "id": "session-8",
+      "title": "Session 8 - The Statue Opens the Way",
+      "dmOnly": false,
+      "content": "SESSION 8\n\nTHE STATUE\n- The central statue had Aelwyn Vaeloris written on it.\n- There was also a small etched melody on the base.\n- Echo played the melody and was pulled into an ancient vision of Lunaryth burning.\n- He saw Aelwyn dying, standing against a beautiful drow, and heard her say, \"You do not get the next age.\"\n- She raised her bloody hand toward the moon, opened a doorway, and banished him.\n- Then she collapsed, passed the melody into the hands of the person holding an instrument, and hummed the same tune etched into the statue.\n- Echo now knows the statue is tied directly to his visions.\n\nLIBRARY RESULTS\n- The party found the Lunaryth drinking guide, which introduced Moon Drop.\n- Moon Drop is the city's special shot and the book is very clear that more than two is a bad idea.\n- They also found the white root guide, which basically says white root is in everything.\n- Lunaryth After Dark pointed them toward what is happening below ground.\n- The Great Fire of Lunaryth was missing.\n\nRED LIGHT PASSAGE\n- The party went into the Red Light district to distract themselves and cause trouble.\n- Mead and Prom both behaved badly enough to make the district memorable.\n- The party mixed with the courtesans, spent money, and made fools of themselves in different ways.\n- On the way back out, they found a hooded figure at the base of the statue.\n\nSERIS\n- Prom approached the hooded figure and got hit with, \"Back for round two, Prom?\"\n- The hood came off and it was Seris.\n- She had been keeping a low profile while looking for her father, Elyndor.\n- She later took the party back to the Red Light district and revealed that her mother had worked there years ago.\n- Her mother had been very popular and had been involved with a powerful man in the city.\n- About twenty-five years ago, her mother disappeared.\n- The blackmail papers and the Red Light gossip both point to Seris being part of the star-touched twins rumor, not just a random bystander.\n- The city clearly treated her bloodline like leverage.\n\nTHE HIDDEN CIVIC PASSAGE\n- The creator of the Guild Games was found murdered outside the city.\n- The city put a 5,000 gold bounty on the killer.\n- The party learned from the Red Light leader that there is a secret passage under the Hall of Civic Records.\n- They used that lead and found a hidden temple underneath the city.\n\nUNDERGROUND DISCOVERIES\n- They found an insignia tied to the hidden temple's order.\n- They found two stacks of papers.\n- One stack was for blackmail and referenced a pair of star-touched twins born to a powerful man in Lunaryth.\n- The other stack was meant to be shredded and contained the real history of Lunaryth.\n- That history matched Echo's vision.\n- They also found a statue of Shar, the goddess who grants power through darkness and secrecy.\n- They found a small keepsake tied to Seris's mother, which proved her family was already entangled in Lunaryth's buried history and the star-touched twins rumor.\n\nTHE PRAYER CIRCLE\n- Prom cut his hand and bled into a prayer circle.\n- He was pulled into a memory of being struck by lightning.\n- When the vision ended, he seemed to have learned less than before.\n- The circle clearly did something, but it did not give up its secrets cleanly.\n\nTHE ESCAPE\n- The party did not fight the temple head-on.\n- They slipped out of the underground as quietly as they could and left the hidden shrine behind them.\n- On the way out, a black pendant cracked open and released a huge bound beast.\n- The beast had to be killed in the tunnels before it could reach the city.\n- After the fight, the party claimed the pendant as their own.\n- It can now trap a beast again if they are willing to risk it.\n\nEND STATE\n- Seris is now in the open and tied directly to Lunaryth's hidden history.\n- The city has a public game and a hidden temple running underneath it at the same time.\n- Echo's statue vision is now connected to real history.\n- The party has a pendant that can trap a beast.\n- Prom's item problem got worse, not better.\n- The party now knows Lunaryth has secrets above and below ground, and both are dangerous.\n"
+    },
+    {
+      "id": "session-9",
+      "title": "Session 9 - Mead Wins the Guild Games",
+      "dmOnly": false,
+      "content": "SESSION 9\n\nTHE GUILD GAMES CONCLUDE\n- The Guild Games reached their final stretch in front of Lunaryth's guilds, nobles, priests, and spectators.\n- Mead fought through the bracket and emerged as the champion.\n- His victory turned the Civic Warden brawler connection from a running joke into real public standing.\n- The party's name now carries weight in Lunaryth, not just notoriety.\n\nMEAD THE CHAMPION\n- The city recognized Mead as the winner of this year's Guild Games.\n- The victory gave the party exactly what the Games promised: coin-adjacent attention, status, and access to rooms they could not have entered cleanly before.\n- Mead's win became the party's public excuse to stand near the highest powers in the city.\n\nMOON DROP CELEBRATION\n- After the tournament, the party retreated to the inn to celebrate.\n- Word had already spread, and the common room crowded around Mead as the champion.\n- Many, many Moon Drops followed.\n- The celebration became loud, messy, and properly Lunaryth, with the kind of morning-after regret the drinking guides had already warned about.\n\nTHE ROYAL INVITATION\n- After a long rest, the party was greeted by formal attendants at the door.\n- On behalf of the King of Lunaryth, Mead and his companions were invited to the reception for the finalists and winner of the Guild Games.\n- The invitation promised access to powerful political figures, wealthy patrons, guild leadership, and high-ranking members of the Lunar Church.\n- The party also learned that the reception would include a demonstration of the Vesperveil Crystal, an ancient artifact safeguarded in Lunaryth for centuries.\n- The attendants gave the party vouchers to be fitted for attire appropriate to the event.\n\nTHE FITTING\n- The party visited formal clothiers and were dressed for the reception.\n- The fitting made the party look less like wandering adventurers and more like a problem Lunaryth had agreed to dress properly.\n- Mead's champion status shaped the room around him.\n- Seris was dressed simply and cleanly, enough to stand beside the party without hiding behind them.\n- Other finalists and important Guild Games figures also appeared in formal attire, making the reception feel like the next stage of the same political theater.\n\nTHE RECEPTION\n- The party entered a beautiful, controlled, expensive Lunaryth reception full of guildmasters, civic officials, Mercantile patrons, Lunar clergy, finalists, and wealthy families.\n- The event honored the Guild Games publicly, but it also clearly existed to put winners and power brokers in the same room.\n- Nyx, Tharos, Sister Halwen, Oren, Ilyra, Rilla, and Sable were present as part of the wider tournament fallout.\n\nTHE VESPERVEIL CRYSTAL\n- The Vesperveil Crystal was unveiled as something far larger and older than a simple jewel or ornament.\n- It appeared as a jagged shard of moonlit glass held in a carved frame of metal and pale stone.\n- Echo heard the melody again: the same shape as the tune etched into Aelwyn Vaeloris's statue.\n- The crystal's hum pulled Echo into a flash of the old vision: Lunaryth burning, Aelwyn raising a bloody hand toward the moon, and the words, \"You do not get the next age.\"\n- The vision confirmed that the statue, the melody, the buried history, and the crystal are part of the same thread.\n\nELYNDOR VAELORIS\n- The High Priest of Lunaryth entered to oversee the demonstration.\n- The room bowed around him before the party knew his name.\n- He was announced as His Radiance, High Priest Elyndor Vaeloris.\n- The name tied him directly to Aelwyn Vaeloris, whose statue and melody had already opened Echo's vision of ancient Lunaryth.\n- In the crystal's silver flash, the party saw Elyndor's face clearly enough to notice something unmistakably familiar in it: something of Seris.\n\nCLIFFHANGER\n- The Vesperveil Crystal answered Echo's melody.\n- A thin crack of silver light split across its surface.\n- The party had just learned that Elyndor Vaeloris is not merely alive in Lunaryth; he is the High Priest of the Lunar Church.\n- The session ended as the room went dark.\n\nEND STATE\n- Mead is the Guild Games champion.\n- The Guild Games have shifted from public tournament to political access point.\n- Elyndor Vaeloris has been revealed as High Priest of Lunaryth.\n- The Vesperveil Crystal is active, unstable, or at least responsive to Echo's melody.\n- Elyndor's face suggests a connection to Seris that the party can no longer ignore.\n- Lunaryth's public power structure, hidden history, and relic mystery have finally converged in one room.\n"
+    },
+    {
+      "id": "session-10",
+      "title": "Session 10 - The Truth Burns and Dragons Descend",
+      "dmOnly": false,
+      "content": "SESSION 10\n\nTHE SHOW OF AELWYN\n- The Vesperveil Crystal demonstration became a public telling of Lunaryth's history.\n- Elyndor's spectacle presented a controlled version of Aelwyn Vaeloris and the city's salvation.\n- Echo recognized that the story was wrong and disrupted the show before the lie could settle over the room.\n- Through the melody, the crystal, and the truth carried in his visions, Echo showed what had really happened.\n- Aelwyn had saved Lunaryth from the drow who attacked the city.\n- The revelation exposed Elyndor's account as a fraud in front of the people whose faith and obedience had protected him.\n\nTHE DROW ATTACKS\n- The truth did not end the danger. It brought the drow into the open.\n- He attacked the party and everyone gathered around the demonstration.\n- Shadow of Moil wrapped him in supernatural darkness and made him almost impossible to strike.\n- The party could not establish momentum while the shadow held.\n- One after another, nearly all of them were downed.\n- The confrontation came within moments of becoming a total defeat.\n\nSERIS BREAKS THE SHADOW\n- Seris called on her divine power when the rest of the field was collapsing.\n- Her Channel Divinity tore away Shadow of Moil and stripped the drow of the protection that had made him untouchable.\n- For the first time in the fight, the party could see him clearly and begin landing meaningful attacks.\n- They rallied from the edge of defeat and brought him down by the narrowest possible margin.\n- Without Seris, the truth Echo revealed would have died with almost everyone in the room.\n\nRECOVERY AND A NEW HIGH PRIESTESS\n- Time passed as the party, Seris, and Lunaryth recovered from the battle.\n- Elyndor's public authority could not survive the exposure of his false history.\n- The city recognized that Seris belonged to Lunaryth's divine bloodline.\n- Seris was named High Priestess of Lunaryth.\n- For a brief stretch, the city's old lies seemed broken, its leadership renewed, and the crisis finally over.\n\nTHE DRAGONS DESCEND\n- The calm ended when two dragons attacked Lunaryth.\n- One swept over the city with killing ice.\n- The other brought fire and lightning.\n- Buildings shattered and burned as people died across the city.\n- The destruction mirrored Echo's vision of Lunaryth burning with horrifying precision.\n- What had looked like ancient memory now felt like prophecy arriving in the present.\n\nPROM'S REVELATION\n- The fire-and-lightning dragon carried the same power that had haunted Prom since childhood.\n- Prom finally understood that the lightning strike from long ago had not been random, divine weather, or a distant mystery.\n- It had come from a dragon.\n- That dragon was now attacking Lunaryth directly in front of him.\n\nEND STATE\n- Echo exposed the true story of Aelwyn and destroyed Elyndor's public legitimacy.\n- The drow attacker is defeated after nearly wiping out the party.\n- Seris's Channel Divinity saved the party and made victory possible.\n- Seris is now High Priestess of Lunaryth and has been recognized as part of its divine bloodline.\n- Two dragons are actively attacking Lunaryth: one of ice, and one of fire and lightning.\n- Echo's vision of the burning city is unfolding in the present.\n- Prom now knows the source of the lightning that struck him as a child, and its source is directly in front of him.\n"
     }
   ],
   "images": [
@@ -1444,6 +1512,12 @@
       "act": "Act 2"
     },
     {
+      "id": "act-2-maps-lunaryth-burning-png",
+      "path": "Act 2/Maps/Lunaryth - Burning.png",
+      "title": "Lunaryth — Burning",
+      "act": "Act 2"
+    },
+    {
       "id": "act-2-maps-shar-temple-below-lunaryth-jpg",
       "path": "Act 2/Maps/Shar Temple - Below Lunaryth.jpg",
       "title": "Shar Temple - Below Lunaryth",
@@ -1479,15 +1553,31 @@
     {
       "id": "seris",
       "name": "Seris",
-      "title": "Half-Elf Cleric • First Relic Bearer",
-      "status": "Traveling alone toward Lunaryth",
+      "title": "High Priestess of Lunaryth • First Relic Bearer",
+      "status": "Leading Lunaryth during the dragon attack",
       "tags": [
         "cleric",
         "ally",
-        "relic-bearer"
+        "relic-bearer",
+        "high-priestess"
       ],
-      "summary": "After attuning to the Moonfall relic, Seris chose to leave the party and head for Lunaryth alone, hoping to understand the relic and find Elyndor before grief or power makes her dangerous to others.",
+      "summary": "Seris's Channel Divinity broke the drow's Shadow of Moil and saved the party from near defeat. After Echo exposed Elyndor's false history, Lunaryth recognized Seris as part of its divine bloodline and named her High Priestess just before the twin-dragon attack began.",
       "image": "/npcs/seris.png",
+      "dmOnly": false
+    },
+    {
+      "id": "nyx-amberline",
+      "name": "Nyx Amberline",
+      "title": "Former Guild Games Champion • Fiend Warlock",
+      "status": "Offering to join the dragon hunt",
+      "tags": [
+        "tiefling",
+        "warlock",
+        "guild-games",
+        "potential-ally"
+      ],
+      "summary": "A charismatic Mercantile League warlock, former Guild Games champion, and proven arena killer who fights for spectacle and escalates when the room demands blood. After surviving the attack on Lunaryth, Nyx offered her pact magic and considerable nerve to the party's hunt for the dragons.",
+      "image": "/npcs/nyx-amberline-arena-champion.png",
       "dmOnly": false
     },
     {
@@ -1708,6 +1798,15 @@
           "label": "Back"
         }
       ]
+    },
+    {
+      "id": "item-beastlock-pendant",
+      "title": "Beastlock Pendant",
+      "category": "Key Item",
+      "status": "Acquired",
+      "holder": "Party",
+      "summary": "A black pendant taken from the hidden temple beneath Lunaryth. It cracked open to release a huge bound beast, but the party claimed it afterward and can now use it as a prison for a creature.",
+      "content": "A black pendant recovered from the hidden temple below Lunaryth. It was hanging on a ruined hook or altar as if it were meant to keep something sealed. When it cracked open during the escape, it released a huge bound beast into the tunnels. The party killed the beast and claimed the pendant afterward.\n\nUse:\n- The pendant can trap a beast if the party catches it at the right moment.\n- If the seal breaks, whatever is inside comes out.\n- The item is a trophy, a prison, and a problem all at once."
     }
   ],
   "locations": [
@@ -1771,9 +1870,9 @@
       "id": "location-lunaryth",
       "title": "Lunaryth",
       "act": "Act 2",
-      "session": 7,
-      "summary": "The party has reached Lunaryth, learned the Guild Games are approaching, sampled all six guilds, and ended the session with Echo recognizing the central statue as the woman from his visions.",
-      "content": "OVERVIEW\nA prosperous elven city of polished order, guild politics, guarded access, and carefully managed reputation. The party has only seen the surface so far, but the city is already pointing them toward the Guild Games as the path to money, status, and deeper access.\n\nWHAT THE PARTY LEARNED\n- The Guild Games are happening in a few days.\n- The six guilds matter socially and politically.\n- Mead found the Civic Wardens immediately appealing because their culture openly embraces brawling.\n- The Mercantile League hoards many of the best items in Lunaryth, treats outsiders like peasants, and has won the last six Guild Games.\n- The central statue depicts the woman from Echo's visions, though the party has not learned her name yet.\n\nKEY MOMENTS\n- The party arrived in Lunaryth after the road from the Weeping Marsh.\n- They visited every guild to get a first impression of the city's power structure.\n- The Civic Wardens felt like Mead's people almost immediately.\n- The Mercantile League kicked the party out after treating them as beneath notice.\n- The session ended at the central statue, with Echo realizing the vision thread has become physically real in the city.\n\nNOTES TO REMEMBER\n- Lunaryth is no longer just a destination; it is the active Act II stage.\n- The Guild Games are the cleanest visible path to coin, reputation, and access.\n- Echo's vision mystery is now tied directly to the central statue and Lunaryth's civic memory."
+      "session": 9,
+      "summary": "The party has moved from Lunaryth outsiders to public figures: Mead won the Guild Games, the finalists' reception unveiled the Vesperveil Crystal, and the High Priest of Lunaryth was revealed as Elyndor Vaeloris.",
+      "content": "OVERVIEW\nA prosperous elven city of polished order, guild politics, guarded access, and carefully managed reputation. Lunaryth is no longer just the city hosting the Guild Games; it is now the place where the party's public reputation, the buried Vaeloris history, and the relic mystery have collided.\n\nWHAT THE PARTY LEARNED\n- Mead won the Guild Games and became a recognized champion in Lunaryth.\n- The Games were the party's cleanest path into elite rooms, exactly as the city implied.\n- The finalists' reception gathered guildmasters, wealthy patrons, civic officials, and ranking Lunar clergy in one place.\n- The Vesperveil Crystal is real, ancient, and responsive to Echo's melody from Aelwyn Vaeloris's statue.\n- Elyndor Vaeloris is alive and is the High Priest of Lunaryth.\n- Elyndor's face carries a familiar resemblance to Seris.\n\nKEY MOMENTS\n- The party arrived in Lunaryth after the road from the Weeping Marsh and visited every guild.\n- Echo identified the central statue as Aelwyn Vaeloris and triggered a vision of ancient Lunaryth burning.\n- The party found Seris, investigated the city, and uncovered the hidden temple beneath the Hall of Civic Records.\n- Mead won the Guild Games and was celebrated as champion.\n- The party was invited to the finalists' reception and dressed for Lunaryth's upper circles.\n- The Vesperveil Crystal was unveiled, Echo heard the melody again, and Elyndor Vaeloris was publicly named as High Priest.\n- The session ended as silver light cracked across the crystal and the room went dark.\n\nNOTES TO REMEMBER\n- Mead's championship gives the party public standing and access.\n- The Guild Games arc has become a political and relic gateway, not just a tournament.\n- Echo's vision mystery is now tied directly to Aelwyn, Elyndor, and the Vesperveil Crystal.\n- Seris's connection to Elyndor is no longer just a private search; the party has seen the resemblance for themselves."
     }
   ],
   "quests": [
@@ -1810,8 +1909,8 @@
       "id": "quest-guild-games",
       "title": "Enter the Guild Games",
       "tier": "main",
-      "status": "active",
-      "summary": "The Guild Games are happening in a few days. The party has learned that guild standing is the cleanest path to coin, reputation, and access in Lunaryth.",
+      "status": "complete",
+      "summary": "Mead won the Guild Games, turning the tournament into the party's public path to Lunaryth's elite reception, the Vesperveil Crystal demonstration, and the reveal that Elyndor Vaeloris is the High Priest of Lunaryth.",
       "steps": [
         {
           "label": "Reach Lunaryth",
@@ -1823,11 +1922,23 @@
         },
         {
           "label": "Choose sponsors or a public path into the Games",
-          "done": false
+          "done": true
         },
         {
           "label": "Compete for coin, standing, and access",
-          "done": false
+          "done": true
+        },
+        {
+          "label": "Mead wins the Guild Games",
+          "done": true
+        },
+        {
+          "label": "Attend the finalists' reception",
+          "done": true
+        },
+        {
+          "label": "Witness the Vesperveil Crystal demonstration and Elyndor reveal",
+          "done": true
         }
       ]
     },
@@ -1845,6 +1956,43 @@
         {
           "label": "Bring it back to Eldra",
           "done": true
+        }
+      ]
+    },
+    {
+      "id": "quest-vesperveil-elyndor",
+      "title": "The Vesperveil Crystal and Elyndor",
+      "tier": "main",
+      "status": "active",
+      "summary": "The finalists' reception revealed that Elyndor Vaeloris is the High Priest of Lunaryth and that the Vesperveil Crystal responds to Echo's melody. The party now has to understand what Elyndor knows, why the crystal cracked, and what his connection to Seris means.",
+      "steps": [
+        {
+          "label": "Earn access to the finalists' reception",
+          "done": true
+        },
+        {
+          "label": "Witness the Vesperveil Crystal demonstration",
+          "done": true
+        },
+        {
+          "label": "Learn that Elyndor Vaeloris is the High Priest of Lunaryth",
+          "done": true
+        },
+        {
+          "label": "Recognize Elyndor's resemblance to Seris",
+          "done": true
+        },
+        {
+          "label": "Find out why the crystal answered Echo's melody",
+          "done": false
+        },
+        {
+          "label": "Determine whether Elyndor is ally, prisoner of the system, or threat",
+          "done": false
+        },
+        {
+          "label": "Secure or understand the Vesperveil Crystal",
+          "done": false
         }
       ]
     },
@@ -1878,7 +2026,7 @@
       "title": "Echo: The Moonlit Song",
       "tier": "personal",
       "status": "active",
-      "summary": "Understand why Echo keeps receiving musical visions, including the new Greyhaven shrine vision of a calm drow performing a blood ritual in red firelight.",
+      "summary": "Echo's melody now connects the Greyhaven shrine, Aelwyn Vaeloris's statue, the vision of Lunaryth burning, and the Vesperveil Crystal itself.",
       "steps": [
         {
           "label": "Complete the Greyhaven shrine melody",
@@ -1902,6 +2050,14 @@
         },
         {
           "label": "Identify the goddess from the vision",
+          "done": true
+        },
+        {
+          "label": "Hear the melody answer from the Vesperveil Crystal",
+          "done": true
+        },
+        {
+          "label": "Learn why the crystal cracked when the melody returned",
           "done": false
         }
       ]
@@ -1932,7 +2088,7 @@
       "title": "Mead: Find Somewhere to Belong",
       "tier": "personal",
       "status": "active",
-      "summary": "Banished again and again for the way he fights and heals, Mead is still looking for a place that will take him as he is instead of throwing him back out.",
+      "summary": "Mead found public acceptance through the Civic Wardens and won the Guild Games, but he still has to decide whether belonging means applause, duty, or a cause worth staying for.",
       "steps": [
         {
           "label": "Find a town, order, or cause willing to tolerate Mead's methods",
@@ -1940,7 +2096,11 @@
         },
         {
           "label": "Prove he can be useful without being cast out again",
-          "done": false
+          "done": true
+        },
+        {
+          "label": "Win the Guild Games as a Civic Warden favorite",
+          "done": true
         },
         {
           "label": "Decide whether belonging means acceptance, purpose, or power",
@@ -1991,7 +2151,7 @@
       "title": "Track the Six Artifacts",
       "tier": "main",
       "status": "active",
-      "summary": "Follow the Moonfall map and find the artifact that is in or around Lunaryth.",
+      "summary": "The party has found the Weeping Marsh relic and identified the Vesperveil Crystal as Lunaryth's relic, but the crystal remains in the hands of the city's highest religious power.",
       "steps": [
         {
           "label": "Witness the first relic vision at Moonfall",
@@ -2011,6 +2171,14 @@
         },
         {
           "label": "Find the artifact that is in or around Lunaryth",
+          "done": true
+        },
+        {
+          "label": "Learn why the Vesperveil Crystal responded to Echo's melody",
+          "done": false
+        },
+        {
+          "label": "Decide whether the party can safely claim, protect, or leave the Vesperveil Crystal",
           "done": false
         }
       ]

@@ -5,15 +5,17 @@ import { useRouter, useSearchParams } from "next/navigation";
 import type { CampaignImage } from "@/lib/campaign";
 import { useDmMode } from "@/components/DmModeProvider";
 
-type TextOverlay = {
+type CharacterOverlay = {
   id: string;
-  kind: "text";
-  text: string;
+  kind: "character";
+  characterId: CharacterId;
+  name: string;
+  role: string;
+  imageSrc: string;
   x: number;
   y: number;
-  fontSize: number;
-  color: string;
-  stroke: string;
+  size: number;
+  statusEffects: string[];
 };
 
 type AoeOverlay = {
@@ -28,7 +30,44 @@ type AoeOverlay = {
   attachedToId?: string;
 };
 
-type Overlay = TextOverlay | AoeOverlay;
+type Overlay = CharacterOverlay | AoeOverlay;
+
+type CharacterId =
+  | "echo"
+  | "mead"
+  | "prom"
+  | "heywud"
+  | "seris"
+  | "nyx"
+  | "caelira"
+  | "aaravos"
+  | "selune"
+  | "shar"
+  | "pyraxis"
+  | "cryovex";
+
+const CHARACTERS: Array<{
+  id: CharacterId;
+  name: string;
+  role: string;
+  imageSrc: string;
+  defaultSize: number;
+}> = [
+  { id: "echo", name: "Echo", role: "Half-Elf Bard", imageSrc: "/party/map-tokens/echo-blonde-3d.png", defaultSize: 60 },
+  { id: "mead", name: "Mead", role: "Dwarven Cleric", imageSrc: "/party/map-tokens/mead-3d.png", defaultSize: 60 },
+  { id: "prom", name: "Prom", role: "Half-Orc Barbarian", imageSrc: "/party/map-tokens/prom-3d.png", defaultSize: 60 },
+  { id: "heywud", name: "Heywud", role: "Goliath Wizard", imageSrc: "/party/map-tokens/heywud-3d.png", defaultSize: 60 },
+  { id: "seris", name: "Seris", role: "Half-Elf Moon Cleric", imageSrc: "/party/map-tokens/seris-ornate-lunar-gown-3d.png", defaultSize: 60 },
+  { id: "nyx", name: "Nyx Amberline", role: "Former Guild Games Champion • Fiend Warlock", imageSrc: "/party/map-tokens/nyx-amberline-arena-champion-3d.png", defaultSize: 60 },
+  { id: "caelira", name: "Caelira", role: "Eclipse Twin • Final Form", imageSrc: "/party/map-tokens/caelira-final-form-3d.png", defaultSize: 60 },
+  { id: "aaravos", name: "Aaravos", role: "Chosen of Shar", imageSrc: "/party/map-tokens/aaravos-reference-informed-3d.png", defaultSize: 60 },
+  { id: "selune", name: "Selûne", role: "Goddess of the Moon", imageSrc: "/party/map-tokens/selune-reference-informed-3d.png", defaultSize: 60 },
+  { id: "shar", name: "Shar", role: "Goddess of Darkness and Loss", imageSrc: "/party/map-tokens/shar-reference-informed-3d.png", defaultSize: 60 },
+  { id: "pyraxis", name: "Lightning & Fire Dragon", role: "Dragon", imageSrc: "/party/map-tokens/lightning-fire-dragon-soaring-3d.png", defaultSize: 190 },
+  { id: "cryovex", name: "Frost Dragon", role: "Dragon", imageSrc: "/party/map-tokens/frost-dragon-soaring-3d.png", defaultSize: 190 },
+];
+
+const HIDDEN_CHARACTER_IDS = new Set<CharacterId>(["caelira", "aaravos", "selune", "shar"]);
 
 type DragState = {
   overlayId: string;
@@ -40,6 +79,19 @@ type DragState = {
   dragAll: boolean;
   startPositions: Record<string, { x: number; y: number }>;
 };
+
+const COMMON_STATUS_EFFECTS = [
+  "Blessed",
+  "Concentrating",
+  "Poisoned",
+  "Prone",
+  "Stunned",
+  "Frightened",
+  "Charmed",
+  "Invisible",
+  "Restrained",
+  "Unconscious",
+];
 
 function imageSrcFromPath(path: string, version?: string) {
   const encoded = path.split("/").map(encodeURIComponent).join("/");
@@ -65,12 +117,14 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
   const stageRef = useRef<HTMLDivElement | null>(null);
   const overlayRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const dragRef = useRef<DragState | null>(null);
+  const nextOverlayIdRef = useRef(1);
 
   const [overlaysByImage, setOverlaysByImage] = useState<Record<string, Overlay[]>>({});
   const [selectedOverlayId, setSelectedOverlayId] = useState<string | null>(null);
-  const [newText, setNewText] = useState("New Text");
   const [highlightAll, setHighlightAll] = useState(false);
-  const [dragAllText, setDragAllText] = useState(false);
+  const [dragAll, setDragAll] = useState(false);
+  const [statusToAdd, setStatusToAdd] = useState(COMMON_STATUS_EFFECTS[0]);
+  const [customStatus, setCustomStatus] = useState("");
 
   const queryImageId = searchParams.get("imageId");
   const selectedImageId =
@@ -92,30 +146,40 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
     () => overlays.find((o) => o.id === selectedOverlayId) ?? null,
     [overlays, selectedOverlayId]
   );
-  const selectedTextOverlay = selectedOverlay?.kind === "text" ? selectedOverlay : null;
+  const selectedCharacterOverlay = selectedOverlay?.kind === "character" ? selectedOverlay : null;
   const selectedAoeOverlay = selectedOverlay?.kind === "aoe" ? selectedOverlay : null;
-  const textOverlays = useMemo(() => overlays.filter((o): o is TextOverlay => o.kind === "text"), [overlays]);
+  const characterOverlays = useMemo(
+    () => overlays.filter((o): o is CharacterOverlay => o.kind === "character"),
+    [overlays]
+  );
 
   function selectImage(imageId: string) {
     router.replace(`/map-editor?imageId=${encodeURIComponent(imageId)}`);
     setSelectedOverlayId(null);
   }
 
-  function addOverlay() {
+  function addCharacter(characterId: CharacterId) {
     if (!selectedImage || !selectedImageId) {
       return;
     }
 
-    const id = `ov-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const character = CHARACTERS.find((candidate) => candidate.id === characterId);
+    if (!character) {
+      return;
+    }
+
+    const id = `character-${nextOverlayIdRef.current++}`;
     const overlay: Overlay = {
       id,
-      kind: "text",
-      text: newText.trim() || "New Text",
+      kind: "character",
+      characterId: character.id,
+      name: character.name,
+      role: character.role,
+      imageSrc: character.imageSrc,
       x: 24,
       y: 24,
-      fontSize: 36,
-      color: "#ffffff",
-      stroke: "#000000",
+      size: character.defaultSize,
+      statusEffects: [],
     };
 
     setOverlaysByImage((prev) => ({
@@ -130,7 +194,7 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
       return;
     }
 
-    const id = `aoe-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const id = `aoe-${nextOverlayIdRef.current++}`;
     const overlay: Overlay =
       template === "cloud"
         ? {
@@ -161,7 +225,7 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
     setSelectedOverlayId(id);
   }
 
-  function updateSelectedOverlay(patch: Partial<TextOverlay> | Partial<AoeOverlay>) {
+  function updateSelectedOverlay(patch: Partial<CharacterOverlay> | Partial<AoeOverlay>) {
     if (!selectedOverlayId || !selectedImageId) {
       return;
     }
@@ -185,6 +249,27 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
     setSelectedOverlayId(null);
   }
 
+  function addStatusEffect(status: string) {
+    const cleanStatus = status.trim();
+    if (!selectedCharacterOverlay || !cleanStatus) {
+      return;
+    }
+    const currentStatuses = selectedCharacterOverlay.statusEffects ?? [];
+    if (!currentStatuses.some((existing) => existing.toLowerCase() === cleanStatus.toLowerCase())) {
+      updateSelectedOverlay({ statusEffects: [...currentStatuses, cleanStatus] });
+    }
+    setCustomStatus("");
+  }
+
+  function removeStatusEffect(status: string) {
+    if (!selectedCharacterOverlay) {
+      return;
+    }
+    updateSelectedOverlay({
+      statusEffects: (selectedCharacterOverlay.statusEffects ?? []).filter((existing) => existing !== status),
+    });
+  }
+
   function onOverlayPointerDown(event: React.PointerEvent<HTMLDivElement>, overlay: Overlay) {
     event.preventDefault();
     event.stopPropagation();
@@ -200,7 +285,7 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
       startClientY: event.clientY,
       startX: overlay.x,
       startY: overlay.y,
-      dragAll: dragAllText,
+      dragAll,
       startPositions: Object.fromEntries(overlays.map((o) => [o.id, { x: o.x, y: o.y }])),
     };
   }
@@ -292,7 +377,7 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
       <header>
         <h1 className="text-2xl font-semibold tracking-tight">Campaign Map Editor</h1>
         <p className="mt-1 text-black/70 dark:text-white/70">
-          Click any included campaign map, then add and drag text directly on top.
+          Choose a map, add party members, then drag their tokens into position.
         </p>
       </header>
 
@@ -315,19 +400,29 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
         </div>
       </section>
 
-      <section className="grid gap-4 rounded-2xl border border-black/10 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-zinc-950 lg:grid-cols-[1fr_auto]">
-        <input
-          value={newText}
-          onChange={(e) => setNewText(e.target.value)}
-          className="rounded-lg border border-black/10 bg-transparent px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black/20 dark:border-white/10 dark:focus:ring-white/20"
-          placeholder="Text to place on map"
-        />
-        <button
-          onClick={addOverlay}
-          className="rounded-lg bg-black px-3 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black"
-        >
-          Add Text
-        </button>
+      <section className="grid gap-4 rounded-2xl border border-black/10 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-zinc-950 lg:grid-cols-2">
+        <div className="lg:col-span-2">
+          <div className="mb-2 text-sm font-medium">Add a character or creature</div>
+          <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+            {CHARACTERS.filter((character) => !HIDDEN_CHARACTER_IDS.has(character.id)).map((character) => (
+              <button
+                key={character.id}
+                onClick={() => addCharacter(character.id)}
+                className="flex items-center gap-3 rounded-xl border border-black/10 p-2 text-left hover:bg-black/5 dark:border-white/10 dark:hover:bg-white/10"
+              >
+                <img
+                  src={character.imageSrc}
+                  alt=""
+                  className="h-14 w-14 object-contain drop-shadow-md"
+                />
+                <span className="min-w-0">
+                  <span className="block font-medium">{character.name}</span>
+                  <span className="block truncate text-xs text-black/60 dark:text-white/60">{character.role}</span>
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
 
         <div className="flex flex-wrap gap-2 lg:col-span-2">
           <button
@@ -349,52 +444,90 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
             {highlightAll ? "Hide Highlights" : "Highlight All Overlays"}
           </button>
           <button
-            onClick={() => setDragAllText((v) => !v)}
+            onClick={() => setDragAll((v) => !v)}
             className={
-              dragAllText
+              dragAll
                 ? "rounded-lg bg-black px-3 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black"
                 : "rounded-lg border border-black/10 px-3 py-2 text-sm text-black/80 hover:bg-black/5 dark:border-white/10 dark:text-white/80 dark:hover:bg-white/10"
             }
           >
-            {dragAllText ? "Drag All: ON" : "Drag All Overlays"}
+            {dragAll ? "Drag All: ON" : "Drag All Overlays"}
           </button>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-3 lg:col-span-2">
+        <div className="grid gap-3 lg:col-span-2">
           <label className="grid gap-1 text-sm">
-            Font size
+            Character token size
             <input
               type="number"
-              min={10}
-              max={120}
-              value={selectedTextOverlay?.fontSize ?? 36}
-              onChange={(e) => updateSelectedOverlay({ fontSize: Number(e.target.value) || 36 })}
-              disabled={!selectedTextOverlay}
+              min={40}
+              max={240}
+              value={selectedCharacterOverlay?.size ?? 60}
+              onChange={(e) => updateSelectedOverlay({ size: Number(e.target.value) || 60 })}
+              disabled={!selectedCharacterOverlay}
               className="rounded-lg border border-black/10 bg-transparent px-3 py-2 outline-none focus:ring-2 focus:ring-black/20 disabled:opacity-60 dark:border-white/10 dark:focus:ring-white/20"
             />
           </label>
+        </div>
 
-          <label className="grid gap-1 text-sm">
-            Text color
+        <div className="grid gap-3 rounded-xl border border-black/10 p-3 dark:border-white/10 lg:col-span-2">
+          <div>
+            <div className="text-sm font-medium">Status effects</div>
+            <div className="mt-1 text-xs text-black/60 dark:text-white/60">
+              Select a character, then add or remove conditions. Effects travel with their token.
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <select
+              value={statusToAdd}
+              onChange={(event) => setStatusToAdd(event.target.value)}
+              disabled={!selectedCharacterOverlay}
+              className="rounded-lg border border-black/10 bg-transparent px-3 py-2 text-sm disabled:opacity-60 dark:border-white/10"
+            >
+              {COMMON_STATUS_EFFECTS.map((status) => (
+                <option key={status} value={status}>{status}</option>
+              ))}
+            </select>
+            <button
+              onClick={() => addStatusEffect(statusToAdd)}
+              disabled={!selectedCharacterOverlay}
+              className="rounded-lg bg-black px-3 py-2 text-sm text-white disabled:opacity-40 dark:bg-white dark:text-black"
+            >
+              Add status
+            </button>
             <input
-              type="color"
-              value={selectedTextOverlay?.color ?? "#ffffff"}
-              onChange={(e) => updateSelectedOverlay({ color: e.target.value })}
-              disabled={!selectedTextOverlay}
-              className="h-10 rounded-lg border border-black/10 bg-transparent px-1 py-1 disabled:opacity-60 dark:border-white/10"
+              value={customStatus}
+              onChange={(event) => setCustomStatus(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") addStatusEffect(customStatus);
+              }}
+              disabled={!selectedCharacterOverlay}
+              placeholder="Custom status"
+              className="min-w-40 flex-1 rounded-lg border border-black/10 bg-transparent px-3 py-2 text-sm disabled:opacity-60 dark:border-white/10"
             />
-          </label>
-
-          <label className="grid gap-1 text-sm">
-            Stroke color
-            <input
-              type="color"
-              value={selectedTextOverlay?.stroke ?? "#000000"}
-              onChange={(e) => updateSelectedOverlay({ stroke: e.target.value })}
-              disabled={!selectedTextOverlay}
-              className="h-10 rounded-lg border border-black/10 bg-transparent px-1 py-1 disabled:opacity-60 dark:border-white/10"
-            />
-          </label>
+            <button
+              onClick={() => addStatusEffect(customStatus)}
+              disabled={!selectedCharacterOverlay || !customStatus.trim()}
+              className="rounded-lg border border-black/10 px-3 py-2 text-sm disabled:opacity-40 dark:border-white/10"
+            >
+              Add custom
+            </button>
+          </div>
+          <div className="flex min-h-7 flex-wrap gap-1.5">
+            {(selectedCharacterOverlay?.statusEffects ?? []).map((status) => (
+              <button
+                key={status}
+                onClick={() => removeStatusEffect(status)}
+                title={`Remove ${status}`}
+                className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-medium text-amber-950 hover:bg-red-100 dark:bg-amber-300/20 dark:text-amber-100"
+              >
+                {status} ×
+              </button>
+            ))}
+            {selectedCharacterOverlay && !(selectedCharacterOverlay.statusEffects ?? []).length ? (
+              <span className="text-xs text-black/50 dark:text-white/50">No active effects</span>
+            ) : null}
+          </div>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-4 lg:col-span-2">
@@ -420,9 +553,9 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
               className="rounded-lg border border-black/10 bg-transparent px-3 py-2 outline-none focus:ring-2 focus:ring-black/20 disabled:opacity-60 dark:border-white/10 dark:focus:ring-white/20"
             >
               <option value="">None</option>
-              {textOverlays.map((overlay) => (
+              {characterOverlays.map((overlay) => (
                 <option key={overlay.id} value={overlay.id}>
-                  {overlay.text}
+                  {overlay.name}
                 </option>
               ))}
             </select>
@@ -455,11 +588,11 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
         </div>
 
         <input
-          value={selectedTextOverlay?.text ?? selectedAoeOverlay?.label ?? ""}
+          value={selectedCharacterOverlay?.name ?? selectedAoeOverlay?.label ?? ""}
           onChange={(e) =>
             selectedOverlay?.kind === "aoe"
               ? updateSelectedOverlay({ label: e.target.value })
-              : updateSelectedOverlay({ text: e.target.value })
+              : updateSelectedOverlay({ name: e.target.value })
           }
           disabled={!selectedOverlay}
           placeholder="Select an overlay to edit label"
@@ -498,8 +631,8 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
               const highlighted = selected || highlightAll;
 
               if (overlay.kind === "aoe") {
-                const attachedText = overlay.attachedToId
-                  ? textOverlays.find((textOverlay) => textOverlay.id === overlay.attachedToId)?.text
+                const attachedCharacter = overlay.attachedToId
+                  ? characterOverlays.find((characterOverlay) => characterOverlay.id === overlay.attachedToId)?.name
                   : null;
                 return (
                   <div
@@ -526,11 +659,12 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
                       outline: highlighted ? "2px solid #3b82f6" : "none",
                       color: "#ffffff",
                       textShadow: "0 1px 3px #000000, 0 0 4px #000000",
+                      zIndex: 10,
                     }}
                   >
                     <span className="px-2 text-center text-xs">
                       {overlay.label}
-                      {attachedText ? ` (${attachedText})` : ""}
+                      {attachedCharacter ? ` (${attachedCharacter})` : ""}
                     </span>
                   </div>
                 );
@@ -550,22 +684,42 @@ export default function MapEditor({ images }: { images: CampaignImage[] }) {
                   onPointerMove={onOverlayPointerMove}
                   onPointerUp={onOverlayPointerUp}
                   onPointerCancel={onOverlayPointerUp}
-                  className={
-                    selected
-                      ? "absolute cursor-grab whitespace-nowrap rounded px-2 py-1 font-semibold leading-tight outline-2 outline-blue-500"
-                      : highlightAll
-                        ? "absolute cursor-grab whitespace-nowrap rounded px-2 py-1 font-semibold leading-tight outline outline-1 outline-amber-400/90"
-                        : "absolute cursor-grab whitespace-nowrap rounded px-2 py-1 font-semibold leading-tight"
-                  }
+                  className="absolute cursor-grab select-none touch-none"
                   style={{
                     left: `${overlay.x}px`,
                     top: `${overlay.y}px`,
-                    fontSize: `${overlay.fontSize}px`,
-                    color: overlay.color,
-                    textShadow: `-1px -1px 0 ${overlay.stroke}, 1px -1px 0 ${overlay.stroke}, -1px 1px 0 ${overlay.stroke}, 1px 1px 0 ${overlay.stroke}`,
+                    width: `${overlay.size}px`,
+                    height: `${overlay.size}px`,
+                    zIndex: 20,
                   }}
                 >
-                  {overlay.text}
+                  <img
+                    src={overlay.imageSrc}
+                    alt={overlay.name}
+                    draggable={false}
+                    className="h-full w-full object-contain drop-shadow-[0_5px_4px_rgba(0,0,0,0.75)]"
+                    style={{
+                      filter: selected
+                        ? "drop-shadow(0 0 5px #3b82f6) drop-shadow(0 4px 3px rgba(0,0,0,.8))"
+                        : highlightAll
+                          ? "drop-shadow(0 0 5px #f59e0b) drop-shadow(0 4px 3px rgba(0,0,0,.8))"
+                          : "drop-shadow(0 4px 3px rgba(0,0,0,.8))",
+                    }}
+                  />
+                  {overlay.characterId !== "pyraxis" && overlay.characterId !== "cryovex" ? (
+                    <span className="pointer-events-none absolute left-1/2 top-full mt-1 -translate-x-1/2 whitespace-nowrap rounded bg-black/75 px-1.5 py-0.5 text-[11px] font-semibold text-white shadow">
+                      {overlay.name}
+                    </span>
+                  ) : null}
+                  {(overlay.statusEffects ?? []).length ? (
+                    <div className="pointer-events-none absolute left-1/2 top-full mt-6 flex max-w-40 -translate-x-1/2 flex-wrap justify-center gap-1">
+                      {(overlay.statusEffects ?? []).map((status) => (
+                        <span key={status} className="whitespace-nowrap rounded-full border border-amber-200/70 bg-black/85 px-1.5 py-0.5 text-[9px] font-semibold text-amber-100 shadow">
+                          {status}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
               );
             })}

@@ -17,7 +17,10 @@ export default function DocsGrid({ docs }: Props) {
     new Set(docs.map((d) => d.act).filter(Boolean))
   );
   
-  const categories = useMemo(() => Array.from(new Set(docs.map((d) => d.category))).sort(), [docs]);
+  const categories = useMemo(
+    () => Array.from(new Set(docs.map((d) => d.category).filter((c): c is string => Boolean(c)))).sort(),
+    [docs]
+  );
 
   const filtered = useMemo(() => {
     const query = q.trim().toLowerCase();
@@ -64,18 +67,36 @@ export default function DocsGrid({ docs }: Props) {
               </option>
             ))}
           </select>
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="rounded-xl border border-black/10 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-zinc-950"
+        </div>
+
+        <div className="mt-3 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => setCategory("all")}
+            className={
+              "rounded-full border px-3 py-1.5 text-sm transition " +
+              (category === "all"
+                ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                : "border-black/10 bg-white text-black hover:bg-black/[0.04] dark:border-white/10 dark:bg-zinc-950 dark:text-white dark:hover:bg-white/10")
+            }
           >
-            <option value="all">All types</option>
-            {categories.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
+            All types
+          </button>
+          {categories.map((c) => (
+            <button
+              key={c}
+              type="button"
+              onClick={() => setCategory(c)}
+              className={
+                "rounded-full border px-3 py-1.5 text-sm transition " +
+                (category === c
+                  ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                  : "border-black/10 bg-white text-black hover:bg-black/[0.04] dark:border-white/10 dark:bg-zinc-950 dark:text-white dark:hover:bg-white/10")
+              }
+            >
+              {c}
+            </button>
+          ))}
         </div>
 
         <div className="text-sm text-black/60 dark:text-white/60">

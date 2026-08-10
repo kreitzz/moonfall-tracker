@@ -17,6 +17,9 @@ const MAP_EDITOR_IDS = new Set([
   "act-2-maps-weeping-marsh-jpg",
   "act-2-maps-weeping-marsh-bottom-of-the-well-jpg",
   "act-2-maps-lunaryth-jpg",
+  "act-2-maps-lunaryth-red-light-underground-jpg",
+  "act-2-maps-shar-temple-below-lunaryth-jpg",
+  "act-2-maps-lunaryth-arena-jpg"
 ]);
 
 function imageSrcFromPath(path: string, version?: string) {
@@ -40,6 +43,17 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
       .sort((a, b) => a.title.localeCompare(b.title));
   }, [images, act, dmMode, isPublic]);
 
+  if (!dmMode) {
+    return (
+      <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
+        <h2 className="text-lg font-semibold">DM Mode required</h2>
+        <p className="mt-2 text-black/70 dark:text-white/70">
+          Turn on DM Mode from the top bar to access campaign maps.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-4">
       <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
@@ -59,9 +73,7 @@ export default function MapsGallery({ images }: { images: CampaignImage[] }) {
           <div className="text-sm text-black/60 dark:text-white/60">{filtered.length} maps</div>
         </div>
 
-        <div className="text-sm text-black/60 dark:text-white/60">
-          {dmMode ? "DM Mode: you can reveal maps for players." : "Showing discovered maps only."}
-        </div>
+        <div className="text-sm text-black/60 dark:text-white/60">DM Mode: you can reveal maps for players.</div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

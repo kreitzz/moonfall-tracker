@@ -53,5 +53,5 @@ export function isSessionDoc(doc: CampaignDoc): boolean {
 
 export function isDmOnlyDoc(doc: CampaignDoc): boolean {
   const path = doc.path ?? "";
-  return doc.category === "DM Guide" || path.includes("/DM Guide/");
+  return (doc as { dmOnly?: boolean }).dmOnly === true || doc.category === "DM Guide" || path.includes("/DM Guide/");
 }
