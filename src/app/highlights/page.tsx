@@ -66,6 +66,14 @@ const highlights = [
       "Mead and Echo gave blood to open the Circle of Promise, and Echo claimed the dagger sealed inside. After the weapon pushed Echo toward killing Lyra, he bequeathed the Bloodbound Testament to Prom, where it took the form of a greataxe.",
   },
   {
+    title: "The Testament Takes Lyra",
+    session: "Session 6 • Circle of Promise",
+    image: "/highlights/echo-slays-lyra-bloodbound-testament.png",
+    alt: "A horrified Echo struggles against the Bloodbound Testament's crimson influence as the compelled dagger fatally strikes Lyra inside the Circle of Promise.",
+    caption:
+      "The Bloodbound Testament began pressing Echo to kill Lyra almost as soon as he claimed it. Heywud could not break the weapon’s hold, and Lyra died trying to stop Echo from keeping the dagger—turning the Circle’s first reward into an immediate tragedy.",
+  },
+  {
     title: "The Marsh Stops Breathing",
     session: "Session 6",
     image: "/highlights/weeping-marsh-stops-breathing-v2.png",
