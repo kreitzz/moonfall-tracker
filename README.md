@@ -10,6 +10,33 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+## Nyx Agent
+
+Nyx Agent is a DM-only autonomous companion panel with conversation, combat, and downtime modes. It stores Nyx's state, approved memories, and recent conversation in the DM's browser. The model declares Nyx's dialogue and intended actions; the DM still resolves rolls, outcomes, and the rest of the world.
+
+Copy `.env.example` to `.env.local` and set:
+
+```bash
+OPENAI_API_KEY=...
+OPENAI_MODEL=gpt-5-mini
+NYX_AGENT_ACCESS_CODE=choose-a-private-code
+```
+
+Open DM Mode, select **Nyx Agent**, and enter the same access code in the Server access panel. `NYX_AGENT_ACCESS_CODE` is required in production to prevent public API usage. The OpenAI key remains server-side.
+
+Nyx requests use low reasoning effort and are capped at 600 output tokens to keep individual calls inexpensive. For tighter account-level control, use prepaid API credit with automatic recharge disabled and configure an API project budget in the OpenAI Platform billing settings.
+
+## Deployed site password
+
+Production deployments are protected by a server-side password gate. The default password is `Mead`; local development remains ungated. The successful login is stored in an HttpOnly cookie for 30 days.
+
+For deployment, optionally override the password and set a private signing secret:
+
+```bash
+SITE_ACCESS_PASSWORD=Mead
+SITE_ACCESS_SECRET=use-a-long-random-value
+```
+
 ## Character sheet persistence
 
 Character sheets save through the API route at:

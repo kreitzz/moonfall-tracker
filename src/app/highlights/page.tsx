@@ -18,6 +18,14 @@ const highlights = [
       "After Mara’s death, the fight with the robed faction, and Selune’s trial, the artifact in Moonfall Grotto forcibly attuned to Seris. Its vision revealed five other linked relics across the region.",
   },
   {
+    title: "Stranger Danger Was Not Covered",
+    session: "Session 3",
+    image: "/highlights/echo-mead-invite-burglars.png",
+    alt: "Echo and Mead separately welcome three suspicious night visitors into their roadside tents while the women quietly reach for their belongings.",
+    caption:
+      "During the roadside long rest, Echo and Mead each invited the night visitors into their respective tents and ignored every warning sign available to them. By morning, the women were gone—and so were the party’s coin and gear.",
+  },
+  {
     title: "Prom Solves the Robbery",
     session: "Session 3",
     image: "/highlights/prom-tramples-women-thieves.png",
@@ -52,7 +60,7 @@ const highlights = [
   {
     title: "Echo Gives Prom the Testament",
     session: "Session 6",
-    image: "/highlights/bloodbound-testament-chooses-prom.png",
+    image: "/highlights/bloodbound-testament-chooses-prom-v2.png",
     alt: "The Bloodbound Testament changes from Echo's dagger into a massive greataxe for Prom after the Circle of Promise.",
     caption:
       "Mead and Echo gave blood to open the Circle of Promise, and Echo claimed the dagger sealed inside. After the weapon pushed Echo toward killing Lyra, he bequeathed the Bloodbound Testament to Prom, where it took the form of a greataxe.",
@@ -60,8 +68,8 @@ const highlights = [
   {
     title: "The Marsh Stops Breathing",
     session: "Session 6",
-    image: "/highlights/weeping-marsh-stops-breathing.png",
-    alt: "A silent shockwave throws Mead backward as the party surrounds the artifact deep in the moonlit Weeping Marsh.",
+    image: "/highlights/weeping-marsh-stops-breathing-v2.png",
+    alt: "A silent shockwave throws Mead backward as Echo, Prom, Heywud, and Aylin surround the artifact deep in the moonlit Weeping Marsh.",
     caption:
       "After falling eighty feet down a well on the way in, Mead still reached the artifact first. When he touched it, the marsh stopped breathing and blasted him backward into the whetstone as the artifact site came alive.",
   },
@@ -128,6 +136,14 @@ const highlights = [
     alt: "Echo leads a packed underground performance while Mead drums, Prom holds a parasol, Heywud conjures dancers, and Seris watches from a balcony.",
     caption:
       "Mead and Prom behaved badly enough to make the Red Light district memorable, while the rest of the party spent money and made fools of themselves in their own ways. The visit stopped being a distraction once Seris revealed why the district mattered to her mother.",
+  },
+  {
+    title: "Heywud Dies. Seris Disagrees.",
+    session: "Session 8 • Hidden Temple",
+    image: "/highlights/seris-resurrects-heywud-aberration.png",
+    alt: "Seris channels brilliant lunar light into the dead Heywud as the aberration that killed him looms in the hidden tunnels beneath Lunaryth.",
+    caption:
+      "On the way out of the hidden temple, a black pendant cracked open and released a bound aberration that killed Heywud in the tunnels. Seris resurrected him, the party brought down the creature, and they kept the pendant that had released it.",
   },
   {
     title: "Nyx's Reputation Precedes Her",
