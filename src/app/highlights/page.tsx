@@ -250,6 +250,14 @@ const highlights = [
       "After the party recovered, Lunaryth recognized Seris as part of its divine bloodline and named her High Priestess. For a short time, the city seemed to have survived the exposure of Elyndor’s history and the battle that followed.",
   },
   {
+    title: "Prom Meets the Lightning",
+    session: "Session 10 • Prom's Memory",
+    image: "/highlights/prom-meets-the-lightning.png",
+    alt: "A young Prom is struck by blue-white lightning beneath the barely visible silhouette of an enormous winged creature hidden in the storm.",
+    caption:
+      "Long before the Belligerent Five, lightning struck Prom beneath an impossible storm and changed the course of his life. When the dragons descended on Lunaryth, he finally recognized the force behind that childhood memory: the same fire-and-lightning dragon was now directly in front of him.",
+  },
+  {
     title: "The Dragons Descend",
     session: "Session 10",
     image: "/highlights/dragons-descend-lunaryth.png",
