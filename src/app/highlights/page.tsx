@@ -146,14 +146,6 @@ const highlights = [
       "During the ambush at the marsh exit, Crown of Madness nearly forced Prom to swing the Bloodbound Testament into Echo. The Tearstone of the Waning Tide purged the charm just before the blow, and Prom turned his weapons back on the attackers.",
   },
   {
-    title: "The Surrender That Failed",
-    session: "Session 7 • Marsh Exit",
-    image: "/highlights/prom-surrender-that-failed-v2.png",
-    alt: "The Bloodbound Testament pulls Prom toward a fatal blow as the final robed ambusher kneels with empty hands raised.",
-    caption:
-      "The final ambusher surrendered, giving the party a chance to extract answers. The Bloodbound Testament pressed Prom to finish the weakened enemy, and he decapitated the prisoner before anyone could ask a question.",
-  },
-  {
     title: "A Completely Fair Dice Game",
     session: "Session 7",
     image: "/highlights/roadside-dice-disaster.png",

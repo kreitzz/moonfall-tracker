@@ -7,6 +7,9 @@ export function proxy(request: NextRequest) {
 
   const { pathname, search } = request.nextUrl;
   if (pathname === "/access" || pathname === "/api/site-access") return NextResponse.next();
+  // Public assets must remain directly readable so Next's image optimizer can
+  // fetch them without carrying a visitor's site-access cookie.
+  if (/\.[^/]+$/.test(pathname)) return NextResponse.next();
 
   const token = request.cookies.get(SITE_ACCESS_COOKIE)?.value;
   if (isValidSiteAccessToken(token)) return NextResponse.next();
@@ -23,4 +26,3 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
 };
-
