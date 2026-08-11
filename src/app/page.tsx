@@ -17,15 +17,6 @@ export default function Home() {
 
   return (
     <div className="space-y-10">
-      <section>
-        <div className="flex items-end justify-between gap-4">
-          <h2 className="text-xl font-semibold tracking-tight">Next Session</h2>
-        </div>
-        <div className="mt-4 rounded-3xl border border-black/10 bg-white p-6 text-2xl font-semibold tracking-tight shadow-sm dark:border-white/10 dark:bg-zinc-950">
-          Monday March 16
-        </div>
-      </section>
-
       <header className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950">
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
           <div className="min-w-0 flex-1 space-y-4">

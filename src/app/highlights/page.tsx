@@ -10,12 +10,36 @@ const highlights = [
       "The bells in the Lost Forest belonged to Admiral MooMoo, the undead cow at the center of the forest’s danger. Prom landed the killing blow and earned the party’s first MVP.",
   },
   {
+    title: "Prom Challenges Seris",
+    session: "Session 2 • Lost Forest",
+    image: "/highlights/prom-challenges-seris-duel-v2.png",
+    alt: "Seris effortlessly knocks Prom flat with lunar magic during their one-sided duel over Mara's sealed letter.",
+    caption:
+      "Prom challenged Seris to a duel over custody of Mara’s sealed letter. He failed to land a single hit, Seris put him down cleanly, and then she revived him herself before telling him not to overthink it next time.",
+  },
+  {
+    title: "Prom Destroys the Only Talking Head",
+    session: "Session 2 • Moonfall Grotto",
+    image: "/highlights/prom-destroys-speaking-head-v2.png",
+    alt: "Prom cheerfully crushes the carefully preserved head of the robed leader while his companions react in horror.",
+    caption:
+      "The party kept the robed leader’s head so they could question it later with Speak with Dead. Prom subsequently threw it down and destroyed it, erasing their own best lead before the spell could ever be used.",
+  },
+  {
     title: "The Artifact Chooses Seris",
     session: "Session 2",
     image: "/highlights/seris-claims-moonfall-artifact.png",
     alt: "Seris floats above Moonfall's lunar altar as the first artifact binds to her and visions of the remaining relics appear.",
     caption:
       "After Mara’s death, the fight with the robed faction, and Selune’s trial, the artifact in Moonfall Grotto forcibly attuned to Seris. Its vision revealed five other linked relics across the region.",
+  },
+  {
+    title: "Aylin Meets Heywud's Crab",
+    session: "Session 3 • Roadside Camp",
+    image: "/highlights/aylin-meets-heywud-crab.png",
+    alt: "The supposedly fearless assassin Aylin recoils from Heywud's tiny crab familiar while the goliath wizard looks amused.",
+    caption:
+      "Aylin entered the party’s orbit with the credentials of a trained assassin and fallen heir. Heywud’s tiny crab familiar immediately rattled her, and the party spent much of her guest appearance bullying her while she struggled to prove the reputation.",
   },
   {
     title: "Stranger Danger Was Not Covered",
@@ -36,7 +60,7 @@ const highlights = [
   {
     title: "The Belligerent Five",
     session: "Campaign Memory",
-    image: "/highlights/belligerent-five-are-named.png",
+    image: "/highlights/belligerent-five-are-named-v2.png",
     alt: "Echo, Mead, Prom, and Heywud argue around a wrecked tavern table as an innkeeper stares through a newly broken wall.",
     caption:
       "By the time the party left Moonfall behind, the Belligerent Five had become the name attached to their growing trail of relics, rescued prisoners, dead enemies, and decisions that usually made things louder.",
@@ -58,6 +82,14 @@ const highlights = [
       "The party chose an inn because it seemed safer than another roadside camp. The attackers struck inside their room, killed Edrin almost immediately, and dropped Echo in the opening exchange before the party recovered and took control of the fight.",
   },
   {
+    title: "The Red Witness Meets Action Economy",
+    session: "Session 5 • Staked Path",
+    image: "/highlights/red-witness-action-economy-v2.png",
+    alt: "The masked Red Witness stands trapped at the center of an overwhelming ring of core party members and guest adventurers.",
+    caption:
+      "The Red Witness confronted the enlarged party on the staked path and tried to turn the clearing into a ritual blood payment. With three guest PCs flooding the field alongside the core group, it never controlled the encounter and went down much faster than intended.",
+  },
+  {
     title: "Echo Gives Prom the Testament",
     session: "Session 6",
     image: "/highlights/bloodbound-testament-chooses-prom-v2.png",
@@ -72,6 +104,14 @@ const highlights = [
     alt: "A horrified Echo struggles against the Bloodbound Testament's crimson influence as the compelled dagger fatally strikes Lyra inside the Circle of Promise.",
     caption:
       "The Bloodbound Testament began pressing Echo to kill Lyra almost as soon as he claimed it. Heywud could not break the weapon’s hold, and Lyra died trying to stop Echo from keeping the dagger—turning the Circle’s first reward into an immediate tragedy.",
+  },
+  {
+    title: "Mead Falls Eighty Feet",
+    session: "Session 6 • Weeping Marsh",
+    image: "/highlights/mead-falls-eighty-foot-well.png",
+    alt: "Mead tumbles down an impossibly deep stone well while four tiny companion silhouettes stare from the moonlit opening above.",
+    caption:
+      "On the way into the Weeping Marsh, Mead plunged eighty feet down a hidden well in full armor. He survived the fall, rejoined the others, and still managed to reach the artifact before anyone else.",
   },
   {
     title: "The Marsh Stops Breathing",
@@ -104,6 +144,14 @@ const highlights = [
     alt: "The Tearstone shatters the Crown of Madness as Prom's greataxe stops inches from Echo.",
     caption:
       "During the ambush at the marsh exit, Crown of Madness nearly forced Prom to swing the Bloodbound Testament into Echo. The Tearstone of the Waning Tide purged the charm just before the blow, and Prom turned his weapons back on the attackers.",
+  },
+  {
+    title: "The Surrender That Failed",
+    session: "Session 7 • Marsh Exit",
+    image: "/highlights/prom-surrender-that-failed-v2.png",
+    alt: "The Bloodbound Testament pulls Prom toward a fatal blow as the final robed ambusher kneels with empty hands raised.",
+    caption:
+      "The final ambusher surrendered, giving the party a chance to extract answers. The Bloodbound Testament pressed Prom to finish the weakened enemy, and he decapitated the prisoner before anyone could ask a question.",
   },
   {
     title: "A Completely Fair Dice Game",
@@ -168,6 +216,14 @@ const highlights = [
     alt: "Mead raises his warhammer after defeating Nyx Amberline in the Guild Games final while Echo, Prom, and Heywud celebrate.",
     caption:
       "Mead fought through the Guild Games and defeated former champion Nyx Amberline in the final. Winning broke the Mercantile League’s six-year hold on the tournament and gave the party the public standing needed to enter Lunaryth’s elite reception.",
+  },
+  {
+    title: "The Moon Drop Warning Goes Unheeded",
+    session: "Session 9 • Champion's Celebration",
+    image: "/highlights/moon-drop-warning-ignored.png",
+    alt: "Echo, Mead, Prom, and Heywud celebrate Mead's victory behind a table buried beneath glowing Moon Drop shot glasses.",
+    caption:
+      "The party had already found Lunaryth’s drinking guide and its explicit warning that more than two Moon Drops was a terrible idea. After Mead won the Guild Games, many, many Moon Drops followed—and the celebration produced exactly the regret the guide promised.",
   },
   {
     title: "Aelwyn Casts Him Beyond",
